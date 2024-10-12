@@ -1,1 +1,16 @@
-<p>formulario-pqr works!</p>
+<form [formGroup]="formPqr">
+  <mat-form-field>
+    <mat-label>Tipo Solicitud*</mat-label>
+    <mat-error></mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Asunto*</mat-label>
+    <input formControlName="asunto" matInput>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Descripcion*</mat-label>
+    <input formControlName="descripcion" matInput>
+  </mat-form-field>
+
+
+</form>
