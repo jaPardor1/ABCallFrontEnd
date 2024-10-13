@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-     nombreModulo:string='prueba'
+     public nombreModulo:string='RADICAR PQR'
+
+
+
+
 }
