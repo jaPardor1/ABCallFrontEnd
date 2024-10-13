@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ABCall';
+  module:string='DEMO'
+  receiveMessage(mensaje:string){
+    this.module=mensaje;
+ }
 }

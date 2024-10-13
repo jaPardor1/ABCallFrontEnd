@@ -1,14 +1,56 @@
-<form [formGroup]="formPqr">
-  <mat-form-field>
-    <mat-label>Tipo Solicitud*</mat-label>
-    <mat-error></mat-error>
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>Asunto*</mat-label>
-    <input formControlName="asunto" matInput>
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>Descripcion*</mat-label>
-    <input formControlName="descripcion" matInput>
-  </mat-form-field>
+
+<!-- <code style="margin:0px auto;">
+  {{form.value.descripcion.length}}
+  {{form.value | json}}
+</code> -->
+<form style="margin-top: 158px;" (submit)="saveInfo()" [formGroup]="form">
+  <div class="container">
+    <div class="row">
+      <div class="col-3">
+        <label>Tipo De Solicitud</label>
+      </div>
+      <div class="col-3">
+        <mat-form-field>
+          <mat-label>Seleccione Tipo De Solicitud</mat-label>
+          <mat-select formControlName="tipoSolicitud">
+            <mat-option *ngFor="let op of tipoSolicitud" [value]="op.id">{{op.tiposol}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3">
+        <label>Asunto*</label>
+      </div>
+      <div class="col-3">
+        <mat-form-field>
+          <mat-label>Asunto</mat-label>
+          <input formControlName="asunto" matInput>
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-error *ngIf="form.invalid">{{getErrorSubjectField()}}</mat-error>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3"><label>Descripcion*</label></div>
+      <div class="col-3">
+        <mat-form-field>
+
+          <mat-label>Descripción</mat-label>
+          <textarea formControlName="descripcion" matInput></textarea>
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-error *ngIf="form.invalid">{{getErrorDescriptionField()}}</mat-error>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+          <button [disabled]="form.invalid" mat-flat-button color="#1FC7B5" >Enviar</button>
+          <a mat-stroked-button routerLink="/generos">Cancelar</a>
+      </div>
+    </div>
+  </div>
 </form>
+

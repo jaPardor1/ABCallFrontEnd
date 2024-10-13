@@ -1,0 +1,8 @@
+
+label{
+  font-size: 40px;
+}
+
+.mat-mdc-unelevated-button:not(:disabled){
+    background-color: #1FC7B5;
+}
