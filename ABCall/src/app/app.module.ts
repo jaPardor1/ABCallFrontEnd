@@ -11,6 +11,7 @@ import { RadicarPQRClienteComponent } from './pqr/radicar-pqrcliente/radicar-pqr
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MaterialModule } from './material/material.module';
 import { DialogComponent } from './shared/dialog/dialog.component';
+import { ListadoPqrComponent } from './pqr/listado-pqr/listado-pqr.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { DialogComponent } from './shared/dialog/dialog.component';
     HeaderComponent,
     FormularioPqrComponent,
     RadicarPQRClienteComponent,
-    DialogComponent
+    DialogComponent,
+    ListadoPqrComponent
   ],
   imports: [
     BrowserModule,

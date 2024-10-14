@@ -1,0 +1,76 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+     <label >Digite el numero de radicado</label>
+    </div>
+    <div class="col-4">
+      <mat-form-field>
+         <input type="text" matInput>
+      </mat-form-field>
+    </div>
+    <div class="col-4">
+     <button >
+      <button (click)="searchIncidents()"  mat-flat-button color="#1FC7B5" >Enviar</button>
+     </button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <table *ngIf="incidentsList.length!=0" mat-table [dataSource]="incidentsList" class="mat-elevation-z8">
+
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+
+
+        <ng-container matColumnDef="client_id">
+          <th mat-header-cell *matHeaderCellDef> Client </th>
+          <td mat-cell *matCellDef="let element"> {{element.client_id}} </td>
+        </ng-container>
+
+              <!-- Position Column -->
+        <ng-container matColumnDef="subject">
+          <th mat-header-cell *matHeaderCellDef> Subject </th>
+          <td mat-cell *matCellDef="let element"> {{element.subject}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="description">
+          <th mat-header-cell *matHeaderCellDef> Description </th>
+          <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef> Status </th>
+          <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="date">
+          <th mat-header-cell *matHeaderCellDef> Date </th>
+          <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="estimated_close_date">
+          <th mat-header-cell *matHeaderCellDef> Estimated Close Date </th>
+          <td mat-cell *matCellDef="let element"> {{element.estimated_close_date}} </td>
+        </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="user_id">
+            <th mat-header-cell *matHeaderCellDef> User Id </th>
+            <td mat-cell *matCellDef="let element"> {{element.user_id}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="type">
+            <th mat-header-cell *matHeaderCellDef> Type </th>
+            <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+          </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+    </div>
+  </div>
+</div>
