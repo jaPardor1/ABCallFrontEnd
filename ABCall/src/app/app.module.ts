@@ -12,6 +12,10 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { MaterialModule } from './material/material.module';
 import { DialogComponent } from './shared/dialog/dialog.component';
 import { LoginComponent } from './login/login.component';
+import { LayoutComponent } from './shared/layout/layout.component';
+
+
+
 
 
 @NgModule({
@@ -21,7 +25,9 @@ import { LoginComponent } from './login/login.component';
     FormularioPqrComponent,
     RadicarPQRClienteComponent,
     DialogComponent,
-    LoginComponent
+    LoginComponent,
+    LayoutComponent,
+
   ],
   imports: [
     BrowserModule,
