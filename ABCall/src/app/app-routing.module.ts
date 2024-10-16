@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { RadicarPQRClienteComponent } from './pqr/radicar-pqrcliente/radicar-pqrcliente.component';
 import { LayoutComponent } from './shared/layout/layout.component';
 import { ListadoPqrComponent } from './pqr/listado-pqr/listado-pqr.component';
+import { ListadoUsuariosComponent } from './users/listado-usuarios/listado-usuarios.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
       {
         path:'listIncidences',
         component:ListadoPqrComponent
+      },
+      {
+        path:'listUsers',
+        component:ListadoUsuariosComponent
       },
 
 

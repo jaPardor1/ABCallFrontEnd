@@ -14,9 +14,10 @@ export class LoginComponent {
 
   onLogin(){
 
-    this.router.navigate(["listIncidences"]);
+    //this.router.navigate(["listIncidences"]);
 
     //this.router.navigate(["createIncidence"]);
 
+    this.router.navigateByUrl('listUsers');
   }
 }
