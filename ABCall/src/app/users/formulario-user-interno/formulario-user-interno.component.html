@@ -1,0 +1,28 @@
+<form class="mt-2">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-3">
+        <label>Perfil</label>
+      </div>
+      <div class="col-3">
+         <mat-form-field>
+          <mat-label>Seleccione Tipo De Solicitud</mat-label>
+          <mat-select formControlName="tipoSolicitud">
+            <mat-option *ngFor="let op of profiles" [value]="op.id">{{op.profileName}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+      </div>
+      <div class="col-3">
+
+      </div>
+      <div class="col-3">
+
+      </div>
+    </div>
+
+
+  </div>
+
+</form>

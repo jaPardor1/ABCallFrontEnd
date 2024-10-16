@@ -15,6 +15,7 @@ import { LoginComponent } from './login/login.component';
 import { LayoutComponent } from './shared/layout/layout.component';
 import { ListadoPqrComponent } from './pqr/listado-pqr/listado-pqr.component';
 import { ListadoUsuariosComponent } from './users/listado-usuarios/listado-usuarios.component';
+import { FormularioUserInternoComponent } from './users/formulario-user-interno/formulario-user-interno.component';
 
 
 
@@ -30,7 +31,8 @@ import { ListadoUsuariosComponent } from './users/listado-usuarios/listado-usuar
     LoginComponent,
     LayoutComponent,
     ListadoPqrComponent,
-    ListadoUsuariosComponent
+    ListadoUsuariosComponent,
+    FormularioUserInternoComponent
 
   ],
   imports: [

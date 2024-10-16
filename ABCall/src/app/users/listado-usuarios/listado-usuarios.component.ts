@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserDto } from '../user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-listado-usuarios',
@@ -10,7 +11,7 @@ export class ListadoUsuariosComponent  {
   displayedColumns: string[] = ['identificacion', 'nombre', 'perfil','actions'];
   usersList:UserDto[];
 
-  constructor() {
+  constructor(private router:Router) {
 
     this.usersList = [
       {
@@ -32,6 +33,10 @@ export class ListadoUsuariosComponent  {
 
       }
     ]
+  }
+
+  goToUserCreation(){
+    this.router.navigateByUrl('innerUserForm');
   }
 
 

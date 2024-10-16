@@ -40,7 +40,7 @@ export class HeaderComponent {
 
   }
   setActiveOption(cOption:number){
-    debugger;
+
     //desactivar opcion anterior
     let searched_obj: HeaderOptionDTO | undefined = this.options.find(i=>i.id==this.currentOption);
     if(searched_obj!==undefined) searched_obj.isActive = false;
