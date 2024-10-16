@@ -7,6 +7,7 @@ import { LayoutComponent } from './shared/layout/layout.component';
 import { ListadoPqrComponent } from './pqr/listado-pqr/listado-pqr.component';
 import { ListadoUsuariosComponent } from './users/listado-usuarios/listado-usuarios.component';
 import { FormularioUserInternoComponent } from './users/formulario-user-interno/formulario-user-interno.component';
+import { RegistroComponent } from './users/registro/registro.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,9 @@ const routes: Routes = [
   },{
     path:'login',
     component:LoginComponent
+  },{
+    path: 'registro',
+    component: RegistroComponent
   },
   {
     path:'',

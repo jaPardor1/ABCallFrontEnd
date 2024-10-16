@@ -20,4 +20,7 @@ export class LoginComponent {
 
     this.router.navigateByUrl('listUsers');
   }
+  onCreateAccount() {
+    this.router.navigateByUrl('registro');
+}
 }

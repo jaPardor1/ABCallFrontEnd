@@ -1,0 +1,57 @@
+<div class="register-page">
+  <div class="register-form">
+    <h1>REGISTRE SUS DATOS</h1>
+    <form>
+      <div class="form-row">
+        <!-- Primera columna -->
+        <div class="form-column">
+          <label for="tipo-identificacion">TIPO IDENTIFICACION*:</label>
+          <select id="tipo-identificacion" name="tipo-identificacion">
+            <option value="cc">Cédula de Ciudadanía</option>
+            <option value="passport">Pasaporte</option>
+          </select>
+
+          <label for="nombres">NOMBRES *:</label>
+          <input type="text" id="nombres" name="nombres" placeholder="Ingrese sus nombres"/>
+
+          <label for="empresa">EMPRESA PQR*:</label>
+          <input type="text" id="empresa" name="empresa" placeholder="Ingrese nombre de la empresa"/>
+
+          <label for="correo">CORREO ELECTRONICO*:</label>
+          <input type="email" id="correo" name="correo" placeholder="Digite su correo electrónico"/>
+        </div>
+
+        <!-- Segunda columna -->
+        <div class="form-column">
+          <label for="identificacion">IDENTIFICACION*:</label>
+          <input type="text" id="identificacion" name="identificacion" placeholder="Digite su identificación"/>
+
+          <label for="apellidos">APELLIDO*:</label>
+          <input type="text" id="apellidos" name="apellidos" placeholder="Digite su apellido"/>
+
+          <label for="telefono">TELEFONO CELULAR*:</label>
+          <input type="text" id="telefono" name="telefono" placeholder="Ingrese su teléfono"/>
+
+          <label for="contrasena">CONTRASEÑA*:</label>
+          <input type="password" id="contrasena" name="contrasena" placeholder="Ingrese su contraseña"/>
+
+          <label for="repetir-contrasena">REPETIR CONTRASEÑA*:</label>
+          <input type="password" id="repetir-contrasena" name="repetir-contrasena" placeholder="Repita su contraseña"/>
+        </div>
+      </div>
+
+     <!-- Botones -->
+     <div class="form-buttons" style="display: flex; justify-content: center; gap: 20px;">
+      <!-- Dejo marcado aqui para Agregar la funcionalidad para regresar al login -->
+      <button type="button" class="btn-regresar" (click)="onCancel()">CANCELAR</button>
+
+      <!-- Dejo marcado aqui para Agregar la funcionalidad para registrar y luego regresar al login -->
+      <button type="button" class="btn-registrar" (click)="onRegister()">REGISTRAR</button>
+    </div>
+
+    </form>
+  </div>
+</div>
+
+
+
