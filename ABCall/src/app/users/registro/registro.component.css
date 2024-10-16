@@ -95,3 +95,49 @@ mat-error {
   justify-content: center;
   height: 100vh; /* Asegura que todo el contenido esté centrado verticalmente */
 }
+
+.is-invalid {
+  border: 2px solid red;
+}
+
+.text-danger {
+  color: red;
+  font-size: 12px; /* Puedes ajustar el tamaño del texto de error */
+}
+
+/* Estilos para el modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.modal-content p {
+  margin-bottom: 20px;
+}
+
+.modal-content button {
+  padding: 10px 20px;
+  background-color: #00bfa5;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+
+
