@@ -21,4 +21,8 @@
   margin-left: 40px;
   font-family: 'bebas-neue';
   color:#D9D9D9;
+  font-size: 35px;
+}
+.active{
+  background-color:#189B8D ;
 }
