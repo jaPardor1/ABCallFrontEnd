@@ -1,2 +1,57 @@
 
-<h1>listado usuarios registrados</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <h1 class="ml-3 mt-3">listado usuarios registrados</h1>
+    </div>
+  </div>
+  <div class="row justify-content-end">
+    <div class="col-2">
+      <button>Crear usuario</button>
+    </div>
+  </div>
+  <div class="row">
+
+    <div class="col-12 mt-5">
+      <table *ngIf="usersList.length!=0" mat-table [dataSource]="usersList" class="mat-elevation-z8">
+
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- identification Column -->
+        <ng-container matColumnDef="identificacion">
+          <th mat-header-cell *matHeaderCellDef> Identificación </th>
+          <td mat-cell *matCellDef="let element"> {{element.identificacion}} </td>
+        </ng-container>
+
+        <!-- profile Column -->
+        <ng-container matColumnDef="nombre">
+          <th mat-header-cell *matHeaderCellDef> Nombre </th>
+          <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+        </ng-container>
+
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="perfil">
+          <th mat-header-cell *matHeaderCellDef> Perfil </th>
+          <td mat-cell *matCellDef="let element"> {{element.perfil}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions" >
+          <th style="width: 160px;" mat-header-cell *matHeaderCellDef>  </th>
+          <td *matCellDef="let row">
+            <mat-icon aria-hidden="false" aria-label="delete user" fontIcon="trash"></mat-icon>
+            <button mat-button>Edit</button>
+            <button mat-button>Delete</button>
+          </td>
+        </ng-container>
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+    </div>
+  </div>
+</div>
