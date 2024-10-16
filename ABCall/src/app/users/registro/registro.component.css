@@ -1,9 +1,19 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 .register-page {
   width: 100%;
+  min-height: 100vh; /* Esto asegura que ocupe al menos toda la altura visible */
   max-width: 900px;
   margin: auto;
   padding: 20px;
-
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Asegura que el contenido esté centrado verticalmente */
 }
 
 .register-form {
@@ -20,7 +30,7 @@ h1 {
 .form-row {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 10px; /* Reducir espacio entre filas */
 }
 
 .form-column {
@@ -37,14 +47,17 @@ h1 {
 .form-column select {
   width: 100%;
   padding: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 10px; /* Reducir espacio entre inputs */
   border: 1px solid #ccc;
   border-radius: 5px;
 }
 
 .form-buttons {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 20px;
+  padding-top: 10px; /* Reducir espacio superior de los botones */
+  margin-bottom: 10px; /* Reducir espacio inferior entre botones y borde de pantalla */
 }
 
 .form-buttons .btn-regresar {
@@ -63,4 +76,22 @@ h1 {
   color: white;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.small-text {
+  font-size: 12px;
+  color: #ff0000; /* Mensaje de campo requerido */
+  margin-bottom: 10px; /* Asegura que el texto no esté pegado a los campos */
+}
+
+mat-error {
+  font-size: 10px;  /* Cambia el tamaño de las etiquetas de error */
+  color: #ff0000;   /* Puedes mantener el color rojo para los errores */
+}
+
+.register-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh; /* Asegura que todo el contenido esté centrado verticalmente */
 }
