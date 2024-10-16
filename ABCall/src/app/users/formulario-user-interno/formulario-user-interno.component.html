@@ -6,23 +6,133 @@
         <label>Perfil</label>
       </div>
       <div class="col-3">
-         <mat-form-field>
-          <mat-label>Seleccione Tipo De Solicitud</mat-label>
-          <mat-select formControlName="tipoSolicitud">
+        <mat-form-field>
+          <mat-label>Seleccione Tipo De perfil</mat-label>
+          <mat-select>
             <mat-option *ngFor="let op of profiles" [value]="op.id">{{op.profileName}}</mat-option>
           </mat-select>
         </mat-form-field>
-
       </div>
       <div class="col-3">
-
+        <label for="">Seleccione el tipo de plan </label>
       </div>
       <div class="col-3">
-
+        <mat-form-field>
+          <mat-label>Seleccione Tipo De plan</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let op of subscriptionsPlan" [value]="op.id">{{op.subscrptionName}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3">
+        <label>tipo identificacion</label>
+      </div>
+      <div class="col-3">
+        <mat-form-field>
+          <mat-label>Seleccione tipo de identificacion</mat-label>
+          <mat-select formControlName="identiicationType">
+            <mat-option *ngFor="let op of documentIds" [value]="op.id">{{op.documentName}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-3">
+        <label>identificacion</label>
+      </div>
+      <div class="col-3">
+        <mat-form-field>
+          <mat-label>Identificacion</mat-label>
+          <input matInput>
+        </mat-form-field>
       </div>
     </div>
 
+  </div>
+  <!--datos de la empresa-->
+  <div class="container">
+    <div class="row">
+      <div class="col-3">
+        <label>razon social*</label>
+      </div>
+      <div class="col-3">
+        <mat-form-field>
+          <mat-label>razon social</mat-label>
+          <input matInput>
+        </mat-form-field>
+      </div>
+      <div class="col-3">
+        <label>direccion empresa</label>
+      </div>
+      <div class="col-3">
+        <mat-form-field [style.width.px]=327>
+          <mat-label>Direccion Empresa</mat-label>
+          <input matInput>
+        </mat-form-field>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-3">
+        <label for="">Tipo Identificacion rep. legal</label>
+      </div>
+      <div class="col-3">
+        <mat-form-field>
+          <mat-label>Seleccione tipo de identificacion</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let op of documentIds" [value]="op.id">{{op.documentName}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-3">
+        <label for="">identificacion rep. legal</label>
+      </div>
+      <div class="col-3">
+        <mat-form-field>
+          <mat-label>Identificacion Rep. Legal</mat-label>
+          <input matInput>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3"><label for="">Nombres rep. legal</label></div>
+      <div class="col-3">
+        <mat-form-field>
+          <mat-label>Nombres rep. legal</mat-label>
+          <input matInput>
+        </mat-form-field>
+      </div>
+      <div class="col-3">
+         <label for="">Apellidos Rep. Legal</label>
+      </div>
+      <div class="col-3">
+        <mat-form-field>
+          <mat-label>Correo Electronico</mat-label>
+          <input matInput>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3"> <label for="">Correo electronico</label></div>
+      <div class="col-3">
+        <mat-form-field>
+        <mat-label>Correo Electronico</mat-label>
+        <input matInput>
+      </mat-form-field>
+    </div>
+      <div class="col-3"><label for="">telefono</label></div>
+      <div class="col-3">
+        <mat-form-field>
+          <mat-label>Correo Electronico</mat-label>
+          <input matInput>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row ">
+      <div class="col d-flex justify-content-center">
+        <button>Guardar</button>
+      </div>
+    </div>
 
   </div>
-
 </form>
