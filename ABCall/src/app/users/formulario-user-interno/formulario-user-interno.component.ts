@@ -62,6 +62,12 @@ export class FormularioUserInternoComponent {
           identificacion:['',{
             validators:[Validators.required]
           }],
+          nombres:['',{
+            validators:[]
+          }],
+          apellidos:['',{
+            validators:[]
+          }],
           razonSocialEmpresa:[],
           direccionEmpresa:[],
           tipoIdentificacionRepLegal:[],
@@ -89,5 +95,38 @@ export class FormularioUserInternoComponent {
   }
 
 // get errors
+
+getErrorProfileField(){
+  var campo = this.form.get('perfil');
+  if (campo!= null){
+
+    if(campo.hasError('required')){
+      return 'Por favor especifique un perfil';
+    }
+  }
+  return '';
+}
+getErrorIdentificationTypeField(){
+  var campo = this.form.get('tipoIdentificacion');
+  if (campo!= null){
+
+    if(campo.hasError('required')){
+      return 'Por favor especifique un tipo de identificacion';
+    }
+  }
+  return '';
+}
+getErrorNameField(){
+  var campo = this.form.get('nombres');
+  if (campo!= null){
+
+    if(campo.hasError('required')){
+      return 'Por favor especifique un nombre';
+    }
+  }
+  return '';
+}
+
+
 
 }
