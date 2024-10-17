@@ -6,35 +6,37 @@ html, body {
 
 .register-page {
   width: 100%;
-  min-height: 100vh; /* Esto asegura que ocupe al menos toda la altura visible */
+  min-height: 100vh;
   max-width: 900px;
   margin: auto;
   padding: 20px;
   background-size: cover;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Asegura que el contenido esté centrado verticalmente */
+  justify-content: center;
 }
 
 .register-form {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(72, 207, 194, 0.9);
   padding: 20px;
   border-radius: 10px;
 }
 
 h1 {
   text-align: center;
-  color: #00bfa5;
+  color: #48464C;
 }
 
 .form-row {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px; /* Reducir espacio entre filas */
+  margin-bottom: 5px; /* Reducir espacio entre filas */
 }
 
 .form-column {
-  width: 48%; /* Ajusta el tamaño de las columnas */
+  width: 48%; /* Mantener el ancho de las columnas */
+  padding-left: 30px;  /* Añadir margen izquierdo */
+  padding-right: 10px; /* Añadir margen derecho */
 }
 
 .form-column label {
@@ -45,10 +47,11 @@ h1 {
 
 .form-column input,
 .form-column select {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px; /* Reducir espacio entre inputs */
-  border: 1px solid #ccc;
+  width: 90%;
+  padding: 12px;
+  margin-bottom: 2px;
+  border: 2px solid  #48464C;;
+  background-color: rgba(72, 207, 194, 0.9);
   border-radius: 5px;
 }
 
@@ -70,7 +73,7 @@ h1 {
 }
 
 .form-buttons .btn-registrar {
-  background-color: #00bfa5;
+  background-color:  #029e89;
   border: none;
   padding: 10px 20px;
   color: white;
@@ -78,10 +81,14 @@ h1 {
   cursor: pointer;
 }
 
+button:hover {
+  background-color: #008d76; /* Color verde más oscuro al pasar el mouse */
+}
+
 .small-text {
   font-size: 12px;
-  color: #ff0000; /* Mensaje de campo requerido */
-  margin-bottom: 10px; /* Asegura que el texto no esté pegado a los campos */
+  color: #ff0000;
+  margin-bottom: 10px;
 }
 
 mat-error {
@@ -93,7 +100,11 @@ mat-error {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100vh; /* Asegura que todo el contenido esté centrado verticalmente */
+  height: 100vh;
+}
+
+.registro-link:hover {
+  text-decoration: underline; /* Revisar */
 }
 
 .is-invalid {
@@ -105,28 +116,32 @@ mat-error {
   font-size: 12px; /* Puedes ajustar el tamaño del texto de error */
 }
 
-/* Estilos para el modal */
+/* Estilos para el modal de error */
 .modal {
+  display: block; /* Mostrar el modal */
   position: fixed;
-  top: 0;
+  z-index: 1;
   left: 0;
+  top: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
 }
 
 .modal-content {
-  background: white;
+  background-color: #fefefe;
+  margin: 15% auto;
   padding: 20px;
-  border-radius: 5px;
+  border: 1px solid #888;
+  width: 300px;
   text-align: center;
 }
 
-.modal-content p {
-  margin-bottom: 20px;
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
 }
 
 .modal-content button {
@@ -137,7 +152,12 @@ mat-error {
   cursor: pointer;
 }
 
-
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
 
 
 

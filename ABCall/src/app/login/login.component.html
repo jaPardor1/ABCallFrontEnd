@@ -41,24 +41,33 @@
 
 </div> -->
 
-<div>
-  <div class="login-page">
-    <div class="form">
-      <form class="register-form">
+<div class="login-container">
+  <div class="login-form-container">
+    <h1>ABCall</h1>
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+      <div class="input-container">
+        <label for="usuario">USUARIO</label>
+        <input type="text" id="usuario" formControlName="usuario" placeholder="Ingrese su usuario" [ngClass]="{'is-invalid': isFieldInvalid('usuario')}"/>
+        <small *ngIf="isFieldInvalid('usuario')" class="text-danger">Este campo es obligatorio</small>
+      </div>
 
-        <input type="text" placeholder="name"/>
-        <input type="password" placeholder="password"/>
-        <input type="text" placeholder="email address"/>
-        <button>create</button>
-        <p class="message">Already registered? <a href="#">Sign In</a></p>
-      </form>
-      <form class="login-form">
-        <p>ABCall</p>
-        <input type="text" placeholder="username"/>
-        <input type="password" placeholder="password"/>
-        <button (click)="onLogin()">login</button>
-        <p class="message">Not registered? <a (click)="onCreateAccount()">Create an account</a></p>
-      </form>
+      <div class="input-container">
+        <label for="contrasena">CONTRASEÑA</label>
+        <input type="password" id="contrasena" formControlName="contrasena" placeholder="**********" [ngClass]="{'is-invalid': isFieldInvalid('contrasena')}"/>
+        <small *ngIf="isFieldInvalid('contrasena')" class="text-danger">Este campo es obligatorio</small>
+      </div>
+
+      <button type="submit">INGRESAR</button>
+    </form>
+    <p class="registro-link" (click)="onCreateAccount()">REGISTRO CLIENTE</p>
+  </div>
+
+  <!-- Modal para error de campos incompletos -->
+  <div *ngIf="showErrorModal" class="modal">
+    <div class="modal-content">
+      <span class="close" (click)="closeErrorModal()">&times;</span>
+      <p>Datos incompletos. Por favor, llene todos los campos.</p>
     </div>
   </div>
 </div>
+

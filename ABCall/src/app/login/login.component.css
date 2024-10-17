@@ -7,103 +7,153 @@
   background-size: cover;
 } */
 
-.login-page {
-  width: 460px;
-  padding: 11% 0 0;
-  margin: auto;
+/* Contenedor principal */
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 
+  font-family: 'Roboto', sans-serif;
 }
-.form {
-  position: relative;
-  z-index: 1;
-  background: #47E3D2;
-  max-width: 360px;
-  margin: 0 auto 100px;
-  padding: 45px;
+
+@font-face {
+  font-family: 'Orbitron';
+  src: url('/assets/fonts/static/Orbitron-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+/* Contenedor principal */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Contenedor del formulario */
+.login-form-container {
+  background-color: rgba(72, 207, 194, 0.9); /* Fondo del contenedor */
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   text-align: center;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  max-width: 400px;
+  width: 100%;
+}
 
+h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: bold;
+  font-size: 36px;
+  color: #48464C;
 }
-.form input {
-  font-family: "Roboto", sans-serif;
-  outline: 0;
-  background: #f2f2f2;
-  width: 100%;
-  border: 0;
-  margin: 0 0 15px;
-  padding: 15px;
-  box-sizing: border-box;
-  font-size: 14px;
+
+
+/* Input y etiquetas */
+.input-container {
+  margin-bottom: 20px;
+  text-align: center;
 }
-.form button {
-  font-family: "Roboto", sans-serif;
-  text-transform: uppercase;
-  outline: 0;
-  background: #4CAF50;
+
+label {
+  color: #48464C;
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 5px;
+  display: block;
+}
+
+input {
   width: 100%;
-  border: 0;
-  padding: 15px;
-  color: #FFFFFF;
+  padding: 12px;
+  border: 2px solid #48464C;
+  background-color: rgba(72, 207, 194, 0.9);
+  border-radius: 5px;
+  font-size: 16px;
+  margin-top: 5px;
+  color: #48464C;
+}
+
+input::placeholder {
+  color: #48464C;
+}
+
+/* Botón de Ingreso */
+button {
+  width: 40%;
+  padding: 10px;
+  background-color: #029e89;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #008d76; /* Color verde más oscuro al pasar el mouse */
+}
+
+/* Link de registro */
+.registro-link {
+  margin-top: 20px;
+  color: #48464C; /* Color del texto del link de registro */
   font-size: 14px;
-  -webkit-transition: all 0.3 ease;
-  transition: all 0.3 ease;
   cursor: pointer;
 }
-.form button:hover,.form button:active,.form button:focus {
-  background: #43A047;
+
+.registro-link:hover {
+  text-decoration: underline;
 }
-.form .message {
-  margin: 15px 0 0;
-  color: #b3b3b3;
-  font-size: 12px;
+
+.is-invalid {
+  border: 2px solid red;
 }
-.form .message a {
-  color: #4CAF50;
-  text-decoration: none;
+
+.text-danger {
+  color: red;
+  font-size: 12px; /* Ajusta el tamaño del texto del error */
 }
-.form .register-form {
-  display: none;
-}
-.container {
-  position: relative;
+
+
+/* Estilos para el modal de error */
+.modal {
+  display: block; /* Mostrar el modal */
+  position: fixed;
   z-index: 1;
-  max-width: 300px;
-  margin: 0 auto;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
 }
-.container:before, .container:after {
-  content: "";
-  display: block;
-  clear: both;
-}
-.container .info {
-  margin: 50px auto;
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 300px;
   text-align: center;
 }
-.container .info h1 {
-  margin: 0 0 15px;
-  padding: 0;
-  font-size: 36px;
-  font-weight: 300;
-  color: #1a1a1a;
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
 }
-.container .info span {
-  color: #4d4d4d;
-  font-size: 12px;
-}
-.container .info span a {
-  color: #000000;
+
+.close:hover,
+.close:focus {
+  color: black;
   text-decoration: none;
-}
-.container .info span .fa {
-  color: #EF3B3A;
-}
-body {
-  background: #76b852; /* fallback for old browsers */
-  background: rgb(141,194,111);
-  background: linear-gradient(90deg, rgba(141,194,111,1) 0%, rgba(118,184,82,1) 50%);
-  font-family: "Roboto", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-
+  cursor: pointer;
 }
