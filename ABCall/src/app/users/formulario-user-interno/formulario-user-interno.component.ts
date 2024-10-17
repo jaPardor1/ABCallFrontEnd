@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ProfileDTO } from '../profile';
 import { DocumentidDTO } from '../documentId';
 import { SubscriptionDTO } from '../subscription';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -12,11 +13,11 @@ import { SubscriptionDTO } from '../subscription';
 export class FormularioUserInternoComponent {
 
 
-
+  public form:FormGroup
   public profiles:ProfileDTO[];
   public documentIds:DocumentidDTO[];
   public subscriptionsPlan:SubscriptionDTO[];
-  constructor(){
+  constructor(private formBuilder:FormBuilder){
     this.profiles = [
       {  id:1,
          profileName:"Gestor"
@@ -49,5 +50,44 @@ export class FormularioUserInternoComponent {
         {id:2,subscrptionName:'Empresario'},
         {id:3,subscrptionName:'Empresario +'}
     ]
+    this.form = this.formBuilder.group(
+      {
+          perfil:['',{
+            validators:[Validators.required]
+          }],
+          plan:[],
+          tipoIdentificacion:['',{
+            validators:[Validators.required]
+          }],
+          identificacion:['',{
+            validators:[Validators.required]
+          }],
+          razonSocialEmpresa:[],
+          direccionEmpresa:[],
+          tipoIdentificacionRepLegal:[],
+          identificacionRepLegal:[],
+          nombresRepLegal:[],
+          apellidosRepLegal:[],
+          correoElectronico:['',{
+            validators:[Validators.required]
+          }],
+          telefono:['',{
+            validators:[Validators.required]
+          }],
+          password:['',{
+            validators:[Validators.required]
+          }],
+          password2:['',{
+            validators:[Validators.required]
+          }]
+
+      }
+    );
   }
+
+  saveInfo(){
+  }
+
+// get errors
+
 }

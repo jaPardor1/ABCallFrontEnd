@@ -1,14 +1,18 @@
-<form class="mt-2">
+<!-- <code style="margin:0px auto;">
+
+  {{form.value | json}}
+</code> -->
+<form class="mt-2" (submit)="saveInfo()" [formGroup]="form">
   <div class="container">
 
-    <div class="row">
+    <div class="row" >
       <div class="col-3">
         <label>Perfil</label>
       </div>
       <div class="col-3">
         <mat-form-field>
           <mat-label>Seleccione Tipo De perfil</mat-label>
-          <mat-select>
+          <mat-select formControlName="perfil">
             <mat-option *ngFor="let op of profiles" [value]="op.id">{{op.profileName}}</mat-option>
           </mat-select>
         </mat-form-field>
@@ -19,7 +23,7 @@
       <div class="col-3">
         <mat-form-field>
           <mat-label>Seleccione Tipo De plan</mat-label>
-          <mat-select>
+          <mat-select formControlName="plan">
             <mat-option *ngFor="let op of subscriptionsPlan" [value]="op.id">{{op.subscrptionName}}</mat-option>
           </mat-select>
         </mat-form-field>
@@ -27,70 +31,70 @@
     </div>
     <div class="row">
       <div class="col-3">
-        <label>tipo identificacion</label>
+        <label>tipo Identificación</label>
       </div>
       <div class="col-3">
         <mat-form-field>
-          <mat-label>Seleccione tipo de identificacion</mat-label>
-          <mat-select formControlName="identiicationType">
+          <mat-label>Seleccione tipo de Identificación</mat-label>
+          <mat-select formControlName="tipoIdentificacion">
             <mat-option *ngFor="let op of documentIds" [value]="op.id">{{op.documentName}}</mat-option>
           </mat-select>
         </mat-form-field>
       </div>
       <div class="col-3">
-        <label>identificacion</label>
+        <label>Identificación</label>
       </div>
       <div class="col-3">
         <mat-form-field>
-          <mat-label>Identificacion</mat-label>
-          <input matInput>
+          <mat-label>Identificación</mat-label>
+          <input formControlName="identificacion" matInput>
         </mat-form-field>
       </div>
     </div>
 
   </div>
   <!--datos de la empresa-->
-  <div class="container">
+  <div class="container" name="info_company_data">
     <div class="row">
       <div class="col-3">
-        <label>razon social*</label>
+        <label>Razón social*</label>
       </div>
       <div class="col-3">
         <mat-form-field>
-          <mat-label>razon social</mat-label>
-          <input matInput>
+          <mat-label>Razón social</mat-label>
+          <input formControlName="razonSocialEmpresa" matInput>
         </mat-form-field>
       </div>
       <div class="col-3">
-        <label>direccion empresa</label>
+        <label>Dirección empresa</label>
       </div>
       <div class="col-3">
         <mat-form-field [style.width.px]=327>
-          <mat-label>Direccion Empresa</mat-label>
-          <input matInput>
+          <mat-label>Dirección Empresa</mat-label>
+          <input formControlName="direccionEmpresa" matInput>
         </mat-form-field>
       </div>
 
     </div>
     <div class="row">
       <div class="col-3">
-        <label for="">Tipo Identificacion rep. legal</label>
+        <label for="">Tipo Identificación rep. legal</label>
       </div>
       <div class="col-3">
         <mat-form-field>
-          <mat-label>Seleccione tipo de identificacion</mat-label>
-          <mat-select>
+          <mat-label>Seleccione tipo de Identificación</mat-label>
+          <mat-select formControlName="tipoIdentificacionRepLegal">
             <mat-option *ngFor="let op of documentIds" [value]="op.id">{{op.documentName}}</mat-option>
           </mat-select>
         </mat-form-field>
       </div>
       <div class="col-3">
-        <label for="">identificacion rep. legal</label>
+        <label for="">Identificación rep. legal</label>
       </div>
       <div class="col-3">
         <mat-form-field>
-          <mat-label>Identificacion Rep. Legal</mat-label>
-          <input matInput>
+          <mat-label>Identificación Rep. Legal</mat-label>
+          <input formControlName="identificacionRepLegal" matInput>
         </mat-form-field>
       </div>
     </div>
@@ -98,8 +102,8 @@
       <div class="col-3"><label for="">Nombres rep. legal</label></div>
       <div class="col-3">
         <mat-form-field>
-          <mat-label>Nombres rep. legal</mat-label>
-          <input matInput>
+          <mat-label>Nombres Rep. legal</mat-label>
+          <input formControlName="nombresRepLegal" matInput>
         </mat-form-field>
       </div>
       <div class="col-3">
@@ -107,30 +111,54 @@
       </div>
       <div class="col-3">
         <mat-form-field>
-          <mat-label>Correo Electronico</mat-label>
-          <input matInput>
+          <mat-label>Apellidos Rep. Legal</mat-label>
+          <input formControlName="apellidosRepLegal" matInput>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-3"> <label for="">Correo electrónico</label></div>
+      <div class="col-3">
+        <mat-form-field>
+        <mat-label>Correo electrónico</mat-label>
+        <input formControlName="correoElectronico" matInput>
+      </mat-form-field>
+    </div>
+      <div class="col-3"><label for="">Teléfono</label></div>
+      <div class="col-3">
+        <mat-form-field>
+          <mat-label>Teléfono</mat-label>
+          <input formControlName="telefono" matInput>
         </mat-form-field>
       </div>
     </div>
     <div class="row">
-      <div class="col-3"> <label for="">Correo electronico</label></div>
-      <div class="col-3">
+      <div class="col-3 highline border-up pt-2">
+       <label for="">Contraseña*</label>
+      </div>
+      <div class="col-3 highline border-up pt-2">
         <mat-form-field>
-        <mat-label>Correo Electronico</mat-label>
-        <input matInput>
-      </mat-form-field>
-    </div>
-      <div class="col-3"><label for="">telefono</label></div>
-      <div class="col-3">
-        <mat-form-field>
-          <mat-label>Correo Electronico</mat-label>
-          <input matInput>
+          <mat-label>Contraseña</mat-label>
+          <input formControlName="password" type="password" matInput>
         </mat-form-field>
       </div>
     </div>
-    <div class="row ">
-      <div class="col d-flex justify-content-center">
+    <div class="row">
+      <div class="col-3 highline border-down" >
+        <label for="">Repetir Contraseña*</label>
+      </div>
+      <div class="col-3 highline border-down">
+        <mat-form-field>
+          <mat-label>Contraseña</mat-label>
+          <input formControlName="password2" type="password" matInput>
+        </mat-form-field>
+      </div>
+      <div class="col-6">
+        <div class="col d-flex justify-content-center">
         <button>Guardar</button>
+      </div>
       </div>
     </div>
 

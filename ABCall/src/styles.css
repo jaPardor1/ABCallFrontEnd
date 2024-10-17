@@ -11,7 +11,12 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: 'bebas-neue',Roboto, "Helvetica Neue", sans-serif !important;
-  background-image: url('/assets/images/background/Background1.png') !important;
+
+  /* opacity: 0.6; */
+}
+
+.main-container{
+  background-image: url('/assets/images/background/Background1.png') ;
   background-size: 100vw 100vh;
   background-repeat: no-repeat;
 }
