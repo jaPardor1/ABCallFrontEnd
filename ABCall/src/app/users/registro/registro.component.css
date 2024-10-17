@@ -1,0 +1,163 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.register-page {
+  width: 100%;
+  min-height: 100vh;
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.register-form {
+  background-color: rgba(72, 207, 194, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+h1 {
+  text-align: center;
+  color: #48464C;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px; /* Reducir espacio entre filas */
+}
+
+.form-column {
+  width: 48%; /* Mantener el ancho de las columnas */
+  padding-left: 30px;  /* Añadir margen izquierdo */
+  padding-right: 10px; /* Añadir margen derecho */
+}
+
+.form-column label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-column input,
+.form-column select {
+  width: 90%;
+  padding: 12px;
+  margin-bottom: 2px;
+  border: 2px solid  #48464C;;
+  background-color: rgba(72, 207, 194, 0.9);
+  border-radius: 5px;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding-top: 10px; /* Reducir espacio superior de los botones */
+  margin-bottom: 10px; /* Reducir espacio inferior entre botones y borde de pantalla */
+}
+
+.form-buttons .btn-regresar {
+  background-color: #ff8a80;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-buttons .btn-registrar {
+  background-color:  #029e89;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #008d76; /* Color verde más oscuro al pasar el mouse */
+}
+
+.small-text {
+  font-size: 12px;
+  color: #ff0000;
+  margin-bottom: 10px;
+}
+
+mat-error {
+  font-size: 10px;  /* Cambia el tamaño de las etiquetas de error */
+  color: #ff0000;   /* Puedes mantener el color rojo para los errores */
+}
+
+.register-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}
+
+.registro-link:hover {
+  text-decoration: underline; /* Revisar */
+}
+
+.is-invalid {
+  border: 2px solid red;
+}
+
+.text-danger {
+  color: red;
+  font-size: 12px; /* Puedes ajustar el tamaño del texto de error */
+}
+
+/* Estilos para el modal de error */
+.modal {
+  display: block; /* Mostrar el modal */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 300px;
+  text-align: center;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.modal-content button {
+  padding: 10px 20px;
+  background-color: #00bfa5;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
