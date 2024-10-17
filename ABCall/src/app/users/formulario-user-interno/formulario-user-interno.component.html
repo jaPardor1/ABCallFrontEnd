@@ -139,6 +139,7 @@
     <div class="row">
       <div class="col-3"> <label for="">Correo electrónico</label></div>
       <div class="col-3">
+
         <mat-form-field>
         <mat-label>Correo electrónico</mat-label>
         <input formControlName="correoElectronico" matInput>
@@ -146,6 +147,7 @@
     </div>
       <div class="col-3"><label for="">Teléfono</label></div>
       <div class="col-3">
+        <mat-error *ngIf="form.invalid">{{getErrorTelephoneField()}}</mat-error>
         <mat-form-field>
           <mat-label>Teléfono</mat-label>
           <input formControlName="telefono" matInput>
@@ -157,6 +159,7 @@
        <label for="">Contraseña*</label>
       </div>
       <div class="col-3 highline border-up pt-2">
+        <mat-error *ngIf="form.invalid">{{getErrorPasswordField()}}</mat-error>
         <mat-form-field>
           <mat-label>Contraseña</mat-label>
           <input formControlName="password" type="password" matInput>
@@ -168,6 +171,7 @@
         <label for="">Repetir Contraseña*</label>
       </div>
       <div class="col-3 highline border-down">
+
         <mat-form-field>
           <mat-label>Contraseña</mat-label>
           <input formControlName="password2" type="password" matInput>

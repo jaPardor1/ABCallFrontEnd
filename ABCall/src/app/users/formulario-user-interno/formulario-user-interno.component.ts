@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ProfileDTO } from '../profile';
 import { DocumentidDTO } from '../documentId';
 import { SubscriptionDTO } from '../subscription';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 
 
 @Component({
@@ -111,21 +111,45 @@ getErrorIdentificationTypeField(){
   if (campo!= null){
 
     if(campo.hasError('required')){
-      return 'Por favor especifique un tipo de identificacion';
+      return 'Por favor especifique un tipo de identificación';
     }
   }
   return '';
 }
-getErrorNameField(){
-  var campo = this.form.get('nombres');
+getErrorEmailField(){
+  var campo = this.form.get('correoElectronico');
   if (campo!= null){
 
     if(campo.hasError('required')){
-      return 'Por favor especifique un nombre';
+      return 'Por favor especifique un correo electrónico';
     }
   }
   return '';
 }
+
+getErrorTelephoneField(){
+  var campo = this.form.get('telefono');
+  if (campo!= null){
+
+    if(campo.hasError('required')){
+      return 'Por favor especifique un teléfono';
+    }
+  }
+  return '';
+}
+
+getErrorPasswordField(){
+  var campo = this.form.get('password');
+  if (campo!= null){
+
+    if(campo.hasError('required')){
+      return 'Por favor especifique una contraseña';
+    }
+  }
+  return '';
+}
+
+
 
 
 
