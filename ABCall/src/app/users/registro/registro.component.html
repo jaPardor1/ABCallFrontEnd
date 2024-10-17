@@ -1,0 +1,74 @@
+<div class="register-page">
+  <div class="register-form">
+    <h1>REGISTRE SUS DATOS</h1>
+    <form [formGroup]="registroForm" (ngSubmit)="onSubmit()">
+      <div class="form-row">
+        <div class="form-column">
+          <label for="tipo-identificacion">TIPO IDENTIFICACION*:</label>
+          <select id="tipo-identificacion" formControlName="tipoIdentificacion" [ngClass]="{'is-invalid': isFieldInvalid('tipoIdentificacion')}">
+            <option value="cc">Cédula de Ciudadanía</option>
+            <option value="passport">Pasaporte</option>
+          </select>
+          <small *ngIf="isFieldInvalid('tipoIdentificacion')" class="text-danger">Este campo es obligatorio</small>
+
+          <label for="nombres">NOMBRES *:</label>
+          <input type="text" id="nombres" formControlName="nombres" placeholder="Ingrese sus nombres" [ngClass]="{'is-invalid': isFieldInvalid('nombres')}"/>
+          <small *ngIf="isFieldInvalid('nombres')" class="text-danger">Este campo es obligatorio</small>
+
+
+          <label for="empresa">EMPRESA PQR*:</label>
+          <input type="text" id="empresa" formControlName="empresa" placeholder="Ingrese nombre de la empresa"/>
+          <small *ngIf="isFieldInvalid('empresa')" class="text-danger">Este campo es obligatorio</small>
+
+          <label for="correo">CORREO ELECTRONICO*:</label>
+          <input type="email" id="correo" formControlName="correo" placeholder="Digite su correo electrónico"/>
+          <small *ngIf="isFieldInvalid('correo')" class="text-danger">Este campo es obligatorio</small>
+
+        </div>
+
+        <!-- Segunda columna -->
+        <div class="form-column">
+          <label for="identificacion">IDENTIFICACION*:</label>
+          <input type="text" id="identificacion" formControlName="identificacion" placeholder="Digite su identificación"/>
+          <small *ngIf="isFieldInvalid('identificacion')" class="text-danger">Este campo es obligatorio</small>
+
+          <label for="apellidos">APELLIDO*:</label>
+          <input type="text" id="apellidos" formControlName="apellidos" placeholder="Digite su apellido"/>
+          <small *ngIf="isFieldInvalid('apellidos')" class="text-danger">Este campo es obligatorio</small>
+
+          <label for="telefono">TELEFONO CELULAR*:</label>
+          <input type="text" id="telefono" formControlName="telefono" placeholder="Ingrese su teléfono"/>
+          <small *ngIf="isFieldInvalid('telefono')" class="text-danger">Este campo es obligatorio</small>
+
+          <label for="contrasena">CONTRASEÑA* (min 6 digitos):</label>
+          <input type="password" id="contrasena" formControlName="contrasena" placeholder="Ingrese su contraseña"/>
+          <small *ngIf="isFieldInvalid('contrasena')" class="text-danger">Este campo es obligatorio</small>
+
+          <label for="repetir-contrasena">REPETIR CONTRASEÑA*:</label>
+          <input type="password" id="repetir-contrasena" formControlName="repetirContrasena" placeholder="Repita su contraseña"/>
+          <small *ngIf="isFieldInvalid('repetirContrasena')" class="text-danger">Este campo es obligatorio</small>
+
+        </div>
+      </div>
+
+      <!-- Mensaje general indicando que los campos son obligatorios -->
+      <p class="small-text">* Este campo es requerido</p>
+
+      <!-- Botones -->
+      <div class="form-buttons" style="display: flex; justify-content: center; gap: 20px;">
+        <button type="button" class="btn-regresar" (click)="onCancel()">CANCELAR</button>
+        <button type="submit" class="btn-registrar">REGISTRAR</button>
+
+      </div>
+    </form>
+  </div>
+
+  <!-- Modal de error -->
+  <div class="modal" *ngIf="showErrorModal">
+    <div class="modal-content">
+      <p>Hay errores en el formulario. Por favor, verifica los campos obligatorios.</p>
+      <button (click)="closeErrorModal()">Cerrar</button>
+    </div>
+  </div>
+</div>
+
