@@ -52,8 +52,6 @@ export class LoginComponent implements OnInit {
   onCreateAccount() {
     this.router.navigateByUrl('registro');
   }
-  onCreateAccount() {
-    this.router.navigateByUrl('registro');
-}
+
 }
 
