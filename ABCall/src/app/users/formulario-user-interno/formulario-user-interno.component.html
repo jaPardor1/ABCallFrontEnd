@@ -1,6 +1,6 @@
 <code style="margin:0px auto;">
-   {{form.value.perfil}}
-  <!-- {{form.value | json}} -->
+   <!-- {{form.value.perfil}} -->
+  {{form.value | json}}
 </code>
 <form class="mt-2" (submit)="saveInfo()" [formGroup]="form">
   <div class="container">
@@ -22,6 +22,7 @@
         <label for="">Seleccione el tipo de plan </label>
       </div>
       <div *ngIf="form.value.perfil==3" class="col-3">
+        <mat-error *ngIf="form.invalid">{{getErrorPlanField()}}</mat-error>
         <mat-form-field>
           <mat-label>Seleccione Tipo De plan</mat-label>
           <mat-select formControlName="plan">
@@ -78,6 +79,7 @@
         <label>Razón social*</label>
       </div>
       <div class="col-3">
+        <mat-error *ngIf="form.invalid">{{getErrorRazonSocialField()}}</mat-error>
         <mat-form-field>
           <mat-label>Razón social</mat-label>
           <input formControlName="razonSocialEmpresa" matInput>
@@ -87,6 +89,7 @@
         <label>Dirección empresa</label>
       </div>
       <div class="col-3">
+        <mat-error *ngIf="form.invalid">{{getErrorDireccionEmpresaField()}}</mat-error>
         <mat-form-field [style.width.px]=327>
           <mat-label>Dirección Empresa</mat-label>
           <input formControlName="direccionEmpresa" matInput>
@@ -99,6 +102,7 @@
         <label for="">Tipo Identificación rep. legal</label>
       </div>
       <div class="col-3">
+        <mat-error *ngIf="form.invalid">{{getErrorLegalrepIdTypeField()}}</mat-error>
         <mat-form-field>
           <mat-label>Seleccione tipo de Identificación</mat-label>
           <mat-select formControlName="tipoIdentificacionRepLegal">
@@ -110,6 +114,7 @@
         <label for="">Identificación rep. legal</label>
       </div>
       <div class="col-3">
+        <mat-error *ngIf="form.invalid">{{getErrorLegalrepIdField()}}</mat-error>
         <mat-form-field>
           <mat-label>Identificación Rep. Legal</mat-label>
           <input formControlName="identificacionRepLegal" matInput>
