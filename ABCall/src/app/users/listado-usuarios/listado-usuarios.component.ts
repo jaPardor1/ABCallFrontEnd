@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserDto } from '../user';
 import { Router } from '@angular/router';
+import { signOut } from 'aws-amplify/auth';
 
 @Component({
   selector: 'app-listado-usuarios',
@@ -38,6 +39,14 @@ export class ListadoUsuariosComponent  {
   goToUserCreation(){
     this.router.navigateByUrl('innerUserForm');
   }
+  async logout() {
+    try {
+      await signOut();
+      console.log('Sign out success');
+      this.router.navigateByUrl('login'); // Redirige al login
+    } catch (error) {
+      console.error('Error signing out:', error);
+    }
 
-
+}
 }

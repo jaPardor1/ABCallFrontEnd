@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { signIn } from "aws-amplify/auth"
+
 
 @Component({
   selector: 'app-login',
@@ -32,14 +34,25 @@ export class LoginComponent implements OnInit {
   }
 
   // Lógica para el botón de login
-  onLogin() {
+  async onLogin() {
     if (this.loginForm.valid) {
-      // Si el formulario es válido, redirigir
-      this.router.navigateByUrl('listUsers');
+      const { usuario, contrasena } = this.loginForm.value;
+
+      try {
+        await signIn({
+          username: usuario,
+          password: contrasena,
+        })
+        console.log('Login success:');
+        this.router.navigateByUrl('listUsers');
+      } catch (error) {
+        console.error('Login error:', error);
+
+        this.showErrorModal = true;
+      }
     } else {
-      // Si no es válido, mostrar el modal de error
       this.showErrorModal = true;
-      this.loginForm.markAllAsTouched(); // Marca todos los campos como tocados para que aparezcan los errores
+      this.loginForm.markAllAsTouched();
     }
   }
 
