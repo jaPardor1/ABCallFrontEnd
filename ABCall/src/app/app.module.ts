@@ -20,8 +20,6 @@ import { RegistroComponent } from './users/registro/registro.component';
 
 
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,3 +47,5 @@ import { RegistroComponent } from './users/registro/registro.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
