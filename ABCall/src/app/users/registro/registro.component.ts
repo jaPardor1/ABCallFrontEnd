@@ -11,6 +11,7 @@ const client = new CognitoIdentityProviderClient({
   region: environment.cognito.region,
 });
 
+
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
