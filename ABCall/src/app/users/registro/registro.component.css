@@ -18,7 +18,7 @@ html, body {
 
 .register-form {
   background-color: rgba(72, 207, 194, 0.9);
-  padding: 20px;
+  padding: 15px;
   border-radius: 10px;
 }
 
@@ -29,6 +29,7 @@ h1 {
 
 .form-row {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: 5px; /* Reducir espacio entre filas */
 }
@@ -47,9 +48,9 @@ h1 {
 
 .form-column input,
 .form-column select {
-  width: 90%;
-  padding: 12px;
-  margin-bottom: 2px;
+  width: 95%;
+  padding: 3px;
+  margin-bottom: 5px;
   border: 2px solid  #48464C;;
   background-color: rgba(72, 207, 194, 0.9);
   border-radius: 5px;
@@ -100,7 +101,8 @@ mat-error {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100vh;
+
+  height: 120vh;
 }
 
 .registro-link:hover {
@@ -159,5 +161,13 @@ mat-error {
   cursor: pointer;
 }
 
+.highlight-box {
+  background-color: rgba(255, 255, 255, 0.15); /* Fondo con transparencia */
+  border: 1px solid rgba(72, 207, 194, 0.9); /* Borde con color */
+  border-radius: 10px; /* Esquinas redondeadas */
+  padding: 15px; /* Espaciado interno */
+  margin-bottom: 20px; /* Espaciado con el siguiente elemento */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
 
 
