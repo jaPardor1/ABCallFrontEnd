@@ -137,6 +137,17 @@ mat-error {
   border: 1px solid #888;
   width: 300px;
   text-align: center;
+  border-radius: 10px;
+}
+
+.modal-content.success {
+  border-color: #4caf50; /* Verde para éxito */
+  color: #4caf50;
+}
+
+.modal-content.error {
+  border-color: #f44336; /* Rojo para errores */
+  color: #f44336;
 }
 
 .close {
@@ -168,6 +179,34 @@ mat-error {
   padding: 15px; /* Espaciado interno */
   margin-bottom: 20px; /* Espaciado con el siguiente elemento */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.toggle-password:focus {
+  outline: none;
+}
+/* Asegúrate de que la etiqueta y el input estén uno al lado del otro */
+.label-input-wrapper {
+  display: flex;
+  align-items: center; /* Alinea verticalmente al centro */
+  margin-bottom: 10px; /* Espacio entre filas */
+}
+
+.is-invalid {
+  border: 2px solid red;
 }
 
 
