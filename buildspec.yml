@@ -6,7 +6,7 @@ phases:
       - npm install -g @angular/cli
       - npm install
     runtime-versions:
-      python: '3.9'
+      nodejs: 16.x
   build:
     commands:
       - ng build --prod
