@@ -20,4 +20,11 @@ button{
   background-color:#1FC7B5;
 }
 
+input {
+  font-family: 'Roboto', sans-serif !important;
+  text-transform: none !important; /* Asegura que el texto mantenga su forma */
+}
+body {
+  text-transform: none !important; /* Asegura que todo el texto respete su forma original */
+}
 

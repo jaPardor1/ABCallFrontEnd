@@ -5,8 +5,6 @@
       <div class="form-row">
         <!-- Primera columna -->
         <div class="form-column">
-          <label for="nombres">NOMBRES *:</label>
-          <input type="text" id="nombres" formControlName="nombres" placeholder="Ingrese sus nombres" [ngClass]="{'is-invalid': isFieldInvalid('nombres')}"/>
 
           <label for="tipo-identificacion">TIPO IDENTIFICACIÓN*:</label>
           <select id="tipo-identificacion" formControlName="tipoIdentificacion" [ngClass]="{'is-invalid': isFieldInvalid('tipoIdentificacion')}">
@@ -14,17 +12,24 @@
             <option value="Cedula_Extranjeria">Cédula de Extranjería</option>
             <option value="Passport">Pasaporte</option>
           </select>
+          <label for="nombres">NOMBRES *:</label>
+          <input type="text" id="nombres" formControlName="nombres" placeholder="Ingrese sus nombres" [ngClass]="{'is-invalid': isFieldInvalid('nombres')}"/>
+          <label for="empresa">EMPRESA PQR*:</label>
+          <select id="empresa" formControlName="empresa">
+            <option *ngFor="let empresa of empresaNombres">{{ empresa }}</option>
+          </select>
+          <label for="correo">EMAIL (USERNAME)*:</label>
+          <input type="email" id="correo" formControlName="correo" placeholder="Ingrese su correo" [ngClass]="{'is-invalid': isFieldInvalid('correo')}"/>
 
-          <label for="telefono">TELÉFONO CELULAR*:</label>
-          <input type="text" id="telefono" formControlName="telefono" placeholder="Ingrese su teléfono" [ngClass]="{'is-invalid': isFieldInvalid('telefono')}"/>
+        </div>
 
-          <label for="userRole">ROL DE USUARIO*:</label>
-            <select id="userRole" formControlName="userRole" [ngClass]="{'is-invalid': isFieldInvalid('userRole')}">
-              <option value="Superadmin">Superadmin</option>
-              <option value="Admin">Admin</option>
-              <option value="Agent">Agent</option>
-              <option value="Regular">Regular</option>
-            </select>
+        <!-- Segunda columna -->
+        <div class="form-column">
+          <label for="identificacion">IDENTIFICACIÓN*:</label>
+          <input type="text" id="identificacion" formControlName="identificacion" placeholder="Ingrese su identificación" [ngClass]="{'is-invalid': isFieldInvalid('identificacion')}"/>
+
+          <label for="apellidos">APELLIDOS *:</label>
+          <input type="text" id="apellidos" formControlName="apellidos" placeholder="Ingrese sus apellidos" [ngClass]="{'is-invalid': isFieldInvalid('apellidos')}"/>
 
           <label for="tipo-comunicacion">TIPO COMUNICACIÓN*:</label>
           <select id="tipo-comunicacion" formControlName="tipoComunicacion">
@@ -33,40 +38,42 @@
             <option value="Telefono">Teléfono</option>
             <option value="Chat">Chat</option>
           </select>
-        </div>
+          <label for="telefono">TELÉFONO CELULAR (Inicia en +"1 hasta 9")*:</label>
+          <input type="text" id="telefono" formControlName="telefono" placeholder="Ingrese su teléfono" [ngClass]="{'is-invalid': isFieldInvalid('telefono')}"/>
 
-        <!-- Segunda columna -->
-        <div class="form-column">
-          <label for="apellidos">APELLIDOS *:</label>
-          <input type="text" id="apellidos" formControlName="apellidos" placeholder="Ingrese sus apellidos" [ngClass]="{'is-invalid': isFieldInvalid('apellidos')}"/>
-
-          <label for="identificacion">IDENTIFICACIÓN*:</label>
-          <input type="text" id="identificacion" formControlName="identificacion" placeholder="Ingrese su identificación" [ngClass]="{'is-invalid': isFieldInvalid('identificacion')}"/>
-
-          <label for="correo">CORREO ELECTRÓNICO*:</label>
-          <input type="email" id="correo" formControlName="correo" placeholder="Ingrese su correo" [ngClass]="{'is-invalid': isFieldInvalid('correo')}"/>
-
-          <label for="empresa">EMPRESA PQR*:</label>
-          <select id="empresa" formControlName="empresa">
-            <option *ngFor="let empresa of empresaNombres">{{ empresa }}</option>
-          </select>
         </div>
       </div>
 
       <div class="form-row highlight-box">
         <!-- Tercera columna para contraseña -->
         <div class="form-column">
-          <label for="contrasena">CONTRASEÑA* (min 6 dígitos):</label>
-          <input type="password" id="contrasena" formControlName="contrasena" placeholder="Ingrese su contraseña" [ngClass]="{'is-invalid': isFieldInvalid('contrasena')}"/>
+          <label for="contrasena">CONTRASEÑA* (Primera en Mayus, min 6 dígitos):</label>
+          <div class="password-wrapper">
+            <input
+              [type]="showPassword ? 'text' : 'password'"
+              id="contrasena"
+              formControlName="contrasena"
+              placeholder="Ingrese su contraseña"
+              [ngClass]="{'is-invalid': isFieldInvalid('contrasena')}"
+            />
+            <button type="button" (click)="togglePasswordVisibility('contrasena')" class="toggle-password">
+              <i [ngClass]="showPassword ? 'fas fa-eye-slash' : 'fas fa-eye'"></i>
+            </button>
+          </div>
 
           <label for="repetir-contrasena">REPETIR CONTRASEÑA*:</label>
-          <input type="password" id="repetir-contrasena" formControlName="repetirContrasena" placeholder="Repita su contraseña" [ngClass]="{'is-invalid': isFieldInvalid('repetirContrasena')}"/>
-        </div>
-
-        <div class="form-column">
-          <label for="username">USUARIO *:</label>
-          <input type="text" id="username" formControlName="username" placeholder="Ingrese su usuario" [ngClass]="{'is-invalid': isFieldInvalid('username')}"/>
-          <p class="small-text">* Este campo es requerido</p>
+          <div class="password-wrapper">
+            <input
+              [type]="showRepeatPassword ? 'text' : 'password'"
+              id="repetir-contrasena"
+              formControlName="repetirContrasena"
+              placeholder="Repita su contraseña"
+              [ngClass]="{'is-invalid': isFieldInvalid('repetirContrasena')}"
+            />
+            <button type="button" (click)="togglePasswordVisibility('repetirContrasena')" class="toggle-password">
+              <i [ngClass]="showRepeatPassword ? 'fas fa-eye-slash' : 'fas fa-eye'"></i>
+            </button>
+          </div>
         </div>
       </div>
 
@@ -78,13 +85,15 @@
     </form>
   </div>
 
-  <!-- Modal para error de campos incompletos -->
+  <!-- Modal para errores y éxito -->
   <div *ngIf="showErrorModal" class="modal">
-    <div class="modal-content">
+    <div [ngClass]="modalType === 'success' ? 'modal-content success' : 'modal-content error'">
       <span class="close" (click)="closeErrorModal()">&times;</span>
-      <p>Datos incompletos. Por favor, llene todos los campos.</p>
+      <p>{{ modalMessage }}</p>
     </div>
   </div>
+
+
 </div>
 
 
