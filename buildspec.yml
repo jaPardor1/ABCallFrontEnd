@@ -13,4 +13,4 @@ phases:
 artifacts:
   files:
     - '**/*'
-  base-directory: ABCall/dist
+  base-directory: ABCall/dist/abcall/browser
