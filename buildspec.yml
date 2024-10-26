@@ -9,7 +9,7 @@ phases:
       nodejs: 18.x
   build:
     commands:
-      - ng build --prod
+      - ng build
 artifacts:
   files:
     - '**/*'
