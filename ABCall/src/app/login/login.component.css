@@ -1,11 +1,4 @@
-/* .example-card {
-  max-width: 400px;
-}
 
-.example-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-  background-size: cover;
-} */
 
 /* Contenedor principal */
 body {
@@ -39,7 +32,7 @@ body {
 /* Contenedor del formulario */
 .login-form-container {
   background-color: rgba(72, 207, 194, 0.9); /* Fondo del contenedor */
-  padding: 40px 30px;
+  padding: 30px 40px;
   border-radius: 15px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   text-align: center;
@@ -52,22 +45,42 @@ h1 {
   font-weight: bold;
   font-size: 36px;
   color: #48464C;
+  margin-top: -10px;
+  margin-bottom: 30px;
 }
 
 
 /* Input y etiquetas */
 .input-container {
-  margin-bottom: 20px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  width: 100%;
 }
 
 label {
   color: #48464C;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 20px;
   margin-bottom: 5px;
   display: block;
 }
+
+.label-input-wrapper {
+  display: flex;
+  align-items: center; /* Alinea verticalmente al centro */
+  margin-bottom: 10px; /* Espacio entre filas */
+}
+
+.label-input-wrapper label {
+  min-width: 120px; /* Ajusta este ancho según tus necesidades */
+  font-weight: bold;
+  color: #48464C;
+  margin-right: 10px; /* Espacio entre el label y el input */
+  text-align: left;
+}
+
+
 
 input {
   width: 100%;
@@ -82,6 +95,13 @@ input {
 
 input::placeholder {
   color: #48464C;
+}
+
+.input-error-wrapper {
+  display: flex;
+  flex-direction: column; /* Asegura que el input y el texto de error estén en columna */
+  align-items: flex-start; /* Alinea a la izquierda el contenido del contenedor */
+  width: 100%;
 }
 
 /* Botón de Ingreso */
@@ -105,7 +125,7 @@ button:hover {
 .registro-link {
   margin-top: 20px;
   color: #48464C; /* Color del texto del link de registro */
-  font-size: 14px;
+  font-size: 18px;
   cursor: pointer;
 }
 
@@ -117,9 +137,13 @@ button:hover {
   border: 2px solid red;
 }
 
+/* Estilo del texto de error alineado */
 .text-danger {
+  display: block;
+  margin: 0;
+  padding-left: 2px;
+  font-size: 12px;
   color: red;
-  font-size: 12px; /* Ajusta el tamaño del texto del error */
 }
 
 
@@ -156,4 +180,12 @@ button:hover {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+
+input[type="text"], input[type="password"] {
+  flex: 1; /* Toma el resto del espacio disponible */
+  padding: 10px;
+  margin: 5px 0;
+  box-sizing: border-box; /* Incluye el padding dentro del ancho */
 }
