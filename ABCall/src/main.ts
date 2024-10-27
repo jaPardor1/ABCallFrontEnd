@@ -3,13 +3,14 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { environment } from './environments/environment';
 import { AppModule } from './app/app.module';
 import { Amplify } from 'aws-amplify';
-
+import config from './environments/amplify/amplifyConfiguration.json'
 
 platformBrowserDynamic().bootstrapModule(AppModule, {
   ngZoneEventCoalescing: true
 })
   .catch(err => console.error(err));
 
+   //Amplify.configure(config)
 
 Amplify.configure({
   Auth: {
@@ -35,6 +36,6 @@ Amplify.configure({
         requireSpecialCharacters: true,
       },
     },
-  },
+  }
 })
 

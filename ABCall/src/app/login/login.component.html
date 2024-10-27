@@ -44,7 +44,7 @@
 <div class="login-container">
   <div class="login-form-container">
     <h1>ABCall</h1>
-    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin2()">
       <div class="input-container">
         <label for="usuario">USUARIO</label>
         <input type="text" id="usuario" formControlName="usuario" placeholder="Ingrese su usuario" [ngClass]="{'is-invalid': isFieldInvalid('usuario')}"/>
@@ -66,7 +66,7 @@
   <div *ngIf="showErrorModal" class="modal">
     <div class="modal-content">
       <span class="close" (click)="closeErrorModal()">&times;</span>
-      <p>Datos incompletos. Por favor, llene todos los campos.</p>
+      <p>{{modalMessage}}</p>
     </div>
   </div>
 </div>

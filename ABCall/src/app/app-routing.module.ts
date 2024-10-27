@@ -8,6 +8,7 @@ import { ListadoPqrComponent } from './pqr/listado-pqr/listado-pqr.component';
 import { ListadoUsuariosComponent } from './users/listado-usuarios/listado-usuarios.component';
 import { FormularioUserInternoComponent } from './users/formulario-user-interno/formulario-user-interno.component';
 import { RegistroComponent } from './users/registro/registro.component';
+import { AuthorizeGuard } from './authorize-guard.guard';
 
 const routes: Routes = [
   {
@@ -27,19 +28,23 @@ const routes: Routes = [
     children:[
       {
         path:'createIncidence',
-        component:RadicarPQRClienteComponent
+        component:RadicarPQRClienteComponent,
+        canActivate:[AuthorizeGuard]
       },
       {
         path:'listIncidences',
-        component:ListadoPqrComponent
+        component:ListadoPqrComponent,
+        canActivate:[AuthorizeGuard]
       },
       {
         path:'listUsers',
-        component:ListadoUsuariosComponent
+        component:ListadoUsuariosComponent,
+        canActivate:[AuthorizeGuard]
       },
       {
         path:'innerUserForm',
-        component:FormularioUserInternoComponent
+        component:FormularioUserInternoComponent,
+        canActivate:[AuthorizeGuard]
       },
 
 

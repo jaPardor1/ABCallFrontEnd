@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { HeaderOptionDTO } from './headerOption';
+import { AuthService } from '../../auth-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +12,7 @@ export class HeaderComponent {
   public moduleName: string = 'BIENVENIDO'
   public options: HeaderOptionDTO[];
   public currentOption=3;
-  constructor() {
+  constructor(private authService:AuthService,private router: Router) {
 
     this.options = [
       {
@@ -48,5 +50,11 @@ export class HeaderComponent {
     searched_obj = this.options.find(i=>i.id==cOption);
     if(searched_obj!==undefined) searched_obj.isActive = true;
     this.currentOption=cOption;
+  }
+
+  async onLogOut(){
+     await this.authService.onSignOut();
+     debugger;
+     this.router.navigateByUrl('login');
   }
 }
