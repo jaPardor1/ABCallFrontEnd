@@ -19,10 +19,19 @@ export class UserService {
     return this.http.get<UserDto[]>(this.urlApi,{headers})
   }
 
-  public  getUserSub(sub:string | null){
+  public getUserSub(sub:string | null){
     let url = environment.apiGetUsersSub+`${sub}`
     const headers = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
     return this.http.get<UserDto>(url,{headers});
+  }
+
+  public editUserSub(userInfo:any){
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
+    const body = userInfo;
+    const sub = userInfo.cognito_user_sub;
+    let url = environment.apiGetUsersSub+`${sub}`
+    return this.http.put<any>(url,body);
 
   }
+
 }

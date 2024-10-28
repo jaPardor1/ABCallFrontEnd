@@ -9,4 +9,8 @@ export interface UserDto{
   last_name:string;
   communication_type:string;
   cellphone:string;
+  email:string;
+  password:string;
+  password2:string;
+
 }

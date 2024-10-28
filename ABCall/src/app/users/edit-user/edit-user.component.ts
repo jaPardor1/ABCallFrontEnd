@@ -14,8 +14,23 @@ export class EditUserComponent implements OnInit {
 
    }
   ngOnInit(): void {
-    debugger;
      this.sub = this.activatedRoute.snapshot.paramMap.get('sub');
+  }
+
+  saveChanges(userInfo:UserDto){
+
+    if(userInfo.cognito_user_sub!==undefined){
+        console.log(userInfo);
+        this.userService.editUserSub(userInfo).subscribe(
+          (response)=>{
+                 alert(response);
+          },
+          (error)=>{
+
+          }
+        )
+    }
+
   }
 
 

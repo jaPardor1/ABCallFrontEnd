@@ -10,7 +10,8 @@ export function  validatePlan(
 
     const profileControl = formGroup.controls[profileControlName];
     const planControl = formGroup.controls[planControlName];
-    if (profileControl.value ===Profile.Client && planControl.value===null) {
+    if (profileControl.value ===Profile.Client
+ && planControl.value===null) {
 
       planControl.setErrors({ planRequired: true });
     } else {
@@ -29,7 +30,8 @@ export function  validateNameField(
     const profileControl = formGroup.controls[profileControlName];
     const nameControl = formGroup.controls[NameControlName];
 
-    if (profileControl.value !==Profile.Client && (nameControl.value===null ||nameControl.value==='') ) {
+    if (profileControl.value !==Profile.Client
+ && (nameControl.value===null ||nameControl.value==='') ) {
 
       nameControl.setErrors({ nameRequired: true });
     } else {
@@ -48,7 +50,8 @@ export function  validateLastNameField(
     const profileControl = formGroup.controls[profileControlName];
     const lastNameControl = formGroup.controls[LastNameControlName];
 
-    if (profileControl.value !==Profile.Client && (lastNameControl.value===null ||lastNameControl.value==='') ) {
+    if (profileControl.value !==Profile.Client
+ && (lastNameControl.value===null ||lastNameControl.value==='') ) {
 
       lastNameControl.setErrors({ lastNameRequired: true });
     } else {
@@ -70,8 +73,9 @@ export function validateRazonSocial(
 
     const profileControl = formGroup.controls[profileControlName];
     const razonSocial = formGroup.controls[razonSocialControlName];
-    if (profileControl.value ===Profile.Client && (razonSocial.value==='' || razonSocial.value==null )) {
-      debugger;
+    if (profileControl.value ===Profile.Client
+ && (razonSocial.value==='' || razonSocial.value==null )) {
+
       razonSocial.setErrors({ razonSocialEmpresaRequired: true });
     } else {
       razonSocial.setErrors(null);
@@ -87,7 +91,8 @@ export function validateDireccionEmpresa(
 
     const profileControl = formGroup.controls[profileControlName];
     const direccionEmpresaControl = formGroup.controls[direccionEmpresaControlName];
-    if (profileControl.value ===Profile.Client && (direccionEmpresaControl.value==='' || direccionEmpresaControl.value==null )) {
+    if (profileControl.value ===Profile.Client
+ && (direccionEmpresaControl.value==='' || direccionEmpresaControl.value==null )) {
 
       direccionEmpresaControl.setErrors({ direccionEmpresaControlRequired: true });
     } else {
@@ -105,7 +110,8 @@ export function validateTipoIdentificacionRepLegal(
 
     const profileControl = formGroup.controls[profileControlName];
     const validateTipoIdentificacionRepLegalControl = formGroup.controls[validateTipoIdentificacionRepLegalName];
-    if (profileControl.value ===Profile.Client && (validateTipoIdentificacionRepLegalControl.value==='' || validateTipoIdentificacionRepLegalControl.value==null )) {
+    if (profileControl.value ===Profile.Client
+ && (validateTipoIdentificacionRepLegalControl.value==='' || validateTipoIdentificacionRepLegalControl.value==null )) {
       validateTipoIdentificacionRepLegalControl.setErrors({ tipoIdenRepresentanteLegalRequired: true });
     } else {
       validateTipoIdentificacionRepLegalControl.setErrors(null);
@@ -121,7 +127,8 @@ export function validateIdentificacionRepLegal(
 
     const profileControl = formGroup.controls[profileControlName];
     const identificacionRepLegalControl = formGroup.controls[IdentificacionRepLegalControlName];
-    if (profileControl.value ===Profile.Client && (identificacionRepLegalControl.value==='' || identificacionRepLegalControl.value==null )) {
+    if (profileControl.value ===Profile.Client
+ && (identificacionRepLegalControl.value==='' || identificacionRepLegalControl.value==null )) {
       identificacionRepLegalControl.setErrors({ identificacionRepLegalRequired: true });
     } else {
       identificacionRepLegalControl.setErrors(null);
@@ -137,7 +144,8 @@ export function validateNombresRepLegal(
 
     const profileControl = formGroup.controls[profileControlName];
     const nombresRepLegalControl = formGroup.controls[nombresRepLegalControlName];
-    if (profileControl.value ===Profile.Client && (nombresRepLegalControl.value==='' || nombresRepLegalControl.value==null )) {
+    if (profileControl.value ===Profile.Client
+ && (nombresRepLegalControl.value==='' || nombresRepLegalControl.value==null )) {
       nombresRepLegalControl.setErrors({ namesRepLegalRequired: true });
     } else {
       nombresRepLegalControl.setErrors(null);
@@ -153,7 +161,8 @@ export function validateApellidosRepLegal(
 
     const profileControl = formGroup.controls[profileControlName];
     const ApellidosRepLegalControl = formGroup.controls[ApellidosRepLegalControlName];
-    if (profileControl.value ===Profile.Client && (ApellidosRepLegalControl.value==='' || ApellidosRepLegalControl.value==null )) {
+    if (profileControl.value ===Profile.Client
+ && (ApellidosRepLegalControl.value==='' || ApellidosRepLegalControl.value==null )) {
       ApellidosRepLegalControl.setErrors({ lastNameRepLegalRequired: true });
     } else {
       ApellidosRepLegalControl.setErrors(null);

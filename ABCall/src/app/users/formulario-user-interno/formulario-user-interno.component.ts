@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ProfileDTO } from '../profile';
-import { DocumentidDTO } from '../documentId';
+import { DocumentId } from '../documentId';
 import { SubscriptionDTO } from '../subscription';
 import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { validateApellidosRepLegal, validateDireccionEmpresa, validateIdentificacionRepLegal, validateLastNameField, validateNameField, validateNombresRepLegal, validatePasswordConfirmation, validatePlan, validateRazonSocial, validateTipoIdentificacionRepLegal } from '../validations/userFormValidations';
@@ -20,10 +20,11 @@ export class FormularioUserInternoComponent implements OnInit {
 
   @Input()
   model:string | null;
-
+  @Output()
+  submit:EventEmitter<UserDto> = new EventEmitter<UserDto>();
   public form:FormGroup;
   public profiles =[{id:'',profileName:''}] ;
-  public documentIds:DocumentidDTO[];
+  public documentIds=[{id:'',documentName:''}];
   public subscriptionsPlan:SubscriptionDTO[];
   constructor(private formBuilder:FormBuilder,private userService:UserService){
 
@@ -52,7 +53,7 @@ export class FormularioUserInternoComponent implements OnInit {
           identificacionRepLegal:[],
           nombresRepLegal:[],
           apellidosRepLegal:[],
-          correoElectronico:['',{
+          email:['',{
             validators:[Validators.required,Validators.email]
           }],
           cellphone:['',{
@@ -63,7 +64,8 @@ export class FormularioUserInternoComponent implements OnInit {
           }],
           password2:['',{
             validators:[Validators.required]
-          }]
+          }],
+          cognito_user_sub:['']
 
       },
       {
@@ -81,22 +83,6 @@ export class FormularioUserInternoComponent implements OnInit {
       },
 
     );
-
-    this.documentIds = [
-      {
-        id:1,
-        documentName:'CEDULA DE CIUDADANIA'
-      },
-      {
-        id:2,
-        documentName:'NIT'
-      },
-      {
-        id:3,
-        documentName:'CEDULA EXTRANJERIA'
-      }
-    ]
-
     this.subscriptionsPlan=[
         {id:1,subscrptionName:'Emprendedor'},
         {id:2,subscrptionName:'Empresario'},
@@ -104,6 +90,7 @@ export class FormularioUserInternoComponent implements OnInit {
     ]
 
     this.loadProfiles();
+    this.loadIdTypes();
 
   }
 
@@ -114,10 +101,18 @@ export class FormularioUserInternoComponent implements OnInit {
     }
   }
 
-  saveInfo(){}
+  saveInfo(){
+    if(this.model!=null){
+      this.submit.emit(this.form.value);
+    }
+  }
   onGetUser(){
     this.userService.getUserSub(this.model).subscribe(
     (response: UserDto) => {
+
+      response.password ='123456'
+      response.password2='123456';
+
       this.form.patchValue(response);
      },
     (error: any) => console.error(error)
@@ -133,11 +128,22 @@ loadProfiles(){
   })
   this.profiles = this.profiles.filter(x=>String(x.profileName).length>0 && x.profileName !=undefined)
 }
+
+loadIdTypes(){
+  const keys = Object.keys(DocumentId)
+  keys.forEach((key, index) => {
+      this.documentIds.push({
+        id:DocumentId[index],
+        documentName:DocumentId[index]
+      })
+  })
+  this.documentIds = this.documentIds.filter(x=>String(x.documentName).length>0 && x.documentName !=undefined)
+}
 // get errors
 
 getErrorProfileField(){
 
-  var campo = this.form.get('perfil');
+  var campo = this.form.get('user_role');
   if (campo!= null){
 
     if(campo.hasError('required')){
@@ -149,7 +155,7 @@ getErrorProfileField(){
 
 getErrorIdentificacionField(){
 
-  var campo = this.form.get('identificacion');
+  var campo = this.form.get('id_number');
   if (campo!= null){
 
     if(campo.hasError('required')){
@@ -162,7 +168,7 @@ getErrorIdentificacionField(){
   return '';
 }
 getErrorIdentificationTypeField(){
-  var campo = this.form.get('tipoIdentificacion');
+  var campo = this.form.get('document_type');
   if (campo!= null){
 
     if(campo.hasError('required')){
@@ -174,7 +180,7 @@ getErrorIdentificationTypeField(){
 }
 
 getErrorNameField(){
-  var campo = this.form.get('nombres');
+  var campo = this.form.get('name');
   if(campo!=null){
     if(campo.hasError('nameRequired'))
       return 'Por favor especificar un nombre';
@@ -184,7 +190,7 @@ getErrorNameField(){
 
 
 getErrorLastNameField(){
-  var campo = this.form.get('apellidos');
+  var campo = this.form.get('last_name');
   if(campo!=null){
     if(campo.hasError('lastNameRequired'))
       return 'Por favor especificar un Apellido';
@@ -195,7 +201,7 @@ getErrorLastNameField(){
 
 
 getErrorEmailField(){
-  var campo = this.form.get('correoElectronico');
+  var campo = this.form.get('email');
   if (campo!= null){
 
     if(campo.hasError('required')){
@@ -211,7 +217,7 @@ getErrorEmailField(){
 }
 
 getErrorTelephoneField(){
-  var campo = this.form.get('telefono');
+  var campo = this.form.get('cellphone');
   if (campo!= null){
      debugger;
     if(campo.hasError('required')){
@@ -310,10 +316,6 @@ getErrorLegalrepLastNamesField(){
   }
   return '';
 }
-
-
-
-
 
 }
 
