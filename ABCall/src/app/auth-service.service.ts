@@ -38,7 +38,6 @@ export class AuthService
         let idToken = session.tokens.idToken;
         localStorage.setItem('id_token', String(idToken));
         let decoded = jwtDecode(String(idToken));
-        debugger;
         this.decodedToken=decoded;
 
       }
@@ -85,7 +84,6 @@ export class AuthService
   }
 
   isTokenExpired(): boolean {
-
     const expiryTime: number = this.getExpiryTime();
     console.log('expiryTime :' +expiryTime);
     if (expiryTime) {

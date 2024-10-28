@@ -22,7 +22,6 @@ export class RadicarPQRClienteComponent {
   }
   saveIncident(incident:PqrDTO){
     console.log(typeof(incident))
-
     if(incident.hasOwnProperty('tipoSolicitud') ){
     //console.log(incident);
     let pqr = {subject:incident.asunto,description:incident.descripcion,type:incident.tipoSolicitud};

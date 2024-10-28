@@ -9,6 +9,7 @@ import { ListadoUsuariosComponent } from './users/listado-usuarios/listado-usuar
 import { FormularioUserInternoComponent } from './users/formulario-user-interno/formulario-user-interno.component';
 import { RegistroComponent } from './users/registro/registro.component';
 import { AuthorizeGuard } from './authorize-guard.guard';
+import { EditUserComponent } from './users/edit-user/edit-user.component';
 
 const routes: Routes = [
   {
@@ -43,7 +44,12 @@ const routes: Routes = [
       },
       {
         path:'innerUserForm',
-        component:FormularioUserInternoComponent,
+        component:FormularioUserInternoComponent
+
+      },
+      {
+        path:'editUser/:sub',
+        component:EditUserComponent,
         canActivate:[AuthorizeGuard]
       },
 

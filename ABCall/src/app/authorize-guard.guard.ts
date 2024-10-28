@@ -12,7 +12,6 @@ export class AuthorizeGuard implements CanActivate{
 
     }
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-        debugger;
       if(!this.authService.isTokenExpired())
          return true;
          else

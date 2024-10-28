@@ -9,6 +9,7 @@ import { MatSelectModule} from '@angular/material/select'
 import { MatDialogModule} from '@angular/material/dialog';
 import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator'
 
 @NgModule({
   declarations: [],
@@ -25,6 +26,7 @@ import {MatTableModule} from '@angular/material/table';
     MatDialogModule,
     MatCardModule,
     MatTableModule,
+    MatPaginatorModule
   ],
 })
 export class MaterialModule { }

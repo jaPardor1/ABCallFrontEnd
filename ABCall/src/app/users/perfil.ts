@@ -1,4 +1,7 @@
-export interface ProfileDTO{
-  id:number,
-  profileName:string
+export enum Profile{
+  'Superadmin',
+  'Admin',
+  'Agent',
+  'Regular',
+  'Client'
 }

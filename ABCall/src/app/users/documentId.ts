@@ -1,4 +1,5 @@
-export interface DocumentidDTO{
-  id:number,
-  documentName:string
+export enum DocumentId{
+     'Cedula',
+     'Cedula_extranjeria',
+     'Passport'
 }
