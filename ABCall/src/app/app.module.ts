@@ -17,6 +17,7 @@ import { ListadoPqrComponent } from './pqr/listado-pqr/listado-pqr.component';
 import { ListadoUsuariosComponent } from './users/listado-usuarios/listado-usuarios.component';
 import { FormularioUserInternoComponent } from './users/formulario-user-interno/formulario-user-interno.component';
 import { RegistroComponent } from './users/registro/registro.component';
+import { EditUserComponent } from './users/edit-user/edit-user.component';
 
 
 
@@ -32,7 +33,8 @@ import { RegistroComponent } from './users/registro/registro.component';
     ListadoPqrComponent,
     ListadoUsuariosComponent,
     FormularioUserInternoComponent,
-    RegistroComponent
+    RegistroComponent,
+    EditUserComponent
    ],
   imports: [
     BrowserModule,

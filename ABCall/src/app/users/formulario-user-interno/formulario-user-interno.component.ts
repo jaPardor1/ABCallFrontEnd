@@ -1,9 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ProfileDTO } from '../profile';
 import { DocumentidDTO } from '../documentId';
 import { SubscriptionDTO } from '../subscription';
 import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
-import { validateDireccionEmpresa, validateIdentificacionRepLegal, validatePlan, validateRazonSocial, validateTipoIdentificacionRepLegal } from '../validations/userFormValidations';
+import { validateApellidosRepLegal, validateDireccionEmpresa, validateIdentificacionRepLegal, validateLastNameField, validateNameField, validateNombresRepLegal, validatePasswordConfirmation, validatePlan, validateRazonSocial, validateTipoIdentificacionRepLegal } from '../validations/userFormValidations';
+import { UserDto } from '../user';
+import { Profile } from '../perfil';
+import { UserService } from '../../service/user/user.service';
 
 
 @Component({
@@ -11,25 +14,73 @@ import { validateDireccionEmpresa, validateIdentificacionRepLegal, validatePlan,
   templateUrl: './formulario-user-interno.component.html',
   styleUrl: './formulario-user-interno.component.css'
 })
-export class FormularioUserInternoComponent {
+export class FormularioUserInternoComponent implements OnInit {
 
 
-  public form:FormGroup
-  public profiles:ProfileDTO[];
+
+  @Input()
+  model:string | null;
+
+  public form:FormGroup;
+  public profiles =[{id:'',profileName:''}] ;
   public documentIds:DocumentidDTO[];
   public subscriptionsPlan:SubscriptionDTO[];
-  constructor(private formBuilder:FormBuilder){
-    this.profiles = [
-      {  id:1,
-         profileName:"Gestor"
+  constructor(private formBuilder:FormBuilder,private userService:UserService){
+
+    this.model=null;
+    this.form = this.formBuilder.group(
+      {
+          user_role:['',{
+            validators:[Validators.required]
+          }],
+          plan:[],
+          document_type:['',{
+            validators:[Validators.required]
+          }],
+          id_number:['',{
+            validators:[Validators.required,Validators.pattern('^[0-9]+$')]
+          }],
+          name:['',{
+            validators:[]
+          }],
+          last_name:['',{
+            validators:[]
+          }],
+          razonSocialEmpresa:[],
+          direccionEmpresa:[],
+          tipoIdentificacionRepLegal:[],
+          identificacionRepLegal:[],
+          nombresRepLegal:[],
+          apellidosRepLegal:[],
+          correoElectronico:['',{
+            validators:[Validators.required,Validators.email]
+          }],
+          cellphone:['',{
+            validators:[Validators.required,Validators.pattern('^[1-9]{1,10}$'),Validators.maxLength(10)]
+          }],
+          password:['',{
+            validators:[Validators.required]
+          }],
+          password2:['',{
+            validators:[Validators.required]
+          }]
+
       },
-      {  id:2,
-         profileName:"Administrador"
+      {
+        validator:[validatePlan('user_role','plan'),
+                   validateRazonSocial('user_role','razonSocialEmpresa'),
+                   validateNameField('user_role','name'),
+                   validateLastNameField('user_role','last_name'),
+                   validateDireccionEmpresa('user_role','direccionEmpresa'),
+                   validateTipoIdentificacionRepLegal('user_role','tipoIdentificacionRepLegal'),
+                   validateIdentificacionRepLegal('user_role','identificacionRepLegal'),
+                   validateNombresRepLegal('user_role','nombresRepLegal'),
+                   validateApellidosRepLegal('user_role','apellidosRepLegal'),
+                   validatePasswordConfirmation('password','password2')
+                  ],
       },
-      {  id:3,
-         profileName:"Empresa"
-      }
-    ]
+
+    );
 
     this.documentIds = [
       {
@@ -51,58 +102,37 @@ export class FormularioUserInternoComponent {
         {id:2,subscrptionName:'Empresario'},
         {id:3,subscrptionName:'Empresario +'}
     ]
-    this.form = this.formBuilder.group(
-      {
-          perfil:['',{
-            validators:[Validators.required]
-          }],
-          plan:[],
-          tipoIdentificacion:['',{
-            validators:[Validators.required]
-          }],
-          identificacion:['',{
-            validators:[Validators.required]
-          }],
-          nombres:['',{
-            validators:[]
-          }],
-          apellidos:['',{
-            validators:[]
-          }],
-          razonSocialEmpresa:[],
-          direccionEmpresa:[],
-          tipoIdentificacionRepLegal:[],
-          identificacionRepLegal:[],
-          nombresRepLegal:[],
-          apellidosRepLegal:[],
-          correoElectronico:['',{
-            validators:[Validators.required]
-          }],
-          telefono:['',{
-            validators:[Validators.required]
-          }],
-          password:['',{
-            validators:[Validators.required]
-          }],
-          password2:['',{
-            validators:[Validators.required]
-          }]
 
-      },
-      {
-        validator:[validatePlan('perfil','plan'),
-                   validateRazonSocial('perfil','razonSocialEmpresa'),
-                   validateDireccionEmpresa('perfil','direccionEmpresa'),
-                   validateTipoIdentificacionRepLegal('perfil','tipoIdentificacionRepLegal'),
-                   validateIdentificacionRepLegal('perfil','identificacionRepLegal')
-                  ],
-      },
+    this.loadProfiles();
 
-    );
+  }
+
+  ngOnInit(): void {
+    debugger;
+    if(this.model !==null){
+        this.onGetUser();
+    }
   }
 
   saveInfo(){}
-
+  onGetUser(){
+    this.userService.getUserSub(this.model).subscribe(
+    (response: UserDto) => {
+      this.form.patchValue(response);
+     },
+    (error: any) => console.error(error)
+  )
+}
+loadProfiles(){
+  const keys = Object.keys(Profile)
+  keys.forEach((key, index) => {
+      this.profiles.push({
+        id:Profile[index],
+        profileName:Profile[index]
+      })
+  })
+  this.profiles = this.profiles.filter(x=>String(x.profileName).length>0 && x.profileName !=undefined)
+}
 // get errors
 
 getErrorProfileField(){
@@ -116,6 +146,21 @@ getErrorProfileField(){
   }
   return '';
 }
+
+getErrorIdentificacionField(){
+
+  var campo = this.form.get('identificacion');
+  if (campo!= null){
+
+    if(campo.hasError('required')){
+      return 'Por favor especifique el numero de identificación';
+    }
+    if(campo.hasError('pattern')){
+      return 'Por favor especifique solo numeros.';
+    }
+  }
+  return '';
+}
 getErrorIdentificationTypeField(){
   var campo = this.form.get('tipoIdentificacion');
   if (campo!= null){
@@ -123,9 +168,32 @@ getErrorIdentificationTypeField(){
     if(campo.hasError('required')){
       return 'Por favor especifique un tipo de identificación';
     }
+
   }
   return '';
 }
+
+getErrorNameField(){
+  var campo = this.form.get('nombres');
+  if(campo!=null){
+    if(campo.hasError('nameRequired'))
+      return 'Por favor especificar un nombre';
+  }
+  return '';
+}
+
+
+getErrorLastNameField(){
+  var campo = this.form.get('apellidos');
+  if(campo!=null){
+    if(campo.hasError('lastNameRequired'))
+      return 'Por favor especificar un Apellido';
+  }
+  return '';
+}
+
+
+
 getErrorEmailField(){
   var campo = this.form.get('correoElectronico');
   if (campo!= null){
@@ -133,6 +201,11 @@ getErrorEmailField(){
     if(campo.hasError('required')){
       return 'Por favor especifique un correo electrónico';
     }
+    if(campo.hasError('email')){
+      return 'Por favor especifique un correo electrónico valido';
+    }
+
+
   }
   return '';
 }
@@ -140,10 +213,19 @@ getErrorEmailField(){
 getErrorTelephoneField(){
   var campo = this.form.get('telefono');
   if (campo!= null){
-
+     debugger;
     if(campo.hasError('required')){
       return 'Por favor especifique un teléfono';
     }
+    if(campo.hasError('maxLength')){
+      return 'Maximo 10 digitos para el teléfono.';
+    }
+    if(campo.hasError('pattern')){
+      return 'Por favor solo colocar numeros.';
+    }
+
+
+
   }
   return '';
 }
@@ -155,6 +237,11 @@ getErrorPasswordField(){
     if(campo.hasError('required')){
       return 'Por favor especifique una contraseña';
     }
+    if(campo.hasError('pass1andpass2notEqual')){
+      return 'La Contraseña y su confirmación no son iguales.';
+    }
+
+
   }
   return '';
 }
@@ -202,6 +289,24 @@ getErrorLegalrepIdField(){
   if(campo!=null){
     if(campo.hasError('identificacionRepLegalRequired'))
       return 'Por favor especificar la identificacion del rep. legal';
+  }
+  return '';
+}
+
+getErrorLegalrepNamesField(){
+  var campo = this.form.get('nombresRepLegal');
+  if(campo!=null){
+    if(campo.hasError('namesRepLegalRequired'))
+      return 'Por favor especificar el nombre del rep. legal';
+  }
+  return '';
+}
+
+getErrorLegalrepLastNamesField(){
+  var campo = this.form.get('apellidosRepLegal');
+  if(campo!=null){
+    if(campo.hasError('lastNameRepLegalRequired'))
+      return 'Por favor especificar los apellidos del rep. legal';
   }
   return '';
 }

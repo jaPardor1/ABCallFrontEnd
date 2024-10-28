@@ -1,4 +1,4 @@
 export interface ProfileDTO{
-  id:number,
+  id:string,
   profileName:string
 }
