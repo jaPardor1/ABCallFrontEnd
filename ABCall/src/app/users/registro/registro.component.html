@@ -1,0 +1,100 @@
+<div class="register-page">
+  <div class="register-form">
+    <h1>REGISTRE SUS DATOS</h1>
+    <form [formGroup]="registroForm" (ngSubmit)="onSubmit()">
+      <div class="form-row">
+        <!-- Primera columna -->
+        <div class="form-column">
+
+          <label for="tipo-identificacion">TIPO IDENTIFICACIÓN*:</label>
+          <select id="tipo-identificacion" formControlName="tipoIdentificacion" [ngClass]="{'is-invalid': isFieldInvalid('tipoIdentificacion')}">
+            <option value="Cedula">Cédula</option>
+            <option value="Cedula_Extranjeria">Cédula de Extranjería</option>
+            <option value="Passport">Pasaporte</option>
+          </select>
+          <label for="nombres">NOMBRES *:</label>
+          <input type="text" id="nombres" formControlName="nombres" placeholder="Ingrese sus nombres" [ngClass]="{'is-invalid': isFieldInvalid('nombres')}"/>
+          <label for="empresa">EMPRESA PQR*:</label>
+          <select id="empresa" formControlName="empresa">
+            <option *ngFor="let empresa of empresaNombres">{{ empresa }}</option>
+          </select>
+          <label for="correo">EMAIL (USERNAME)*:</label>
+          <input type="email" id="correo" formControlName="correo" placeholder="Ingrese su correo" [ngClass]="{'is-invalid': isFieldInvalid('correo')}"/>
+
+        </div>
+
+        <!-- Segunda columna -->
+        <div class="form-column">
+          <label for="identificacion">IDENTIFICACIÓN*:</label>
+          <input type="text" id="identificacion" formControlName="identificacion" placeholder="Ingrese su identificación" [ngClass]="{'is-invalid': isFieldInvalid('identificacion')}"/>
+
+          <label for="apellidos">APELLIDOS *:</label>
+          <input type="text" id="apellidos" formControlName="apellidos" placeholder="Ingrese sus apellidos" [ngClass]="{'is-invalid': isFieldInvalid('apellidos')}"/>
+
+          <label for="tipo-comunicacion">TIPO COMUNICACIÓN*:</label>
+          <select id="tipo-comunicacion" formControlName="tipoComunicacion">
+            <option value="Sms">Sms</option>
+            <option value="Email">Email</option>
+            <option value="Telefono">Teléfono</option>
+            <option value="Chat">Chat</option>
+          </select>
+          <label for="telefono">TELÉFONO CELULAR (Inicia en +"1 hasta 9")*:</label>
+          <input type="text" id="telefono" formControlName="telefono" placeholder="Ingrese su teléfono" [ngClass]="{'is-invalid': isFieldInvalid('telefono')}"/>
+
+        </div>
+      </div>
+
+      <div class="form-row highlight-box">
+        <!-- Tercera columna para contraseña -->
+        <div class="form-column">
+          <label for="contrasena">CONTRASEÑA* (Primera en Mayus, min 6 dígitos):</label>
+          <div class="password-wrapper">
+            <input
+              [type]="showPassword ? 'text' : 'password'"
+              id="contrasena"
+              formControlName="contrasena"
+              placeholder="Ingrese su contraseña"
+              [ngClass]="{'is-invalid': isFieldInvalid('contrasena')}"
+            />
+            <button type="button" (click)="togglePasswordVisibility('contrasena')" class="toggle-password">
+              <i [ngClass]="showPassword ? 'fas fa-eye-slash' : 'fas fa-eye'"></i>
+            </button>
+          </div>
+
+          <label for="repetir-contrasena">REPETIR CONTRASEÑA*:</label>
+          <div class="password-wrapper">
+            <input
+              [type]="showRepeatPassword ? 'text' : 'password'"
+              id="repetir-contrasena"
+              formControlName="repetirContrasena"
+              placeholder="Repita su contraseña"
+              [ngClass]="{'is-invalid': isFieldInvalid('repetirContrasena')}"
+            />
+            <button type="button" (click)="togglePasswordVisibility('repetirContrasena')" class="toggle-password">
+              <i [ngClass]="showRepeatPassword ? 'fas fa-eye-slash' : 'fas fa-eye'"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Botones -->
+      <div class="form-buttons" style="display: flex; justify-content: center; gap: 10px;">
+        <button type="button" class="btn-regresar" (click)="onCancel()">CANCELAR</button>
+        <button type="submit" class="btn-registrar">REGISTRAR</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Modal para errores y éxito -->
+  <div *ngIf="showErrorModal" class="modal">
+    <div [ngClass]="modalType === 'success' ? 'modal-content success' : 'modal-content error'">
+      <span class="close" (click)="closeErrorModal()">&times;</span>
+      <p>{{ modalMessage }}</p>
+    </div>
+  </div>
+
+
+</div>
+
+
+

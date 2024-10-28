@@ -3,22 +3,27 @@
   top:0px;
   background-color:#1FC7B5 ;
   margin-top: 0px;
+  z-index: 9;
 }
 @font-face{
   font-family: 'bebas-neue';
-  src:url("/src/resources/fonts/bebas_neue/BebasNeue-Regular.ttf") format('truetype');
+  src:url("/assets/fonts/bebas_neue/BebasNeue-Regular.ttf") format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 .text-content{
-  height: 127px;
-  font-size: 64px;
+  height: 75px;
+  font-size: 35px;
   width: auto;
 }
 .header-text{
   padding: 10px;
   margin-top: 0px;
   margin-left: 40px;
- /* font-family: 'bebas-neue';*/
+  font-family: 'bebas-neue';
   color:#D9D9D9;
+  font-size: 35px;
+}
+.active{
+  background-color:#189B8D ;
 }

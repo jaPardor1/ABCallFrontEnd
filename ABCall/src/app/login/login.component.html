@@ -1,0 +1,80 @@
+<!-- <div class="container">
+
+  <div class="row">
+
+    <div class="col-md-12 d-flex justify-content-center">
+
+      <mat-card class="example-card" appearance="outlined">
+        <mat-card-header>
+
+          <mat-card-title>
+            <p style="text-align: center;">ABCall</p>
+          </mat-card-title>
+
+        </mat-card-header>
+
+        <mat-card-content>
+         <mat-form-field>
+          <mat-label>Usuario</mat-label>
+          <input type="text" matInput>
+         </mat-form-field>
+         <mat-form-field>
+          <mat-label>Contrasena</mat-label>
+          <input type="password" matInput>
+         </mat-form-field>
+         <br/>
+         <button mat-button>LIKE</button>
+
+        </mat-card-content>
+        <mat-card-actions>
+          <div class="row">
+            <div class="d-flex justify-content-center">
+              <button mat-button>LIKE</button>
+            </div>
+          </div>
+        </mat-card-actions>
+      </mat-card>
+
+    </div>
+
+  </div>
+
+</div> -->
+
+<div class="login-container">
+  <div class="login-form-container">
+    <h1>ABCall</h1>
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin2()">
+      <div class="input-container">
+        <div class="label-input-wrapper">
+            <label for="usuario">Usuario</label>
+            <div class="input-error-wrapper">
+              <input type="text" id="usuario" formControlName="usuario" placeholder="Ingrese su usuario" [ngClass]="{'is-invalid': isFieldInvalid('usuario')}"/>
+              <small *ngIf="isFieldInvalid('usuario')" class="text-danger">Este campo es obligatorio</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="input-container">
+        <div class="label-input-wrapper">
+          <label for="contrasena">Contraseña</label>
+          <div class="input-error-wrapper">
+            <input type="password" id="contrasena" formControlName="contrasena" placeholder="**********" [ngClass]="{'is-invalid': isFieldInvalid('contrasena')}"/>
+            <small *ngIf="isFieldInvalid('contrasena')" class="text-danger">Este campo es obligatorio</small>
+        </div>
+      </div>
+    </div>
+      <button type="submit">INGRESAR</button>
+    </form>
+    <p class="registro-link" (click)="onCreateAccount()">REGISTRO CLIENTE</p>
+  </div>
+
+  <!-- Modal para error de campos incompletos -->
+  <div *ngIf="showErrorModal" class="modal">
+    <div class="modal-content">
+      <span class="close" (click)="closeErrorModal()">&times;</span>
+      <p>{{modalMessage}}</p>
+    </div>
+  </div>
+</div>
+

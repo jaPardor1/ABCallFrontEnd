@@ -1,0 +1,15 @@
+label{
+  font-size: 30px;
+}
+button{
+  font-size: 30px;
+}
+.highline{
+  background-color: #1FC7B5;
+}
+.border-down{
+  border-radius: 0px 0px 8px 8px;
+}
+.border-up{
+  border-radius: 8px 8px 0px 0px;
+}

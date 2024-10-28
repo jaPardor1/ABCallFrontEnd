@@ -1,4 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
 
+
+@font-face{
+  font-family: 'bebas-neue';
+  src:url("/assets/fonts/bebas_neue/BebasNeue-Regular.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; /*font-family: 'bebas-neue',Roboto, "Helvetica Neue", sans-serif !important;*/
+  background-image: url('/assets/images/background/Background2.png') !important;
+  background-size: 100vw 130vh;
+  background-repeat: no-repeat;
+}
+
+button{
+  background-color:#1FC7B5;
+}
+
+input {
+  font-family: 'Roboto', sans-serif !important;
+  text-transform: none !important; /* Asegura que el texto mantenga su forma */
+}
+body {
+  text-transform: none !important; /* Asegura que todo el texto respete su forma original */
+}
+
