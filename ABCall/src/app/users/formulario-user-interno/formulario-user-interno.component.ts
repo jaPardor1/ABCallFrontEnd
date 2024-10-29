@@ -65,7 +65,10 @@ export class FormularioUserInternoComponent implements OnInit {
           password2:['',{
             validators:[Validators.required]
           }],
-          cognito_user_sub:['']
+          cognito_user_sub:[''],
+          client_id:['1'],
+          communication_type:['Telefono']
+
 
       },
       {
@@ -102,9 +105,7 @@ export class FormularioUserInternoComponent implements OnInit {
   }
 
   saveInfo(){
-    if(this.model!=null){
       this.submit.emit(this.form.value);
-    }
   }
   onGetUser(){
     this.userService.getUserSub(this.model).subscribe(

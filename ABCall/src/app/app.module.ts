@@ -19,6 +19,7 @@ import { FormularioUserInternoComponent } from './users/formulario-user-interno/
 import { RegistroComponent } from './users/registro/registro.component';
 import { EditUserComponent } from './users/edit-user/edit-user.component';
 import { ConfirmDialogComponent } from './shared/confirm-dialog/confirm-dialog.component';
+import { CreateUserComponent } from './users/create-user/create-user.component';
 
 
 
@@ -36,7 +37,8 @@ import { ConfirmDialogComponent } from './shared/confirm-dialog/confirm-dialog.c
     FormularioUserInternoComponent,
     RegistroComponent,
     EditUserComponent,
-    ConfirmDialogComponent
+    ConfirmDialogComponent,
+    CreateUserComponent
    ],
   imports: [
     BrowserModule,

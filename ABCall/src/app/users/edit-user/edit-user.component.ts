@@ -40,10 +40,8 @@ export class EditUserComponent implements OnInit {
   }
 
   openDialog(mensaje: string): void {
-    const dialogRef = this.dialog.open(DialogComponent, {
+     this.dialog.open(DialogComponent, {
       data: { message: mensaje },
     });
-
-
   }
 }
