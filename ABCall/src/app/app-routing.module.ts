@@ -10,6 +10,7 @@ import { FormularioUserInternoComponent } from './users/formulario-user-interno/
 import { RegistroComponent } from './users/registro/registro.component';
 import { AuthorizeGuard } from './authorize-guard.guard';
 import { EditUserComponent } from './users/edit-user/edit-user.component';
+import { CreateUserComponent } from './users/create-user/create-user.component';
 
 const routes: Routes = [
   {
@@ -52,12 +53,13 @@ const routes: Routes = [
         component:EditUserComponent,
         canActivate:[AuthorizeGuard]
       },
-
-
+      {
+        path:'createUser',
+        component:CreateUserComponent,
+        canActivate:[AuthorizeGuard]
+      },
     ]
-
   }
-
 ];
 
 @NgModule({

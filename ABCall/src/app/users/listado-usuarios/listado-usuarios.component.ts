@@ -28,7 +28,7 @@ export class ListadoUsuariosComponent implements OnInit  {
   }
 
   goToUserCreation(){
-    this.router.navigateByUrl('innerUserForm');
+    this.router.navigateByUrl('createUser');
   }
 
   getRegisteredUsers(){
