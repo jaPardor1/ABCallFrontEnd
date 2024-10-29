@@ -18,6 +18,7 @@ import { ListadoUsuariosComponent } from './users/listado-usuarios/listado-usuar
 import { FormularioUserInternoComponent } from './users/formulario-user-interno/formulario-user-interno.component';
 import { RegistroComponent } from './users/registro/registro.component';
 import { EditUserComponent } from './users/edit-user/edit-user.component';
+import { ConfirmDialogComponent } from './shared/confirm-dialog/confirm-dialog.component';
 
 
 
@@ -34,7 +35,8 @@ import { EditUserComponent } from './users/edit-user/edit-user.component';
     ListadoUsuariosComponent,
     FormularioUserInternoComponent,
     RegistroComponent,
-    EditUserComponent
+    EditUserComponent,
+    ConfirmDialogComponent
    ],
   imports: [
     BrowserModule,
