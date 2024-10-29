@@ -30,7 +30,14 @@ export class UserService {
     const body = userInfo;
     const sub = userInfo.cognito_user_sub;
     let url = environment.apiGetUsersSub+`${sub}`
-    return this.http.put<any>(url,body);
+    return this.http.put<any>(url,body,{headers});
+
+  }
+
+  public deleteUserSub(sub:string){
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
+    let url = environment.apiGetUsersSub+`${sub}`
+    return this.http.delete<any>(url,{headers});
 
   }
 

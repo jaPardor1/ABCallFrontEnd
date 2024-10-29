@@ -5,6 +5,9 @@ import { signOut } from 'aws-amplify/auth';
 import { UserService } from '../../service/user/user.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmDialogComponent } from '../../shared/confirm-dialog/confirm-dialog.component';
+import { DialogComponent } from '../../shared/dialog/dialog.component';
 
 @Component({
   selector: 'app-listado-usuarios',
@@ -17,7 +20,7 @@ export class ListadoUsuariosComponent implements OnInit  {
   dataSource:any;
   @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
 
-  constructor(private router:Router,private userService:UserService) {
+  constructor(private router:Router,private userService:UserService,public dialog: MatDialog) {
 
   }
   ngOnInit(): void {
@@ -46,4 +49,34 @@ export class ListadoUsuariosComponent implements OnInit  {
   onEditUser(sub:string){
     this.router.navigateByUrl(`editUser/${sub}`);
   }
+
+  showDeletionDialog(sub:string): void {
+    console.log(sub);
+    this.dialog
+      .open(ConfirmDialogComponent, {
+        data: `¿Esta Seguro de eliminar este usuario?`
+      })
+      .afterClosed()
+      .subscribe((confirmed: Boolean) => {
+        if (confirmed) {
+            this.userService.deleteUserSub(sub).subscribe(
+              (result:any)=>{
+                this.openDialog(result.message)
+                this.getRegisteredUsers();
+              },
+              (error:any)=>{
+                this.openDialog(error)
+              }
+            )
+        }
+      });
+  }
+
+  openDialog(mensaje: string): void {
+    const dialogRef = this.dialog.open(DialogComponent, {
+      data: { message: mensaje },
+    });
+  }
+
+
 }

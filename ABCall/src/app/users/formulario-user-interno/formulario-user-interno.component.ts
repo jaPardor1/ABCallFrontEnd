@@ -57,7 +57,7 @@ export class FormularioUserInternoComponent implements OnInit {
             validators:[Validators.required,Validators.email]
           }],
           cellphone:['',{
-            validators:[Validators.required,Validators.pattern('^[1-9]{1,10}$'),Validators.maxLength(10)]
+            validators:[Validators.required,Validators.pattern('^[0-9]{1,10}$'),Validators.maxLength(10)]
           }],
           password:['',{
             validators:[Validators.required]
@@ -95,7 +95,7 @@ export class FormularioUserInternoComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    debugger;
+
     if(this.model !==null){
         this.onGetUser();
     }
@@ -219,7 +219,7 @@ getErrorEmailField(){
 getErrorTelephoneField(){
   var campo = this.form.get('cellphone');
   if (campo!= null){
-     debugger;
+
     if(campo.hasError('required')){
       return 'Por favor especifique un teléfono';
     }
