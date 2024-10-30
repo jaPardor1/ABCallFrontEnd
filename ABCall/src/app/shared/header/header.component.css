@@ -26,4 +26,12 @@
 }
 .active{
   background-color:#189B8D ;
+  font-weight: bold;
+}
+
+.navbar-nav{
+  background-color:#47E3D2 ;
+}
+.nav-link-container{
+   border-radius: 0px 0px 8px 8px;
 }
