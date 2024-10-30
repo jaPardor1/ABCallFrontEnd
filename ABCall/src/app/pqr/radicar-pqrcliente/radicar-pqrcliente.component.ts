@@ -18,7 +18,7 @@ export class RadicarPQRClienteComponent {
 
   }
   ngOnInit(): void {
-    this.module.emit('RADICAR PQR');
+
   }
   saveIncident(incident:PqrDTO){
     console.log(typeof(incident))
@@ -26,15 +26,15 @@ export class RadicarPQRClienteComponent {
     //console.log(incident);
     let pqr = {subject:incident.asunto,description:incident.descripcion,type:incident.tipoSolicitud};
        this.pqrService.createIncident(pqr).subscribe(
-        (response)=> this.openDialog('Se ha radicado el pqr #'+response.id), //alert('se ha radicado el pqr #'+response.id),
+        (response)=> {
+          this.openDialog('Se ha radicado el pqr #'+response.id);
+        },
         (error:any)=> console.error(error)
        )
     }
-
-
  }
  openDialog(mensaje:string):void{
-  const dialogRef = this.dialog.open(DialogComponent, {
+  this.dialog.open(DialogComponent, {
     data: {message:mensaje},
   });
 }
