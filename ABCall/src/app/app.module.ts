@@ -20,6 +20,7 @@ import { RegistroComponent } from './users/registro/registro.component';
 import { EditUserComponent } from './users/edit-user/edit-user.component';
 import { ConfirmDialogComponent } from './shared/confirm-dialog/confirm-dialog.component';
 import { CreateUserComponent } from './users/create-user/create-user.component';
+import { DetailDialogComponent } from './shared/detail-dialog/detail-dialog.component';
 
 
 
@@ -38,7 +39,8 @@ import { CreateUserComponent } from './users/create-user/create-user.component';
     RegistroComponent,
     EditUserComponent,
     ConfirmDialogComponent,
-    CreateUserComponent
+    CreateUserComponent,
+    DetailDialogComponent
    ],
   imports: [
     BrowserModule,

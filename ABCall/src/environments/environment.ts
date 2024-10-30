@@ -6,11 +6,13 @@ export const environment = {
     region: 'us-east-1'  // Cognito Region
 
   },
-  apiClientsUrl2: 'https://l36oyb6gwa.execute-api.us-east-1.amazonaws.com/api/clients/short',
+  apiPqrs: 'https://yxdz3rfzj3.execute-api.us-east-1.amazonaws.com/api/pqrs',
+  apiClientsUrl2: 'https://yxdz3rfzj3.execute-api.us-east-1.amazonaws.com/api/pqrs',
   /**apis for users**/
   apiUsersUrl2: 'https://1acgpw2vfg.execute-api.us-east-1.amazonaws.com/api/user/register',
   apiGetUsersForClient:'https://1acgpw2vfg.execute-api.us-east-1.amazonaws.com/api/users/1',
   apiGetUsersSub:'https://1acgpw2vfg.execute-api.us-east-1.amazonaws.com/api/user/',
+
 
 };
 

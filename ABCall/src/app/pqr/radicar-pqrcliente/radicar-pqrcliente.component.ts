@@ -1,6 +1,6 @@
 import { Component, EventEmitter, inject, Output, output } from '@angular/core';
 import { PqrDTO } from '../Pqr';
-import { PqrService } from '../../service/pqr.service';
+import { PqrService } from '../../service/pqr/pqr.service';
 import { DialogComponent } from '../../shared/dialog/dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 
