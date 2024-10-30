@@ -1,4 +1,8 @@
 
-label{
-  font-size: 27px;
+label , button{
+  font-size: 30px;
+}
+
+.button-1{
+  font-size: 16px;
 }

@@ -1,6 +1,10 @@
-import { Component } from '@angular/core';
-import { PqrService } from '../../service/pqr.service';
+import { Component, ViewChild } from '@angular/core';
+import { PqrService } from '../../service/pqr/pqr.service';
 import { PqrResultDto } from '../pqrResult';
+import { MatDialog } from '@angular/material/dialog';
+import { DetailDialogComponent } from '../../shared/detail-dialog/detail-dialog.component';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-listado-pqr',
@@ -8,12 +12,13 @@ import { PqrResultDto } from '../pqrResult';
   styleUrl: './listado-pqr.component.css'
 })
 export class ListadoPqrComponent {
-  constructor(private pqrService: PqrService) {
+  constructor(private pqrService: PqrService,public dialog: MatDialog) {
 
   }
 
-  public incidentsList: PqrResultDto[] = [];
-  displayedColumns: string[] = ['client_id', 'subject', 'description', 'status', 'date', 'estimated_close_date', 'user_id', 'type'];
+  public incidentsList:any;
+  displayedColumns: string[] = ['subject', 'status', 'date','actions'];
+  @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
   public searchIncidents() {
 
     this.listFoundIncidents(this.incidentsList);
@@ -22,11 +27,18 @@ export class ListadoPqrComponent {
       (error: any) => console.error(error)
     )
   }
-
   public listFoundIncidents(list: PqrResultDto[]) {
-    console.log(list);
-    this.incidentsList = list;
 
+    this.incidentsList =new MatTableDataSource<PqrResultDto>(list); ;
+    this.incidentsList.paginator = this.paginator;
+    debugger;
+  }
 
+  openDialog(pqrData:PqrResultDto): void {
+    this.dialog.open(DetailDialogComponent, {
+      width: '430px',
+      height: '400px',
+      data: { pqrData },
+    });
   }
 }

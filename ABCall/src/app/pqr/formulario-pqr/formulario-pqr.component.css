@@ -1,6 +1,6 @@
 
-label{
-  font-size: 40px;
+label ,button{
+  font-size: 30px;
 }
 
 .mat-mdc-unelevated-button:not(:disabled){

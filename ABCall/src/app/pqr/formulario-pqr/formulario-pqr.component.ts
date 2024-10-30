@@ -36,6 +36,18 @@ export class FormularioPqrComponent implements OnInit{
      this.submit.emit(this.form.value);
   }
 
+
+  getErrorRequestTypeField(){
+    var campo = this.form.get('tipoSolicitud');
+    if (campo!= null){
+      if(campo.hasError('required')){
+        return 'Por favor especifique el tipo de solicitud';
+      }
+    }
+    return '';
+  }
+
+
   getErrorDescriptionField(){
     var campo = this.form.get('descripcion');
     if (campo!= null){
