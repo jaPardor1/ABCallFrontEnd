@@ -8,12 +8,13 @@ export const environment = {
   },
 
   apiPqrs: 'https://yxdz3rfzj3.execute-api.us-east-1.amazonaws.com/api/pqrs',
-  apiClientsUrl2: 'https://l36oyb6gwa.execute-api.us-east-1.amazonaws.com/api/clients/short',
 
   /**apis for users**/
+  apiClientsUrl2: 'https://l36oyb6gwa.execute-api.us-east-1.amazonaws.com/api/clients/short',// creacion de usurio sin autorization
   apiUsersUrl2: 'https://1acgpw2vfg.execute-api.us-east-1.amazonaws.com/api/user/register',
   apiGetUsersForClient:'https://1acgpw2vfg.execute-api.us-east-1.amazonaws.com/api/users/1',
   apiGetUsersSub:'https://1acgpw2vfg.execute-api.us-east-1.amazonaws.com/api/user/',
+                 
 };
 
 

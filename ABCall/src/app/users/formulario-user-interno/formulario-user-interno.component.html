@@ -1,11 +1,12 @@
 <!-- <code style="margin:0px auto;">
   {{form.invalid}}
   {{form.value | json}}
+  {{form.value.password | json}}
 </code> -->
 <form class="mt-2" (submit)="saveInfo()" [formGroup]="form">
   <div class="container">
 
-    <div class="row" >
+    <div class="row">
       <div class="col-3">
         <label>Perfil</label>
       </div>
@@ -40,7 +41,7 @@
         <mat-form-field>
           <mat-label>Seleccione tipo de Identificación</mat-label>
           <mat-select formControlName="document_type">
-            <mat-option  *ngFor="let op of documentIds" [value]="op.id">{{op.documentName}}</mat-option>
+            <mat-option *ngFor="let op of documentIds" [value]="op.id">{{op.documentName}}</mat-option>
           </mat-select>
         </mat-form-field>
       </div>
@@ -55,13 +56,13 @@
         </mat-form-field>
       </div>
     </div>
-    <div *ngIf="form.value.user_role!='Client'" class="row" >
+    <div *ngIf="form.value.user_role!='Client'" class="row">
       <div class="col-3"><label for="">Nombres</label></div>
       <div class="col-3">
         <mat-error *ngIf="form.invalid">{{getErrorNameField()}}</mat-error>
         <mat-form-field>
           <mat-label>Nombres</mat-label>
-          <input formControlName="name"  matInput>
+          <input formControlName="name" matInput>
         </mat-form-field>
       </div>
       <div class="col-3"><label for="">Apellidos</label></div>
@@ -134,7 +135,7 @@
         </mat-form-field>
       </div>
       <div class="col-3">
-         <label for="">Apellidos Rep. Legal</label>
+        <label for="">Apellidos Rep. Legal</label>
       </div>
       <div class="col-3">
         <mat-error *ngIf="form.invalid">{{getErrorLegalrepLastNamesField()}}</mat-error>
@@ -151,10 +152,10 @@
       <div class="col-3">
         <mat-error *ngIf="form.invalid">{{getErrorEmailField()}}</mat-error>
         <mat-form-field>
-        <mat-label>Correo electrónico</mat-label>
-        <input formControlName="email" matInput>
-      </mat-form-field>
-    </div>
+          <mat-label>Correo electrónico</mat-label>
+          <input formControlName="email" matInput>
+        </mat-form-field>
+      </div>
       <div class="col-3"><label for="">Teléfono</label></div>
       <div class="col-3">
         <mat-error *ngIf="form.invalid">{{getErrorTelephoneField()}}</mat-error>
@@ -164,35 +165,80 @@
         </mat-form-field>
       </div>
     </div>
-    <div class="row">
-      <div class="col-3 highline border-up pt-2">
-       <label for="">Contraseña*</label>
-      </div>
-      <div class="col-3 highline border-up pt-2">
-        <mat-error *ngIf="form.invalid">{{getErrorPasswordField()}}</mat-error>
-        <mat-form-field>
-          <mat-label>Contraseña</mat-label>
-          <input formControlName="password" type="password" matInput>
-        </mat-form-field>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-3 highline border-down" >
-        <label for="">Repetir Contraseña*</label>
-      </div>
-      <div class="col-3 highline border-down">
+    <ng-container *ngIf="model==null">
 
-        <mat-form-field>
-          <mat-label>Contraseña</mat-label>
-          <input formControlName="password2" type="password" matInput>
-        </mat-form-field>
+      <div class="container">
+        <div class="row">
+          <div class="col-6 d-flex align-items-center ">
+            <div class="container">
+              <div class="row">
+                <div class="col-3 pt-2">
+                  <label for="">Contraseña*</label>
+                </div>
+                <div class="col-3 pt-2">
+                  <mat-error *ngIf="form.invalid">{{getErrorPasswordField()}}</mat-error>
+                  <mat-form-field>
+                    <mat-label>Contraseña</mat-label>
+                    <input formControlName="password" type="password" matInput>
+                  </mat-form-field>
+                </div>
+                <div class="row">
+                  <div class="col-3">
+                    <label for="">Repetir Contraseña*</label>
+                  </div>
+                  <div class="col-3">
+                    <mat-form-field>
+                      <mat-label>Contraseña</mat-label>
+                      <input formControlName="password2" type="password" matInput>
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+            </div>
+           
+          </div>
+          <div class="col-6">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-12">
+                  {{form.value.password}}
+                  {{form.value.password.match('^(?=.*[A-Z])')}}
+                  <div class="pass-err text-sm">
+                    <ul>
+                      <li class="block" [ngClass]="{'pass-ok': form.value.password?.match('^(?=.*[A-Z])')}">At least
+                        oneu ppercase
+                        letter.</li>
+                      <li class="block" [ngClass]="{'pass-ok': form.value.password?.match('(?=.*[a-z])')}">At least
+                        one
+                        lowercase
+                        letter.</li>
+                      <li class="block" [ngClass]="{'pass-ok': form.value.password?.match('(.*[0-9].*)')}">At least
+                        one
+                        digit.</li>
+                      <li class="block" [ngClass]="{'pass-ok': form.value.password?.match('(?=.*[!@#$%^&*])')}">At
+                        least one
+                        special
+                        character.</li>
+                      <li class="block" [ngClass]="{'pass-ok': form.value.password?.match('.{8,}')}">At least 8
+                        characters
+                        long.</li>
+                    </ul>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
       </div>
-      <div class="col-6">
+    </ng-container>
+    <div class="row">
+      <div class="col-12 mt-5">
         <div class="col d-flex justify-content-center">
-        <button [disabled]="form.invalid" >Guardar</button>
-      </div>
+          <button [disabled]="form.invalid">Guardar</button>
+        </div>
       </div>
     </div>
-
   </div>
 </form>

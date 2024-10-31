@@ -60,7 +60,7 @@ export class FormularioUserInternoComponent implements OnInit {
             validators:[Validators.required,Validators.pattern('^[0-9]{1,10}$'),Validators.maxLength(10)]
           }],
           password:['',{
-            validators:[Validators.required]
+            validators:[Validators.required,Validators.pattern('/^(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=\D*\d).{8,}$/')]
           }],
           password2:['',{
             validators:[Validators.required]
@@ -246,6 +246,9 @@ getErrorPasswordField(){
     }
     if(campo.hasError('pass1andpass2notEqual')){
       return 'La Contraseña y su confirmación no son iguales.';
+    }
+    if(campo.hasError('pattern')){
+      return 'Por favor ';
     }
 
 
