@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http'
+import { ReactiveFormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -48,6 +50,9 @@ import { DetailDialogComponent } from './shared/detail-dialog/detail-dialog.comp
     MaterialModule,
     ReactiveFormsModule,
     HttpClientModule
+    MaterialModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     provideAnimationsAsync()
@@ -55,5 +60,7 @@ import { DetailDialogComponent } from './shared/detail-dialog/detail-dialog.comp
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
 
 

@@ -1,0 +1,16 @@
+version: 0.2
+phases:
+  install:
+    commands:
+      - cd ABCall
+      - npm install -g @angular/cli
+      - npm install
+    runtime-versions:
+      nodejs: 18.x
+  build:
+    commands:
+      - ng build
+artifacts:
+  files:
+    - '**/*'
+  base-directory: ABCall/dist/abcall/browser
