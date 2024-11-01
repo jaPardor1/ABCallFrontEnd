@@ -1,0 +1,11 @@
+.title{
+   font-size: 20px;
+}
+
+.line-title{
+    border-bottom: 2px solid #189B8D;
+}
+
+.field-title{
+    font-weight: bold;
+}
