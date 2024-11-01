@@ -42,13 +42,13 @@ export class UserService {
   }
 
   public createUser(userInfo:any){
-    debugger;
     const headers = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
     const body = userInfo;
     let url = environment.apiGetUsersSub
     return this.http.post<any>(url,body,{headers});
-
   }
+
+  
 
 
 }
