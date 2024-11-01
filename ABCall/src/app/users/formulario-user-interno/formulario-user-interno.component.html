@@ -167,7 +167,45 @@
     </div>
     <ng-container *ngIf="model==null">
 
-      <div class="container">
+      <div class="row">
+        <div class="col-3 pt-2">
+          <label for="">Contraseña*</label>
+        </div>
+        <div class="col-3 pt-2">
+          <mat-error *ngIf="form.invalid">{{getErrorPasswordField()}}</mat-error>
+          <mat-form-field>
+            <mat-label>Contraseña</mat-label>
+            <input formControlName="password" type="password" matInput>
+          </mat-form-field>
+        </div>
+        <div class="col-6 pt-3">
+          <div class="pass-err text-sm">
+            <ul>  
+              <li class="block" [ngClass]="{'pass-ok': form.value.password?.match('^(?=.*[A-Z])')}">Una letra Mayuscula</li>
+              <li class="block" [ngClass]="{'pass-ok': form.value.password?.match('(?=.*[a-z])')}">Una letra Minuscula.</li>
+              <li class="block" [ngClass]="{'pass-ok': form.value.password?.match('(.*[0-9].*)')}">Al menos un digito</li>
+              <li class="block" [ngClass]="{'pass-ok': form.value.password?.match('(?=.*[!@#$%^&*])')}">Un Carácter Especial</li>
+              <li class="block" [ngClass]="{'pass-ok': form.value.password?.match('.{8,}')}">Mínimo 8 caracteres de logitud</li>
+            </ul>
+          </div>
+
+
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-3">
+          <label for="">Repetir Contraseña*</label>
+        </div>
+        <div class="col-3">
+          <mat-form-field>
+            <mat-label>Contraseña</mat-label>
+            <input formControlName="password2" type="password" matInput>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <!-- <div class="container">
         <div class="row">
           <div class="col-6 d-flex align-items-center ">
             <div class="container">
@@ -231,7 +269,7 @@
 
           </div>
         </div>
-      </div>
+      </div> -->
     </ng-container>
     <div class="row">
       <div class="col-12 mt-5">

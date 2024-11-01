@@ -41,7 +41,7 @@ const routes: Routes = [
       {
         path:'listUsers',
         component:ListadoUsuariosComponent,
-        canActivate:[AuthorizeGuard]
+        //canActivate:[AuthorizeGuard]
       },
       {
         path:'innerUserForm',
