@@ -53,6 +53,9 @@ export class LoginComponent implements OnInit {
       }catch (error:any) {
         if(error.name=='NotAuthorizedException'){
           this.modalMessage = 'Usuario o contrasena incorrectos';
+        }if(error.name==='UserAlreadyAuthenticatedException'){
+              alert('usuario ya autenticado cerrando sesion..')
+              this.authService.onSignOut();
         }
         this.showErrorModal = true;
     }

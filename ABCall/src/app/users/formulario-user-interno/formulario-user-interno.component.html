@@ -12,7 +12,7 @@
       </div>
       <div class="col-3">
         <mat-error *ngIf="form.invalid">{{getErrorProfileField()}}</mat-error>
-        <mat-form-field>
+        <mat-form-field appearance="outline">
           <mat-label>Seleccione Tipo De perfil</mat-label>
           <mat-select formControlName="user_role">
             <mat-option *ngFor="let op of profiles" [value]="op.id">{{op.profileName}}</mat-option>
@@ -24,7 +24,7 @@
       </div>
       <div *ngIf="form.value.user_role=='Client'" class="col-3">
         <mat-error *ngIf="form.invalid">{{getErrorPlanField()}}</mat-error>
-        <mat-form-field>
+        <mat-form-field appearance="outline">
           <mat-label>Seleccione Tipo De plan</mat-label>
           <mat-select formControlName="plan">
             <mat-option *ngFor="let op of subscriptionsPlan" [value]="op.id">{{op.subscrptionName}}</mat-option>
@@ -38,7 +38,7 @@
       </div>
       <div class="col-3">
         <mat-error *ngIf="form.invalid">{{getErrorIdentificationTypeField()}}</mat-error>
-        <mat-form-field>
+        <mat-form-field appearance="outline">
           <mat-label>Seleccione tipo de Identificación</mat-label>
           <mat-select formControlName="document_type">
             <mat-option *ngFor="let op of documentIds" [value]="op.id">{{op.documentName}}</mat-option>
@@ -50,7 +50,7 @@
       </div>
       <div class="col-3">
         <mat-error *ngIf="form.invalid">{{getErrorIdentificacionField()}}</mat-error>
-        <mat-form-field>
+        <mat-form-field appearance="outline">
           <mat-label>Identificación</mat-label>
           <input formControlName="id_number" matInput>
         </mat-form-field>
@@ -60,7 +60,7 @@
       <div class="col-3"><label for="">Nombres</label></div>
       <div class="col-3">
         <mat-error *ngIf="form.invalid">{{getErrorNameField()}}</mat-error>
-        <mat-form-field>
+        <mat-form-field appearance="outline">
           <mat-label>Nombres</mat-label>
           <input formControlName="name" matInput>
         </mat-form-field>
@@ -68,7 +68,7 @@
       <div class="col-3"><label for="">Apellidos</label></div>
       <div class="col-3">
         <mat-error *ngIf="form.invalid">{{getErrorLastNameField()}}</mat-error>
-        <mat-form-field>
+        <mat-form-field appearance="outline">
           <mat-label>Apellidos</mat-label>
           <input formControlName="last_name" matInput>
         </mat-form-field>
@@ -84,7 +84,7 @@
       </div>
       <div class="col-3">
         <mat-error *ngIf="form.invalid">{{getErrorRazonSocialField()}}</mat-error>
-        <mat-form-field>
+        <mat-form-field appearance="outline">
           <mat-label>Razón social</mat-label>
           <input formControlName="razonSocialEmpresa" matInput>
         </mat-form-field>
@@ -94,7 +94,7 @@
       </div>
       <div class="col-3">
         <mat-error *ngIf="form.invalid">{{getErrorDireccionEmpresaField()}}</mat-error>
-        <mat-form-field [style.width.px]=327>
+        <mat-form-field appearance="outline" [style.width.px]=327>
           <mat-label>Dirección Empresa</mat-label>
           <input formControlName="direccionEmpresa" matInput>
         </mat-form-field>
@@ -107,7 +107,7 @@
       </div>
       <div class="col-3">
         <mat-error *ngIf="form.invalid">{{getErrorLegalrepIdTypeField()}}</mat-error>
-        <mat-form-field>
+        <mat-form-field appearance="outline">
           <mat-label>Seleccione tipo de Identificación</mat-label>
           <mat-select formControlName="tipoIdentificacionRepLegal">
             <mat-option *ngFor="let op of documentIds" [value]="op.id">{{op.documentName}}</mat-option>
@@ -119,7 +119,7 @@
       </div>
       <div class="col-3">
         <mat-error *ngIf="form.invalid">{{getErrorLegalrepIdField()}}</mat-error>
-        <mat-form-field>
+        <mat-form-field appearance="outline">
           <mat-label>Identificación Rep. Legal</mat-label>
           <input formControlName="identificacionRepLegal" matInput>
         </mat-form-field>
@@ -129,7 +129,7 @@
       <div class="col-3"><label for="">Nombres rep. legal</label></div>
       <div class="col-3">
         <mat-error *ngIf="form.invalid">{{getErrorLegalrepNamesField()}}</mat-error>
-        <mat-form-field>
+        <mat-form-field appearance="outline">
           <mat-label>Nombres Rep. legal</mat-label>
           <input formControlName="nombresRepLegal" matInput>
         </mat-form-field>
@@ -139,7 +139,7 @@
       </div>
       <div class="col-3">
         <mat-error *ngIf="form.invalid">{{getErrorLegalrepLastNamesField()}}</mat-error>
-        <mat-form-field>
+        <mat-form-field appearance="outline">
           <mat-label>Apellidos Rep. Legal</mat-label>
           <input formControlName="apellidosRepLegal" matInput>
         </mat-form-field>
@@ -151,7 +151,7 @@
       <div class="col-3"> <label for="">Correo electrónico</label></div>
       <div class="col-3">
         <mat-error *ngIf="form.invalid">{{getErrorEmailField()}}</mat-error>
-        <mat-form-field>
+        <mat-form-field appearance="outline">
           <mat-label>Correo electrónico</mat-label>
           <input formControlName="email" matInput>
         </mat-form-field>
@@ -159,7 +159,7 @@
       <div class="col-3"><label for="">Teléfono</label></div>
       <div class="col-3">
         <mat-error *ngIf="form.invalid">{{getErrorTelephoneField()}}</mat-error>
-        <mat-form-field>
+        <mat-form-field appearance="outline">
           <mat-label>Teléfono</mat-label>
           <input formControlName="cellphone" matInput>
         </mat-form-field>
@@ -173,7 +173,7 @@
         </div>
         <div class="col-3 pt-2">
           <mat-error *ngIf="form.invalid">{{getErrorPasswordField()}}</mat-error>
-          <mat-form-field>
+          <mat-form-field appearance="outline">
             <mat-label>Contraseña</mat-label>
             <input formControlName="password" type="password" matInput>
           </mat-form-field>
@@ -198,7 +198,7 @@
           <label for="">Repetir Contraseña*</label>
         </div>
         <div class="col-3">
-          <mat-form-field>
+          <mat-form-field appearance="outline">
             <mat-label>Contraseña</mat-label>
             <input formControlName="password2" type="password" matInput>
           </mat-form-field>

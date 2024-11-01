@@ -20,7 +20,7 @@ export class ListadoPqrComponent {
   displayedColumns: string[] = ['subject', 'status', 'date','actions'];
   @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
   public searchIncidents() {
-
+    debugger;
     this.listFoundIncidents(this.incidentsList);
     this.pqrService.getIncidents().subscribe(
       (response: PqrResultDto[]) => this.listFoundIncidents(response), //alert('se ha radicado el pqr #'+response.id),
@@ -36,8 +36,6 @@ export class ListadoPqrComponent {
 
   openDialog(pqrData:PqrResultDto): void {
     this.dialog.open(DetailDialogComponent, {
-      width: '430px',
-      height: '400px',
       data: { pqrData },
     });
   }

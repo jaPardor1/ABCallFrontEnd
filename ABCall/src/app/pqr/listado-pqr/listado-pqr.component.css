@@ -6,3 +6,13 @@ label , button{
 .button-1{
   font-size: 16px;
 }
+.mat-form-field{
+  width:auto !important;
+}
+
+input{
+  border-radius: 6px;
+    border: 2px black solid;
+    background-color: #dfe1eb;
+    width: 100%;
+}
