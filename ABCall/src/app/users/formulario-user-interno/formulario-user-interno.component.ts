@@ -60,7 +60,7 @@ export class FormularioUserInternoComponent implements OnInit {
             validators:[Validators.required,Validators.pattern('^[0-9]{1,10}$'),Validators.maxLength(10)]
           }],
           password:['',{
-            validators:[Validators.required,Validators.pattern('/^(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=\D*\d).{8,}$/')]
+            validators:[Validators.required,Validators.pattern('/^(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=\D*\d).{6,}$/')]
           }],
           password2:['',{
             validators:[Validators.required]
