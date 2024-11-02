@@ -23,15 +23,13 @@
         <!-- Tag Column -->
         <ng-container matColumnDef="content">
           <th mat-header-cell *matHeaderCellDef> Contenido </th>
-          <td mat-cell *matCellDef="let article"> {{article.content}} </td>
-        </ng-container>
-        
 
-        <!-- Actions Column -->
-        <ng-container matColumnDef="actions">
-          <th style="width: 160px;" mat-header-cell *matHeaderCellDef> Acciones </th>
           <td mat-cell *matCellDef="let article">
-            <button class="button-1" (click)="openDialog(article)" mat-button>Ver detalle</button>
+            <span *ngIf="!article.isExpanded">{{ article.content | slice:0:50 }}...</span>
+            <span *ngIf="article.isExpanded">{{ article.content }}</span>
+            <a href="javascript:void(0)" (click)="toggleContent(article)">
+              {{ article.isExpanded ? ' Ver menos' : ' Ver más' }}
+            </a>
           </td>
         </ng-container>
 
