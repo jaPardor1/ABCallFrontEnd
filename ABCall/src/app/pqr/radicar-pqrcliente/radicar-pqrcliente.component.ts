@@ -22,12 +22,11 @@ export class RadicarPQRClienteComponent {
   }
   saveIncident(incident:PqrDTO){
     console.log(typeof(incident))
-    if(incident.hasOwnProperty('tipoSolicitud') ){
-    //console.log(incident);
-    let pqr = {subject:incident.asunto,description:incident.descripcion,type:incident.tipoSolicitud};
-       this.pqrService.createIncident(pqr).subscribe(
+    if(incident.title !==undefined){
+
+       this.pqrService.createIncident(incident).subscribe(
         (response)=> {
-          this.openDialog('Se ha radicado el pqr #'+response.id);
+          this.openDialog('Se ha radicado el pqr #'+response.ticket_number);
         },
         (error:any)=> console.error(error)
        )
