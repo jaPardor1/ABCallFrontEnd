@@ -18,7 +18,7 @@
               <mat-error>{{getErrorRequestTypeField()}}</mat-error>
               <mat-form-field appearance="outline" [style.width.px]=300>
                 <mat-label>Seleccione Tipo de solicitud</mat-label>
-                <mat-select formControlName="tipoSolicitud">
+                <mat-select formControlName="type">
                   <mat-option *ngFor="let op of tipoSolicitud" [value]="op.id">{{op.tiposol}}</mat-option>
                 </mat-select>
               </mat-form-field>
@@ -35,7 +35,7 @@
               <mat-error *ngIf="form.invalid">{{getErrorSubjectField()}}</mat-error>
               <mat-form-field appearance="outline" [style.width.px]=450>
                 <mat-label>Asunto</mat-label>
-                <input formControlName="asunto" matInput>
+                <input formControlName="title" matInput>
               </mat-form-field>
             </div>
           </div>
@@ -48,10 +48,10 @@
             </div>
             <div class="col-7">
               <mat-error *ngIf="form.invalid">{{getErrorDescriptionField()}}</mat-error>
-              <div>{{form.value.descripcion.length}}/500</div>
+              <div>{{form.value.description.length}}/500</div>
               <mat-form-field appearance="outline" [style.width.px]=450 [style.height.px]=150>
                 <mat-label>Descripción</mat-label>
-                <textarea style="height: 150px;width: 450px;" formControlName="descripcion" matInput></textarea>
+                <textarea style="height: 150px;width: 450px;" formControlName="description" matInput></textarea>
               </mat-form-field>
             </div>
           </div>

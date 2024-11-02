@@ -37,7 +37,8 @@ export class ListadoUsuariosComponent implements OnInit  {
       (response: UserDto[]) => {
         this.usersList=response;
         this.dataSource = new MatTableDataSource<UserDto>(this.usersList);
-        this.dataSource.paginator = this.paginator;   }, //alert('se ha radicado el pqr #'+response.id),
+        this.dataSource.paginator = this.paginator;
+      },
       (error: any) => console.error(error)
     )
   }

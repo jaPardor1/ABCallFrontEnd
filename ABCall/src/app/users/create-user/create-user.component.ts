@@ -20,7 +20,6 @@ export class CreateUserComponent {
 
   createUser(userInfo: UserDto) {
     if (userInfo.cognito_user_sub !== undefined) {
-      console.log(userInfo);
       this.userService.createUser(userInfo).subscribe(
         (response:any) => {
           console.log(response.cognito_user_sub);

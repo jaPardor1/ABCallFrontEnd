@@ -1,5 +1,5 @@
 export interface PqrDTO{
-  tipoSolicitud:string;
-  asunto:string;
-  descripcion:string;
+  type:string;
+  title:string;
+  description:string;
 }

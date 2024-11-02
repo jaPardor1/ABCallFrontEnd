@@ -5,16 +5,16 @@
     </div>
     <div class="col-3">
       <!-- <mat-form-field appearance="outline"> -->
-         <input type="text" matInput>
+         <input [(ngModel)]="ticketNumber" type="text" matInput>
       <!-- </mat-form-field> -->
     </div>
     <div class="col-3">
       <button class="ml-3" style="font-size: large;" (click)="searchIncidents()">Enviar</button>
     </div>
   </div>
-  <div class="row mt-5" *ngIf="incidentsList!==undefined">
+  <div class="row mt-5" *ngIf="dataSource!==undefined">
     <div class="col-12">
-      <table  mat-table [dataSource]="incidentsList" class="mat-elevation-z8">
+      <table  mat-table [dataSource]="dataSource" class="mat-elevation-z8">
         <!--- Note that these columns can be defined in any order.
               The actual rendered columns are set as a property on the row definition" -->
           <ng-container matColumnDef="date">

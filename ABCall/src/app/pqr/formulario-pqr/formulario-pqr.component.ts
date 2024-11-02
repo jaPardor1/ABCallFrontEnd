@@ -13,16 +13,16 @@ export class FormularioPqrComponent implements OnInit{
   @Output()
   public submit:EventEmitter<PqrDTO> = new EventEmitter<PqrDTO>();
 
-  public tipoSolicitud:any[]=[{id:1,tiposol:'Pregunta'},{id:2,tiposol:'Queja'},{id:1,tiposol:'Reclamo'}];
+  public tipoSolicitud:any[]=[{id:'Peticion',tiposol:'Peticion'},{id:'Queja',tiposol:'Queja'},{id:'Reclamo',tiposol:'Reclamo'}];
   constructor(private formBuilder:FormBuilder){
    this.form= this.formBuilder.group({
-      tipoSolicitud:['',{
+      type:['',{
        validators:[Validators.required]
       }],
-      asunto:['',{
+      title:['',{
         validators:[Validators.required]
       }],
-      descripcion:['',{
+      description:['',{
         validators:[Validators.required,Validators.maxLength(500)]
       }]
   });
