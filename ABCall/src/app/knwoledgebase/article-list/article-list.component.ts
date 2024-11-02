@@ -35,6 +35,10 @@ export class ArticleListComponent {
     this.articlesList.paginator = this.paginator;
   }
 
+  toggleContent(article: any): void {
+    article.isExpanded = !article.isExpanded;
+  }
+
   openDialog(articleData: ArticleResultDto): void {
     this.dialog.open(DetailDialogComponent, {
       data: { articleData },

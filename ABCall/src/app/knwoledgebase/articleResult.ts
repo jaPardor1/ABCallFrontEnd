@@ -3,5 +3,6 @@ export interface ArticleResultDto {
     client_id:number;
     title:string;
     content:string;
+    isExpanded?:boolean;
   }
   
