@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http'
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http'
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -23,6 +23,9 @@ import { EditUserComponent } from './users/edit-user/edit-user.component';
 import { ConfirmDialogComponent } from './shared/confirm-dialog/confirm-dialog.component';
 import { CreateUserComponent } from './users/create-user/create-user.component';
 import { DetailDialogComponent } from './shared/detail-dialog/detail-dialog.component';
+import { LoadingIndicatorComponent } from './shared/loading-indicator/loading-indicator.component';
+import { LoadingInterceptor } from './loading.interceptor';
+import { HeaderInterceptor } from './request-handler.interceptor';
 
 
 
@@ -43,7 +46,8 @@ import { DetailDialogComponent } from './shared/detail-dialog/detail-dialog.comp
     EditUserComponent,
     ConfirmDialogComponent,
     CreateUserComponent,
-    DetailDialogComponent
+    DetailDialogComponent,
+    LoadingIndicatorComponent
    ],
   imports: [
     BrowserModule,
@@ -53,7 +57,10 @@ import { DetailDialogComponent } from './shared/detail-dialog/detail-dialog.comp
     HttpClientModule
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    {provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi:true},
+    {provide: HTTP_INTERCEPTORS, useClass:HeaderInterceptor, multi:true},
+
   ],
   bootstrap: [AppComponent]
 })

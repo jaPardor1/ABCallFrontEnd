@@ -10,7 +10,7 @@ import { MatDialogModule} from '@angular/material/dialog';
 import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator'
-
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'
 @NgModule({
   declarations: [],
   imports: [
@@ -26,7 +26,8 @@ import {MatPaginatorModule} from '@angular/material/paginator'
     MatDialogModule,
     MatCardModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatProgressSpinnerModule
   ],
 })
 export class MaterialModule { }
