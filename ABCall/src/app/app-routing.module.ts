@@ -11,6 +11,7 @@ import { RegistroComponent } from './users/registro/registro.component';
 import { AuthorizeGuard } from './authorize-guard.guard';
 import { EditUserComponent } from './users/edit-user/edit-user.component';
 import { CreateUserComponent } from './users/create-user/create-user.component';
+import { ArticleListComponent } from './knwoledgebase/article-list/article-list.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,11 @@ const routes: Routes = [
       {
         path:'listIncidences',
         component:ListadoPqrComponent,
+        canActivate:[AuthorizeGuard]
+      },
+      {
+        path: 'articlesList',
+        component: ArticleListComponent,
         canActivate:[AuthorizeGuard]
       },
       {
