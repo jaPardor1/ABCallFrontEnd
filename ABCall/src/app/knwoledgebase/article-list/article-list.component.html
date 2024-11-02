@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-3">
+      <label style="font-size: large;">Buscar artículo por contenido:</label>
+    </div>
+    <div class="col-3">
+      <input type="text" id="search-content" #searchContent placeholder="Ingrese texto de búsqueda">
+    </div>
+    <div class="col-3">
+      <button class="ml-3" style="font-size: large;" (click)="searchArticles()">Buscar</button>
+    </div>
+  </div>
+  
+  <div class="row mt-5" *ngIf="articlesList !== undefined">
+    <div class="col-12">
+      <table mat-table [dataSource]="articlesList" class="mat-elevation-z8">
+        <!-- Title Column -->
+        <ng-container matColumnDef="title">
+          <th mat-header-cell *matHeaderCellDef> Título </th>
+          <td mat-cell *matCellDef="let article"> {{article.title}} </td>
+        </ng-container>
+
+        <!-- Tag Column -->
+        <ng-container matColumnDef="content">
+          <th mat-header-cell *matHeaderCellDef> Contenido </th>
+          <td mat-cell *matCellDef="let article"> {{article.content}} </td>
+        </ng-container>
+        
+
+        <!-- Actions Column -->
+        <ng-container matColumnDef="actions">
+          <th style="width: 160px;" mat-header-cell *matHeaderCellDef> Acciones </th>
+          <td mat-cell *matCellDef="let article">
+            <button class="button-1" (click)="openDialog(article)" mat-button>Ver detalle</button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      
+      <mat-paginator [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons></mat-paginator>
+    </div>
+  </div>
+</div>

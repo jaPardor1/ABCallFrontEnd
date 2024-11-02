@@ -14,7 +14,8 @@ export const environment = {
   apiUsersUrl2: 'https://1acgpw2vfg.execute-api.us-east-1.amazonaws.com/api/user/register',
   apiGetUsersForClient:'https://1acgpw2vfg.execute-api.us-east-1.amazonaws.com/api/users/1',
   apiGetUsersSub:'https://1acgpw2vfg.execute-api.us-east-1.amazonaws.com/api/user/',
-                 
+  /**apis knowledgebase**/
+  apiFilterArticles: 'https://gpe0e6wgv6.execute-api.us-east-1.amazonaws.com/api/knowledgebase/filters',           
 };
 
 

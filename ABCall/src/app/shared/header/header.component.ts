@@ -32,6 +32,12 @@ export class HeaderComponent {
         name: 'USUARIOS REGISTRADOS',
         isActive: true,
         link:"listUsers"
+      },
+      {
+        id: 4,
+        name: 'BASE DE CONOCIMIENTOS',
+        isActive: false,
+        link:"articlesList"      
       }
     ]
   }

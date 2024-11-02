@@ -6,6 +6,7 @@ import {HttpClientModule} from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ArticleListComponent } from './knwoledgebase/article-list/article-list.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FormularioPqrComponent } from './pqr/formulario-pqr/formulario-pqr.component';
 import { RadicarPQRClienteComponent } from './pqr/radicar-pqrcliente/radicar-pqrcliente.component';
@@ -28,6 +29,7 @@ import { DetailDialogComponent } from './shared/detail-dialog/detail-dialog.comp
 @NgModule({
   declarations: [
     AppComponent,
+    ArticleListComponent,
     HeaderComponent,
     FormularioPqrComponent,
     RadicarPQRClienteComponent,
