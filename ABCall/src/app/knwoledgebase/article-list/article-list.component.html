@@ -10,8 +10,8 @@
       <button class="ml-3" style="font-size: large;" (click)="searchArticles()">Buscar</button>
     </div>
   </div>
-  
-  <div class="row mt-5" *ngIf="articlesList !== undefined">
+
+  <div class="row mt-5" [hidden]="isNotFound">
     <div class="col-12">
       <table mat-table [dataSource]="articlesList" class="mat-elevation-z8">
         <!-- Title Column -->
@@ -36,7 +36,7 @@
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
-      
+
       <mat-paginator [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons></mat-paginator>
     </div>
   </div>

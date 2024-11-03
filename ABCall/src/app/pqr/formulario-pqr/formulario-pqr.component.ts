@@ -13,7 +13,9 @@ export class FormularioPqrComponent implements OnInit{
   @Output()
   public submit:EventEmitter<PqrDTO> = new EventEmitter<PqrDTO>();
 
-  public tipoSolicitud:any[]=[{id:'Peticion',tiposol:'Peticion'},{id:'Queja',tiposol:'Queja'},{id:'Reclamo',tiposol:'Reclamo'}];
+  public tipoSolicitud:any[]=[{id:'Peticion',tiposol:'Peticion'},
+                              {id:'Queja',tiposol:'Queja'},
+                              {id:'Reclamo',tiposol:'Reclamo'}];
   constructor(private formBuilder:FormBuilder){
    this.form= this.formBuilder.group({
       type:['',{
@@ -31,7 +33,6 @@ export class FormularioPqrComponent implements OnInit{
   ngOnInit(): void {
 
   }
-
   saveInfo(){
      this.submit.emit(this.form.value);
   }
