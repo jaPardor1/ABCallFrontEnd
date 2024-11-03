@@ -18,6 +18,7 @@ export class ArticleListComponent {
 
   public articlesList: any;
   displayedColumns: string[] = ['title', 'content'];
+  isNotFound:boolean=true;
 
   constructor(private articleService: ArticleService, public dialog: MatDialog) { }
 
@@ -31,6 +32,7 @@ export class ArticleListComponent {
   }
 
   public listFoundArticles(list: ArticleResultDto[]) {
+    this.isNotFound=(list.length==0)
     this.articlesList = new MatTableDataSource<ArticleResultDto>(list);
     this.articlesList.paginator = this.paginator;
   }
