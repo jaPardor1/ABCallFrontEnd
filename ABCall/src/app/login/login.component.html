@@ -47,24 +47,24 @@
     <form [formGroup]="loginForm" (ngSubmit)="onLogin2()">
       <div class="input-container">
         <div class="label-input-wrapper">
-            <label for="usuario">Usuario</label>
+            <label i18n="login-Usuario" for="usuario">Usuario</label>
             <div class="input-error-wrapper">
-              <input type="text" id="usuario" formControlName="usuario" placeholder="Ingrese su usuario" [ngClass]="{'is-invalid': isFieldInvalid('usuario')}"/>
-              <small *ngIf="isFieldInvalid('usuario')" class="text-danger">Este campo es obligatorio</small>
+              <input type="text" id="usuario" formControlName="usuario" i18n-[placeholder]   placeholder="Ingrese su usuario" [ngClass]="{'is-invalid': isFieldInvalid('usuario')}"/>
+              <small i18n="login-validacion-usuario" *ngIf="isFieldInvalid('usuario')" class="text-danger">Este campo es obligatorio</small>
           </div>
         </div>
       </div>
 
       <div class="input-container">
         <div class="label-input-wrapper">
-          <label for="contrasena">Contraseña</label>
+          <label  i18n="login-contraseña"  for="contrasena">Contraseña</label>
           <div class="input-error-wrapper">
             <input type="password" id="contrasena" formControlName="contrasena" placeholder="**********" [ngClass]="{'is-invalid': isFieldInvalid('contrasena')}"/>
-            <small *ngIf="isFieldInvalid('contrasena')" class="text-danger">Este campo es obligatorio</small>
+            <small i18n="login-validacion-contrasenia" *ngIf="isFieldInvalid('contrasena')" class="text-danger">Este campo es obligatorio</small>
         </div>
       </div>
     </div>
-      <button type="submit">INGRESAR</button>
+      <button i18n="login-ingresar" type="submit">INGRESAR</button>
     </form>
     <p class="registro-link" (click)="onCreateAccount()">REGISTRO CLIENTE</p>
   </div>

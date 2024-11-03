@@ -31,7 +31,7 @@ export class ListadoPqrComponent {
     if(this.ticketNumber.length>0){
       list = list.filter(i=>i.ticket_number===this.ticketNumber)
     }
-    debugger;
+
     this.dataSource =new MatTableDataSource<PqrResultDto>(list);
     this.dataSource.paginator = this.paginator;
 
