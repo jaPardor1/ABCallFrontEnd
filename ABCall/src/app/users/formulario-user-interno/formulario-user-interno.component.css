@@ -13,3 +13,9 @@ button{
 .border-up{
   border-radius: 8px 8px 0px 0px;
 }
+.pass-ok{
+   display: none;
+}
+.pass-err{
+  color:red
+}

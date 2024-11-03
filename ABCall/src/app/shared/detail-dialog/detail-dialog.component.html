@@ -1,0 +1,55 @@
+
+<mat-dialog-content>
+  <div class="container-fluid">
+    <div class="line-title row">
+      <div class="col-12">
+        <label class="title">{{pqr.subject}}</label>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="field-title col-6 ">
+        <label for="">Id pqr:</label>
+
+      </div>
+      <div class="col-6">
+        <label for="">{{pqr.id}}</label>
+      </div>
+    </div>
+    <div class=" row">
+      <div class="field-title col-6">
+        <label for="">Tipo:</label>
+      </div>
+      <div class="col-6">
+        <label for="">{{pqr.type}}</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="field-title col">
+        <label for="">Estado:</label>
+      </div>
+      <div class="col-6">
+        <label for="">{{pqr.status}}</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="field-title col-6">
+        <label for="">Fecha:</label>
+      </div>
+      <div class="col-6">
+        <label for="">{{pqr.date}}</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="field-title col-6">
+        <label for="">Fecha estimada de cierre:</label>
+      </div>
+      <div class="col-6">
+        <label for="">{{pqr.estimated_close_date}}</label>
+      </div>
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="" cdkFocusInitial>Ok</button>
+</mat-dialog-actions>
+

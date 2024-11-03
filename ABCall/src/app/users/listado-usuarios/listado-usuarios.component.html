@@ -37,7 +37,7 @@
           <td *matCellDef="let row">
             <mat-icon aria-hidden="false" aria-label="delete user" fontIcon="trash"></mat-icon>
             <button (click)="onEditUser(row.cognito_user_sub)" mat-button>Edit</button>
-            <button (click)="onDeleteUser(row.id_number)" mat-button>Delete</button>
+            <button (click)="showDeletionDialog(row.cognito_user_sub)" mat-button>Delete</button>
           </td>
         </ng-container>
 

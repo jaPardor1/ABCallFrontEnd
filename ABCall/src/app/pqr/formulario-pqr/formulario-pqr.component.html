@@ -3,53 +3,65 @@
   {{form.value.descripcion.length}}
   {{form.value | json}}
 </code> -->
-<form class="mt-2" (submit)="saveInfo()" [formGroup]="form">
+<form class="mt-5" (submit)="saveInfo()" [formGroup]="form">
   <div class="container">
     <div class="row">
-      <div class="col-3">
-        <label>Tipo De Solicitud</label>
-      </div>
-      <div class="col-3">
-        <mat-form-field>
-          <mat-label>Seleccione Tipo De Solicitud</mat-label>
-          <mat-select formControlName="tipoSolicitud">
-            <mat-option *ngFor="let op of tipoSolicitud" [value]="op.id">{{op.tiposol}}</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-3">
-        <label>Asunto*</label>
-      </div>
-      <div class="col-3">
-        <mat-form-field>
-          <mat-label>Asunto</mat-label>
-          <input formControlName="asunto" matInput>
-        </mat-form-field>
-      </div>
-      <div class="col">
-        <mat-error *ngIf="form.invalid">{{getErrorSubjectField()}}</mat-error>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-3"><label>Descripcion*</label></div>
-      <div class="col-3">
-        <mat-form-field>
+       <div class="col-12 d-flex align-items-center">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-3">
+              <label>Tipo de solicitud</label>
+            </div>
+            <div class="col-2">
+            </div>
+            <div class="col-7">
+              <mat-error>{{getErrorRequestTypeField()}}</mat-error>
+              <mat-form-field appearance="outline" [style.width.px]=300>
+                <mat-label>Seleccione Tipo de solicitud</mat-label>
+                <mat-select formControlName="type">
+                  <mat-option *ngFor="let op of tipoSolicitud" [value]="op.id">{{op.tiposol}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
 
-          <mat-label>Descripción</mat-label>
-          <textarea formControlName="descripcion" matInput></textarea>
-        </mat-form-field>
-      </div>
-      <div class="col">
-        <mat-error *ngIf="form.invalid">{{getErrorDescriptionField()}}</mat-error>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-          <button [disabled]="form.invalid" mat-flat-button color="#1FC7B5" >Enviar</button>
-          <a mat-stroked-button routerLink="/generos">Cancelar</a>
-      </div>
+          </div>
+          <div class="row">
+            <div class="col-3">
+              <label>Asunto*</label>
+            </div>
+            <div class="col-2">
+            </div>
+            <div class="col-7">
+              <mat-error *ngIf="form.invalid">{{getErrorSubjectField()}}</mat-error>
+              <mat-form-field appearance="outline" [style.width.px]=450>
+                <mat-label>Asunto</mat-label>
+                <input formControlName="title" matInput>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-3">
+              <label>Descripción*</label>
+            </div>
+            <div class="col-2">
+
+            </div>
+            <div class="col-7">
+              <mat-error *ngIf="form.invalid">{{getErrorDescriptionField()}}</mat-error>
+              <div>{{form.value.description.length}}/500</div>
+              <mat-form-field appearance="outline" [style.width.px]=450 [style.height.px]=150>
+                <mat-label>Descripción</mat-label>
+                <textarea style="height: 150px;width: 450px;" formControlName="description" matInput></textarea>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col d-flex flex-row-reverse">
+                <button [disabled]="form.invalid"  >Enviar</button>
+            </div>
+          </div>
+        </div>
+       </div>
     </div>
   </div>
 </form>

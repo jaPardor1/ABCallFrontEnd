@@ -57,15 +57,18 @@ export class FormularioUserInternoComponent implements OnInit {
             validators:[Validators.required,Validators.email]
           }],
           cellphone:['',{
-            validators:[Validators.required,Validators.pattern('^[1-9]{1,10}$'),Validators.maxLength(10)]
+            validators:[Validators.required,Validators.pattern('^[0-9]{1,10}$'),Validators.maxLength(10)]
           }],
           password:['',{
-            validators:[Validators.required]
+            validators:[Validators.required,Validators.pattern('/^(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=\D*\d).{6,}$/')]
           }],
           password2:['',{
             validators:[Validators.required]
           }],
-          cognito_user_sub:['']
+          cognito_user_sub:[''],
+          client_id:['1'],
+          communication_type:['Telefono']
+
 
       },
       {
@@ -95,16 +98,14 @@ export class FormularioUserInternoComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    debugger;
+
     if(this.model !==null){
         this.onGetUser();
     }
   }
 
   saveInfo(){
-    if(this.model!=null){
       this.submit.emit(this.form.value);
-    }
   }
   onGetUser(){
     this.userService.getUserSub(this.model).subscribe(
@@ -219,7 +220,7 @@ getErrorEmailField(){
 getErrorTelephoneField(){
   var campo = this.form.get('cellphone');
   if (campo!= null){
-     debugger;
+
     if(campo.hasError('required')){
       return 'Por favor especifique un teléfono';
     }
@@ -245,6 +246,9 @@ getErrorPasswordField(){
     }
     if(campo.hasError('pass1andpass2notEqual')){
       return 'La Contraseña y su confirmación no son iguales.';
+    }
+    if(campo.hasError('pattern')){
+      return 'Por favor ';
     }
 
 

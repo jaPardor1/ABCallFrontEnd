@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { HeaderOptionDTO } from './headerOption';
-import { AuthService } from '../../auth-service.service';
+import { AuthService } from '../../service/auth-service.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -32,6 +32,12 @@ export class HeaderComponent {
         name: 'USUARIOS REGISTRADOS',
         isActive: true,
         link:"listUsers"
+      },
+      {
+        id: 4,
+        name: 'BASE DE CONOCIMIENTOS',
+        isActive: false,
+        link:"articlesList"
       }
     ]
   }

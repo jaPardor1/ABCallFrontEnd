@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { signIn } from "aws-amplify/auth"
-import { AuthService } from '../auth-service.service';
+import { AuthService } from '../service/auth-service.service';
 
 
 @Component({
@@ -53,6 +53,9 @@ export class LoginComponent implements OnInit {
       }catch (error:any) {
         if(error.name=='NotAuthorizedException'){
           this.modalMessage = 'Usuario o contrasena incorrectos';
+        }if(error.name==='UserAlreadyAuthenticatedException'){
+              alert('usuario ya autenticado cerrando sesion..')
+              this.authService.onSignOut();
         }
         this.showErrorModal = true;
     }
