@@ -1,8 +1,10 @@
-import { Component, EventEmitter, inject, Output, output } from '@angular/core';
+import { Component, EventEmitter, inject, Output, output, ViewChild, viewChild } from '@angular/core';
 import { PqrDTO } from '../Pqr';
 import { PqrService } from '../../service/pqr/pqr.service';
 import { DialogComponent } from '../../shared/dialog/dialog.component';
 import { MatDialog } from '@angular/material/dialog';
+import { FormularioPqrComponent } from '../formulario-pqr/formulario-pqr.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-radicar-pqrcliente',
@@ -14,7 +16,8 @@ export class RadicarPQRClienteComponent {
   @Output()
   public module:EventEmitter<string> = new EventEmitter<string>();
   readonly dialog = inject(MatDialog);
-  constructor(private pqrService:PqrService){
+  @ViewChild(FormularioPqrComponent) child!:FormularioPqrComponent
+  constructor(private pqrService:PqrService,private router:Router){
 
   }
   ngOnInit(): void {
@@ -26,16 +29,23 @@ export class RadicarPQRClienteComponent {
 
        this.pqrService.createIncident(incident).subscribe(
         (response)=> {
-          this.openDialog('Se ha radicado el pqr #'+response.ticket_number);
+          this.openDialog('Se ha radicado el pqr #'+response.ticket_number,incident);
         },
         (error:any)=> console.error(error)
        )
     }
  }
- openDialog(mensaje:string):void{
+ openDialog(mensaje:string,incident:PqrDTO):void{
   this.dialog.open(DialogComponent, {
     data: {message:mensaje},
+  })
+  .afterClosed()
+  .subscribe(() => {
+      window.location.reload();
   });
+
+
+  ;
 }
 
 }

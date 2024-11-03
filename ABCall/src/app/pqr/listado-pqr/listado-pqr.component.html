@@ -12,7 +12,7 @@
       <button class="ml-3" style="font-size: large;" (click)="searchIncidents()">Enviar</button>
     </div>
   </div>
-  <div class="row mt-5" *ngIf="dataSource!==undefined">
+  <div class="row mt-5" [hidden]=isNotFound>
     <div class="col-12">
       <table  mat-table [dataSource]="dataSource" class="mat-elevation-z8">
         <!--- Note that these columns can be defined in any order.
