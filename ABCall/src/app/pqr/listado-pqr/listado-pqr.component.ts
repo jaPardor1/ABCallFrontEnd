@@ -20,6 +20,7 @@ export class ListadoPqrComponent {
   displayedColumns: string[] = ['subject', 'status', 'date','actions'];
   @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
   ticketNumber:string='';
+  isNotFound:boolean=true;
   public searchIncidents() {
     this.pqrService.getIncidents().subscribe(
       (response: PqrResultDto[]) => this.listFoundIncidents(response), //alert('se ha radicado el pqr #'+response.id),
@@ -27,13 +28,18 @@ export class ListadoPqrComponent {
     )
   }
   public listFoundIncidents(list: PqrResultDto[]) {
-
-    if(this.ticketNumber.length>0){
-      list = list.filter(i=>i.ticket_number===this.ticketNumber)
+    if(list.length>0){
+      this.isNotFound=false;
+      if(this.ticketNumber.length>0){
+        list = list.filter(i=>i.ticket_number===this.ticketNumber)
+        this.isNotFound=(list.length==0);
+      }
+      this.dataSource =new MatTableDataSource<PqrResultDto>(list);
+      this.dataSource.paginator = this.paginator;
+    }else{
+      this.isNotFound=true;
     }
 
-    this.dataSource =new MatTableDataSource<PqrResultDto>(list);
-    this.dataSource.paginator = this.paginator;
 
   }
 
