@@ -10,14 +10,14 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-3">
-              <label>Tipo de solicitud</label>
+              <label i18n="pqr-form-tipo-solicitud">Tipo de solicitud</label>
             </div>
             <div class="col-2">
             </div>
             <div class="col-7">
               <mat-error>{{getErrorRequestTypeField()}}</mat-error>
               <mat-form-field appearance="outline" [style.width.px]=300>
-                <mat-label>Seleccione Tipo de solicitud</mat-label>
+                <mat-label i18n="pqr-form-tipo-solicitud-2">Seleccione Tipo de solicitud</mat-label>
                 <mat-select formControlName="type">
                   <mat-option *ngFor="let op of tipoSolicitud" [value]="op.id">{{op.tiposol}}</mat-option>
                 </mat-select>
@@ -27,21 +27,21 @@
           </div>
           <div class="row">
             <div class="col-3">
-              <label>Asunto*</label>
+              <label i18n="pqr-form-asunto">Asunto*</label>
             </div>
             <div class="col-2">
             </div>
             <div class="col-7">
               <mat-error *ngIf="form.invalid">{{getErrorSubjectField()}}</mat-error>
               <mat-form-field appearance="outline" [style.width.px]=450>
-                <mat-label>Asunto</mat-label>
+                <mat-label i18n="pqr-form-asunto-2">Asunto</mat-label>
                 <input formControlName="title" matInput>
               </mat-form-field>
             </div>
           </div>
           <div class="row">
             <div class="col-3">
-              <label>Descripción*</label>
+              <label i18n="pqr-form-descripcion">Descripción*</label>
             </div>
             <div class="col-2">
 
@@ -50,14 +50,14 @@
               <mat-error *ngIf="form.invalid">{{getErrorDescriptionField()}}</mat-error>
               <div>{{form.value.description.length}}/500</div>
               <mat-form-field appearance="outline" [style.width.px]=450 [style.height.px]=150>
-                <mat-label>Descripción</mat-label>
+                <mat-label i18n="pqr-form-descripcion-2">Descripción</mat-label>
                 <textarea style="height: 150px;width: 450px;" formControlName="description" matInput></textarea>
               </mat-form-field>
             </div>
           </div>
           <div class="row">
             <div class="col d-flex flex-row-reverse">
-                <button [disabled]="form.invalid"  >Enviar</button>
+                <button i18n="pqr-btn-enviar" [disabled]="form.invalid"  >Enviar</button>
             </div>
           </div>
         </div>

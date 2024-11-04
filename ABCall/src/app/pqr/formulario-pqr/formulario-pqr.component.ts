@@ -42,7 +42,7 @@ export class FormularioPqrComponent implements OnInit{
     var campo = this.form.get('tipoSolicitud');
     if (campo!= null){
       if(campo.hasError('required')){
-        return 'Por favor especifique el tipo de solicitud';
+        return $localize `Por favor especifique el tipo de solicitud`;
       }
     }
     return '';
@@ -53,10 +53,10 @@ export class FormularioPqrComponent implements OnInit{
     var campo = this.form.get('descripcion');
     if (campo!= null){
       if(campo.hasError('required')){
-        return 'Por favor especifique una descripción';
+        return $localize `Por favor especifique una descripción`;
       }
       if (campo.hasError('maxlength')){
-        return 'La descripción solo puede almacenar maximo: '+campo.getError('maxlength').requiredLength+' Caracteres.';
+        return $localize `La descripción solo puede almacenar maximo:${campo.getError('maxlength').requiredLength} Caracteres.`;
       }
     }
     return '';
@@ -67,7 +67,7 @@ export class FormularioPqrComponent implements OnInit{
     if (campo!= null){
 
       if(campo.hasError('required')){
-        return 'Por favor especifique un asunto';
+        return $localize `Por favor especifique un asunto`;
       }
     }
     return '';

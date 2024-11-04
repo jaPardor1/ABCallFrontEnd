@@ -23,7 +23,7 @@ export class CreateUserComponent {
       this.userService.createUser(userInfo).subscribe(
         (response:any) => {
           console.log(response.cognito_user_sub);
-          this.openDialog('El Usuario ha sido Creado '+response.cognito_user_sub);
+          this.openDialog( $localize `El Usuario ha sido Creado`+response.cognito_user_sub);
         },
         (error:any) => {
           this.openDialog(error.Message);

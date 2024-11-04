@@ -148,7 +148,7 @@ getErrorProfileField(){
   if (campo!= null){
 
     if(campo.hasError('required')){
-      return 'Por favor especifique un perfil';
+      return $localize `Por favor especifique un perfil`;
     }
   }
   return '';
@@ -160,10 +160,10 @@ getErrorIdentificacionField(){
   if (campo!= null){
 
     if(campo.hasError('required')){
-      return 'Por favor especifique el numero de identificación';
+      return $localize `Por favor especifique el numero de identificación`;
     }
     if(campo.hasError('pattern')){
-      return 'Por favor especifique solo numeros.';
+      return $localize `Por favor especifique solo numeros.`;
     }
   }
   return '';
@@ -173,7 +173,7 @@ getErrorIdentificationTypeField(){
   if (campo!= null){
 
     if(campo.hasError('required')){
-      return 'Por favor especifique un tipo de identificación';
+      return $localize `Por favor especifique un tipo de identificación`;
     }
 
   }
@@ -184,7 +184,7 @@ getErrorNameField(){
   var campo = this.form.get('name');
   if(campo!=null){
     if(campo.hasError('nameRequired'))
-      return 'Por favor especificar un nombre';
+      return $localize `Por favor especificar un nombre`;
   }
   return '';
 }
@@ -194,7 +194,7 @@ getErrorLastNameField(){
   var campo = this.form.get('last_name');
   if(campo!=null){
     if(campo.hasError('lastNameRequired'))
-      return 'Por favor especificar un Apellido';
+      return $localize `Por favor especificar un Apellido`;
   }
   return '';
 }
@@ -206,10 +206,10 @@ getErrorEmailField(){
   if (campo!= null){
 
     if(campo.hasError('required')){
-      return 'Por favor especifique un correo electrónico';
+      return $localize `Por favor especifique un correo electrónico`;
     }
     if(campo.hasError('email')){
-      return 'Por favor especifique un correo electrónico valido';
+      return $localize `Por favor especifique un correo electrónico valido`;
     }
 
 
@@ -222,13 +222,13 @@ getErrorTelephoneField(){
   if (campo!= null){
 
     if(campo.hasError('required')){
-      return 'Por favor especifique un teléfono';
+      return $localize `Por favor especifique un teléfono`;
     }
     if(campo.hasError('maxLength')){
-      return 'Maximo 10 digitos para el teléfono.';
+      return $localize `Maximo 10 digitos para el teléfono.`;
     }
     if(campo.hasError('pattern')){
-      return 'Por favor solo colocar numeros.';
+      return $localize `Por favor solo colocar numeros.`;
     }
 
 
@@ -242,13 +242,13 @@ getErrorPasswordField(){
   if (campo!= null){
 
     if(campo.hasError('required')){
-      return 'Por favor especifique una contraseña';
+      return $localize `Por favor especifique una contraseña`;
     }
     if(campo.hasError('pass1andpass2notEqual')){
-      return 'La Contraseña y su confirmación no son iguales.';
+      return $localize `La Contraseña y su confirmación no son iguales.`;
     }
     if(campo.hasError('pattern')){
-      return 'Por favor ';
+      return $localize `Por favor validar contraseña`;
     }
 
 
@@ -262,7 +262,7 @@ getErrorPlanField(){
   var campo = this.form.get('plan');
   if(campo!=null){
     if(campo.hasError('planRequired'))
-      return 'POr favor especifficar el tipo de plan';
+      return $localize `POr favor especifficar el tipo de plan`;
   }
   return '';
 }
@@ -271,7 +271,7 @@ getErrorRazonSocialField(){
   var campo = this.form.get('razonSocialEmpresa');
   if(campo!=null){
     if(campo.hasError('razonSocialEmpresaRequired'))
-      return 'Por favor especifficar la razon social';
+      return $localize `Por favor especifficar la razon social`;
   }
   return '';
 }
@@ -280,7 +280,7 @@ getErrorDireccionEmpresaField(){
   var campo = this.form.get('direccionEmpresa');
   if(campo!=null){
     if(campo.hasError('direccionEmpresaControlRequired'))
-      return 'Por favor especificar la direccion empresa.';
+      return $localize `Por favor especificar la direccion empresa.`;
   }
   return '';
 }
@@ -289,7 +289,7 @@ getErrorLegalrepIdTypeField(){
   var campo = this.form.get('tipoIdentificacionRepLegal');
   if(campo!=null){
     if(campo.hasError('tipoIdenRepresentanteLegalRequired'))
-      return 'Por favor especificar el tipo de identificacion.';
+      return $localize `Por favor especificar el tipo de identificacion.`;
   }
   return '';
 }
@@ -298,7 +298,7 @@ getErrorLegalrepIdField(){
   var campo = this.form.get('identificacionRepLegal');
   if(campo!=null){
     if(campo.hasError('identificacionRepLegalRequired'))
-      return 'Por favor especificar la identificacion del rep. legal';
+      return $localize `Por favor especificar la identificacion del rep. legal`;
   }
   return '';
 }
@@ -307,7 +307,7 @@ getErrorLegalrepNamesField(){
   var campo = this.form.get('nombresRepLegal');
   if(campo!=null){
     if(campo.hasError('namesRepLegalRequired'))
-      return 'Por favor especificar el nombre del rep. legal';
+      return $localize `Por favor especificar el nombre del rep. legal`;
   }
   return '';
 }
@@ -316,7 +316,7 @@ getErrorLegalrepLastNamesField(){
   var campo = this.form.get('apellidosRepLegal');
   if(campo!=null){
     if(campo.hasError('lastNameRepLegalRequired'))
-      return 'Por favor especificar los apellidos del rep. legal';
+      return $localize `Por favor especificar los apellidos del rep. legal`;
   }
   return '';
 }

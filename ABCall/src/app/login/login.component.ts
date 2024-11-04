@@ -13,7 +13,7 @@ import { AuthService } from '../service/auth-service.service';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   showErrorModal: boolean = false; // Controla la visibilidad del modal de error
-  modalMessage: string = "Datos incompletos. Por favor, llene todos los campos."
+  modalMessage: string = $localize `Datos incompletos. Por favor, llene todos los campos.`
   constructor(private router: Router, private formBuilder: FormBuilder,private authService:AuthService) {
     this.loginForm = this.formBuilder.group({
       usuario: ['', Validators.required],
@@ -46,15 +46,15 @@ export class LoginComponent implements OnInit {
           this.router.navigateByUrl('listUsers');
         }else{
 
-          this.modalMessage = "Algo fallo en la autenticacion";
+          this.modalMessage = $localize  `Algo fallo en la autenticacion`;
           console.error(this.modalMessage);
           this.showErrorModal = true;
         }
       }catch (error:any) {
         if(error.name=='NotAuthorizedException'){
-          this.modalMessage = 'Usuario o contrasena incorrectos';
+          this.modalMessage = $localize `Usuario o contrasena incorrectos`;
         }if(error.name==='UserAlreadyAuthenticatedException'){
-              alert('usuario ya autenticado cerrando sesion..')
+              alert( $localize `usuario ya autenticado cerrando sesion..`)
               this.authService.onSignOut();
         }
         this.showErrorModal = true;
