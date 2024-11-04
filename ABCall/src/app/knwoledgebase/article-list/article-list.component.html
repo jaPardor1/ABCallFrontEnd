@@ -1,13 +1,13 @@
 <div class="container">
   <div class="row mt-5">
     <div class="col-3">
-      <label style="font-size: large;">Buscar artículo por contenido:</label>
+      <label i18n="knowledge-base-title"  style="font-size: large;">Buscar artículo por contenido:</label>
     </div>
     <div class="col-3">
-      <input type="text" id="search-content" #searchContent placeholder="Ingrese texto de búsqueda">
+      <input type="text" id="search-content" #searchContent i18n-placeholder  placeholder="Ingrese texto de búsqueda">
     </div>
     <div class="col-3">
-      <button class="ml-3" style="font-size: large;" (click)="searchArticles()">Buscar</button>
+      <button i18n="knowledge-base-btn-buscar" class="ml-3" style="font-size: large;" (click)="searchArticles()">Buscar</button>
     </div>
   </div>
 
@@ -16,13 +16,13 @@
       <table mat-table [dataSource]="articlesList" class="mat-elevation-z8">
         <!-- Title Column -->
         <ng-container matColumnDef="title">
-          <th mat-header-cell *matHeaderCellDef> Título </th>
+          <th mat-header-cell i18n="knowledge-base-tabla-enc-titulo" *matHeaderCellDef> Título </th>
           <td mat-cell *matCellDef="let article"> {{article.title}} </td>
         </ng-container>
 
         <!-- Tag Column -->
         <ng-container matColumnDef="content">
-          <th mat-header-cell *matHeaderCellDef> Contenido </th>
+          <th mat-header-cell i18n="knowledge-base-tabla-enc-contenido" *matHeaderCellDef> Contenido </th>
 
           <td mat-cell *matCellDef="let article">
             <span *ngIf="!article.isExpanded">{{ article.content | slice:0:50 }}...</span>
