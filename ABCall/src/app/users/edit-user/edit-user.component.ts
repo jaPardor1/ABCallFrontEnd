@@ -27,7 +27,7 @@ export class EditUserComponent implements OnInit {
       this.userService.editUserSub(userInfo).subscribe(
         (response) => {
           console.log(response);
-          this.openDialog('La información ha sido actualizada.');
+          this.openDialog( $localize `La información ha sido actualizada.`);
         },
         (error) => {
 

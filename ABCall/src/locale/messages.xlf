@@ -1,0 +1,1043 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="es" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="5963922453976061032" datatype="html">
+        <source>Buscar artículo por contenido:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/knwoledgebase/article-list/article-list.component.html</context>
+          <context context-type="linenumber">4,6</context>
+        </context-group>
+        <note priority="1" from="description">knowledge-base-title</note>
+      </trans-unit>
+      <trans-unit id="6865519051337164773" datatype="html">
+        <source>Ingrese texto de búsqueda</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/knwoledgebase/article-list/article-list.component.html</context>
+          <context context-type="linenumber">7,8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8713073708350341933" datatype="html">
+        <source>Buscar</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/knwoledgebase/article-list/article-list.component.html</context>
+          <context context-type="linenumber">10,14</context>
+        </context-group>
+        <note priority="1" from="description">knowledge-base-btn-buscar</note>
+      </trans-unit>
+      <trans-unit id="5771284892701040174" datatype="html">
+        <source> Título </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/knwoledgebase/article-list/article-list.component.html</context>
+          <context context-type="linenumber">19,20</context>
+        </context-group>
+        <note priority="1" from="description">knowledge-base-tabla-enc-titulo</note>
+      </trans-unit>
+      <trans-unit id="6388001720697805430" datatype="html">
+        <source> Contenido </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/knwoledgebase/article-list/article-list.component.html</context>
+          <context context-type="linenumber">25,27</context>
+        </context-group>
+        <note priority="1" from="description">knowledge-base-tabla-enc-contenido</note>
+      </trans-unit>
+      <trans-unit id="9016536884183098576" datatype="html">
+        <source>Usuario</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login.component.html</context>
+          <context context-type="linenumber">7,8</context>
+        </context-group>
+        <note priority="1" from="description">login-Usuario</note>
+      </trans-unit>
+      <trans-unit id="4109664648581986688" datatype="html">
+        <source>Ingrese su usuario</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6181371069918240643" datatype="html">
+        <source>Este campo es obligatorio</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login.component.html</context>
+          <context context-type="linenumber">10,12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login.component.html</context>
+          <context context-type="linenumber">20,23</context>
+        </context-group>
+        <note priority="1" from="description">login-validacion-usuario</note>
+      </trans-unit>
+      <trans-unit id="7132730488496169673" datatype="html">
+        <source>Contraseña</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login.component.html</context>
+          <context context-type="linenumber">17,18</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.html</context>
+          <context context-type="linenumber">187,188</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.html</context>
+          <context context-type="linenumber">209,210</context>
+        </context-group>
+        <note priority="1" from="description">login-contraseña</note>
+      </trans-unit>
+      <trans-unit id="1689476084591570854" datatype="html">
+        <source>INGRESAR</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login.component.html</context>
+          <context context-type="linenumber">24,26</context>
+        </context-group>
+        <note priority="1" from="description">login-ingresar</note>
+      </trans-unit>
+      <trans-unit id="2040196419664960746" datatype="html">
+        <source>REGISTRO CLIENTE</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login.component.html</context>
+          <context context-type="linenumber">26,29</context>
+        </context-group>
+        <note priority="1" from="description">login-registro-cliente</note>
+      </trans-unit>
+      <trans-unit id="7737328131766375534" datatype="html">
+        <source>Datos incompletos. Por favor, llene todos los campos.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login.component.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4353400568257995592" datatype="html">
+        <source>Algo fallo en la autenticacion</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login.component.ts</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2945643426245295322" datatype="html">
+        <source>Usuario o contrasena incorrectos</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login.component.ts</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7427775816185543399" datatype="html">
+        <source>usuario ya autenticado cerrando sesion..</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login.component.ts</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2716216317683461581" datatype="html">
+        <source>Tipo de solicitud</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pqr/formulario-pqr/formulario-pqr.component.html</context>
+          <context context-type="linenumber">13,15</context>
+        </context-group>
+        <note priority="1" from="description">pqr-form-tipo-solicitud</note>
+      </trans-unit>
+      <trans-unit id="5351415503252550237" datatype="html">
+        <source>Seleccione Tipo de solicitud</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pqr/formulario-pqr/formulario-pqr.component.html</context>
+          <context context-type="linenumber">20,21</context>
+        </context-group>
+        <note priority="1" from="description">pqr-form-tipo-solicitud-2</note>
+      </trans-unit>
+      <trans-unit id="1200645578066669372" datatype="html">
+        <source>Asunto*</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pqr/formulario-pqr/formulario-pqr.component.html</context>
+          <context context-type="linenumber">30,31</context>
+        </context-group>
+        <note priority="1" from="description">pqr-form-asunto</note>
+      </trans-unit>
+      <trans-unit id="8013744119479468097" datatype="html">
+        <source>Asunto</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pqr/formulario-pqr/formulario-pqr.component.html</context>
+          <context context-type="linenumber">37,38</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pqr/listado-pqr/listado-pqr.component.html</context>
+          <context context-type="linenumber">31,32</context>
+        </context-group>
+        <note priority="1" from="description">pqr-form-asunto-2</note>
+      </trans-unit>
+      <trans-unit id="1911166753277294765" datatype="html">
+        <source>Descripción*</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pqr/formulario-pqr/formulario-pqr.component.html</context>
+          <context context-type="linenumber">44,46</context>
+        </context-group>
+        <note priority="1" from="description">pqr-form-descripcion</note>
+      </trans-unit>
+      <trans-unit id="2702769239797460498" datatype="html">
+        <source>Descripción</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pqr/formulario-pqr/formulario-pqr.component.html</context>
+          <context context-type="linenumber">53,54</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/detail-dialog/detail-dialog.component.html</context>
+          <context context-type="linenumber">52,54</context>
+        </context-group>
+        <note priority="1" from="description">pqr-form-descripcion-2</note>
+      </trans-unit>
+      <trans-unit id="1896093879997026163" datatype="html">
+        <source>Enviar</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pqr/formulario-pqr/formulario-pqr.component.html</context>
+          <context context-type="linenumber">60,61</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pqr/listado-pqr/listado-pqr.component.html</context>
+          <context context-type="linenumber">12,15</context>
+        </context-group>
+        <note priority="1" from="description">pqr-btn-enviar</note>
+      </trans-unit>
+      <trans-unit id="3924608947529296985" datatype="html">
+        <source>Por favor especifique el tipo de solicitud</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pqr/formulario-pqr/formulario-pqr.component.ts</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5023990131237648094" datatype="html">
+        <source>Por favor especifique una descripción</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pqr/formulario-pqr/formulario-pqr.component.ts</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4855799166698196307" datatype="html">
+        <source>La descripción solo puede almacenar maximo:<x id="PH" equiv-text="campo.getError(&apos;maxlength&apos;).requiredLength"/> Caracteres.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pqr/formulario-pqr/formulario-pqr.component.ts</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2792968248972672864" datatype="html">
+        <source>Por favor especifique un asunto</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pqr/formulario-pqr/formulario-pqr.component.ts</context>
+          <context context-type="linenumber">70</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1019334419677722210" datatype="html">
+        <source>Digite el radicado:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pqr/listado-pqr/listado-pqr.component.html</context>
+          <context context-type="linenumber">4,6</context>
+        </context-group>
+        <note priority="1" from="description">pqr-list-title</note>
+      </trans-unit>
+      <trans-unit id="7944442845393176638" datatype="html">
+        <source>Fecha</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pqr/listado-pqr/listado-pqr.component.html</context>
+          <context context-type="linenumber">21,22</context>
+        </context-group>
+        <note priority="1" from="description">pqr-list-tabla-enc-fecha</note>
+      </trans-unit>
+      <trans-unit id="4963172891871550734" datatype="html">
+        <source>Estado</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pqr/listado-pqr/listado-pqr.component.html</context>
+          <context context-type="linenumber">26,27</context>
+        </context-group>
+        <note priority="1" from="description">pqr-list-tabla-enc-estado</note>
+      </trans-unit>
+      <trans-unit id="7607208936794683365" datatype="html">
+        <source>Ver detalle</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pqr/listado-pqr/listado-pqr.component.html</context>
+          <context context-type="linenumber">37,39</context>
+        </context-group>
+        <note priority="1" from="description">pqr-list-tabla-btn-detalle</note>
+      </trans-unit>
+      <trans-unit id="2620267898684313576" datatype="html">
+        <source>Se ha radicado el pqr </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pqr/radicar-pqrcliente/radicar-pqrcliente.component.ts</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="382224285571054578" datatype="html">
+        <source>Sí</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/confirm-dialog/confirm-dialog.component.html</context>
+          <context context-type="linenumber">7,9</context>
+        </context-group>
+        <note priority="1" from="description">confirm-dialog-btn-no</note>
+      </trans-unit>
+      <trans-unit id="7677557782923484557" datatype="html">
+        <source>Ticket:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/detail-dialog/detail-dialog.component.html</context>
+          <context context-type="linenumber">11,14</context>
+        </context-group>
+        <note priority="1" from="description">detail-dialog-ticket</note>
+      </trans-unit>
+      <trans-unit id="1395022319740174102" datatype="html">
+        <source>Tipo:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/detail-dialog/detail-dialog.component.html</context>
+          <context context-type="linenumber">20,22</context>
+        </context-group>
+        <note priority="1" from="description">detail-dialog-tipo</note>
+      </trans-unit>
+      <trans-unit id="4044083241884921229" datatype="html">
+        <source>Estado:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/detail-dialog/detail-dialog.component.html</context>
+          <context context-type="linenumber">28,30</context>
+        </context-group>
+        <note priority="1" from="description">detail-dialog-estado</note>
+      </trans-unit>
+      <trans-unit id="2444499384194106860" datatype="html">
+        <source>Fecha:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/detail-dialog/detail-dialog.component.html</context>
+          <context context-type="linenumber">36,38</context>
+        </context-group>
+        <note priority="1" from="description">detail-dialog-fecha</note>
+      </trans-unit>
+      <trans-unit id="3810236297530531753" datatype="html">
+        <source>Fecha estimada de cierre:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/detail-dialog/detail-dialog.component.html</context>
+          <context context-type="linenumber">44,46</context>
+        </context-group>
+        <note priority="1" from="description">detail-dialog-fecha-cierre</note>
+      </trans-unit>
+      <trans-unit id="5490118278894275768" datatype="html">
+        <source>BIENVENIDO</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/header/header.component.ts</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4612676418147869549" datatype="html">
+        <source>RADICAR PQR</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/header/header.component.ts</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8590270768153208849" datatype="html">
+        <source>CONSULTAR PQR</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/header/header.component.ts</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2699027052759319454" datatype="html">
+        <source>USUARIOS REGISTRADOS</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/header/header.component.ts</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1902502073083218005" datatype="html">
+        <source>BASE DE CONOCIMIENTOS</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/header/header.component.ts</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3934708114094715312" datatype="html">
+        <source>El Usuario ha sido Creado</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/create-user/create-user.component.ts</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5514382401231699398" datatype="html">
+        <source>La información ha sido actualizada.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/edit-user/edit-user.component.ts</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5797087197643200257" datatype="html">
+        <source>Perfil</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.html</context>
+          <context context-type="linenumber">11,13</context>
+        </context-group>
+        <note priority="1" from="description">user-form-perfil</note>
+      </trans-unit>
+      <trans-unit id="3043371772658324402" datatype="html">
+        <source>Seleccione Tipo De perfil</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.html</context>
+          <context context-type="linenumber">16,17</context>
+        </context-group>
+        <note priority="1" from="description">user-form-selec-tipo-perfil</note>
+      </trans-unit>
+      <trans-unit id="7278949950334473417" datatype="html">
+        <source>Seleccione el tipo de plan </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.html</context>
+          <context context-type="linenumber">23,25</context>
+        </context-group>
+        <note priority="1" from="description">user-form-selec-tipo-plan</note>
+      </trans-unit>
+      <trans-unit id="6258960746717733136" datatype="html">
+        <source>Seleccione Tipo De plan</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.html</context>
+          <context context-type="linenumber">28,29</context>
+        </context-group>
+        <note priority="1" from="description">user-form-selec-tipo-plan-2</note>
+      </trans-unit>
+      <trans-unit id="7899079677093638612" datatype="html">
+        <source>Tipo Identificación</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.html</context>
+          <context context-type="linenumber">37,39</context>
+        </context-group>
+        <note priority="1" from="description">user-form-id-type</note>
+      </trans-unit>
+      <trans-unit id="8167414187893269639" datatype="html">
+        <source>Seleccione tipo de Identificación</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.html</context>
+          <context context-type="linenumber">42,43</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.html</context>
+          <context context-type="linenumber">115,116</context>
+        </context-group>
+        <note priority="1" from="description">user-form-id-type-2</note>
+      </trans-unit>
+      <trans-unit id="7709411072264174165" datatype="html">
+        <source>Identificación</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.html</context>
+          <context context-type="linenumber">49,51</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.html</context>
+          <context context-type="linenumber">54,55</context>
+        </context-group>
+        <note priority="1" from="description">user-form-id-number</note>
+      </trans-unit>
+      <trans-unit id="4743156365764866968" datatype="html">
+        <source>Nombres</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.html</context>
+          <context context-type="linenumber">61,63</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.html</context>
+          <context context-type="linenumber">66,67</context>
+        </context-group>
+        <note priority="1" from="description">user-form-nombre</note>
+      </trans-unit>
+      <trans-unit id="6759367372427181151" datatype="html">
+        <source>Apellidos</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.html</context>
+          <context context-type="linenumber">71,73</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.html</context>
+          <context context-type="linenumber">76,77</context>
+        </context-group>
+        <note priority="1" from="description">user-form-apellido</note>
+      </trans-unit>
+      <trans-unit id="2548394556626168715" datatype="html">
+        <source>Razón social*</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.html</context>
+          <context context-type="linenumber">87,89</context>
+        </context-group>
+        <note priority="1" from="description">user-form-razon-social</note>
+      </trans-unit>
+      <trans-unit id="9027170258147968259" datatype="html">
+        <source>Razón social</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.html</context>
+          <context context-type="linenumber">92,93</context>
+        </context-group>
+        <note priority="1" from="description">user-form-razon-social-2</note>
+      </trans-unit>
+      <trans-unit id="888431743120275581" datatype="html">
+        <source>Dirección empresa</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.html</context>
+          <context context-type="linenumber">97,99</context>
+        </context-group>
+        <note priority="1" from="description">user-form-direccion-empresa</note>
+      </trans-unit>
+      <trans-unit id="8749357193488610690" datatype="html">
+        <source>Dirección Empresa</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.html</context>
+          <context context-type="linenumber">102,103</context>
+        </context-group>
+        <note priority="1" from="description">user-form-direccion-empresa-2</note>
+      </trans-unit>
+      <trans-unit id="7522365035460565775" datatype="html">
+        <source>Tipo Identificación rep. legal</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.html</context>
+          <context context-type="linenumber">110,112</context>
+        </context-group>
+        <note priority="1" from="description">user-form-id-type-rep-legal</note>
+      </trans-unit>
+      <trans-unit id="6103788923722736047" datatype="html">
+        <source>Identificación rep. legal</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.html</context>
+          <context context-type="linenumber">122,124</context>
+        </context-group>
+        <note priority="1" from="description">user-form-id-rep-legal</note>
+      </trans-unit>
+      <trans-unit id="4517503516093282040" datatype="html">
+        <source>Identificación Rep. Legal</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.html</context>
+          <context context-type="linenumber">127,128</context>
+        </context-group>
+        <note priority="1" from="description">user-form-id-rep-legal-2</note>
+      </trans-unit>
+      <trans-unit id="301234517311931349" datatype="html">
+        <source>Nombres rep. legal</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.html</context>
+          <context context-type="linenumber">134,136</context>
+        </context-group>
+        <note priority="1" from="description">user-form-nombre-rep-legal</note>
+      </trans-unit>
+      <trans-unit id="286840383340136358" datatype="html">
+        <source>Nombres Rep. legal</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.html</context>
+          <context context-type="linenumber">139,140</context>
+        </context-group>
+        <note priority="1" from="description">user-form-nombre-rep-legal-2</note>
+      </trans-unit>
+      <trans-unit id="5815320318557095734" datatype="html">
+        <source>Apellidos Rep. Legal</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.html</context>
+          <context context-type="linenumber">144,146</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.html</context>
+          <context context-type="linenumber">149,150</context>
+        </context-group>
+        <note priority="1" from="description">user-form-apellidos-rep-legal</note>
+      </trans-unit>
+      <trans-unit id="4401057011206112121" datatype="html">
+        <source>Correo electrónico</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.html</context>
+          <context context-type="linenumber">158,160</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.html</context>
+          <context context-type="linenumber">163,164</context>
+        </context-group>
+        <note priority="1" from="description">user-form-email</note>
+      </trans-unit>
+      <trans-unit id="8437243144618493917" datatype="html">
+        <source>Teléfono</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.html</context>
+          <context context-type="linenumber">168,170</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.html</context>
+          <context context-type="linenumber">173,174</context>
+        </context-group>
+        <note priority="1" from="description">user-form-telefono</note>
+      </trans-unit>
+      <trans-unit id="3161810677190795725" datatype="html">
+        <source>Contraseña*</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.html</context>
+          <context context-type="linenumber">182,184</context>
+        </context-group>
+        <note priority="1" from="description">user-form-contrasena</note>
+      </trans-unit>
+      <trans-unit id="8190884051345784808" datatype="html">
+        <source>Una letra Mayuscula</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.html</context>
+          <context context-type="linenumber">194,195</context>
+        </context-group>
+        <note priority="1" from="description">user-form-pass-una-mayuscula</note>
+      </trans-unit>
+      <trans-unit id="5926698475234543325" datatype="html">
+        <source>Una letra Minuscula.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.html</context>
+          <context context-type="linenumber">195,196</context>
+        </context-group>
+        <note priority="1" from="description">user-form-pass-una-minuscula</note>
+      </trans-unit>
+      <trans-unit id="3519089490389804543" datatype="html">
+        <source>Al menos un digito</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.html</context>
+          <context context-type="linenumber">196,197</context>
+        </context-group>
+        <note priority="1" from="description">user-form-pass-una-digito</note>
+      </trans-unit>
+      <trans-unit id="4172667951097611103" datatype="html">
+        <source>Un Carácter Especial</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.html</context>
+          <context context-type="linenumber">197,198</context>
+        </context-group>
+        <note priority="1" from="description">user-form-pass-una-caracter-especial</note>
+      </trans-unit>
+      <trans-unit id="4965452839129705317" datatype="html">
+        <source>Mínimo 8 caracteres de logitud</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.html</context>
+          <context context-type="linenumber">198,201</context>
+        </context-group>
+        <note priority="1" from="description">user-form-pass-caracteres-minimos</note>
+      </trans-unit>
+      <trans-unit id="5031262185724101319" datatype="html">
+        <source>Repetir Contraseña*</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.html</context>
+          <context context-type="linenumber">205,207</context>
+        </context-group>
+        <note priority="1" from="description">user-form-repetir-contrasenia</note>
+      </trans-unit>
+      <trans-unit id="1372173599787735409" datatype="html">
+        <source>Guardar</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.html</context>
+          <context context-type="linenumber">218,220</context>
+        </context-group>
+        <note priority="1" from="description">user-form-but-guardar</note>
+      </trans-unit>
+      <trans-unit id="9055062590870758106" datatype="html">
+        <source>Por favor especifique un perfil</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.ts</context>
+          <context context-type="linenumber">151</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8459718095540158447" datatype="html">
+        <source>Por favor especifique el numero de identificación</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.ts</context>
+          <context context-type="linenumber">163</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7480392469758055380" datatype="html">
+        <source>Por favor especifique solo numeros.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.ts</context>
+          <context context-type="linenumber">166</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4087653527649808829" datatype="html">
+        <source>Por favor especifique un tipo de identificación</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.ts</context>
+          <context context-type="linenumber">176</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="876838282240439819" datatype="html">
+        <source>Por favor especificar un nombre</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.ts</context>
+          <context context-type="linenumber">187</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6641509936304929607" datatype="html">
+        <source>Por favor especificar un Apellido</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.ts</context>
+          <context context-type="linenumber">197</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4224314163566218645" datatype="html">
+        <source>Por favor especifique un correo electrónico</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.ts</context>
+          <context context-type="linenumber">209</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3852558397260522265" datatype="html">
+        <source>Por favor especifique un correo electrónico valido</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.ts</context>
+          <context context-type="linenumber">212</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4622165649469422957" datatype="html">
+        <source>Por favor especifique un teléfono</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.ts</context>
+          <context context-type="linenumber">225</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7813074485889484571" datatype="html">
+        <source>Maximo 10 digitos para el teléfono.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.ts</context>
+          <context context-type="linenumber">228</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4377190815512626552" datatype="html">
+        <source>Por favor solo colocar numeros.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.ts</context>
+          <context context-type="linenumber">231</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1910159973834320466" datatype="html">
+        <source>Por favor especifique una contraseña</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.ts</context>
+          <context context-type="linenumber">245</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7835604892557982037" datatype="html">
+        <source>La Contraseña y su confirmación no son iguales.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.ts</context>
+          <context context-type="linenumber">248</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1486249471321506303" datatype="html">
+        <source>Por favor validar contraseña</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.ts</context>
+          <context context-type="linenumber">251</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3318846068721251220" datatype="html">
+        <source>POr favor especifficar el tipo de plan</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.ts</context>
+          <context context-type="linenumber">265</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4601495951703323655" datatype="html">
+        <source>Por favor especifficar la razon social</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.ts</context>
+          <context context-type="linenumber">274</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3010666581072135193" datatype="html">
+        <source>Por favor especificar la direccion empresa.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.ts</context>
+          <context context-type="linenumber">283</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1535593053274567965" datatype="html">
+        <source>Por favor especificar el tipo de identificacion.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.ts</context>
+          <context context-type="linenumber">292</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1864797813744568306" datatype="html">
+        <source>Por favor especificar la identificacion del rep. legal</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.ts</context>
+          <context context-type="linenumber">301</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7264626021180625094" datatype="html">
+        <source>Por favor especificar el nombre del rep. legal</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.ts</context>
+          <context context-type="linenumber">310</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8351696566398180127" datatype="html">
+        <source>Por favor especificar los apellidos del rep. legal</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/formulario-user-interno/formulario-user-interno.component.ts</context>
+          <context context-type="linenumber">319</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1357591006399567011" datatype="html">
+        <source>Listado usuarios registrados</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/listado-usuarios/listado-usuarios.component.html</context>
+          <context context-type="linenumber">6,9</context>
+        </context-group>
+        <note priority="1" from="description">listado-usuarios-main-title</note>
+      </trans-unit>
+      <trans-unit id="3609400991367713406" datatype="html">
+        <source>Crear usuario</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/listado-usuarios/listado-usuarios.component.html</context>
+          <context context-type="linenumber">11,14</context>
+        </context-group>
+        <note priority="1" from="description">listado-usuarios-crear-usuario-button</note>
+      </trans-unit>
+      <trans-unit id="7393613717200351542" datatype="html">
+        <source> Identificación </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/listado-usuarios/listado-usuarios.component.html</context>
+          <context context-type="linenumber">19,20</context>
+        </context-group>
+        <note priority="1" from="description">listado-usuarios-tabla-enc-identificacion</note>
+      </trans-unit>
+      <trans-unit id="8294859789022685381" datatype="html">
+        <source> Nombre </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/listado-usuarios/listado-usuarios.component.html</context>
+          <context context-type="linenumber">25,26</context>
+        </context-group>
+        <note priority="1" from="description">listado-usuarios-tabla-enc-nombre</note>
+      </trans-unit>
+      <trans-unit id="262919455445236748" datatype="html">
+        <source> Perfil </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/listado-usuarios/listado-usuarios.component.html</context>
+          <context context-type="linenumber">31,32</context>
+        </context-group>
+        <note priority="1" from="description">listado-usuarios-tabla-enc-perfil</note>
+      </trans-unit>
+      <trans-unit id="2153980152639237955" datatype="html">
+        <source>Editar</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/listado-usuarios/listado-usuarios.component.html</context>
+          <context context-type="linenumber">39,40</context>
+        </context-group>
+        <note priority="1" from="description">listado-usuarios-tabla-but-editar</note>
+      </trans-unit>
+      <trans-unit id="7099780434896458019" datatype="html">
+        <source>Borrar</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/listado-usuarios/listado-usuarios.component.html</context>
+          <context context-type="linenumber">40,42</context>
+        </context-group>
+        <note priority="1" from="description">listado-usuarios-tabla-but-borrar</note>
+      </trans-unit>
+      <trans-unit id="6174616077232764940" datatype="html">
+        <source>¿Esta Seguro de eliminar este usuario?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/listado-usuarios/listado-usuarios.component.ts</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3942795330261785668" datatype="html">
+        <source>TIPO IDENTIFICACIÓN*:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/registro/registro.component.html</context>
+          <context context-type="linenumber">9,10</context>
+        </context-group>
+        <note priority="1" from="description">registro-tipo-identificacion</note>
+      </trans-unit>
+      <trans-unit id="8088388045866912195" datatype="html">
+        <source>NOMBRES *:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/registro/registro.component.html</context>
+          <context context-type="linenumber">15,16</context>
+        </context-group>
+        <note priority="1" from="description">registro-nombres</note>
+      </trans-unit>
+      <trans-unit id="6552802747903618225" datatype="html">
+        <source>Ingrese sus nombres</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/registro/registro.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6110112172066350433" datatype="html">
+        <source>EMPRESA PQR*:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/registro/registro.component.html</context>
+          <context context-type="linenumber">17,18</context>
+        </context-group>
+        <note priority="1" from="description">registro-empresa</note>
+      </trans-unit>
+      <trans-unit id="7609389592913394633" datatype="html">
+        <source>EMAIL (USERNAME)*:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/registro/registro.component.html</context>
+          <context context-type="linenumber">21,22</context>
+        </context-group>
+        <note priority="1" from="description">registro-correo</note>
+      </trans-unit>
+      <trans-unit id="2999371813809234636" datatype="html">
+        <source>Ingrese su correo</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/registro/registro.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5999257392359139446" datatype="html">
+        <source>IDENTIFICACIÓN*:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/registro/registro.component.html</context>
+          <context context-type="linenumber">28,29</context>
+        </context-group>
+        <note priority="1" from="description">registro-identificacion</note>
+      </trans-unit>
+      <trans-unit id="7183661185910038195" datatype="html">
+        <source>Ingrese su identificación</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/registro/registro.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4289324751035375322" datatype="html">
+        <source>APELLIDOS *:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/registro/registro.component.html</context>
+          <context context-type="linenumber">31,32</context>
+        </context-group>
+        <note priority="1" from="description">registro-apellidos</note>
+      </trans-unit>
+      <trans-unit id="8884474613349514354" datatype="html">
+        <source>Ingrese sus apellidos</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/registro/registro.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="536564115614589411" datatype="html">
+        <source>TIPO COMUNICACIÓN*:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/registro/registro.component.html</context>
+          <context context-type="linenumber">34,35</context>
+        </context-group>
+        <note priority="1" from="description">registro-tipo-comunicacion</note>
+      </trans-unit>
+      <trans-unit id="4781620143383197296" datatype="html">
+        <source>TELÉFONO CELULAR (Inicia en +&quot;1 hasta 9&quot;)*:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/registro/registro.component.html</context>
+          <context context-type="linenumber">41,42</context>
+        </context-group>
+        <note priority="1" from="description">registro-tipo-telefono</note>
+      </trans-unit>
+      <trans-unit id="697517824302293839" datatype="html">
+        <source>Ingrese su teléfono</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/registro/registro.component.html</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1398865848346696836" datatype="html">
+        <source>CONTRASEÑA* (Primera en Mayus, min 6 dígitos):</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/registro/registro.component.html</context>
+          <context context-type="linenumber">50,51</context>
+        </context-group>
+        <note priority="1" from="description">registro-tipo-contraseña</note>
+      </trans-unit>
+      <trans-unit id="4946009185302855624" datatype="html">
+        <source>Ingrese su contraseña</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/registro/registro.component.html</context>
+          <context context-type="linenumber">57,58</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2488677313512371996" datatype="html">
+        <source>REPETIR CONTRASEÑA*:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/registro/registro.component.html</context>
+          <context context-type="linenumber">65,66</context>
+        </context-group>
+        <note priority="1" from="description">registro-repetir-contraseña</note>
+      </trans-unit>
+      <trans-unit id="3980780174832590055" datatype="html">
+        <source>Repita su contraseña</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/registro/registro.component.html</context>
+          <context context-type="linenumber">72,73</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="160176481219936013" datatype="html">
+        <source>CANCELAR</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/registro/registro.component.html</context>
+          <context context-type="linenumber">84,85</context>
+        </context-group>
+        <note priority="1" from="description">registro-btn-cancelar</note>
+      </trans-unit>
+      <trans-unit id="6788317604113594802" datatype="html">
+        <source>REGISTRAR</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/registro/registro.component.html</context>
+          <context context-type="linenumber">85,87</context>
+        </context-group>
+        <note priority="1" from="description">registro-btn-resgistrar</note>
+      </trans-unit>
+      <trans-unit id="830571837828408506" datatype="html">
+        <source>No se encontró una empresa válida para la selección realizada.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/registro/registro.component.ts</context>
+          <context context-type="linenumber">99</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3218363632002136273" datatype="html">
+        <source>El client_id es nulo o no válido.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/registro/registro.component.ts</context>
+          <context context-type="linenumber">105</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4505750246018850154" datatype="html">
+        <source>Usuario registrado con éxito.}</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/registro/registro.component.ts</context>
+          <context context-type="linenumber">160</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4589031675865878262" datatype="html">
+        <source>No se pudo registrar el usuario. Intente nuevamente.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/registro/registro.component.ts</context>
+          <context context-type="linenumber">164</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8205963006103979423" datatype="html">
+        <source>Campos incompletos. Por favor, llene todos los campos.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/registro/registro.component.ts</context>
+          <context context-type="linenumber">177</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5106107470497064683" datatype="html">
+        <source>Correo inválido. Por favor, ingrese un formato de correo válido.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/registro/registro.component.ts</context>
+          <context context-type="linenumber">180</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8224763838780642343" datatype="html">
+        <source>Datos ingresados erróneos en el campo Identificación. Use solo números.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/registro/registro.component.ts</context>
+          <context context-type="linenumber">184</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6097997100664287863" datatype="html">
+        <source>Formato de teléfono incorrecto. Use formato internacional.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/registro/registro.component.ts</context>
+          <context context-type="linenumber">187</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8578303686901064387" datatype="html">
+        <source>Datos ingresados erróneos. Verifique la información.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/users/registro/registro.component.ts</context>
+          <context context-type="linenumber">191</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
