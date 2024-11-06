@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { HeaderOptionDTO } from './headerOption';
 import { AuthService } from '../../service/auth-service.service';
 import { Router } from '@angular/router';
+import { TranslationService } from '../../service/i18n/translation.service';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +13,7 @@ export class HeaderComponent {
   public moduleName: string = $localize `BIENVENIDO`
   public options: HeaderOptionDTO[];
   public currentOption=3;
-  constructor(private authService:AuthService,private router: Router) {
+  constructor(private authService:AuthService,private router: Router,private translationService: TranslationService) {
 
     this.options = [
       {
@@ -63,4 +64,9 @@ export class HeaderComponent {
      debugger;
      this.router.navigateByUrl('login');
   }
+
+  changeLanguage(lang: string) {
+    this.translationService.changeLanguage(lang);
+  }
+
 }

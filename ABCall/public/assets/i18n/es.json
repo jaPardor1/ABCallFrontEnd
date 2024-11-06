@@ -1,0 +1,10 @@
+{
+    "loginModule": {
+        "Usuario": "Usuario",
+        "Contrasenia": "Contraseña",
+        "placeHoldrLoginUsr": "Por favor ingrese el usuario",
+        "loginbtnIngresar": "INGRESAR",
+        "loginBtRegistroCliente": "REGISTRO CLIENTE",
+        "fieldRequiredValidation":"Este campo es obligatorio"
+    }
+}

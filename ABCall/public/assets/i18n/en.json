@@ -1,0 +1,11 @@
+{
+    "loginModule": {
+        "Usuario": "User",
+        "Contrasenia": "Password",
+        "listadoUsuariosMainTitle": "Avalilable Users",
+        "placeHoldrLoginUsr": "Please enter a user name",
+        "loginbtnIngresar": "SIGN IN",
+        "loginBtRegistroCliente": "SIGN UP",
+        "fieldRequiredValidation":"This field is required"
+    }
+}

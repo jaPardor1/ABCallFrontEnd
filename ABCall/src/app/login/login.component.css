@@ -189,3 +189,9 @@ input[type="text"], input[type="password"] {
   margin: 5px 0;
   box-sizing: border-box; /* Incluye el padding dentro del ancho */
 }
+
+.lang-selector{
+  position: relative;
+  top: -64px;
+  left: 128px;
+}

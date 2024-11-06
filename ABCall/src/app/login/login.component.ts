@@ -13,7 +13,7 @@ import { AuthService } from '../service/auth-service.service';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   showErrorModal: boolean = false; // Controla la visibilidad del modal de error
-  modalMessage: string = $localize `Datos incompletos. Por favor, llene todos los campos.`
+  modalMessage: string =  `Datos incompletos. Por favor, llene todos los campos.`
   constructor(private router: Router, private formBuilder: FormBuilder,private authService:AuthService) {
     this.loginForm = this.formBuilder.group({
       usuario: ['', Validators.required],
