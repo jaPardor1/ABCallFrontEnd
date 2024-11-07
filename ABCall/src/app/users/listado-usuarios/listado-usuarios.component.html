@@ -3,12 +3,12 @@
 <div class="container">
   <div class="row">
     <div class="col-6">
-      <h1 class="ml-3 mt-3">Listado usuarios registrados</h1>
+      <h1 i18n="listado-usuarios-main-title" class="ml-3 mt-3">Listado usuarios registrados</h1>
     </div>
   </div>
   <div class="row d-flex justify-content-end">
     <div class="col-2">
-      <button class="button-1" (click)="goToUserCreation()">Crear usuario</button>
+      <button i18n="listado-usuarios-crear-usuario-button" class="button-1" (click)="goToUserCreation()">Crear usuario</button>
     </div>
   </div>
   <div class="row">
@@ -16,19 +16,19 @@
       <table *ngIf="usersList.length!=0" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
         <!-- identification Column -->
         <ng-container matColumnDef="identificacion">
-          <th mat-header-cell *matHeaderCellDef> Identificación </th>
+          <th i18n="listado-usuarios-tabla-enc-identificacion" mat-header-cell *matHeaderCellDef> Identificación </th>
           <td mat-cell *matCellDef="let element"> {{element.id_number}} </td>
         </ng-container>
 
         <!-- profile Column -->
         <ng-container matColumnDef="nombre">
-          <th mat-header-cell *matHeaderCellDef> Nombre </th>
+          <th i18n="listado-usuarios-tabla-enc-nombre" mat-header-cell *matHeaderCellDef> Nombre </th>
           <td mat-cell *matCellDef="let element"> {{element.name+' '+element.last_name}} </td>
         </ng-container>
 
         <!-- Symbol Column -->
         <ng-container matColumnDef="perfil">
-          <th mat-header-cell *matHeaderCellDef> Perfil </th>
+          <th i18n="listado-usuarios-tabla-enc-perfil" mat-header-cell *matHeaderCellDef> Perfil </th>
           <td mat-cell *matCellDef="let element"> {{element.user_role}} </td>
         </ng-container>
 
@@ -36,8 +36,8 @@
           <th style="width: 160px;" mat-header-cell *matHeaderCellDef> </th>
           <td *matCellDef="let row">
             <mat-icon aria-hidden="false" aria-label="delete user" fontIcon="trash"></mat-icon>
-            <button (click)="onEditUser(row.cognito_user_sub)" mat-button>Edit</button>
-            <button (click)="showDeletionDialog(row.cognito_user_sub)" mat-button>Delete</button>
+            <button i18n="listado-usuarios-tabla-but-editar" (click)="onEditUser(row.cognito_user_sub)" mat-button>Editar</button>
+            <button i18n="listado-usuarios-tabla-but-borrar" (click)="showDeletionDialog(row.cognito_user_sub)" mat-button>Borrar</button>
           </td>
         </ng-container>
 

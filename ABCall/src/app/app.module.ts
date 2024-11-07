@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http'
@@ -61,6 +61,7 @@ import { HeaderInterceptor } from './request-handler.interceptor';
     provideAnimationsAsync(),
     {provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi:true},
     {provide: HTTP_INTERCEPTORS, useClass:HeaderInterceptor, multi:true},
+    { provide: LOCALE_ID, useValue: 'es' }
 
   ],
   bootstrap: [AppComponent]

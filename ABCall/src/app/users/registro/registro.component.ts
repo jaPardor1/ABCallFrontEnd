@@ -73,8 +73,8 @@ export class RegistroComponent implements OnInit {
         if (Array.isArray(data)) {
           // Aquí asignamos directamente el array recibido
           this.empresas = data;
-          this.empresaNombres = this.empresas.map((empresa: any) => empresa.legal_name);
-        } else {
+          this.empresaNombres = ["Seleccione una empresa", ...this.empresas.map((empresa: any) => empresa.legal_name)];
+        }  else {
           console.error('La respuesta no es un array de empresas esperado:', data);
         }
       }, error => {
@@ -89,6 +89,12 @@ export class RegistroComponent implements OnInit {
       return;
     }
       const formData = this.registroForm.value;
+      
+        // Verificar si el usuario seleccionó una empresa válida
+      if (formData.empresa === "Seleccione una empresa") {
+        this.showModal('error', $localize `Por favor seleccione una empresa válida.`);
+        return;
+      }
 
       // Obtener el client_id (id_number) basado en el nombre de la empresa seleccionada
       const empresaSeleccionada = this.empresas.find(empresa => empresa.legal_name === formData.empresa);
@@ -96,13 +102,13 @@ export class RegistroComponent implements OnInit {
         this.selectedClientId = empresaSeleccionada.id;  // Asigna el id_number como client_id
       } else {
         console.error('No se encontró una empresa válida para la selección realizada.');
-        this.showModal('error', 'No se encontró una empresa válida para la selección realizada.');
+        this.showModal('error', $localize `No se encontró una empresa válida para la selección realizada.`);
         return; // Detiene la ejecución si no hay una empresa válida seleccionada
       }
 
       if (!this.selectedClientId) {
         console.error('El client_id es nulo o no válido.');
-        this.showModal('error', 'El client_id es nulo o no válido.');
+        this.showModal('error', $localize `El client_id es nulo o no válido.`);
         return; // Detiene la ejecución si `client_id` es nulo
       }
       console.log('Empresa seleccionada:', empresaSeleccionada);
@@ -157,11 +163,11 @@ export class RegistroComponent implements OnInit {
       // this.http.post(`${environment.apiUsersUrl2}`, usuario, { headers })
       .subscribe(response => {
         console.log('Usuario creado en el backend', response);
-        this.showModal('success', 'Usuario registrado con éxito.');
+        this.showModal('success',  $localize `Usuario registrado con éxito.}`);
         this.router.navigateByUrl('/login');
       }, error => {
         console.error('Error al crear usuario en el backend', error);
-        this.showModal('error', 'No se pudo registrar el usuario. Intente nuevamente.');
+        this.showModal('error', $localize `No se pudo registrar el usuario. Intente nuevamente.`);
         });
   }
 
@@ -174,21 +180,21 @@ export class RegistroComponent implements OnInit {
 
       if (control && control.invalid) {
         if (control.errors?.['required']) {
-          this.showModal('error', 'Campos incompletos. Por favor, llene todos los campos.');
+          this.showModal('error', $localize `Campos incompletos. Por favor, llene todos los campos.`);
           break;
         } else if (control.errors?.['email']) {
-          this.showModal('error', 'Correo inválido. Por favor, ingrese un formato de correo válido.');
+          this.showModal('error', $localize `Correo inválido. Por favor, ingrese un formato de correo válido.`);
           break;
         } else if (control.errors?.['pattern']) {
           if (key === 'identificacion') {
-            this.showModal('error', 'Datos ingresados erróneos en el campo Identificación. Use solo números.');
+            this.showModal('error', $localize `Datos ingresados erróneos en el campo Identificación. Use solo números.`);
             break;
           } else if (key === 'telefono') {
-            this.showModal('error', 'Formato de teléfono incorrecto. Use formato internacional.');
+            this.showModal('error', $localize `Formato de teléfono incorrecto. Use formato internacional.`);
             break;
           }
         } else {
-          this.showModal('error', 'Datos ingresados erróneos. Verifique la información.');
+          this.showModal('error', $localize `Datos ingresados erróneos. Verifique la información.`);
           break;
         }
       }

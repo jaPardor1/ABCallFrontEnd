@@ -29,7 +29,7 @@ export class RadicarPQRClienteComponent {
 
        this.pqrService.createIncident(incident).subscribe(
         (response)=> {
-          this.openDialog('Se ha radicado el pqr #'+response.ticket_number,incident);
+          this.openDialog( $localize`Se ha radicado el pqr `+response.ticket_number,incident);
         },
         (error:any)=> console.error(error)
        )

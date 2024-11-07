@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-  public moduleName: string = 'BIENVENIDO'
+  public moduleName: string = $localize `BIENVENIDO`
   public options: HeaderOptionDTO[];
   public currentOption=3;
   constructor(private authService:AuthService,private router: Router) {
@@ -17,25 +17,25 @@ export class HeaderComponent {
     this.options = [
       {
         id: 1,
-        name: 'RADICAR PQR',
+        name: $localize `RADICAR PQR`,
         isActive: false,
         link:"createIncidence"
       },
       {
         id: 2,
-        name: 'CONSULTAR PQR',
+        name: $localize `CONSULTAR PQR`,
         isActive: false,
         link:"listIncidences"
       },
       {
         id: 3,
-        name: 'USUARIOS REGISTRADOS',
+        name: $localize `USUARIOS REGISTRADOS`,
         isActive: true,
         link:"listUsers"
       },
       {
         id: 4,
-        name: 'BASE DE CONOCIMIENTOS',
+        name: $localize `BASE DE CONOCIMIENTOS`,
         isActive: false,
         link:"articlesList"
       }

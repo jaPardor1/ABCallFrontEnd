@@ -55,7 +55,7 @@ export class ListadoUsuariosComponent implements OnInit  {
     console.log(sub);
     this.dialog
       .open(ConfirmDialogComponent, {
-        data: `¿Esta Seguro de eliminar este usuario?`
+        data: $localize `¿Esta Seguro de eliminar este usuario?`
       })
       .afterClosed()
       .subscribe((confirmed: Boolean) => {
