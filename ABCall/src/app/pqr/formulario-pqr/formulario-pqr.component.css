@@ -1,8 +1,89 @@
-
-label ,button{
-  font-size: 30px;
+/* General styles */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-.mat-mdc-unelevated-button:not(:disabled){
-    background-color: #1FC7B5;
+/* Estilos del formulario */
+.form-container {
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
+
+/* Estilo de los labels */
+label {
+  font-size: 20px;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #48464C;
+}
+
+/* Estilos para inputs y selects */
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 2px solid #48464C;
+  background-color: #d0d3db; /* Color de fondo gris */
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* Estilos para el contador de caracteres */
+.character-counter {
+  font-size: 12px;
+  color: #48464C;
+  text-align: right;
+}
+
+/* Estilos para mensajes de error */
+.mat-error, .small-text {
+  font-size: 12px;
+  color: #ff0000;
+  margin-bottom: 10px;
+}
+
+.is-invalid {
+  border: 2px solid red;
+}
+
+button {
+  background-color: #029e89 !important;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #008d76 !important;
+}
+
+button[disabled] {
+  background-color: #d3d3d3 !important; /* Color gris para el botón deshabilitado */
+  cursor: not-allowed;
+}
+
+
+/* Ajuste del espaciado entre filas */
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.form-column {
+  display: flex;
+  flex-direction: column;
+  width: 48%;
+}
+
+
