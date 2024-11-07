@@ -1,0 +1,25 @@
+
+button {
+  background-color:  #029e89;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+label {
+  font-size: 20px;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+input {
+  border-radius: 6px;
+  border: 2px black solid;
+  background-color: #dfe1eb;
+  width: 100%;
+  padding: 10px 20px;
+  font-size: large;
+  line-height: normal;
+}

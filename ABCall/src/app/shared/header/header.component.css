@@ -30,8 +30,12 @@
   font-size: 35px;
 }
 .active{
-  background-color:#189B8D ;
+  background-color: #189B8D;
   font-weight: bold;
+  height: 50px; /* Igual a la altura de los elementos no activos */
+  transform: translateY(-5px); /* Eleva hacia arriba */
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
 .navbar-nav{
@@ -39,4 +43,20 @@
 }
 .nav-link-container{
    border-radius: 0px 0px 8px 8px;
+   height: 40px;
+
 }
+.navbar-nav .active {
+  margin-top: -5px; /* Ajusta este valor para darle la apariencia de altura extra */
+}
+
+/* Efecto de hover para las opciones del menú */
+.nav-link-container .nav-link {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-link-container .nav-link:hover {
+  background-color: #189B8D; /* Color de fondo en hover */
+  color: #ffffff; /* Color de texto en hover */
+}
+

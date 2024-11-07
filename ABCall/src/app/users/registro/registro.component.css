@@ -198,7 +198,7 @@ mat-error {
 .toggle-password:focus {
   outline: none;
 }
-/* Asegúrate de que la etiqueta y el input estén uno al lado del otro */
+
 .label-input-wrapper {
   display: flex;
   align-items: center; /* Alinea verticalmente al centro */
