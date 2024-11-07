@@ -6,24 +6,28 @@
 <div class="register-page">
   <div class="register-form">
     <h1>EDITE SUS DATOS</h1>
-    <form [formGroup]="form" (submit)="saveInfo()">
+    <form [formGroup]="form" (ngSubmit)="saveInfo()">
 
       <!-- Primera fila -->
       <div class="form-row">
         <div class="form-column">
           <label i18n="user-form-perfil">Perfil</label>
-          <select formControlName="user_role" [ngClass]="{'is-invalid': form.invalid}">
+          <select formControlName="user_role" [ngClass]="{'is-invalid': form.get('user_role')?.invalid && (submitted || form.get('user_role')?.touched)}">
             <option *ngFor="let op of profiles" [value]="op.id">{{ op.profileName }}</option>
           </select>
-          <div *ngIf="form.invalid" class="small-text">{{getErrorProfileField()}}</div>
+          <div *ngIf="(submitted || form.get('user_role')?.touched) && form.get('user_role')?.invalid" class="small-text">
+            {{ getErrorProfileField() }}
+          </div>
         </div>
 
         <div *ngIf="form.value.user_role == 'Client'" class="form-column">
           <label i18n="user-form-selec-tipo-plan">Seleccione el tipo de plan</label>
-          <select formControlName="plan" [ngClass]="{'is-invalid': form.invalid}">
+          <select formControlName="plan" [ngClass]="{'is-invalid': form.get('plan')?.invalid && (submitted || form.get('plan')?.touched)}">
             <option *ngFor="let op of subscriptionsPlan" [value]="op.id">{{ op.subscrptionName }}</option>
           </select>
-          <div *ngIf="form.invalid" class="small-text">{{getErrorPlanField()}}</div>
+          <div *ngIf="(submitted || form.get('plan')?.touched) && form.get('plan')?.invalid" class="small-text">
+            {{ getErrorPlanField() }}
+          </div>
         </div>
       </div>
 
@@ -31,16 +35,20 @@
       <div class="form-row">
         <div class="form-column">
           <label i18n="user-form-id-type">Tipo Identificación</label>
-          <select formControlName="document_type" [ngClass]="{'is-invalid': form.invalid}">
+          <select formControlName="document_type" [ngClass]="{'is-invalid': form.get('document_type')?.invalid && (submitted || form.get('document_type')?.touched)}">
             <option *ngFor="let op of documentIds" [value]="op.id">{{ op.documentName }}</option>
           </select>
-          <div *ngIf="form.invalid" class="small-text">{{getErrorIdentificationTypeField()}}</div>
+          <div *ngIf="(submitted || form.get('document_type')?.touched) && form.get('document_type')?.invalid" class="small-text">
+            {{ getErrorIdentificationTypeField() }}
+          </div>
         </div>
 
         <div class="form-column">
           <label i18n="user-form-id-number">Identificación</label>
-          <input type="text" formControlName="id_number" [ngClass]="{'is-invalid': form.invalid}" />
-          <div *ngIf="form.invalid" class="small-text">{{getErrorIdentificacionField()}}</div>
+          <input type="text" formControlName="id_number" [ngClass]="{'is-invalid': form.get('id_number')?.invalid && (submitted || form.get('id_number')?.touched)}">
+          <div *ngIf="(submitted || form.get('id_number')?.touched) && form.get('id_number')?.invalid" class="small-text">
+            {{ getErrorIdentificacionField() }}
+          </div>
         </div>
       </div>
 
@@ -48,13 +56,18 @@
       <div *ngIf="form.value.user_role != 'Client'" class="form-row">
         <div class="form-column">
           <label i18n="user-form-nombre">Nombres</label>
-          <input type="text" formControlName="name" [ngClass]="{'is-invalid': form.invalid}" />
-          <div *ngIf="form.invalid" class="small-text">{{getErrorNameField()}}</div>
+          <input type="text" formControlName="name" [ngClass]="{'is-invalid': form.get('name')?.invalid && (submitted || form.get('name')?.touched)}">
+          <div *ngIf="(submitted || form.get('name')?.touched) && form.get('name')?.invalid" class="small-text">
+            {{ getErrorNameField() }}
+          </div>
         </div>
+
         <div class="form-column">
           <label i18n="user-form-apellido">Apellidos</label>
-          <input type="text" formControlName="last_name" [ngClass]="{'is-invalid': form.invalid}" />
-          <div *ngIf="form.invalid" class="small-text">{{getErrorLastNameField()}}</div>
+          <input type="text" formControlName="last_name" [ngClass]="{'is-invalid': form.get('last_name')?.invalid && (submitted || form.get('last_name')?.touched)}">
+          <div *ngIf="(submitted || form.get('last_name')?.touched) && form.get('last_name')?.invalid" class="small-text">
+            {{ getErrorLastNameField() }}
+          </div>
         </div>
       </div>
 
@@ -62,14 +75,18 @@
       <div *ngIf="form.value.user_role == 'Client'" class="form-row highlight-box">
         <div class="form-column">
           <label i18n="user-form-razon-social">Razón social*</label>
-          <input type="text" formControlName="razonSocialEmpresa" [ngClass]="{'is-invalid': form.invalid}" />
-          <div *ngIf="form.invalid" class="small-text">{{getErrorRazonSocialField()}}</div>
+          <input type="text" formControlName="razonSocialEmpresa" [ngClass]="{'is-invalid': form.get('razonSocialEmpresa')?.invalid && (submitted || form.get('razonSocialEmpresa')?.touched)}">
+          <div *ngIf="(submitted || form.get('razonSocialEmpresa')?.touched) && form.get('razonSocialEmpresa')?.invalid" class="small-text">
+            {{ getErrorRazonSocialField() }}
+          </div>
         </div>
 
         <div class="form-column">
           <label i18n="user-form-direccion-empresa">Dirección empresa</label>
-          <input type="text" formControlName="direccionEmpresa" [ngClass]="{'is-invalid': form.invalid}" />
-          <div *ngIf="form.invalid" class="small-text">{{getErrorDireccionEmpresaField()}}</div>
+          <input type="text" formControlName="direccionEmpresa" [ngClass]="{'is-invalid': form.get('direccionEmpresa')?.invalid && (submitted || form.get('direccionEmpresa')?.touched)}">
+          <div *ngIf="(submitted || form.get('direccionEmpresa')?.touched) && form.get('direccionEmpresa')?.invalid" class="small-text">
+            {{ getErrorDireccionEmpresaField() }}
+          </div>
         </div>
       </div>
 
@@ -77,30 +94,20 @@
       <div *ngIf="form.value.user_role == 'Client'" class="form-row">
         <div class="form-column">
           <label i18n="user-form-id-type-rep-legal">Tipo Identificación rep. legal</label>
-          <select formControlName="tipoIdentificacionRepLegal" [ngClass]="{'is-invalid': form.invalid}">
+          <select formControlName="tipoIdentificacionRepLegal" [ngClass]="{'is-invalid': form.get('tipoIdentificacionRepLegal')?.invalid && (submitted || form.get('tipoIdentificacionRepLegal')?.touched)}">
             <option *ngFor="let op of documentIds" [value]="op.id">{{ op.documentName }}</option>
           </select>
-          <div *ngIf="form.invalid" class="small-text">{{getErrorLegalrepIdTypeField()}}</div>
+          <div *ngIf="(submitted || form.get('tipoIdentificacionRepLegal')?.touched) && form.get('tipoIdentificacionRepLegal')?.invalid" class="small-text">
+            {{ getErrorLegalrepIdTypeField() }}
+          </div>
         </div>
 
         <div class="form-column">
           <label i18n="user-form-id-rep-legal">Identificación rep. legal</label>
-          <input type="text" formControlName="identificacionRepLegal" [ngClass]="{'is-invalid': form.invalid}" />
-          <div *ngIf="form.invalid" class="small-text">{{getErrorLegalrepIdField()}}</div>
-        </div>
-      </div>
-
-      <div *ngIf="form.value.user_role == 'Client'" class="form-row">
-        <div class="form-column">
-          <label i18n="user-form-nombre-rep-legal">Nombres rep. legal</label>
-          <input type="text" formControlName="nombresRepLegal" [ngClass]="{'is-invalid': form.invalid}" />
-          <div *ngIf="form.invalid" class="small-text">{{getErrorLegalrepNamesField()}}</div>
-        </div>
-
-        <div class="form-column">
-          <label i18n="user-form-apellidos-rep-legal">Apellidos Rep. Legal</label>
-          <input type="text" formControlName="apellidosRepLegal" [ngClass]="{'is-invalid': form.invalid}" />
-          <div *ngIf="form.invalid" class="small-text">{{getErrorLegalrepLastNamesField()}}</div>
+          <input type="text" formControlName="identificacionRepLegal" [ngClass]="{'is-invalid': form.get('identificacionRepLegal')?.invalid && (submitted || form.get('identificacionRepLegal')?.touched)}">
+          <div *ngIf="(submitted || form.get('identificacionRepLegal')?.touched) && form.get('identificacionRepLegal')?.invalid" class="small-text">
+            {{ getErrorLegalrepIdField() }}
+          </div>
         </div>
       </div>
 
@@ -108,14 +115,18 @@
       <div class="form-row">
         <div class="form-column">
           <label i18n="user-form-email">Correo electrónico</label>
-          <input type="email" formControlName="email" [ngClass]="{'is-invalid': form.invalid}" />
-          <div *ngIf="form.invalid" class="small-text">{{getErrorEmailField()}}</div>
+          <input type="email" formControlName="email" [ngClass]="{'is-invalid': form.get('email')?.invalid && (submitted || form.get('email')?.touched)}">
+          <div *ngIf="(submitted || form.get('email')?.touched) && form.get('email')?.invalid" class="small-text">
+            {{ getErrorEmailField() }}
+          </div>
         </div>
 
         <div class="form-column">
           <label i18n="user-form-telefono">Teléfono</label>
-          <input type="text" formControlName="cellphone" [ngClass]="{'is-invalid': form.invalid}" />
-          <div *ngIf="form.invalid" class="small-text">{{getErrorTelephoneField()}}</div>
+          <input type="text" formControlName="cellphone" [ngClass]="{'is-invalid': form.get('cellphone')?.invalid && (submitted || form.get('cellphone')?.touched)}">
+          <div *ngIf="(submitted || form.get('cellphone')?.touched) && form.get('cellphone')?.invalid" class="small-text">
+            {{ getErrorTelephoneField() }}
+          </div>
         </div>
       </div>
 
@@ -124,26 +135,47 @@
         <div class="form-row highlight-box">
           <div class="form-column">
             <label i18n="user-form-contrasena">Contraseña*</label>
-            <input type="password" formControlName="password" [ngClass]="{'is-invalid': form.invalid}" />
-            <div *ngIf="form.invalid" class="small-text">{{getErrorPasswordField()}}</div>
+            <input type="password" formControlName="password" [ngClass]="{'is-invalid': form.get('password')?.invalid && (submitted || form.get('password')?.touched)}">
+            <div *ngIf="(submitted || form.get('password')?.touched) && form.get('password')?.invalid" class="small-text">
+              {{ getErrorPasswordField() }}
+            </div>
 
             <!-- Validaciones de contraseña -->
-            <div class="col-6 pt-3">
-              <div class="pass-err text-sm">
-                <ul>
-                  <li i18n="user-form-pass-una-mayuscula" class="block" [ngClass]="{'pass-ok': form.value.password?.match('^(?=.*[A-Z])')}">Una letra Mayuscula</li>
-                  <li i18n="user-form-pass-una-minuscula" class="block" [ngClass]="{'pass-ok': form.value.password?.match('(?=.*[a-z])')}">Una letra Minuscula.</li>
-                  <li i18n="user-form-pass-una-digito" class="block" [ngClass]="{'pass-ok': form.value.password?.match('(.*[0-9].*)')}">Al menos un digito</li>
-                  <li i18n="user-form-pass-una-caracter-especial" class="block" [ngClass]="{'pass-ok': form.value.password?.match('(?=.*[!@#$%^&*])')}">Un Carácter Especial</li>
-                  <li i18n="user-form-pass-caracteres-minimos" class="block" [ngClass]="{'pass-ok': form.value.password?.match('.{8,}')}">Mínimo 8 caracteres de logitud</li>
+            <div *ngIf="(submitted || form.get('password')?.touched) && form.get('password')?.invalid" class="col-6 pt-3">
+              <div class="pass-err-container">
+                <ul class="pass-err text-sm">
+                  <li i18n="user-form-pass-una-mayuscula" class="block"
+                      [ngClass]="{'pass-ok': form.value.password?.match('^(?=.*[A-Z])')}">
+                    Una letra Mayúscula
+                  </li>
+                  <li i18n="user-form-pass-una-minuscula" class="block"
+                      [ngClass]="{'pass-ok': form.value.password?.match('(?=.*[a-z])')}">
+                    Una letra Minúscula
+                  </li>
+                  <li i18n="user-form-pass-una-digito" class="block"
+                      [ngClass]="{'pass-ok': form.value.password?.match('(.*[0-9].*)')}">
+                    Al menos un dígito
+                  </li>
+                  <li i18n="user-form-pass-una-caracter-especial" class="block"
+                      [ngClass]="{'pass-ok': form.value.password?.match('(?=.*[!@#$%^&*])')}">
+                    Un carácter especial
+                  </li>
+                  <li i18n="user-form-pass-caracteres-minimos" class="block"
+                      [ngClass]="{'pass-ok': form.value.password?.match('.{8,}')}">
+                    Mínimo 8 caracteres de longitud
+                  </li>
                 </ul>
               </div>
             </div>
+
           </div>
 
           <div class="form-column">
             <label i18n="user-form-repetir-contrasenia">Repetir Contraseña*</label>
-            <input type="password" formControlName="password2" [ngClass]="{'is-invalid': form.invalid}" />
+            <input type="password" formControlName="password2" [ngClass]="{'is-invalid': form.get('password2')?.invalid && (submitted || form.get('password2')?.touched)}">
+            <div *ngIf="(submitted || form.get('password2')?.touched) && form.get('password2')?.invalid" class="small-text">
+              {{ getErrorPasswordField() }}
+            </div>
           </div>
         </div>
       </ng-container>
@@ -151,11 +183,14 @@
       <!-- Botones -->
       <div class="form-buttons">
         <button type="button" class="btn-regresar" (click)="onCancel()">CANCELAR</button>
-        <button type="submit" class="btn-registrar" [disabled]="form.invalid">GUARDAR</button>
+        <button type="submit" (click)="saveInfo()" class="btn-registrar" [disabled]="form.invalid">GUARDAR</button>
+
       </div>
     </form>
   </div>
 </div>
 
 
-  <!--nuevo formulario-->
+
+
+
