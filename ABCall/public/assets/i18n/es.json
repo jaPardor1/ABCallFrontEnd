@@ -6,5 +6,11 @@
         "loginbtnIngresar": "INGRESAR",
         "loginBtRegistroCliente": "REGISTRO CLIENTE",
         "fieldRequiredValidation":"Este campo es obligatorio"
+    },
+    "registoModule":{
+      "title":"REGISTRE SUS DATOS",
+      "tipoIdentificacion":"TIPO IDENTIFICACIÓN*:",
+      "lblNombres":"NOMBRES *:",
+       "nombrePlaceHolder":"Ingrese sus nombres"
     }
 }

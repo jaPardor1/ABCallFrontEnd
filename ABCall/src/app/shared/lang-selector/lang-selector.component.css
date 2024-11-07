@@ -1,0 +1,8 @@
+select {
+  width: 16%;
+  padding: 3px;
+  margin-bottom: 5px;
+  border: 2px solid  #48464C;;
+  background-color: rgba(72, 207, 194, 0.9);
+  border-radius: 5px;
+}

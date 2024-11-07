@@ -7,5 +7,13 @@
         "loginbtnIngresar": "SIGN IN",
         "loginBtRegistroCliente": "SIGN UP",
         "fieldRequiredValidation":"This field is required"
+    },
+    "registoModule":{
+      "title":"PLEASE ENTER YOUR DATA",
+      "tipoIdentificacion":"ID TYPE*:",
+      "lblNombres":"NAME *:",
+      "nombrePlaceHolder":"Enter your name"
+
+
     }
 }

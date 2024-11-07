@@ -1,25 +1,25 @@
 <div class="register-page">
   <div class="register-form">
-    <h1>REGISTRE SUS DATOS</h1>
+    <h1> {{'registoModule.title' | translate}}   </h1>
     <form [formGroup]="registroForm" (ngSubmit)="onSubmit()">
       <div class="form-row">
         <!-- Primera columna -->
         <div class="form-column">
 
-          <label i18n="registro-tipo-identificacion" for="tipo-identificacion">TIPO IDENTIFICACIÓN*:</label>
+          <label i18n="registro-tipo-identificacion" for="tipo-identificacion">{{'registoModule.tipoIdentificacion' | translate}}</label>
           <select id="tipo-identificacion" formControlName="tipoIdentificacion" [ngClass]="{'is-invalid': isFieldInvalid('tipoIdentificacion')}">
             <option value="Cedula">Cédula</option>
             <option value="Cedula_Extranjeria">Cédula de Extranjería</option>
             <option value="Passport">Pasaporte</option>
           </select>
-          <label i18n="registro-nombres" for="nombres">NOMBRES *:</label>
-          <input type="text" id="nombres" formControlName="nombres" i18n-placeholder  placeholder="Ingrese sus nombres" [ngClass]="{'is-invalid': isFieldInvalid('nombres')}"/>
+          <label for="nombres">{{'registoModule.lblNombres' | translate}}</label>
+          <input type="text" id="nombres" formControlName="nombres" [attr.placeholder]="'registoModule.nombrePlaceHolder' | translate" [ngClass]="{'is-invalid': isFieldInvalid('nombres')}"/>
           <label i18n="registro-empresa" for="empresa">EMPRESA PQR*:</label>
           <select id="empresa" formControlName="empresa" [ngClass]="{'is-invalid': isFieldInvalid('empresa')}">
             <option *ngFor="let empresa of empresaNombres">{{ empresa }}</option>
           </select>
           <label i18n="registro-correo" for="correo">EMAIL (USERNAME)*:</label>
-          <input type="email" id="correo" formControlName="correo" i18n-placeholder placeholder="Ingrese su correo" [ngClass]="{'is-invalid': isFieldInvalid('correo')}"/>
+          <input type="email"  id="correo" formControlName="correo" i18n-placeholder placeholder="Ingrese su correo" [ngClass]="{'is-invalid': isFieldInvalid('correo')}"/>
 
         </div>
 
