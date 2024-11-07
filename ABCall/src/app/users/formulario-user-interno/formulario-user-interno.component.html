@@ -3,221 +3,159 @@
   {{form.value | json}}
   {{form.value.password | json}}
 </code> -->
-<form class="mt-2" (submit)="saveInfo()" [formGroup]="form">
-  <div class="container">
+<div class="register-page">
+  <div class="register-form">
+    <h1>EDITE SUS DATOS</h1>
+    <form [formGroup]="form" (submit)="saveInfo()">
 
-    <div class="row">
-      <div class="col-3">
-        <label i18n="user-form-perfil" >Perfil</label>
-      </div>
-      <div class="col-3">
-        <mat-error *ngIf="form.invalid">{{getErrorProfileField()}}</mat-error>
-        <mat-form-field appearance="outline">
-          <mat-label i18n="user-form-selec-tipo-perfil">Seleccione Tipo De perfil</mat-label>
-          <mat-select formControlName="user_role">
-            <mat-option *ngFor="let op of profiles" [value]="op.id">{{op.profileName}}</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-      <div *ngIf="form.value.user_role=='Client'" class="col-3">
-        <label i18n="user-form-selec-tipo-plan" for="">Seleccione el tipo de plan </label>
-      </div>
-      <div *ngIf="form.value.user_role=='Client'" class="col-3">
-        <mat-error *ngIf="form.invalid">{{getErrorPlanField()}}</mat-error>
-        <mat-form-field appearance="outline">
-          <mat-label i18n="user-form-selec-tipo-plan-2" >Seleccione Tipo De plan</mat-label>
-          <mat-select formControlName="plan">
-            <mat-option *ngFor="let op of subscriptionsPlan" [value]="op.id">{{op.subscrptionName}}</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-3">
-        <label i18n="user-form-id-type">Tipo Identificación</label>
-      </div>
-      <div class="col-3">
-        <mat-error *ngIf="form.invalid">{{getErrorIdentificationTypeField()}}</mat-error>
-        <mat-form-field appearance="outline">
-          <mat-label i18n="user-form-id-type-2">Seleccione tipo de Identificación</mat-label>
-          <mat-select formControlName="document_type">
-            <mat-option *ngFor="let op of documentIds" [value]="op.id">{{op.documentName}}</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-      <div class="col-3">
-        <label i18n="user-form-id-number">Identificación</label>
-      </div>
-      <div class="col-3">
-        <mat-error *ngIf="form.invalid">{{getErrorIdentificacionField()}}</mat-error>
-        <mat-form-field appearance="outline">
-          <mat-label i18n="user-form-id-number-2">Identificación</mat-label>
-          <input formControlName="id_number" matInput>
-        </mat-form-field>
-      </div>
-    </div>
-    <div *ngIf="form.value.user_role!='Client'" class="row">
-      <div class="col-3">
-        <label i18n="user-form-nombre" for="">Nombres</label>
-      </div>
-      <div class="col-3">
-        <mat-error *ngIf="form.invalid">{{getErrorNameField()}}</mat-error>
-        <mat-form-field appearance="outline">
-          <mat-label i18n="user-form-nombre-2" >Nombres</mat-label>
-          <input formControlName="name" matInput>
-        </mat-form-field>
-      </div>
-      <div class="col-3">
-        <label i18n="user-form-apellido" for="">Apellidos</label>
-      </div>
-      <div class="col-3">
-        <mat-error *ngIf="form.invalid">{{getErrorLastNameField()}}</mat-error>
-        <mat-form-field appearance="outline">
-          <mat-label i18n="user-form-apellido-2">Apellidos</mat-label>
-          <input formControlName="last_name" matInput>
-        </mat-form-field>
-      </div>
-    </div>
-
-  </div>
-  <!--datos de la empresa-->
-  <div *ngIf="form.value.user_role=='Client'" class="container" name="info_company_data">
-    <div class="row">
-      <div class="col-3">
-        <label i18n="user-form-razon-social">Razón social*</label>
-      </div>
-      <div class="col-3">
-        <mat-error *ngIf="form.invalid">{{getErrorRazonSocialField()}}</mat-error>
-        <mat-form-field appearance="outline">
-          <mat-label i18n="user-form-razon-social-2">Razón social</mat-label>
-          <input formControlName="razonSocialEmpresa" matInput>
-        </mat-form-field>
-      </div>
-      <div class="col-3">
-        <label i18n="user-form-direccion-empresa">Dirección empresa</label>
-      </div>
-      <div class="col-3">
-        <mat-error *ngIf="form.invalid">{{getErrorDireccionEmpresaField()}}</mat-error>
-        <mat-form-field appearance="outline" [style.width.px]=327>
-          <mat-label i18n="user-form-direccion-empresa-2">Dirección Empresa</mat-label>
-          <input formControlName="direccionEmpresa" matInput>
-        </mat-form-field>
-      </div>
-
-    </div>
-    <div class="row">
-      <div class="col-3">
-        <label i18n="user-form-id-type-rep-legal" for="">Tipo Identificación rep. legal</label>
-      </div>
-      <div class="col-3">
-        <mat-error *ngIf="form.invalid">{{getErrorLegalrepIdTypeField()}}</mat-error>
-        <mat-form-field appearance="outline">
-          <mat-label i18n="user-form-id-type-rep-legal-2">Seleccione tipo de Identificación</mat-label>
-          <mat-select formControlName="tipoIdentificacionRepLegal">
-            <mat-option *ngFor="let op of documentIds" [value]="op.id">{{op.documentName}}</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-      <div class="col-3">
-        <label i18n="user-form-id-rep-legal" for="">Identificación rep. legal</label>
-      </div>
-      <div class="col-3">
-        <mat-error *ngIf="form.invalid">{{getErrorLegalrepIdField()}}</mat-error>
-        <mat-form-field appearance="outline">
-          <mat-label i18n="user-form-id-rep-legal-2">Identificación Rep. Legal</mat-label>
-          <input formControlName="identificacionRepLegal" matInput>
-        </mat-form-field>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-3">
-        <label i18n="user-form-nombre-rep-legal" for="">Nombres rep. legal</label>
-      </div>
-      <div class="col-3">
-        <mat-error *ngIf="form.invalid">{{getErrorLegalrepNamesField()}}</mat-error>
-        <mat-form-field appearance="outline">
-          <mat-label i18n="user-form-nombre-rep-legal-2">Nombres Rep. legal</mat-label>
-          <input formControlName="nombresRepLegal" matInput>
-        </mat-form-field>
-      </div>
-      <div class="col-3">
-        <label i18n="user-form-apellidos-rep-legal" for="">Apellidos Rep. Legal</label>
-      </div>
-      <div class="col-3">
-        <mat-error *ngIf="form.invalid">{{getErrorLegalrepLastNamesField()}}</mat-error>
-        <mat-form-field appearance="outline">
-          <mat-label i18n="user-form-apellidos-rep-legal-2">Apellidos Rep. Legal</mat-label>
-          <input formControlName="apellidosRepLegal" matInput>
-        </mat-form-field>
-      </div>
-    </div>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-3">
-        <label i18n="user-form-email" for="">Correo electrónico</label>
-      </div>
-      <div class="col-3">
-        <mat-error *ngIf="form.invalid">{{getErrorEmailField()}}</mat-error>
-        <mat-form-field appearance="outline">
-          <mat-label i18n="user-form-email-2">Correo electrónico</mat-label>
-          <input formControlName="email" matInput>
-        </mat-form-field>
-      </div>
-      <div class="col-3">
-        <label i18n="user-form-telefono" for="">Teléfono</label>
-      </div>
-      <div class="col-3">
-        <mat-error *ngIf="form.invalid">{{getErrorTelephoneField()}}</mat-error>
-        <mat-form-field appearance="outline">
-          <mat-label i18n="user-form-telefono-2">Teléfono</mat-label>
-          <input formControlName="cellphone" matInput>
-        </mat-form-field>
-      </div>
-    </div>
-    <ng-container *ngIf="model==null">
-
-      <div class="row">
-        <div class="col-3 pt-2">
-          <label i18n="user-form-contrasena" for="">Contraseña*</label>
+      <!-- Primera fila -->
+      <div class="form-row">
+        <div class="form-column">
+          <label i18n="user-form-perfil">Perfil</label>
+          <select formControlName="user_role" [ngClass]="{'is-invalid': form.invalid}">
+            <option *ngFor="let op of profiles" [value]="op.id">{{ op.profileName }}</option>
+          </select>
+          <div *ngIf="form.invalid" class="small-text">{{getErrorProfileField()}}</div>
         </div>
-        <div class="col-3 pt-2">
-          <mat-error *ngIf="form.invalid">{{getErrorPasswordField()}}</mat-error>
-          <mat-form-field appearance="outline">
-            <mat-label i18n="user-form-contrasena-2">Contraseña</mat-label>
-            <input formControlName="password" type="password" matInput>
-          </mat-form-field>
+
+        <div *ngIf="form.value.user_role == 'Client'" class="form-column">
+          <label i18n="user-form-selec-tipo-plan">Seleccione el tipo de plan</label>
+          <select formControlName="plan" [ngClass]="{'is-invalid': form.invalid}">
+            <option *ngFor="let op of subscriptionsPlan" [value]="op.id">{{ op.subscrptionName }}</option>
+          </select>
+          <div *ngIf="form.invalid" class="small-text">{{getErrorPlanField()}}</div>
         </div>
-        <div class="col-6 pt-3">
-          <div class="pass-err text-sm">
-            <ul>
-              <li i18n="user-form-pass-una-mayuscula" class="block" [ngClass]="{'pass-ok': form.value.password?.match('^(?=.*[A-Z])')}">Una letra Mayuscula</li>
-              <li i18n="user-form-pass-una-minuscula" class="block" [ngClass]="{'pass-ok': form.value.password?.match('(?=.*[a-z])')}">Una letra Minuscula.</li>
-              <li i18n="user-form-pass-una-digito" class="block" [ngClass]="{'pass-ok': form.value.password?.match('(.*[0-9].*)')}">Al menos un digito</li>
-              <li i18n="user-form-pass-una-caracter-especial" class="block" [ngClass]="{'pass-ok': form.value.password?.match('(?=.*[!@#$%^&*])')}">Un Carácter Especial</li>
-              <li i18n="user-form-pass-caracteres-minimos" class="block" [ngClass]="{'pass-ok': form.value.password?.match('.{8,}')}">Mínimo 8 caracteres de logitud</li>
-            </ul>
+      </div>
+
+      <!-- Segunda fila -->
+      <div class="form-row">
+        <div class="form-column">
+          <label i18n="user-form-id-type">Tipo Identificación</label>
+          <select formControlName="document_type" [ngClass]="{'is-invalid': form.invalid}">
+            <option *ngFor="let op of documentIds" [value]="op.id">{{ op.documentName }}</option>
+          </select>
+          <div *ngIf="form.invalid" class="small-text">{{getErrorIdentificationTypeField()}}</div>
+        </div>
+
+        <div class="form-column">
+          <label i18n="user-form-id-number">Identificación</label>
+          <input type="text" formControlName="id_number" [ngClass]="{'is-invalid': form.invalid}" />
+          <div *ngIf="form.invalid" class="small-text">{{getErrorIdentificacionField()}}</div>
+        </div>
+      </div>
+
+      <!-- Tercera fila -->
+      <div *ngIf="form.value.user_role != 'Client'" class="form-row">
+        <div class="form-column">
+          <label i18n="user-form-nombre">Nombres</label>
+          <input type="text" formControlName="name" [ngClass]="{'is-invalid': form.invalid}" />
+          <div *ngIf="form.invalid" class="small-text">{{getErrorNameField()}}</div>
+        </div>
+        <div class="form-column">
+          <label i18n="user-form-apellido">Apellidos</label>
+          <input type="text" formControlName="last_name" [ngClass]="{'is-invalid': form.invalid}" />
+          <div *ngIf="form.invalid" class="small-text">{{getErrorLastNameField()}}</div>
+        </div>
+      </div>
+
+      <!-- Datos de la empresa (solo para "Client") -->
+      <div *ngIf="form.value.user_role == 'Client'" class="form-row highlight-box">
+        <div class="form-column">
+          <label i18n="user-form-razon-social">Razón social*</label>
+          <input type="text" formControlName="razonSocialEmpresa" [ngClass]="{'is-invalid': form.invalid}" />
+          <div *ngIf="form.invalid" class="small-text">{{getErrorRazonSocialField()}}</div>
+        </div>
+
+        <div class="form-column">
+          <label i18n="user-form-direccion-empresa">Dirección empresa</label>
+          <input type="text" formControlName="direccionEmpresa" [ngClass]="{'is-invalid': form.invalid}" />
+          <div *ngIf="form.invalid" class="small-text">{{getErrorDireccionEmpresaField()}}</div>
+        </div>
+      </div>
+
+      <!-- Representante legal (solo para "Client") -->
+      <div *ngIf="form.value.user_role == 'Client'" class="form-row">
+        <div class="form-column">
+          <label i18n="user-form-id-type-rep-legal">Tipo Identificación rep. legal</label>
+          <select formControlName="tipoIdentificacionRepLegal" [ngClass]="{'is-invalid': form.invalid}">
+            <option *ngFor="let op of documentIds" [value]="op.id">{{ op.documentName }}</option>
+          </select>
+          <div *ngIf="form.invalid" class="small-text">{{getErrorLegalrepIdTypeField()}}</div>
+        </div>
+
+        <div class="form-column">
+          <label i18n="user-form-id-rep-legal">Identificación rep. legal</label>
+          <input type="text" formControlName="identificacionRepLegal" [ngClass]="{'is-invalid': form.invalid}" />
+          <div *ngIf="form.invalid" class="small-text">{{getErrorLegalrepIdField()}}</div>
+        </div>
+      </div>
+
+      <div *ngIf="form.value.user_role == 'Client'" class="form-row">
+        <div class="form-column">
+          <label i18n="user-form-nombre-rep-legal">Nombres rep. legal</label>
+          <input type="text" formControlName="nombresRepLegal" [ngClass]="{'is-invalid': form.invalid}" />
+          <div *ngIf="form.invalid" class="small-text">{{getErrorLegalrepNamesField()}}</div>
+        </div>
+
+        <div class="form-column">
+          <label i18n="user-form-apellidos-rep-legal">Apellidos Rep. Legal</label>
+          <input type="text" formControlName="apellidosRepLegal" [ngClass]="{'is-invalid': form.invalid}" />
+          <div *ngIf="form.invalid" class="small-text">{{getErrorLegalrepLastNamesField()}}</div>
+        </div>
+      </div>
+
+      <!-- Datos de contacto -->
+      <div class="form-row">
+        <div class="form-column">
+          <label i18n="user-form-email">Correo electrónico</label>
+          <input type="email" formControlName="email" [ngClass]="{'is-invalid': form.invalid}" />
+          <div *ngIf="form.invalid" class="small-text">{{getErrorEmailField()}}</div>
+        </div>
+
+        <div class="form-column">
+          <label i18n="user-form-telefono">Teléfono</label>
+          <input type="text" formControlName="cellphone" [ngClass]="{'is-invalid': form.invalid}" />
+          <div *ngIf="form.invalid" class="small-text">{{getErrorTelephoneField()}}</div>
+        </div>
+      </div>
+
+      <!-- Contraseñas -->
+      <ng-container *ngIf="model == null">
+        <div class="form-row highlight-box">
+          <div class="form-column">
+            <label i18n="user-form-contrasena">Contraseña*</label>
+            <input type="password" formControlName="password" [ngClass]="{'is-invalid': form.invalid}" />
+            <div *ngIf="form.invalid" class="small-text">{{getErrorPasswordField()}}</div>
+
+            <!-- Validaciones de contraseña -->
+            <div class="col-6 pt-3">
+              <div class="pass-err text-sm">
+                <ul>
+                  <li i18n="user-form-pass-una-mayuscula" class="block" [ngClass]="{'pass-ok': form.value.password?.match('^(?=.*[A-Z])')}">Una letra Mayuscula</li>
+                  <li i18n="user-form-pass-una-minuscula" class="block" [ngClass]="{'pass-ok': form.value.password?.match('(?=.*[a-z])')}">Una letra Minuscula.</li>
+                  <li i18n="user-form-pass-una-digito" class="block" [ngClass]="{'pass-ok': form.value.password?.match('(.*[0-9].*)')}">Al menos un digito</li>
+                  <li i18n="user-form-pass-una-caracter-especial" class="block" [ngClass]="{'pass-ok': form.value.password?.match('(?=.*[!@#$%^&*])')}">Un Carácter Especial</li>
+                  <li i18n="user-form-pass-caracteres-minimos" class="block" [ngClass]="{'pass-ok': form.value.password?.match('.{8,}')}">Mínimo 8 caracteres de logitud</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-column">
+            <label i18n="user-form-repetir-contrasenia">Repetir Contraseña*</label>
+            <input type="password" formControlName="password2" [ngClass]="{'is-invalid': form.invalid}" />
           </div>
         </div>
+      </ng-container>
+
+      <!-- Botones -->
+      <div class="form-buttons">
+        <button type="button" class="btn-regresar" (click)="onCancel()">CANCELAR</button>
+        <button type="submit" class="btn-registrar" [disabled]="form.invalid">GUARDAR</button>
       </div>
-      <div class="row">
-        <div class="col-3">
-          <label i18n="user-form-repetir-contrasenia" for="">Repetir Contraseña*</label>
-        </div>
-        <div class="col-3">
-          <mat-form-field appearance="outline">
-            <mat-label i18n="user-form-repetir-contrasenia-2">Contraseña</mat-label>
-            <input formControlName="password2" type="password" matInput>
-          </mat-form-field>
-        </div>
-      </div>
-    </ng-container>
-    <div class="row">
-      <div class="col-12 mt-5">
-        <div class="col d-flex justify-content-center">
-          <button i18n="user-form-but-guardar" [disabled]="form.invalid">Guardar</button>
-        </div>
-      </div>
-    </div>
+    </form>
   </div>
-</form>
+</div>
+
+
+  <!--nuevo formulario-->
