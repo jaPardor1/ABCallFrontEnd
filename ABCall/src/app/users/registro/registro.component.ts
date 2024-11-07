@@ -73,8 +73,8 @@ export class RegistroComponent implements OnInit {
         if (Array.isArray(data)) {
           // Aquí asignamos directamente el array recibido
           this.empresas = data;
-          this.empresaNombres = this.empresas.map((empresa: any) => empresa.legal_name);
-        } else {
+          this.empresaNombres = ["Seleccione una empresa", ...this.empresas.map((empresa: any) => empresa.legal_name)];
+        }  else {
           console.error('La respuesta no es un array de empresas esperado:', data);
         }
       }, error => {
@@ -89,6 +89,12 @@ export class RegistroComponent implements OnInit {
       return;
     }
       const formData = this.registroForm.value;
+      
+        // Verificar si el usuario seleccionó una empresa válida
+      if (formData.empresa === "Seleccione una empresa") {
+        this.showModal('error', $localize `Por favor seleccione una empresa válida.`);
+        return;
+      }
 
       // Obtener el client_id (id_number) basado en el nombre de la empresa seleccionada
       const empresaSeleccionada = this.empresas.find(empresa => empresa.legal_name === formData.empresa);

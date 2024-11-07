@@ -15,7 +15,7 @@
           <label i18n="registro-nombres" for="nombres">NOMBRES *:</label>
           <input type="text" id="nombres" formControlName="nombres" i18n-placeholder  placeholder="Ingrese sus nombres" [ngClass]="{'is-invalid': isFieldInvalid('nombres')}"/>
           <label i18n="registro-empresa" for="empresa">EMPRESA PQR*:</label>
-          <select id="empresa" formControlName="empresa">
+          <select id="empresa" formControlName="empresa" [ngClass]="{'is-invalid': isFieldInvalid('empresa')}">
             <option *ngFor="let empresa of empresaNombres">{{ empresa }}</option>
           </select>
           <label i18n="registro-correo" for="correo">EMAIL (USERNAME)*:</label>
