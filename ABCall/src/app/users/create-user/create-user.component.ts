@@ -3,6 +3,7 @@ import { UserDto } from '../user';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../../shared/dialog/dialog.component';
 import { UserService } from '../../service/user/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-user',
@@ -14,7 +15,7 @@ export class CreateUserComponent {
   readonly dialog = inject(MatDialog);
 
 
-  constructor(private userService:UserService){
+  constructor(private userService:UserService,private router:Router){
 
   }
 
@@ -26,7 +27,7 @@ export class CreateUserComponent {
           this.openDialog( $localize `El Usuario ha sido Creado`+response.cognito_user_sub);
         },
         (error:any) => {
-          this.openDialog(error.Message);
+          //this.openDialog(error.Message);
            console.error(error.Message)
         }
       )
@@ -36,6 +37,8 @@ export class CreateUserComponent {
   openDialog(mensaje: string): void {
     this.dialog.open(DialogComponent, {
      data: { message: mensaje },
+   }).afterClosed().subscribe(() => {
+      this.router.navigate(['/listUsers']);
    });
  }
 

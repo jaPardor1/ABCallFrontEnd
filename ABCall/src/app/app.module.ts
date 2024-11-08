@@ -26,6 +26,7 @@ import { DetailDialogComponent } from './shared/detail-dialog/detail-dialog.comp
 import { LoadingIndicatorComponent } from './shared/loading-indicator/loading-indicator.component';
 import { LoadingInterceptor } from './loading.interceptor';
 import { HeaderInterceptor } from './request-handler.interceptor';
+import { ShowForRolesDirective } from './directives/show-for-roles.directive';
 
 
 
@@ -47,7 +48,8 @@ import { HeaderInterceptor } from './request-handler.interceptor';
     ConfirmDialogComponent,
     CreateUserComponent,
     DetailDialogComponent,
-    LoadingIndicatorComponent
+    LoadingIndicatorComponent,
+    ShowForRolesDirective
    ],
   imports: [
     BrowserModule,

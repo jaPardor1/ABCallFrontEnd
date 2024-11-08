@@ -11,10 +11,10 @@
 
 html, body { height: 100%; background-color: #e0e2ec; }
 body { margin: 0; /*font-family: 'bebas-neue',Roboto, "Helvetica Neue", sans-serif !important;*/
-  /* background-image: url('/assets/images/background/Background2.png') !important; */
+
   background-color: #e0e2ec !important;
-  /* background-size: 100vw 130vh;
-  background-repeat: no-repeat; */
+  background-size: 100vw 130vh;
+  background-repeat: no-repeat;
 }
 
 button{
@@ -28,4 +28,5 @@ input {
 body {
   text-transform: none !important; /* Asegura que todo el texto respete su forma original */
 }
+
 
