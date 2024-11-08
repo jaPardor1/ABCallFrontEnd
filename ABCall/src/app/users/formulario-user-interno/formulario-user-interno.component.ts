@@ -83,7 +83,7 @@ export class FormularioUserInternoComponent implements OnInit {
     this.submitted = true;
     if (this.form.valid) {
         this.submit.emit(this.form.value);
-        this.router.navigate(['/listUsers']);
+       
     } else {
         this.form.markAllAsTouched();
     }
