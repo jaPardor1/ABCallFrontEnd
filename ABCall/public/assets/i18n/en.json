@@ -12,8 +12,42 @@
       "title":"PLEASE ENTER YOUR DATA",
       "tipoIdentificacion":"ID TYPE*:",
       "lblNombres":"NAME *:",
-      "nombrePlaceHolder":"Enter your name"
-
-
+      "nombrePlaceHolder":"Enter your name",
+      "empresaLbl": "COMPANY*:",
+      "emailLbl": "EMAIL(USERNAME):",
+      "placeHoldrLoginEmail" : "Enter email",
+      "identificacionlbl":"ID NUMBER*:",
+      "placeHoldrIdentificacion":"Enter your id number",
+      "apellidolbl":"LAST NAME*:",
+      "placeHoldrApellido":"Enter your last name",
+      "tipoComunicacionLbl":"COMUNICATION TYPE*:",
+      "telefonolbl":"PHONE NUMBER (BEGINS WITH +1 TO 9)*:",
+      "placeHoldrtelefono":"Enter tour phone number",
+      "contraseniaLbl":"PASSWORD* (first letter in uppercase, min 6 digit):",
+      "placeHoldrcontrasenia":"Enter your password",
+      "repetircontraseniaLbl":"REPEAT PASSWORD*:"  ,
+      "placeHoldrRepcontrasenia":"Repeat password",
+      "cancelButton":"CANCEL",
+      "registrarButton":"SAVE",
+      "validacionSeleccionEmpresa":"Please select a valid company.",
+      "validacionEmpresa2":"No valid company was found for the selection made.",
+      "validacionCamposIncompletos":"Incomplete fields. Please fill out all fields.",
+      "validacionCorreo":"Invalid mail.Please enter a valid email.",
+      "validacionIdentificacion":"Wrong data entered in the Identification field. Use only numbers.",
+      "validacionTelefono":"Wrong phone format. Use international format.",
+      "validacionDatosGeneral":"Wrong data entered. Verify the information.",
+      "validacionCreacionUsuario":"The user could not be registered. Please try again.",
+      "validacionClientId":"The client_id is null or invalid.",
+      "ConfirmacionCreacionUsuario":"Successfully registered user.",
+      "seleccionarEmpresa":"Select a company"
+    },
+    "userListModule":{
+       "title":"Registered Users",
+       "crearUsuarioBtn":"Create User",
+       "encabezadoIdentificacion":"Id. number",
+        "encabezadoNombre":"Name",
+        "encabezadoPerfil":"User role",
+        "editarBtn":"Edit",
+        "borrarBtn":"Delete"
     }
 }
