@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
         const {isSignedIn} = await this.authService.login2(usuario, contrasena);
 
         if(isSignedIn){
-          this.router.navigateByUrl('listUsers');
+          this.authService.getUserHomeByUserRole();
         }else{
 
           this.modalMessage = $localize  `Algo fallo en la autenticacion`;
