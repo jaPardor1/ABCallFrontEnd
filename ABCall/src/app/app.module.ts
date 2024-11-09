@@ -28,8 +28,8 @@ import { DetailDialogComponent } from './shared/detail-dialog/detail-dialog.comp
 import { LoadingIndicatorComponent } from './shared/loading-indicator/loading-indicator.component';
 import { LoadingInterceptor } from './loading.interceptor';
 import { HeaderInterceptor } from './request-handler.interceptor';
+import { ShowForRolesDirective } from './directives/show-for-roles.directive';
 import { LangSelectorComponent } from './shared/lang-selector/lang-selector.component';
-
 
 // Función de fábrica para crear el TranslateLoader
 export function HttpLoaderFactory(http: HttpClient) {
@@ -55,6 +55,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     CreateUserComponent,
     DetailDialogComponent,
     LoadingIndicatorComponent,
+    ShowForRolesDirective,
     LangSelectorComponent
    ],
   imports: [

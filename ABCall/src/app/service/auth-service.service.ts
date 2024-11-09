@@ -4,19 +4,41 @@ import { Injectable } from "@angular/core";
 import { jwtDecode } from "jwt-decode";
 import { signIn, signOut } from 'aws-amplify/auth';
 import { fetchAuthSession } from 'aws-amplify/auth';
+import { Router } from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   private decodedToken: any | null;
+  private userRole: any | null;
+  constructor(private router:Router){
 
+  }
   public GetEmailAddress(): string | undefined {
     if (this.decodedToken === undefined || this.decodedToken === null)
       return undefined;
     return this.decodedToken.email;
   }
+  
+  public getUserRole(): string | null {
+    return this.userRole;
+  }
+  public getUserHomeByUserRole(){
+      
+    if(this.userRole==="Superadmin" || this.userRole==="Admin"){
+       this.router.navigateByUrl('listUsers');
+    }
+    else if(this.userRole==="Regular"){
+       this.router.navigateByUrl('listIncidences');
+    }
+    else if(this.userRole==="Agent"|| this.userRole==="Client"){
+       this.router.navigateByUrl('articlesList');
+    }else{
+       this.router.navigateByUrl('login');
+    }
 
+}
 
   public async login2(user: string, pass: string) {
     const SignInresult = await signIn({
@@ -35,6 +57,7 @@ export class AuthService {
           localStorage.setItem('id_token', String(idToken));
           let decoded = jwtDecode(String(idToken));
           this.decodedToken = decoded;
+          this.userRole = this.decodedToken['custom:custom:userRole'];
 
         }
       }

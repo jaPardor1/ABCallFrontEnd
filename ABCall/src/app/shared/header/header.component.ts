@@ -13,32 +13,37 @@ export class HeaderComponent {
   public moduleName: string = $localize `BIENVENIDO`
   public options: HeaderOptionDTO[];
   public currentOption=3;
-  constructor(private authService:AuthService,private router: Router,private translationService: TranslationService) {
-
+  public userRole: string='';
+  constructor(private authService:AuthService,private router: Router) {
+    this.userRole = authService.getUserRole()??'';
     this.options = [
       {
         id: 1,
         name: $localize `RADICAR PQR`,
         isActive: false,
-        link:"createIncidence"
+        link:"createIncidence",
+        allowedRoles:['Regular','Admin','Superadmin','Admin']
       },
       {
         id: 2,
         name: $localize `CONSULTAR PQR`,
         isActive: false,
-        link:"listIncidences"
+        link:"listIncidences",
+        allowedRoles:['Regular','Admin','Superadmin']
       },
       {
         id: 3,
         name: $localize `USUARIOS REGISTRADOS`,
         isActive: true,
-        link:"listUsers"
+        link:"listUsers",
+        allowedRoles:['Admin','Superadmin']
       },
       {
         id: 4,
         name: $localize `BASE DE CONOCIMIENTOS`,
         isActive: false,
-        link:"articlesList"
+        link:"articlesList",
+        allowedRoles:['Regular','Admin','Superadmin','Agent']
       }
     ]
   }

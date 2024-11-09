@@ -21,8 +21,8 @@ export class EditUserComponent implements OnInit {
   }
 
   saveChanges(userInfo: UserDto) {
-
-    if (userInfo.cognito_user_sub !== undefined) {
+   debugger;
+   if (userInfo.cognito_user_sub !== undefined) {
       console.log(userInfo);
       this.userService.editUserSub(userInfo).subscribe(
         (response) => {

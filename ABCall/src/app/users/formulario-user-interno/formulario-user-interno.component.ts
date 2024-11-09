@@ -21,6 +21,8 @@ export class FormularioUserInternoComponent implements OnInit {
   public profiles = [{ id: '', profileName: '' }];
   public documentIds = [{ id: '', documentName: '' }];
   public subscriptionsPlan: SubscriptionDTO[];
+  public submitted: boolean = false;
+
 
   constructor(private router: Router,private formBuilder: FormBuilder, private userService: UserService) {
     this.model = null;
@@ -30,8 +32,8 @@ export class FormularioUserInternoComponent implements OnInit {
       plan: [],
       document_type: ['', [Validators.required]],
       id_number: ['', [Validators.required, Validators.pattern('^[0-9]+$')]],
-      name: [],
-      last_name: [],
+      name: ['', Validators.required],
+      last_name: ['', Validators.required],
       razonSocialEmpresa: [],
       direccionEmpresa: [],
       tipoIdentificacionRepLegal: [],
@@ -78,8 +80,15 @@ export class FormularioUserInternoComponent implements OnInit {
   }
 
   saveInfo() {
-    this.submit.emit(this.form.value);
-  }
+    this.submitted = true;
+    if (this.form.valid) {
+        this.submit.emit(this.form.value);
+       
+    } else {
+        this.form.markAllAsTouched();
+    }
+}
+
 
   onGetUser() {
     this.userService.getUserSub(this.model).subscribe(
@@ -207,7 +216,7 @@ export class FormularioUserInternoComponent implements OnInit {
     return campo && campo.hasError('lastNameRepLegalRequired') ? $localize `Por favor especificar los apellidos del representante legal` : '';
   }
   onCancel() {
-    this.router.navigate(['/listUsers']); // Redirige a la ruta específica
+    this.router.navigate(['/listUsers']);
   }
 }
 
