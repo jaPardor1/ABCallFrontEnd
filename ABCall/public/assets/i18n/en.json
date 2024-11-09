@@ -119,7 +119,7 @@
     "asuntoRequerido": "Please specify a subject"
   },
   "listPqrMOdule": {
-    "digiteElRadicado": "Enter the ticket number:",
+    "digiteElRadicado": "Enter the ticket(PQR) number:",
     "enviar": "Submit",
     "pqrListTitle": "Incident Search",
     "pqrListBtnEnviarIncidente": "Send incident",

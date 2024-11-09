@@ -118,7 +118,7 @@
     "asuntoRequerido": "Por favor especifique un asunto"
   },
   "listPqrMOdule":{
-    "digiteElRadicado": "Digite el radicado:",
+    "digiteElRadicado": "Digite el PQR* radicado:",
     "enviar": "Enviar",
     "pqrListTitle": "Consulta de Incidentes",
     "pqrListBtnEnviarIncidente": "Enviar incidente",
