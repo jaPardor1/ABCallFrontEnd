@@ -1,4 +1,3 @@
-
 <!-- <code style="margin:0px auto;">
   {{form.value.descripcion.length}}
   {{form.value | json}}
@@ -12,24 +11,23 @@
           <!-- Tipo de solicitud -->
           <div class="row align-items-center mb-3">
             <div class="col-3 text-right d-flex align-items-center justify-content-start">
-              <label i18n="pqr-form-tipo-solicitud" class="form-label">Tipo de solicitud:</label>
+              <label class="form-label">{{ 'createIncidentModule.tipoSolicitud' | translate }}</label>
             </div>
             <div class="col-9">
               <div *ngIf="form.controls['type'].touched && form.controls['type'].invalid" class="small-text">
                 {{ getErrorRequestTypeField() }}
               </div>
               <select formControlName="type" [ngClass]="{'is-invalid': form.controls['type'].touched && form.controls['type'].invalid}">
-                <option value="">Seleccione Tipo de solicitud</option>
+                <option value="">{{ 'createIncidentModule.seleccioneTipoSolicitud' | translate }}</option>
                 <option *ngFor="let op of tipoSolicitud" [value]="op.id">{{op.tiposol}}</option>
               </select>
             </div>
           </div>
 
-
           <!-- Asunto -->
           <div class="row align-items-center mb-3">
             <div class="col-3 text-right d-flex align-items-center justify-content-start">
-              <label i18n="pqr-form-asunto" for="asunto" class="form-label">Asunto*:</label>
+              <label for="asunto" class="form-label">{{ 'createIncidentModule.asunto' | translate }}</label>
             </div>
             <div class="col-9">
               <div *ngIf="form.controls['title'].touched && form.controls['title'].invalid" class="small-text">
@@ -38,14 +36,14 @@
               <input id="asunto" formControlName="title" type="text"
               class="form-control"
               [ngClass]="{'is-invalid': form.controls['title'].touched && form.controls['title'].invalid}"
-              placeholder="Asunto">
+              placeholder="{{ 'createIncidentModule.asuntoPlaceholder' | translate }}">
             </div>
           </div>
 
           <!-- Descripción -->
           <div class="row align-items-start mb-3">
             <div class="col-3 text-right d-flex align-items-start justify-content-start">
-              <label i18n="pqr-form-descripcion" for="descripcion" class="form-label">Descripción*:</label>
+              <label for="descripcion" class="form-label">{{ 'createIncidentModule.descripcion' | translate }}</label>
             </div>
             <div class="col-9">
               <div *ngIf="form.controls['description'].touched && form.controls['description'].invalid" class="small-text">
@@ -54,11 +52,12 @@
 
               <textarea id="descripcion" formControlName="description" class="form-control"
           [ngClass]="{'is-invalid': form.controls['description'].touched && form.controls['description'].invalid}"
-          style="height: 150px;" placeholder="Descripción"></textarea>
+          style="height: 150px;" placeholder="{{ 'createIncidentModule.descripcionPlaceholder' | translate }}"></textarea>
+
               <!-- Contador de caracteres y botón Enviar -->
               <div class="d-flex justify-content-between mt-1">
                 <span>{{form.value.description.length}}/500</span>
-                <button i18n="pqr-btn-enviar" [disabled]="form.invalid" type="submit" class="btn btn-primary">Enviar</button>
+                <button [disabled]="form.invalid" type="submit" class="btn btn-primary">{{ 'createIncidentModule.enviar' | translate }} </button>
               </div>
             </div>
           </div>
@@ -68,9 +67,3 @@
     </div>
   </div>
 </form>
-
-
-
-
-
-

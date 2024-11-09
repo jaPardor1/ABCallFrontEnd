@@ -4,12 +4,6 @@
   "newProjectRoot": "projects",
   "projects": {
     "ABCall": {
-      "i18n": {
-        "sourceLocale":"es",
-        "locales": {
-          "en":"src/locale/messages.en.xlf"
-        }
-      },
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -29,8 +23,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "localize":true,
-            "aot": true,
             "outputPath": "dist/abcall",
             "index": "src/index.html",
             "browser": "src/main.ts",
@@ -54,23 +46,17 @@
             "scripts": ["node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"]
           },
           "configurations": {
-            "en":{
-              "localize":["en"]
-            },
-            "es":{
-              "localize":["es"]
-            },
             "production": {
 
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "3mb"
+                  "maximumWarning": "3mb",
+                  "maximumError": "4mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kB",
+                  "maximumWarning": "3kB",
                   "maximumError": "4kB"
                 }
               ],
@@ -87,12 +73,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
-            "en":{
-              "buildTarget": "ABCall:build:en"
-            },
-            "es":{
-              "buildTarget": "ABCall:build:es"
-            },
+
             "production": {
               "buildTarget": "ABCall:build:production"
             },

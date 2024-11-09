@@ -1,4 +1,3 @@
-
 <mat-dialog-content>
   <div class="container-fluid">
     <div class="line-title row">
@@ -7,16 +6,16 @@
       </div>
     </div>
     <div class="row mt-3">
-      <div class="field-title col-6 ">
-        <label i18n="detail-dialog-ticket" for="">Ticket:</label>
+      <div class="field-title col-6">
+        <label i18n="detailPqr.detailDialogTicket" for="">{{ 'detailPqr.ticket' | translate }}:</label>
       </div>
       <div class="col-6">
         <label for="">{{pqr.ticket_number}}</label>
       </div>
     </div>
-    <div class=" row">
+    <div class="row">
       <div class="field-title col-6">
-        <label i18n="detail-dialog-tipo" for="">Tipo:</label>
+        <label i18n="detailPqr.detailDialogTipo" for="">{{ 'detailPqr.tipo' | translate }}:</label>
       </div>
       <div class="col-6">
         <label for="">{{pqr.type}}</label>
@@ -24,7 +23,7 @@
     </div>
     <div class="row">
       <div class="field-title col">
-        <label i18n="detail-dialog-estado" for="">Estado:</label>
+        <label i18n="detailPqr.detailDialogEstado" for="">{{ 'detailPqr.estado' | translate }}:</label>
       </div>
       <div class="col-6">
         <label for="">{{pqr.status}}</label>
@@ -32,7 +31,7 @@
     </div>
     <div class="row">
       <div class="field-title col-6">
-        <label i18n="detail-dialog-fecha" for="">Fecha:</label>
+        <label i18n="detailPqr.detailDialogFecha" for="">{{ 'detailPqr.fecha' | translate }}:</label>
       </div>
       <div class="col-6">
         <label for="">{{pqr.date}}</label>
@@ -40,15 +39,15 @@
     </div>
     <div class="row">
       <div class="field-title col-6">
-        <label i18n="detail-dialog-fecha-cierre" for="">Fecha estimada de cierre:</label>
+        <label i18n="detailPqr.detailDialogFechaCierre" for="">{{ 'detailPqr.fechaCierre' | translate }}:</label>
       </div>
       <div class="col-6">
         <label for="">{{pqr.estimated_close_date}}</label>
       </div>
     </div>
     <div class="row">
-      <div class=" field-title col-6">
-        <label i18n="detail-dialog-descripcion" for="">Descripción</label>
+      <div class="field-title col-6">
+        <label i18n="detailPqr.detailDialogDescripcion" for="">{{ 'detailPqr.descripcion' | translate }}:</label>
       </div>
       <div class="col-6">
         <p>{{pqr.description}}</p>
@@ -56,7 +55,7 @@
     </div>
   </div>
 </mat-dialog-content>
-<mat-dialog-actions>
-  <button mat-button [mat-dialog-close]="" cdkFocusInitial>Ok</button>
-</mat-dialog-actions>
 
+<mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="" cdkFocusInitial>{{ 'detailPqr.ok' | translate }}</button>
+</mat-dialog-actions>

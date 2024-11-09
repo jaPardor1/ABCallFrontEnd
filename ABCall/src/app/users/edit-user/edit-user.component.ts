@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { UserService } from '../../service/user/user.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../../shared/dialog/dialog.component';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-edit-user',
@@ -13,7 +14,7 @@ import { DialogComponent } from '../../shared/dialog/dialog.component';
 export class EditUserComponent implements OnInit {
   sub: string | null = '';
   readonly dialog = inject(MatDialog);
-  constructor(private activatedRoute: ActivatedRoute, private userService: UserService) {
+  constructor(private activatedRoute: ActivatedRoute, private userService: UserService, private translate: TranslateService) {
 
   }
   ngOnInit(): void {
@@ -27,7 +28,7 @@ export class EditUserComponent implements OnInit {
       this.userService.editUserSub(userInfo).subscribe(
         (response) => {
           console.log(response);
-          this.openDialog( $localize `La información ha sido actualizada.`);
+          this.openDialog( this.translate.instant('editUserModule.confirmMessage')   /*`La información ha sido actualizada.`*/);
         },
         (error) => {
 
