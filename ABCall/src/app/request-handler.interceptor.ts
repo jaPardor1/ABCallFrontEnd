@@ -7,7 +7,7 @@ import { Observable } from "rxjs";
 export class HeaderInterceptor implements HttpInterceptor {
   constructor(private authService: AuthService) {}
   intercept(httpRequest: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-     debugger;
+
      if (httpRequest.url.includes('cognito')
 
     ) {

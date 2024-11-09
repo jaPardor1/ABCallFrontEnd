@@ -24,6 +24,8 @@
     "@aws-amplify/ui-angular": "^5.0.29",
     "@aws-sdk/client-cognito-identity-provider": "^3.678.0",
     "@fortawesome/angular-fontawesome": "^0.15.0",
+    "@ngx-translate/core": "^16.0.3",
+    "@ngx-translate/http-loader": "^16.0.0",
     "aws-amplify": "^6.6.7",
     "bootstrap": "^5.3.3",
     "fontawesome": "^5.6.3",

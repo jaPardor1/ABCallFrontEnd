@@ -23,8 +23,8 @@ export class ListadoPqrComponent {
   isNotFound:boolean=true;
   public searchIncidents() {
     this.pqrService.getIncidents().subscribe(
-      (response: PqrResultDto[]) => this.listFoundIncidents(response), //alert('se ha radicado el pqr #'+response.id),
-      (error: any) => console.error(error)
+      (response: PqrResultDto[]) => this.listFoundIncidents(response),
+      (error: any) =>  console.error(error)
     )
   }
   public listFoundIncidents(list: PqrResultDto[]) {

@@ -1,15 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';  // Para hacer las peticiones HTTP
 import { environment } from '../../../environments/environment';
-//import { SignInOutput, signUp, signIn, signOut } from "aws-amplify/auth";
-import { CognitoIdentityProviderClient, InitiateAuthCommand, AuthFlowType  } from "@aws-sdk/client-cognito-identity-provider";
-
-// Configuración del cliente de Cognito
-const client = new CognitoIdentityProviderClient({
-  region: environment.cognito.region,
-});
+import { Subscription } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
 
 
 @Component({
@@ -17,7 +12,7 @@ const client = new CognitoIdentityProviderClient({
   templateUrl: './registro.component.html',
   styleUrls: ['./registro.component.css']
 })
-export class RegistroComponent implements OnInit {
+export class RegistroComponent implements OnInit, OnDestroy {
   showPassword: boolean = false;
   showRepeatPassword: boolean = false;
   modalMessage: string = '';
@@ -27,9 +22,9 @@ export class RegistroComponent implements OnInit {
   empresas: any[] = [];  // Almacena la lista de empresas (con nombres y client_id)
   empresaNombres: string[] = [];  // Solo nombres de las empresas para el dropdown
   selectedClientId: number | null = null;  // Guardar el client_id seleccionado
-  //idToken: string | null = null;  // Token de autenticación
+  private subscription: Subscription = new Subscription;
 
-  constructor(private router: Router, private formBuilder: FormBuilder, private http: HttpClient) {
+  constructor(private router: Router, private formBuilder: FormBuilder, private http: HttpClient, private translate: TranslateService) {
     // Añadimos todos los campos necesarios en el form
     this.registroForm = this.formBuilder.group({
       //username: ['', Validators.required],
@@ -46,6 +41,9 @@ export class RegistroComponent implements OnInit {
       tipoComunicacion: ['', Validators.required]
     }, { validator: this.checkPasswords });
   }
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
 
   ngOnInit(): void {
     this.obtenerEmpresas();
@@ -53,28 +51,22 @@ export class RegistroComponent implements OnInit {
 
   // Función asíncrona para manejar la lógica de inicio
   private async initializeComponent() {
-    // Iniciar sesión antes de hacer cualquier cosa
-    // await this.loginSuperAdmin();
     // Obtener empresas si el login fue exitoso
-    // if (this.idToken) {
     this.obtenerEmpresas();
   }
 
   obtenerEmpresas() {
-    // if (!this.idToken) {
-    //   console.error('No se puede obtener empresas sin el token');
-    //   return;
-    // }
-
-    // const headers = new HttpHeaders().set('Authorization', `Bearer ${this.idToken}`);
+    let option='';
+    this.subscription=this.translate.stream('registoModule.seleccionarEmpresa').subscribe((translatedText: string) => {
+      option = translatedText;
+    });
     this.http.get(`${environment.apiClientsUrl2}`)
-      // this.http.get(`${environment.apiClientsUrl2}`, { headers })
       .subscribe((data: any) => {
         if (Array.isArray(data)) {
           // Aquí asignamos directamente el array recibido
           this.empresas = data;
-          this.empresaNombres = ["Seleccione una empresa", ...this.empresas.map((empresa: any) => empresa.legal_name)];
-        }  else {
+          this.empresaNombres = [option, ...this.empresas.map((empresa: any) => empresa.legal_name)];
+        } else {
           console.error('La respuesta no es un array de empresas esperado:', data);
         }
       }, error => {
@@ -88,120 +80,138 @@ export class RegistroComponent implements OnInit {
       this.handleValidationErrors();
       return;
     }
-      const formData = this.registroForm.value;
+    const formData = this.registroForm.value;
+    
+    let errorMessage = "test";
+    
+   
+    // Verificar si el usuario seleccionó una empresa válida
+    if (formData.empresa === "Seleccione una empresa" || formData.empresa==="Select a company") {
+      this.subscription=this.translate.stream('registoModule.validacionSeleccionEmpresa').subscribe((translatedText: string) => {
+        errorMessage = translatedText;
+      });
+      this.showModal('error', errorMessage);
+      return;
+    }
+
+    // Obtener el client_id (id_number) basado en el nombre de la empresa seleccionada
+    const empresaSeleccionada = this.empresas.find(empresa => empresa.legal_name === formData.empresa);
+    if (empresaSeleccionada) {
+      this.selectedClientId = empresaSeleccionada.id;  // Asigna el id_number como client_id
+    } else {
+      console.error('No se encontró una empresa válida para la selección realizada.');
+      this.subscription=this.translate.stream('registoModule.validacionEmpresa2').subscribe((translatedText: string) => {
+        errorMessage = translatedText;
+      });
       
-        // Verificar si el usuario seleccionó una empresa válida
-      if (formData.empresa === "Seleccione una empresa") {
-        this.showModal('error', $localize `Por favor seleccione una empresa válida.`);
-        return;
-      }
+      this.showModal('error', errorMessage);
+      return; // Detiene la ejecución si no hay una empresa válida seleccionada
+    }
 
-      // Obtener el client_id (id_number) basado en el nombre de la empresa seleccionada
-      const empresaSeleccionada = this.empresas.find(empresa => empresa.legal_name === formData.empresa);
-      if (empresaSeleccionada) {
-        this.selectedClientId = empresaSeleccionada.id;  // Asigna el id_number como client_id
-      } else {
-        console.error('No se encontró una empresa válida para la selección realizada.');
-        this.showModal('error', $localize `No se encontró una empresa válida para la selección realizada.`);
-        return; // Detiene la ejecución si no hay una empresa válida seleccionada
-      }
+    if (!this.selectedClientId) {
+      console.error('El client_id es nulo o no válido.');
+      this.subscription=this.translate.stream('registoModule.validacionClientId').subscribe((translatedText: string) => {
+        errorMessage = translatedText;
+      });
 
-      if (!this.selectedClientId) {
-        console.error('El client_id es nulo o no válido.');
-        this.showModal('error', $localize `El client_id es nulo o no válido.`);
-        return; // Detiene la ejecución si `client_id` es nulo
-      }
-      console.log('Empresa seleccionada:', empresaSeleccionada);
-      console.log('Client ID:', this.selectedClientId);
+      this.showModal('error',errorMessage);
+      return; // Detiene la ejecución si `client_id` es nulo
+    }
+    console.log('Empresa seleccionada:', empresaSeleccionada);
+    console.log('Client ID:', this.selectedClientId);
 
-      // try {
-      // Registro de usuario en Cognito
-      // const { isSignUpComplete, userId, nextStep } = await signUp({
-      //   username: this.registroForm.value.username,  // Usuario
-      //   password: this.registroForm.value.contrasena, // Contraseña
-      //   options: {
-      //     userAttributes: {
-      //       email: this.registroForm.value.correo, // Email
-      //       phone_number: this.registroForm.value.telefono, // Número de teléfono (formato E.164)
-      //     },
-      //   },
-      // });
 
-      // 'userId' contiene el 'sub' de Cognito (ID del usuario)
-      // const cognitoUserSub = userId;
 
-      // Datos a enviar al backend
-      const usuario = {
-        // username: formData.username,
-        email: formData.correo,
-        //user_role: "regular",
-        // cognito_user_sub: cognitoUserSub,
-        document_type: formData.tipoIdentificacion,
-        client_id: this.selectedClientId,
-        id_number: formData.identificacion,
-        name: formData.nombres,
-        last_name: formData.apellidos,
-        communication_type: formData.tipoComunicacion,
-        cellphone: formData.telefono,
-        password: formData.contrasena
-      };
+    // Datos a enviar al backend
+    const usuario = {
+      // username: formData.username,
+      email: formData.correo,
+      //user_role: "regular",
+      // cognito_user_sub: cognitoUserSub,
+      document_type: formData.tipoIdentificacion,
+      client_id: this.selectedClientId,
+      id_number: formData.identificacion,
+      name: formData.nombres,
+      last_name: formData.apellidos,
+      communication_type: formData.tipoComunicacion,
+      cellphone: formData.telefono,
+      password: formData.contrasena
+    };
 
-      // Aquí se hace la llamada al microservicio de usuarios
-      this.crearUsuarioEnBackend(usuario);
+    // Aquí se hace la llamada al microservicio de usuarios
+    this.crearUsuarioEnBackend(usuario);
   }
 
   crearUsuarioEnBackend(usuario: any) {
-    // if (!this.idToken) {
-    //   console.error('No se puede crear el usuario sin token');
-    //   return;
-    // }
+   
     console.log('Datos a enviar al backend:', usuario);
-
-    // const headers = new HttpHeaders().set('Authorization', `Bearer ${this.idToken}`);
-
+    
+    let message='';
+    this.subscription= this.translate.stream('registoModule.ConfirmacionCreacionUsuario').subscribe((translatedText: string) => {
+      message = translatedText;
+    });
     this.http.post(`${environment.apiUsersUrl2}`, usuario)
-      // this.http.post(`${environment.apiUsersUrl2}`, usuario, { headers })
       .subscribe(response => {
         console.log('Usuario creado en el backend', response);
-        this.showModal('success',  $localize `Usuario registrado con éxito.}`);
+        this.showModal('success',message );
         this.router.navigateByUrl('/login');
       }, error => {
-        console.error('Error al crear usuario en el backend', error);
-        this.showModal('error', $localize `No se pudo registrar el usuario. Intente nuevamente.`);
+        let errorMessage='';
+        this.subscription= this.translate.stream('registoModule.validacionCreacionUsuario').subscribe((translatedText: string) => {
+          errorMessage = translatedText;
         });
+        console.error('Error al crear usuario en el backend', error);
+        this.showModal('error', $localize`No se pudo registrar el usuario. Intente nuevamente.`);
+      });
   }
 
-   // Método para manejar errores específicos
-   handleValidationErrors() {
+  // Método para manejar errores específicos
+  handleValidationErrors() {
     const controlKeys = Object.keys(this.registroForm.controls);
-
+    let errorMessage = "test";
     for (let key of controlKeys) {
       const control = this.registroForm.get(key);
 
       if (control && control.invalid) {
         if (control.errors?.['required']) {
-          this.showModal('error', $localize `Campos incompletos. Por favor, llene todos los campos.`);
+          
+          this.subscription= this.translate.stream('registoModule.validacionCamposIncompletos').subscribe((translatedText: string) => {
+            errorMessage = translatedText;
+          });
+          this.showModal('error', errorMessage);
           break;
         } else if (control.errors?.['email']) {
-          this.showModal('error', $localize `Correo inválido. Por favor, ingrese un formato de correo válido.`);
+          this.subscription= this.translate.stream('registoModule.validacionCorreo').subscribe((translatedText: string) => {
+            errorMessage = translatedText;
+          });
+          this.showModal('error', errorMessage);
           break;
         } else if (control.errors?.['pattern']) {
           if (key === 'identificacion') {
-            this.showModal('error', $localize `Datos ingresados erróneos en el campo Identificación. Use solo números.`);
+            this.subscription= this.translate.stream('registoModule.validacionIdentificacion').subscribe((translatedText: string) => {
+              errorMessage = translatedText;
+            });
+            this.showModal('error', errorMessage);
             break;
           } else if (key === 'telefono') {
-            this.showModal('error', $localize `Formato de teléfono incorrecto. Use formato internacional.`);
+            this.subscription= this.translate.stream('registoModule.validacionTelefono').subscribe((translatedText: string) => {
+              errorMessage = translatedText;
+            });
+            this.showModal('error', errorMessage);
             break;
           }
         } else {
-          this.showModal('error', $localize `Datos ingresados erróneos. Verifique la información.`);
+          this.subscription= this.translate.stream('registoModule.validacionDatosGeneral').subscribe((translatedText: string) => {
+            errorMessage = translatedText;
+          });
+          this.showModal('error', errorMessage);
           break;
         }
       }
     }
 
-        // Marcar campos como tocados para mostrar errores
-        this.showFieldErrors();
+    // Marcar campos como tocados para mostrar errores
+    this.showFieldErrors();
   }
 
   showFieldErrors() {
