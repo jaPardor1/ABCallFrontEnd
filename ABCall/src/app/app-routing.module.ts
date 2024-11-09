@@ -32,37 +32,58 @@ const routes: Routes = [
       {
         path:'createIncidence',
         component:RadicarPQRClienteComponent,
-        canActivate:[AuthorizeGuard]
+        canActivate:[AuthorizeGuard],
+        data:{
+          allowedRoles: ['Admin', 'Superadmin','Regular'],
+        }
       },
       {
         path:'listIncidences',
         component:ListadoPqrComponent,
-        canActivate:[AuthorizeGuard]
+        canActivate:[AuthorizeGuard],
+        data:{
+          allowedRoles: ['Admin', 'Superadmin','Regular'],
+        }
       },
       {
         path: 'articlesList',
         component: ArticleListComponent,
-        canActivate:[AuthorizeGuard]
+        canActivate:[AuthorizeGuard],
+        data:{
+          allowedRoles: ['Admin', 'Superadmin','Regular','Agent'],
+        }
       },
       {
         path:'listUsers',
         component:ListadoUsuariosComponent,
-        canActivate:[AuthorizeGuard]
+        canActivate:[AuthorizeGuard],
+        data:{
+          allowedRoles: ['Admin', 'Superadmin'],
+        }
       },
       {
         path:'innerUserForm',
-        component:FormularioUserInternoComponent
+        component:FormularioUserInternoComponent,
+        data:{
+          allowedRoles: ['Admin', 'Superadmin'],
+        }
 
       },
       {
         path:'editUser/:sub',
         component:EditUserComponent,
-        canActivate:[AuthorizeGuard]
+        canActivate:[AuthorizeGuard],
+        data:{
+          allowedRoles: ['Admin', 'Superadmin'],
+        }
       },
       {
         path:'createUser',
         component:CreateUserComponent,
-        canActivate:[AuthorizeGuard]
+        canActivate:[AuthorizeGuard],
+        data:{
+          allowedRoles: ['Admin', 'Superadmin'],
+        }
       },
     ]
   }

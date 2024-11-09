@@ -41,7 +41,7 @@ export class RadicarPQRClienteComponent {
   })
   .afterClosed()
   .subscribe(() => {
-      window.location.reload();
+    this.router.navigateByUrl('listIncidences');
   });
 
 

@@ -3,4 +3,5 @@ export interface HeaderOptionDTO{
   name:string,
   isActive:boolean,
   link:string
+  allowedRoles:string[]
 }

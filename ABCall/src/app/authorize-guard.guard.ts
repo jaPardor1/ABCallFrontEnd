@@ -12,9 +12,18 @@ export class AuthorizeGuard implements CanActivate{
 
     }
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-      if(!this.authService.isTokenExpired())
+      if(!this.authService.isTokenExpired()){
+        debugger;
+        const allowedRoles = route.data?.['allowedRoles'];
+        let currentRole=this.authService.getUserRole();
+        if(!allowedRoles.includes(currentRole)){
+            console.log("Access restricted");
+            this.authService.getUserHomeByUserRole();
+        }
          return true;
-         else
-         return  this.router.navigate(['/login']);
+      }else{
+        return  this.router.navigate(['/login']);
+      }
+        
     }
 }
