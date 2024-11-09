@@ -1,29 +1,30 @@
 <div class="login-container">
   <div class="login-form-container">
     <h1>ABCall</h1>
+    <app-lang-selector></app-lang-selector>
     <form [formGroup]="loginForm" (ngSubmit)="onLogin2()">
       <div class="input-container">
         <div class="label-input-wrapper">
-            <label i18n="login-Usuario" for="usuario">Usuario</label>
+            <label for="usuario">{{'loginModule.Usuario' | translate}}</label>
             <div class="input-error-wrapper">
-              <input type="text" id="usuario" formControlName="usuario" i18n-placeholder   placeholder="Ingrese su usuario" [ngClass]="{'is-invalid': isFieldInvalid('usuario')}"/>
-              <small i18n="login-validacion-usuario" *ngIf="isFieldInvalid('usuario')" class="text-danger">Este campo es obligatorio</small>
+              <input type="text" id="usuario" formControlName="usuario"   [attr.placeholder]="'loginModule.placeHoldrLoginUsr' | translate" [ngClass]="{'is-invalid': isFieldInvalid('usuario')}"/>
+              <small i18n="login-validacion-usuario" *ngIf="isFieldInvalid('usuario')" class="text-danger">{{'loginModule.fieldRequiredValidation'| translate}}</small>
           </div>
         </div>
       </div>
 
       <div class="input-container">
         <div class="label-input-wrapper">
-          <label  i18n="login-contraseña"  for="contrasena">Contraseña</label>
+          <label  i18n="login-contraseña"  for="contrasena">{{'loginModule.Contrasenia'|translate}}</label>
           <div class="input-error-wrapper">
             <input type="password" id="contrasena" formControlName="contrasena" placeholder="**********" [ngClass]="{'is-invalid': isFieldInvalid('contrasena')}"/>
-            <small i18n="login-validacion-contrasenia" *ngIf="isFieldInvalid('contrasena')" class="text-danger">Este campo es obligatorio</small>
+            <small i18n="login-validacion-contrasenia" *ngIf="isFieldInvalid('contrasena')" class="text-danger">{{'loginModule.fieldRequiredValidation'| translate}}</small>
         </div>
       </div>
     </div>
-      <button i18n="login-ingresar" type="submit">INGRESAR</button>
+      <button type="submit">{{'loginModule.loginbtnIngresar' | translate}}</button>
     </form>
-    <p class="registro-link" i18n="login-registro-cliente"  (click)="onCreateAccount()">REGISTRO CLIENTE</p>
+    <p class="registro-link" (click)="onCreateAccount()">{{'loginModule.loginBtRegistroCliente'|translate}}</p>
   </div>
 
   <!-- Modal para error de campos incompletos -->

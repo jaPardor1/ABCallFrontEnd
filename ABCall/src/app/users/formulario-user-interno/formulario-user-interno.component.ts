@@ -8,6 +8,7 @@ import { UserDto } from '../user';
 import { Profile } from '../perfil';
 import { Router } from '@angular/router';
 import { UserService } from '../../service/user/user.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-formulario-user-interno',
@@ -23,8 +24,12 @@ export class FormularioUserInternoComponent implements OnInit {
   public subscriptionsPlan: SubscriptionDTO[];
   public submitted: boolean = false;
 
-
-  constructor(private router: Router,private formBuilder: FormBuilder, private userService: UserService) {
+  constructor(
+    private router: Router,
+    private formBuilder: FormBuilder,
+    private userService: UserService,
+    private translate: TranslateService // Inyección de ngx-translate
+  ) {
     this.model = null;
 
     this.form = this.formBuilder.group({
@@ -82,13 +87,11 @@ export class FormularioUserInternoComponent implements OnInit {
   saveInfo() {
     this.submitted = true;
     if (this.form.valid) {
-        this.submit.emit(this.form.value);
-       
+      this.submit.emit(this.form.value);
     } else {
-        this.form.markAllAsTouched();
+      this.form.markAllAsTouched();
     }
-}
-
+  }
 
   onGetUser() {
     this.userService.getUserSub(this.model).subscribe(
@@ -126,38 +129,38 @@ export class FormularioUserInternoComponent implements OnInit {
   // Errores
   getErrorProfileField() {
     const campo = this.form.get('user_role');
-    return campo && campo.hasError('required') ? $localize `Por favor especifique un perfil` : '';
+    return campo && campo.hasError('required') ? this.translate.instant('UserFormModule.perfilReq') : '';
   }
 
   getErrorIdentificacionField() {
     const campo = this.form.get('id_number');
     if (campo) {
-      if (campo.hasError('required')) return $localize `Por favor especifique el número de identificación`;
-      if (campo.hasError('pattern')) return $localize `Por favor especifique solo números.`;
+      if (campo.hasError('required')) return this.translate.instant('UserFormModule.idNumReq');
+      if (campo.hasError('pattern')) return this.translate.instant('UserFormModule.numOnly');
     }
     return '';
   }
 
   getErrorIdentificationTypeField() {
     const campo = this.form.get('document_type');
-    return campo && campo.hasError('required') ? $localize `Por favor especifique un tipo de identificación` : '';
+    return campo && campo.hasError('required') ? this.translate.instant('UserFormModule.idTypeReq') : '';
   }
 
   getErrorNameField() {
     const campo = this.form.get('name');
-    return campo && campo.hasError('nameRequired') ? $localize `Por favor especificar un nombre` : '';
+    return campo && campo.hasError('nameRequired') ? this.translate.instant('UserFormModule.nameReq') : '';
   }
 
   getErrorLastNameField() {
     const campo = this.form.get('last_name');
-    return campo && campo.hasError('lastNameRequired') ? $localize `Por favor especificar un apellido` : '';
+    return campo && campo.hasError('lastNameRequired') ? this.translate.instant('UserFormModule.lastNameReq') : '';
   }
 
   getErrorEmailField() {
     const campo = this.form.get('email');
     if (campo) {
-      if (campo.hasError('required')) return $localize `Por favor especifique un correo electrónico`;
-      if (campo.hasError('email')) return $localize `Por favor especifique un correo electrónico válido`;
+      if (campo.hasError('required')) return this.translate.instant('UserFormModule.emailReq');
+      if (campo.hasError('email')) return this.translate.instant('UserFormModule.emailValid');
     }
     return '';
   }
@@ -165,9 +168,9 @@ export class FormularioUserInternoComponent implements OnInit {
   getErrorTelephoneField() {
     const campo = this.form.get('cellphone');
     if (campo) {
-      if (campo.hasError('required')) return $localize `Por favor especifique un teléfono`;
-      if (campo.hasError('maxLength')) return $localize `Máximo 10 dígitos para el teléfono.`;
-      if (campo.hasError('pattern')) return $localize `Por favor solo colocar números.`;
+      if (campo.hasError('required')) return this.translate.instant('UserFormModule.phoneReq');
+      if (campo.hasError('maxLength')) return this.translate.instant('UserFormModule.phoneMax');
+      if (campo.hasError('pattern')) return this.translate.instant('UserFormModule.phoneNumOnly');
     }
     return '';
   }
@@ -175,49 +178,48 @@ export class FormularioUserInternoComponent implements OnInit {
   getErrorPasswordField() {
     const campo = this.form.get('password');
     if (campo) {
-      if (campo.hasError('required')) return $localize `Por favor especifique una contraseña`;
-      if (campo.hasError('pattern')) return $localize `Por favor validar contraseña`;
+      if (campo.hasError('required')) return this.translate.instant('UserFormModule.passReq');
+      if (campo.hasError('pattern')) return this.translate.instant('UserFormModule.passValid');
     }
     return '';
   }
 
   getErrorPlanField() {
     const campo = this.form.get('plan');
-    return campo && campo.hasError('planRequired') ? $localize `Por favor especifique el tipo de plan` : '';
+    return campo && campo.hasError('planRequired') ? this.translate.instant('UserFormModule.planReq') : '';
   }
 
   getErrorRazonSocialField() {
     const campo = this.form.get('razonSocialEmpresa');
-    return campo && campo.hasError('razonSocialEmpresaRequired') ? $localize `Por favor especifique la razón social` : '';
+    return campo && campo.hasError('razonSocialEmpresaRequired') ? this.translate.instant('UserFormModule.razonSocialReq') : '';
   }
 
   getErrorDireccionEmpresaField() {
     const campo = this.form.get('direccionEmpresa');
-    return campo && campo.hasError('direccionEmpresaControlRequired') ? $localize `Por favor especificar la dirección de la empresa.` : '';
+    return campo && campo.hasError('direccionEmpresaControlRequired') ? this.translate.instant('UserFormModule.direccionEmpReq') : '';
   }
 
   getErrorLegalrepIdTypeField() {
     const campo = this.form.get('tipoIdentificacionRepLegal');
-    return campo && campo.hasError('tipoIdenRepresentanteLegalRequired') ? $localize `Por favor especificar el tipo de identificación.` : '';
+    return campo && campo.hasError('tipoIdenRepresentanteLegalRequired') ? this.translate.instant('UserFormModule.repLegalIdTypeReq') : '';
   }
 
   getErrorLegalrepIdField() {
     const campo = this.form.get('identificacionRepLegal');
-    return campo && campo.hasError('identificacionRepLegalRequired') ? $localize `Por favor especificar la identificación del representante legal` : '';
+    return campo && campo.hasError('identificacionRepLegalRequired') ? this.translate.instant('UserFormModule.repLegalIdReq') : '';
   }
 
   getErrorLegalrepNamesField() {
     const campo = this.form.get('nombresRepLegal');
-    return campo && campo.hasError('namesRepLegalRequired') ? $localize `Por favor especificar el nombre del representante legal` : '';
+    return campo && campo.hasError('namesRepLegalRequired') ? this.translate.instant('UserFormModule.repLegalNameReq') : '';
   }
 
   getErrorLegalrepLastNamesField() {
     const campo = this.form.get('apellidosRepLegal');
-    return campo && campo.hasError('lastNameRepLegalRequired') ? $localize `Por favor especificar los apellidos del representante legal` : '';
+    return campo && campo.hasError('lastNameRepLegalRequired') ? this.translate.instant('UserFormModule.repLegalLastNameReq') : '';
   }
+
   onCancel() {
     this.router.navigate(['/listUsers']);
   }
 }
-
-

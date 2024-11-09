@@ -1,13 +1,17 @@
 <div class="container">
   <div class="row mt-5">
     <div class="col-3">
-      <label i18n="knowledge-base-title"  style="font-size: large;">Buscar artículo por contenido:</label>
+      <label i18n="KnowledgeBaseModule.searchTitle" style="font-size: large;">
+        {{ 'KnowledgeBaseModule.searchTitle' | translate }}
+      </label>
     </div>
     <div class="col-3">
-      <input type="text" id="search-content" #searchContent i18n-placeholder  placeholder="Ingrese texto de búsqueda">
+      <input type="text" id="search-content" #searchContent placeholder="{{ 'KnowledgeBaseModule.searchPlaceholder' | translate }}">
     </div>
     <div class="col-3">
-      <button i18n="knowledge-base-btn-buscar" class="ml-3" style="font-size: large;" (click)="searchArticles()">Buscar</button>
+      <button i18n="KnowledgeBaseModule.searchButton" class="ml-3" style="font-size: large;" (click)="searchArticles()">
+        {{ 'KnowledgeBaseModule.searchButton' | translate }}
+      </button>
     </div>
   </div>
 
@@ -16,19 +20,22 @@
       <table mat-table [dataSource]="articlesList" class="mat-elevation-z8">
         <!-- Title Column -->
         <ng-container matColumnDef="title">
-          <th mat-header-cell i18n="knowledge-base-tabla-enc-titulo" *matHeaderCellDef> Título </th>
-          <td mat-cell *matCellDef="let article"> {{article.title}} </td>
+          <th mat-header-cell i18n="KnowledgeBaseModule.tableHeaderTitle" *matHeaderCellDef>
+            {{ 'KnowledgeBaseModule.tableHeaderTitle' | translate }}
+          </th>
+          <td mat-cell *matCellDef="let article"> {{ article.title }} </td>
         </ng-container>
 
-        <!-- Tag Column -->
+        <!-- Content Column -->
         <ng-container matColumnDef="content">
-          <th mat-header-cell i18n="knowledge-base-tabla-enc-contenido" *matHeaderCellDef> Contenido </th>
-
+          <th mat-header-cell i18n="KnowledgeBaseModule.tableHeaderContent" *matHeaderCellDef>
+            {{ 'KnowledgeBaseModule.tableHeaderContent' | translate }}
+          </th>
           <td mat-cell *matCellDef="let article">
             <span *ngIf="!article.isExpanded">{{ article.content | slice:0:50 }}...</span>
             <span *ngIf="article.isExpanded">{{ article.content }}</span>
             <a href="javascript:void(0)" (click)="toggleContent(article)">
-              {{ article.isExpanded ? ' Ver menos' : ' Ver más' }}
+              {{ article.isExpanded ? ('KnowledgeBaseModule.viewLess' | translate) : ('KnowledgeBaseModule.viewMore' | translate) }}
             </a>
           </td>
         </ng-container>

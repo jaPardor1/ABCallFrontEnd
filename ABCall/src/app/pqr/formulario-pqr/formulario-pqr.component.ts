@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PqrDTO } from "../Pqr";
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-formulario-pqr',
@@ -18,7 +19,7 @@ export class FormularioPqrComponent implements OnInit {
     { id: 'Reclamo', tiposol: 'Reclamo' }
   ];
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private translate: TranslateService) {
     this.form = this.formBuilder.group({
       type: ['', [Validators.required]],
       title: ['', [Validators.required]],
@@ -39,7 +40,7 @@ export class FormularioPqrComponent implements OnInit {
   getErrorRequestTypeField() {
     const campo = this.form.get('type');
     if (campo?.hasError('required')) {
-      return $localize `Por favor especifique el tipo de solicitud`;
+      return this.translate.instant('createIncidentModule.tipoSolicitudRequerido');
     }
     return '';
   }
@@ -47,10 +48,10 @@ export class FormularioPqrComponent implements OnInit {
   getErrorDescriptionField() {
     const campo = this.form.get('description');
     if (campo?.hasError('required')) {
-      return $localize `Por favor especifique una descripción`;
+      return this.translate.instant('createIncidentModule.descripcionRequerida');
     }
     if (campo?.hasError('maxlength')) {
-      return $localize `La descripción solo puede almacenar máximo: ${campo.getError('maxlength').requiredLength} caracteres.`;
+      return this.translate.instant('createIncidentModule.descripcionMaxima', {maxLength: campo.getError('maxlength').requiredLength});
     }
     return '';
   }
@@ -58,7 +59,7 @@ export class FormularioPqrComponent implements OnInit {
   getErrorSubjectField() {
     const campo = this.form.get('title');
     if (campo?.hasError('required')) {
-      return $localize `Por favor especifique un asunto`;
+      return this.translate.instant('createIncidentModule.asuntoRequerido');
     }
     return '';
   }
