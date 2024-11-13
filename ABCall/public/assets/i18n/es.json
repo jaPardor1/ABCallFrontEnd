@@ -160,6 +160,16 @@
     "HEADER_OPTION_RADICAR_PQR": "RADICAR PQR",
     "HEADER_OPTION_CONSULTAR_PQR": "CONSULTAR PQR",
     "HEADER_OPTION_USUARIOS_REGISTRADOS": "USUARIOS REGISTRADOS",
-    "HEADER_OPTION_BASE_DE_CONOCIMIENTOS": "BASE DE CONOCIMIENTOS"
+    "HEADER_OPTION_BASE_DE_CONOCIMIENTOS": "BASE DE CONOCIMIENTOS",
+    "HEADER_OPTION_INCIDENT_MANAGEMENT":"GESTIÓN DE INCIDENTES"
+  },
+  "incidentManagementModule":{
+    "busquedaIdentificacionLbl":"Digite la identificación del usuario",
+    "buscarBtn":"Buscar",
+    "nivelRisgoLbl":"Nivel de riesgo:",
+    "table1EncIdentificacion":"Identificación",
+    "table1EncTipoIdentificacion":"Tipo Identificación",
+    "table1EncNombreCompleto":"Nombre Completo"
+
   }
 }

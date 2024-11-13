@@ -1,0 +1,71 @@
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <!-- buscador de usuarios-->
+            <div class="form-row">
+                <div class="form-column">
+                    <div class="row">
+                        <div class="col-4">
+                            <label for="">{{'incidentManagementModule.busquedaIdentificacionLbl'|translate}}</label>
+                        </div>
+                        <div class="col-4">
+                            <input type="text"  >
+                        </div>
+                        <div class="col-4">
+                            <button>{{'incidentManagementModule.buscarBtn'|translate}}</button>
+                        </div>
+                    </div>
+                    
+                   
+                    
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-column">
+                    <label for="">{{'incidentManagementModule.nivelRisgoLbl'|translate}}</label>
+                  <div style="width: 100%;border:1px solid red;border-radius: 8px;background-color: white;">
+                    <ul>
+                        <li>Sugerir ampliacion del plan por 2 meses.</li>
+                        <li>Sugerir ampliacion del plan por 2 meses.</li>
+                        <li>Sugerir ampliacion del plan por 2 meses.</li>
+                        <li>Sugerir ampliacion del plan por 2 meses.</li>
+                    </ul>
+
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="form-row">
+                <div class="form-column">
+                    <div [hidden]="isNotFound">
+                        <div class="col-12">
+                          <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                            <!-- Fecha Column -->
+                            <ng-container matColumnDef="id">
+                              <th mat-header-cell *matHeaderCellDef>{{ 'incidentManagementModule.table1EncIdentificacion' | translate }}</th>
+                              <td mat-cell *matCellDef="let element">{{ element.id  }}</td>
+                            </ng-container>
+                    
+                            <!-- Estado Column -->
+                            <ng-container matColumnDef="id_type">
+                              <th mat-header-cell *matHeaderCellDef>{{ 'incidentManagementModule.table1EncTipoIdentificacion' | translate }}</th>
+                              <td mat-cell *matCellDef="let element">{{ element.id_type }}</td>
+                            </ng-container>
+                            <ng-container matColumnDef="complete_name">
+                                <th mat-header-cell *matHeaderCellDef>{{ 'incidentManagementModule.table1EncNombreCompleto' | translate }}</th>
+                                <td mat-cell *matCellDef="let element">{{ element.complete_name }}</td>
+                              </ng-container>
+
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                          </table>
+                        </div>
+                      </div>
+                    
+                </div>
+            </div>
+          
+        </div>
+    </div>
+</div>
