@@ -7,7 +7,8 @@ import { Component } from '@angular/core';
 })
 export class GestionIncidentesComponent {
   isNotFound:boolean=false;
-  dataSource:any[]=[]
+  dataSource:any[]
+  dataSource2:any[]
   displayedColumns: string[] = ['id', 'id_type','complete_name'];
   displayedColumns2: string[] = ['email', 'phone_number'];
 
@@ -16,6 +17,11 @@ export class GestionIncidentesComponent {
       id:"1212551515",
       id_type:"Cedula Ciudadania",
       complete_name:"Alan Brito Gonzalez"
+    }]
+
+    this.dataSource2 = [{
+      email:"prueba@prueba.co",
+      phone_number:"3133096521",
     }]
   }
   

@@ -170,7 +170,9 @@
     "nivelRisgoLbl":"Risk level:",
     "table1EncIdentificacion":"Id. number",
     "table1EncTipoIdentificacion":"Id. type",
-    "table1EncNombreCompleto":"Full Name"
+    "table1EncNombreCompleto":"Full Name",
+    "table2EncEmail":"Email",
+    "table2EncTelefono":"Phone Number"
 
   }
 

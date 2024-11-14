@@ -169,7 +169,9 @@
     "nivelRisgoLbl":"Nivel de riesgo:",
     "table1EncIdentificacion":"Identificación",
     "table1EncTipoIdentificacion":"Tipo Identificación",
-    "table1EncNombreCompleto":"Nombre Completo"
+    "table1EncNombreCompleto":"Nombre Completo",
+    "table2EncEmail":"Correo Electronico",
+    "table2EncTelefono":"Telefono"
 
   }
 }
