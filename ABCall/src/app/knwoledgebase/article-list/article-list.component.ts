@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewChild, ElementRef, Inject } from '@angular/core';
 import { ArticleService } from '../../service/knowledgebase/article.service';
 import { ArticleResultDto } from '../articleResult';
 import { MatDialog } from '@angular/material/dialog';
@@ -20,7 +20,7 @@ export class ArticleListComponent {
   displayedColumns: string[] = ['title', 'content'];
   isNotFound:boolean=true;
 
-  constructor(private articleService: ArticleService, public dialog: MatDialog) { }
+  constructor(private articleService: ArticleService, public dialog: MatDialog,@Inject('tabData') public gestion: boolean) { }
 
   public searchArticles() {
     const content = this.searchContent.nativeElement.value;

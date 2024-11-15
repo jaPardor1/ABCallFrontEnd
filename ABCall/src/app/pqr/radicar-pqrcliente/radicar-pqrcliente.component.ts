@@ -1,4 +1,4 @@
-import { Component, EventEmitter, inject, Output, output, ViewChild, viewChild } from '@angular/core';
+import { Component, EventEmitter, Inject, inject, Input, Output, output, ViewChild, viewChild } from '@angular/core';
 import { PqrDTO } from '../Pqr';
 import { PqrService } from '../../service/pqr/pqr.service';
 import { DialogComponent } from '../../shared/dialog/dialog.component';
@@ -17,8 +17,11 @@ export class RadicarPQRClienteComponent {
   public module:EventEmitter<string> = new EventEmitter<string>();
   readonly dialog = inject(MatDialog);
   @ViewChild(FormularioPqrComponent) child!:FormularioPqrComponent
-  constructor(private pqrService:PqrService,private router:Router){
 
+
+
+  constructor(private pqrService:PqrService,private router:Router,@Inject('tabData') public gestion: boolean){
+       alert(gestion)
   }
   ngOnInit(): void {
 

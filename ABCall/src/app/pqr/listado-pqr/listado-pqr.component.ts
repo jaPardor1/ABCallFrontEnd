@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, Inject, ViewChild } from '@angular/core';
 import { PqrService } from '../../service/pqr/pqr.service';
 import { PqrResultDto } from '../pqrResult';
 import { MatDialog } from '@angular/material/dialog';
@@ -12,7 +12,7 @@ import { MatTableDataSource } from '@angular/material/table';
   styleUrl: './listado-pqr.component.css'
 })
 export class ListadoPqrComponent {
-  constructor(private pqrService: PqrService,public dialog: MatDialog) {
+  constructor(private pqrService: PqrService,public dialog: MatDialog,@Inject('tabData') public gestion: boolean) {
 
   }
 
