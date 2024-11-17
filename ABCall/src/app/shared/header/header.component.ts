@@ -70,6 +70,13 @@ export class HeaderComponent implements OnInit, OnDestroy {
         isActive: false,
         link: "articlesList",
         allowedRoles: ['Regular', 'Admin', 'Superadmin', 'Agent']
+      },
+      {
+        id: 5,
+        name: this.translate.instant('headerOptions.HEADER_OPTION_FLOWS'),
+        isActive: false,
+        link: "flows",
+        allowedRoles: ['Admin', 'Superadmin', 'Agent']
       }
     ];
 

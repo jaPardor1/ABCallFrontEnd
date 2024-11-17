@@ -160,6 +160,34 @@
     "HEADER_OPTION_RADICAR_PQR": "RADICAR PQR",
     "HEADER_OPTION_CONSULTAR_PQR": "CONSULTAR PQR",
     "HEADER_OPTION_USUARIOS_REGISTRADOS": "USUARIOS REGISTRADOS",
-    "HEADER_OPTION_BASE_DE_CONOCIMIENTOS": "BASE DE CONOCIMIENTOS"
+    "HEADER_OPTION_BASE_DE_CONOCIMIENTOS": "BASE DE CONOCIMIENTOS",
+    "HEADER_OPTION_FLOWS": "FLUJOS"
+  },
+  "flowsModule": {
+    "flows": "Flujos",
+    "flowName": "Nombre",
+    "flowDescription": "Descripción",
+    "flowActions": "Acciones",
+    "createFlow": "Crear Flujo",
+    "deleteMessage": "¿Esta Seguro de eliminar este flujo?",
+    "steps": "Pasos",
+    "flowCreated": "Flow Created Successfully",
+    "requiredName": "Por favor especifique el nombre del flujo",
+    "requiredDescription": "Por favor especifique la descripción del flujo"
+  },
+  "flowSteps": {
+    "Validation": "Validacion",
+    "Diagnostic": "Diagnostico",
+    "Resolution": "Resolución",
+    "Escalation": "Escalación",
+    "Closure": "Cierre",
+    "type": "Tipo",
+    "createStep": "Crear Paso",
+    "stepCreated": "Paso creado correctamente",
+    "typeRequired": "Por favor especifique el typo del paso",
+    "requiredDescription": "Por favor especifique la descripción del paso",
+    "minLength": "El campo debe tener al menos 3 carácteres",
+    "deleteMessage": "¿Esta Seguro de eliminar este paso?"
+    
   }
 }
