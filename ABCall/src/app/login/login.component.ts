@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { signIn } from "aws-amplify/auth"
 import { AuthService } from '../service/auth-service.service';
+import { Subscription } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
 
 
 @Component({
@@ -13,8 +15,14 @@ import { AuthService } from '../service/auth-service.service';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   showErrorModal: boolean = false; // Controla la visibilidad del modal de error
-  modalMessage: string = $localize `Datos incompletos. Por favor, llene todos los campos.`
-  constructor(private router: Router, private formBuilder: FormBuilder,private authService:AuthService) {
+  modalMessage: string = "";
+  private subscription: Subscription = new Subscription;
+  constructor(private router: Router, private formBuilder: FormBuilder,private authService:AuthService,private translate: TranslateService) {
+
+    this.subscription=this.translate.stream('loginModule.incompleteDataError').subscribe((translatedText: string) => {
+      this.modalMessage = translatedText;
+    });
+
     this.loginForm = this.formBuilder.group({
       usuario: ['', Validators.required],
       contrasena: ['', Validators.required]
@@ -28,6 +36,10 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
+
   // Verifica si un campo es inválido
   isFieldInvalid(field: string): boolean {
     const control = this.loginForm.get(field);
@@ -35,6 +47,8 @@ export class LoginComponent implements OnInit {
   }
 
   async onLogin2() {
+
+    let message = ''
 
     if (this.loginForm.valid) {
       const { usuario, contrasena } = this.loginForm.value;
@@ -46,16 +60,28 @@ export class LoginComponent implements OnInit {
           this.authService.getUserHomeByUserRole();
         }else{
 
-          this.modalMessage = $localize  `Algo fallo en la autenticacion`;
+          this.subscription=this.translate.stream('loginModule.errorLogin').subscribe((translatedText: string) => {
+            message = translatedText;
+          });
+
+          this.modalMessage = message;
           console.error(this.modalMessage);
           this.showErrorModal = true;
         }
       }catch (error:any) {
+
         if(error.name=='NotAuthorizedException'){
-          this.modalMessage = $localize `Usuario o contrasena incorrectos`;
+          this.subscription=this.translate.stream('loginModule.errorLogin').subscribe((translatedText: string) => {
+            message = translatedText;
+          });
+          this.modalMessage = message;
         }if(error.name==='UserAlreadyAuthenticatedException'){
-              alert( $localize `usuario ya autenticado cerrando sesion..`)
-              this.authService.onSignOut();
+
+          this.subscription=this.translate.stream('loginModule.alreadySignedUpMessage').subscribe((translatedText: string) => {
+            message = translatedText;
+          });
+          alert(message)
+          this.authService.onSignOut();
         }
         this.showErrorModal = true;
     }
