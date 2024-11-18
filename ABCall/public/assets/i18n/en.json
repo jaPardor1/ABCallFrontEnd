@@ -161,7 +161,8 @@
     "HEADER_OPTION_CONSULTAR_PQR": "CHECK PQR",
     "HEADER_OPTION_USUARIOS_REGISTRADOS": "REGISTERED USERS",
     "HEADER_OPTION_BASE_DE_CONOCIMIENTOS": "KNOWLEDGE BASE",
-    "HEADER_OPTION_FLOWS": "FLOWS"
+    "HEADER_OPTION_FLOWS": "FLOWS",
+     "HEADER_OPTION_INCIDENT_MANAGEMENT":"INCIDENT MANAGEMENT"
   },
   "flowsModule": {
     "flows": "Flows",
@@ -188,7 +189,15 @@
     "requiredDescription": "Please specify step's description",
     "minLength": "Description field must have at least 3 characters",
     "deleteMessage": "Are you sure you want to delete this step?"
+  },
+  "incidentManagementModule":{
+    "busquedaIdentificacionLbl":"Enter id user",
+    "buscarBtn":"Search",
+    "nivelRisgoLbl":"Risk level:",
+    "table1EncIdentificacion":"Id. number",
+    "table1EncTipoIdentificacion":"Id. type",
+    "table1EncNombreCompleto":"Full Name",
+    "table2EncEmail":"Email",
+    "table2EncTelefono":"Phone Number"
   }
-
-
 }

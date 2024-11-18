@@ -77,7 +77,15 @@ export class HeaderComponent implements OnInit, OnDestroy {
         isActive: false,
         link: "flows",
         allowedRoles: ['Admin', 'Superadmin', 'Agent']
+      },
+      {
+        id: 6,
+        name: this.translate.instant('headerOptions.HEADER_OPTION_INCIDENT_MANAGEMENT'),
+        isActive: false,
+        link: "incidentManagement",
+        allowedRoles: ['Admin', 'Superadmin', 'Agent']
       }
+
     ];
 
     this.setActiveOption(this.currentOption);

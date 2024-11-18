@@ -30,6 +30,8 @@ import { LoadingInterceptor } from './loading.interceptor';
 import { HeaderInterceptor } from './request-handler.interceptor';
 import { ShowForRolesDirective } from './directives/show-for-roles.directive';
 import { LangSelectorComponent } from './shared/lang-selector/lang-selector.component';
+import { GestionIncidentesComponent } from './pqr/gestion-incidentes/gestion-incidentes.component';
+import { TabsComponent } from './shared/tabs/tabs.component';
 import { FlowListComponent } from './flow/flow-list/flow-list.component';
 import { CreateFlowComponent } from './flow/create-flow/create-flow.component';
 import { FlowFormComponent } from './flow/flow-form/flow-form.component';
@@ -43,7 +45,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 
 @NgModule({
-  declarations: [	
+  declarations: [
     AppComponent,
     ArticleListComponent,
     HeaderComponent,
@@ -63,6 +65,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     LoadingIndicatorComponent,
     ShowForRolesDirective,
     LangSelectorComponent,
+    GestionIncidentesComponent,
+    TabsComponent,
     FlowListComponent,
     CreateFlowComponent,
     FlowFormComponent,

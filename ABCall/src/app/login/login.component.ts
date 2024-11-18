@@ -53,7 +53,7 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.valid) {
       const { usuario, contrasena } = this.loginForm.value;
       try{
-        debugger;
+
         const {isSignedIn} = await this.authService.login2(usuario, contrasena);
 
         if(isSignedIn){

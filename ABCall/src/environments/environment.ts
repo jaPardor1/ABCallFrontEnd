@@ -13,6 +13,7 @@ export const environment = {
   apiClientsUrl2: 'https://l36oyb6gwa.execute-api.us-east-1.amazonaws.com/api/clients/short',// creacion de usurio sin autorization
   apiUsersUrl2: 'https://1acgpw2vfg.execute-api.us-east-1.amazonaws.com/api/user/register',
   apiGetUsersForClient:'https://1acgpw2vfg.execute-api.us-east-1.amazonaws.com/api/users/1',
+  apiGetUserinfo:'https://1acgpw2vfg.execute-api.us-east-1.amazonaws.com/api/users?id_number=',
   apiGetUsersSub:'https://1acgpw2vfg.execute-api.us-east-1.amazonaws.com/api/user/',
   /**apis knowledgebase**/
   apiFilterArticles: 'https://gpe0e6wgv6.execute-api.us-east-1.amazonaws.com/api/knowledgebase/filters',

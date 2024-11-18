@@ -16,6 +16,7 @@ import { FlowListComponent } from './flow/flow-list/flow-list.component';
 import { CreateFlowComponent } from './flow/create-flow/create-flow.component';
 import { StepListComponent } from './flow/steps/step-list/step-list.component';
 import { CreateStepComponent } from './flow/steps/create-step/create-step.component';
+import { GestionIncidentesComponent } from './pqr/gestion-incidentes/gestion-incidentes.component';
 
 const routes: Routes = [
   {
@@ -39,7 +40,11 @@ const routes: Routes = [
         canActivate:[AuthorizeGuard],
         data:{
           allowedRoles: ['Admin', 'Superadmin','Regular'],
-        }
+        },
+        providers: [
+          {provide: 'tabData',useValue: {gestion:false,user_sub:null},},
+          {provide: 'tabState', useValue:{}},
+        ]
       },
       {
         path:'listIncidences',
@@ -47,7 +52,11 @@ const routes: Routes = [
         canActivate:[AuthorizeGuard],
         data:{
           allowedRoles: ['Admin', 'Superadmin','Regular'],
-        }
+        },
+        providers: [
+          {provide: 'tabData',useValue: {gestion:false,user_sub:null},},
+          {provide: 'tabState', useValue:{}},
+        ]
       },
       {
         path: 'articlesList',
@@ -55,7 +64,11 @@ const routes: Routes = [
         canActivate:[AuthorizeGuard],
         data:{
           allowedRoles: ['Admin', 'Superadmin','Regular','Agent'],
-        }
+        },
+        providers: [
+          {provide: 'tabData',useValue: {gestion:false,user_sub:null},},
+          {provide: 'tabState', useValue:{}},
+        ]
       },
       {
         path:'listUsers',
@@ -119,6 +132,14 @@ const routes: Routes = [
         canActivate:[AuthorizeGuard],
         data:{
           allowedRoles: ['Admin', 'Superadmin'],
+        }
+      },
+      {
+        path:'incidentManagement',
+        component:GestionIncidentesComponent,
+        canActivate:[AuthorizeGuard],
+        data:{
+         allowedRoles: ['Admin', 'Superadmin','Agent'],
         }
       }
     ]

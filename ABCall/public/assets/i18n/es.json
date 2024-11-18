@@ -161,7 +161,8 @@
     "HEADER_OPTION_CONSULTAR_PQR": "CONSULTAR PQR",
     "HEADER_OPTION_USUARIOS_REGISTRADOS": "USUARIOS REGISTRADOS",
     "HEADER_OPTION_BASE_DE_CONOCIMIENTOS": "BASE DE CONOCIMIENTOS",
-    "HEADER_OPTION_FLOWS": "FLUJOS"
+    "HEADER_OPTION_FLOWS": "FLUJOS",
+     "HEADER_OPTION_INCIDENT_MANAGEMENT":"GESTIÓN INCIDENTES"
   },
   "flowsModule": {
     "flows": "Flujos",
@@ -188,6 +189,17 @@
     "requiredDescription": "Por favor especifique la descripción del paso",
     "minLength": "El campo debe tener al menos 3 carácteres",
     "deleteMessage": "¿Esta Seguro de eliminar este paso?"
-    
+
+  },
+  "incidentManagementModule":{
+    "busquedaIdentificacionLbl":"Identificación",
+    "buscarBtn":"Buscar",
+    "nivelRisgoLbl":"Nivel de riesgo:",
+    "table1EncIdentificacion":"Identificación",
+    "table1EncTipoIdentificacion":"Tipo Identificación",
+    "table1EncNombreCompleto":"Nombre Completo",
+    "table2EncEmail":"Correo Electronico",
+    "table2EncTelefono":"Telefono"
+
   }
 }
