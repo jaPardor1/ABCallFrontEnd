@@ -116,10 +116,11 @@
     "tipoSolicitudRequerido": "Please specify the request type",
     "descripcionRequerida": "Please provide a description",
     "descripcionMaxima": "The description can only store a maximum of: {{maxLength}} characters.",
-    "asuntoRequerido": "Please specify a subject"
+    "asuntoRequerido": "Please specify a subject",
+    "incidenceCreated":"The incidende has been created :"
   },
   "listPqrMOdule": {
-    "digiteElRadicado": "Enter the ticket number:",
+    "digiteElRadicado": "Enter the ticket(PQR) number:",
     "enviar": "Submit",
     "pqrListTitle": "Incident Search",
     "pqrListBtnEnviarIncidente": "Send incident",
@@ -160,7 +161,19 @@
     "HEADER_OPTION_RADICAR_PQR": "SUBMIT PQR",
     "HEADER_OPTION_CONSULTAR_PQR": "CHECK PQR",
     "HEADER_OPTION_USUARIOS_REGISTRADOS": "REGISTERED USERS",
-    "HEADER_OPTION_BASE_DE_CONOCIMIENTOS": "KNOWLEDGE BASE"
+    "HEADER_OPTION_BASE_DE_CONOCIMIENTOS": "KNOWLEDGE BASE",
+    "HEADER_OPTION_INCIDENT_MANAGEMENT":"INCIDENT MANAGEMENT"
+
+  },
+  "incidentManagementModule":{
+    "busquedaIdentificacionLbl":"Enter id user",
+    "buscarBtn":"Search",
+    "nivelRisgoLbl":"Risk level:",
+    "table1EncIdentificacion":"Id. number",
+    "table1EncTipoIdentificacion":"Id. type",
+    "table1EncNombreCompleto":"Full Name",
+    "table2EncEmail":"Email",
+    "table2EncTelefono":"Phone Number"
 
   }
 

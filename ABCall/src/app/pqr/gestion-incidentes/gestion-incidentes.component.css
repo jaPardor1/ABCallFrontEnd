@@ -1,0 +1,188 @@
+
+label {
+    font-size: 20px;
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  button {
+    background-color:  #029e89;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  /* General styles */
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .register-page {
+    width: 100%;
+    min-height: 100vh;
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-size: cover;
+  }
+  
+  /* Form styles */
+  .register-form {
+    background-color: rgba(72, 207, 194, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #48464C;
+    font-size: 24px;
+  }
+  
+  .form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px; /* Reducir espacio entre filas */
+  }
+  
+  .form-column {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  /* Labels and Inputs */
+  label {
+    font-weight: bold;
+    color: #48464C;
+    margin-bottom: 5px;
+  }
+  
+  input,
+  select {
+    width: 100%;
+    padding: 10px; /* Ajuste de padding para altura de la caja */
+    margin-bottom: 15px; /* Espacio entre cajas */
+    border: 2px solid #48464C;
+    background-color: rgba(72, 207, 194, 0.9);
+    border-radius: 5px;
+    box-sizing: border-box; /* Para asegurar que el padding no afecta el ancho */
+  }
+  
+  /* Styling for buttons */
+  .form-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .form-buttons .btn-regresar {
+    background-color: #ff8a80;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .form-buttons .btn-registrar {
+    background-color: #029e89;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Hover effect for buttons */
+  button:hover {
+    background-color: #008d76;
+  }
+  
+  .is-invalid {
+    border: 2px solid red;
+  }
+  
+  /* Password validation list */
+  .pass-err-container {
+    background-color: #f0f0f038; /* Fondo gris claro */
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+  }
+  
+  .pass-err ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .pass-err li {
+    font-size: 10px;
+    color: #ff0000;
+    margin-bottom: 1px;
+  }
+  
+  .pass-ok {
+    color: #4caf50; /* Green for valid items */
+  }
+  
+  /* Modal styling */
+  .modal {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px;
+    text-align: center;
+    border-radius: 10px;
+  }
+  
+  .modal-content.success {
+    border-color: #4caf50;
+    color: #4caf50;
+  }
+  
+  .modal-content.error {
+    border-color: #f44336;
+    color: #f44336;
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    cursor: pointer;
+  }
+  
+  .small-text{
+    font-size: 10px;
+  
+  }
+  
+  

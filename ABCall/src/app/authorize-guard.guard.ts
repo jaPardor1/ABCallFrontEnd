@@ -13,7 +13,6 @@ export class AuthorizeGuard implements CanActivate{
     }
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
       if(!this.authService.isTokenExpired()){
-        debugger;
         const allowedRoles = route.data?.['allowedRoles'];
         let currentRole=this.authService.getUserRole();
         if(!allowedRoles.includes(currentRole)){
@@ -24,6 +23,6 @@ export class AuthorizeGuard implements CanActivate{
       }else{
         return  this.router.navigate(['/login']);
       }
-        
+
     }
 }
