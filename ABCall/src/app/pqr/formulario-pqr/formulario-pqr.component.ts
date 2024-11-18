@@ -23,11 +23,20 @@ export class FormularioPqrComponent implements OnInit {
     this.form = this.formBuilder.group({
       type: ['', [Validators.required]],
       title: ['', [Validators.required]],
-      description: ['', [Validators.required, Validators.maxLength(500)]]
+      description: ['', [Validators.required, Validators.maxLength(500)]],
+      user_sub:['']
     });
   }
 
   ngOnInit(): void {}
+
+  getFormData() {
+    return this.form;
+  }
+
+  setFormData(data:any) {
+    this.form = data;
+  }
 
   saveInfo() {
     if (this.form.valid) {

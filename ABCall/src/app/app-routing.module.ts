@@ -12,6 +12,7 @@ import { AuthorizeGuard } from './authorize-guard.guard';
 import { EditUserComponent } from './users/edit-user/edit-user.component';
 import { CreateUserComponent } from './users/create-user/create-user.component';
 import { ArticleListComponent } from './knwoledgebase/article-list/article-list.component';
+import { GestionIncidentesComponent } from './pqr/gestion-incidentes/gestion-incidentes.component';
 
 const routes: Routes = [
   {
@@ -35,7 +36,11 @@ const routes: Routes = [
         canActivate:[AuthorizeGuard],
         data:{
           allowedRoles: ['Admin', 'Superadmin','Regular'],
-        }
+        },
+        providers: [
+          {provide: 'tabData',useValue: {gestion:false,user_sub:null},},
+          {provide: 'tabState', useValue:{}},
+        ]
       },
       {
         path:'listIncidences',
@@ -43,7 +48,11 @@ const routes: Routes = [
         canActivate:[AuthorizeGuard],
         data:{
           allowedRoles: ['Admin', 'Superadmin','Regular'],
-        }
+        },
+        providers: [
+          {provide: 'tabData',useValue: {gestion:false,user_sub:null},},
+          {provide: 'tabState', useValue:{}},
+        ]
       },
       {
         path: 'articlesList',
@@ -85,6 +94,14 @@ const routes: Routes = [
           allowedRoles: ['Admin', 'Superadmin'],
         }
       },
+      {
+        path:'incidentManagement',
+        component:GestionIncidentesComponent,
+        canActivate:[AuthorizeGuard],
+        data:{
+         allowedRoles: ['Admin', 'Superadmin','Agent'],
+        }
+      }
     ]
   }
 ];

@@ -30,6 +30,8 @@ import { LoadingInterceptor } from './loading.interceptor';
 import { HeaderInterceptor } from './request-handler.interceptor';
 import { ShowForRolesDirective } from './directives/show-for-roles.directive';
 import { LangSelectorComponent } from './shared/lang-selector/lang-selector.component';
+import { GestionIncidentesComponent } from './pqr/gestion-incidentes/gestion-incidentes.component';
+import { TabsComponent } from './shared/tabs/tabs.component';
 
 // Función de fábrica para crear el TranslateLoader
 export function HttpLoaderFactory(http: HttpClient) {
@@ -56,7 +58,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     DetailDialogComponent,
     LoadingIndicatorComponent,
     ShowForRolesDirective,
-    LangSelectorComponent
+    LangSelectorComponent,
+    GestionIncidentesComponent,
+    TabsComponent
    ],
   imports: [
     BrowserModule,

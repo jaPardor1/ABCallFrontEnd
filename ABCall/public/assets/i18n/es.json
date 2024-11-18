@@ -115,10 +115,11 @@
     "tipoSolicitudRequerido": "Por favor especifique el tipo de solicitud",
     "descripcionRequerida": "Por favor especifique una descripción",
     "descripcionMaxima": "La descripción solo puede almacenar máximo: {{maxLength}} caracteres.",
-    "asuntoRequerido": "Por favor especifique un asunto"
+    "asuntoRequerido": "Por favor especifique un asunto",
+    "incidenceCreated":"Se ha radicado el pqr :"
   },
   "listPqrMOdule":{
-    "digiteElRadicado": "Digite el radicado:",
+    "digiteElRadicado": "Digite el PQR* radicado:",
     "enviar": "Enviar",
     "pqrListTitle": "Consulta de Incidentes",
     "pqrListBtnEnviarIncidente": "Enviar incidente",
@@ -160,6 +161,18 @@
     "HEADER_OPTION_RADICAR_PQR": "RADICAR PQR",
     "HEADER_OPTION_CONSULTAR_PQR": "CONSULTAR PQR",
     "HEADER_OPTION_USUARIOS_REGISTRADOS": "USUARIOS REGISTRADOS",
-    "HEADER_OPTION_BASE_DE_CONOCIMIENTOS": "BASE DE CONOCIMIENTOS"
+    "HEADER_OPTION_BASE_DE_CONOCIMIENTOS": "BASE DE CONOCIMIENTOS",
+    "HEADER_OPTION_INCIDENT_MANAGEMENT":"GESTIÓN DE INCIDENTES"
+  },
+  "incidentManagementModule":{
+    "busquedaIdentificacionLbl":"Identificación",
+    "buscarBtn":"Buscar",
+    "nivelRisgoLbl":"Nivel de riesgo:",
+    "table1EncIdentificacion":"Identificación",
+    "table1EncTipoIdentificacion":"Tipo Identificación",
+    "table1EncNombreCompleto":"Nombre Completo",
+    "table2EncEmail":"Correo Electronico",
+    "table2EncTelefono":"Telefono"
+
   }
 }

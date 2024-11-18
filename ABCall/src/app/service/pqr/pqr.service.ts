@@ -13,13 +13,18 @@ export class PqrService {
   constructor(private http:HttpClient) { }
   public createIncident(incident:any):Observable<any>
   {
-
     return this.http.post<any>(this.urlApi,incident)
   }
 
   public getIncidents():Observable<PqrResultDto[]>{
     let op = '/assigned'
     const url = this.urlApi+op
+    return this.http.get<PqrResultDto[]>(url)
+  }
+
+  public getIncidentsSub(userSub:string):Observable<PqrResultDto[]>{
+    let sub = "?user_sub="+userSub;
+    const url = this.urlApi+sub
     return this.http.get<PqrResultDto[]>(url)
   }
 }
