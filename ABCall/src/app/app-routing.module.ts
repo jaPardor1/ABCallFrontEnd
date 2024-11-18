@@ -64,7 +64,11 @@ const routes: Routes = [
         canActivate:[AuthorizeGuard],
         data:{
           allowedRoles: ['Admin', 'Superadmin','Regular','Agent'],
-        }
+        },
+        providers: [
+          {provide: 'tabData',useValue: {gestion:false,user_sub:null},},
+          {provide: 'tabState', useValue:{}},
+        ]
       },
       {
         path:'listUsers',
