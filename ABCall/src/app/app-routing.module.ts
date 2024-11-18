@@ -12,6 +12,10 @@ import { AuthorizeGuard } from './authorize-guard.guard';
 import { EditUserComponent } from './users/edit-user/edit-user.component';
 import { CreateUserComponent } from './users/create-user/create-user.component';
 import { ArticleListComponent } from './knwoledgebase/article-list/article-list.component';
+import { FlowListComponent } from './flow/flow-list/flow-list.component';
+import { CreateFlowComponent } from './flow/create-flow/create-flow.component';
+import { StepListComponent } from './flow/steps/step-list/step-list.component';
+import { CreateStepComponent } from './flow/steps/create-step/create-step.component';
 import { GestionIncidentesComponent } from './pqr/gestion-incidentes/gestion-incidentes.component';
 
 const routes: Routes = [
@@ -89,6 +93,38 @@ const routes: Routes = [
       {
         path:'createUser',
         component:CreateUserComponent,
+        canActivate:[AuthorizeGuard],
+        data:{
+          allowedRoles: ['Admin', 'Superadmin'],
+        }
+      },
+      {
+        path:'flows',
+        component:FlowListComponent,
+        canActivate:[AuthorizeGuard],
+        data:{
+          allowedRoles: ['Admin', 'Superadmin'],
+        }
+      },
+      {
+        path:'createFlow',
+        component:CreateFlowComponent,
+        canActivate:[AuthorizeGuard],
+        data:{
+          allowedRoles: ['Admin', 'Superadmin'],
+        }
+      },
+      {
+        path:'flow/steps/:flow_id',
+        component:StepListComponent,
+        canActivate:[AuthorizeGuard],
+        data:{
+          allowedRoles: ['Admin', 'Superadmin'],
+        }
+      },
+      {
+        path:'flow/:flow_id/createStep',
+        component:CreateStepComponent,
         canActivate:[AuthorizeGuard],
         data:{
           allowedRoles: ['Admin', 'Superadmin'],

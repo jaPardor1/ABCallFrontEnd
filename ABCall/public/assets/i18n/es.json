@@ -115,8 +115,7 @@
     "tipoSolicitudRequerido": "Por favor especifique el tipo de solicitud",
     "descripcionRequerida": "Por favor especifique una descripción",
     "descripcionMaxima": "La descripción solo puede almacenar máximo: {{maxLength}} caracteres.",
-    "asuntoRequerido": "Por favor especifique un asunto",
-    "incidenceCreated":"Se ha radicado el pqr :"
+    "asuntoRequerido": "Por favor especifique un asunto"
   },
   "listPqrMOdule":{
     "digiteElRadicado": "Digite el PQR* radicado:",
@@ -162,7 +161,35 @@
     "HEADER_OPTION_CONSULTAR_PQR": "CONSULTAR PQR",
     "HEADER_OPTION_USUARIOS_REGISTRADOS": "USUARIOS REGISTRADOS",
     "HEADER_OPTION_BASE_DE_CONOCIMIENTOS": "BASE DE CONOCIMIENTOS",
-    "HEADER_OPTION_INCIDENT_MANAGEMENT":"GESTIÓN DE INCIDENTES"
+    "HEADER_OPTION_FLOWS": "FLUJOS",
+     "HEADER_OPTION_INCIDENT_MANAGEMENT":"GESTIÓN INCIDENTES"
+  },
+  "flowsModule": {
+    "flows": "Flujos",
+    "flowName": "Nombre",
+    "flowDescription": "Descripción",
+    "flowActions": "Acciones",
+    "createFlow": "Crear Flujo",
+    "deleteMessage": "¿Esta Seguro de eliminar este flujo?",
+    "steps": "Pasos",
+    "flowCreated": "Flow Created Successfully",
+    "requiredName": "Por favor especifique el nombre del flujo",
+    "requiredDescription": "Por favor especifique la descripción del flujo"
+  },
+  "flowSteps": {
+    "Validation": "Validacion",
+    "Diagnostic": "Diagnostico",
+    "Resolution": "Resolución",
+    "Escalation": "Escalación",
+    "Closure": "Cierre",
+    "type": "Tipo",
+    "createStep": "Crear Paso",
+    "stepCreated": "Paso creado correctamente",
+    "typeRequired": "Por favor especifique el typo del paso",
+    "requiredDescription": "Por favor especifique la descripción del paso",
+    "minLength": "El campo debe tener al menos 3 carácteres",
+    "deleteMessage": "¿Esta Seguro de eliminar este paso?"
+
   },
   "incidentManagementModule":{
     "busquedaIdentificacionLbl":"Identificación",

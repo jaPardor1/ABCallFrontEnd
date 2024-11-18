@@ -32,6 +32,12 @@ import { ShowForRolesDirective } from './directives/show-for-roles.directive';
 import { LangSelectorComponent } from './shared/lang-selector/lang-selector.component';
 import { GestionIncidentesComponent } from './pqr/gestion-incidentes/gestion-incidentes.component';
 import { TabsComponent } from './shared/tabs/tabs.component';
+import { FlowListComponent } from './flow/flow-list/flow-list.component';
+import { CreateFlowComponent } from './flow/create-flow/create-flow.component';
+import { FlowFormComponent } from './flow/flow-form/flow-form.component';
+import { StepListComponent } from './flow/steps/step-list/step-list.component';
+import { CreateStepComponent } from './flow/steps/create-step/create-step.component';
+import { StepFormComponent } from './flow/steps/step-form/step-form.component';
 
 // Función de fábrica para crear el TranslateLoader
 export function HttpLoaderFactory(http: HttpClient) {
@@ -60,7 +66,13 @@ export function HttpLoaderFactory(http: HttpClient) {
     ShowForRolesDirective,
     LangSelectorComponent,
     GestionIncidentesComponent,
-    TabsComponent
+    TabsComponent,
+    FlowListComponent,
+    CreateFlowComponent,
+    FlowFormComponent,
+    StepListComponent,
+    CreateStepComponent,
+    StepFormComponent
    ],
   imports: [
     BrowserModule,

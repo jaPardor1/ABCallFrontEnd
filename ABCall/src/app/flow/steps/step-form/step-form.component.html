@@ -1,0 +1,44 @@
+<div class="register-page">
+  <div class="register-form">
+    <h1>{{ 'flowSteps.createStep' | translate }}</h1>
+    <form [formGroup]="form" (ngSubmit)="saveInfo()">
+      <input type="hidden" formControlName="flow_id"/>
+
+      <!-- Descripción del paso -->
+      <div class="form-row">
+        <div class="form-column">
+          <label>{{ 'flowsModule.flowDescription' | translate }}</label>
+          <textarea formControlName="description" 
+                    [ngClass]="{'is-invalid': form.get('description')?.invalid && (submitted || form.get('description')?.touched)}">
+          </textarea>
+          <div *ngIf="(submitted || form.get('description')?.touched) && form.get('description')?.invalid" class="small-text">
+            {{ getErrorDescriptionField() }}
+          </div>
+        </div>
+
+        <div class="form-column">
+          <label>{{ 'flowSteps.type' | translate }}</label>
+          <select formControlName="type" 
+                  [ngClass]="{'is-invalid': form.get('type')?.invalid && (submitted || form.get('type')?.touched)}">
+            <option value="">Select step type</option>
+            <option *ngFor="let stepType of stepTypes" [value]="stepType">{{ stepType | translate }}</option>
+          </select>
+          <div *ngIf="(submitted || form.get('type')?.touched) && form.get('type')?.invalid" class="small-text">
+            {{ getErrorTypeField() }}
+          </div>
+        </div>
+
+      </div>
+      
+      <!-- Botones -->
+      <div class="form-buttons">
+        <button type="button" class="btn-regresar" (click)="onCancel()">
+          {{ 'UserFormModule.cancelarBtn' | translate }}
+        </button>
+        <button type="submit" class="btn-registrar" [disabled]="form.invalid">
+          {{ 'UserFormModule.guardarBtn' | translate }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

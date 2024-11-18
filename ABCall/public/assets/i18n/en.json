@@ -116,8 +116,7 @@
     "tipoSolicitudRequerido": "Please specify the request type",
     "descripcionRequerida": "Please provide a description",
     "descripcionMaxima": "The description can only store a maximum of: {{maxLength}} characters.",
-    "asuntoRequerido": "Please specify a subject",
-    "incidenceCreated":"The incidende has been created :"
+    "asuntoRequerido": "Please specify a subject"
   },
   "listPqrMOdule": {
     "digiteElRadicado": "Enter the ticket(PQR) number:",
@@ -162,8 +161,34 @@
     "HEADER_OPTION_CONSULTAR_PQR": "CHECK PQR",
     "HEADER_OPTION_USUARIOS_REGISTRADOS": "REGISTERED USERS",
     "HEADER_OPTION_BASE_DE_CONOCIMIENTOS": "KNOWLEDGE BASE",
-    "HEADER_OPTION_INCIDENT_MANAGEMENT":"INCIDENT MANAGEMENT"
-
+    "HEADER_OPTION_FLOWS": "FLOWS",
+     "HEADER_OPTION_INCIDENT_MANAGEMENT":"INCIDENT MANAGEMENT"
+  },
+  "flowsModule": {
+    "flows": "Flows",
+    "flowName": "Name",
+    "flowDescription": "Description",
+    "flowActions": "Actions",
+    "createFlow": "Create Flow",
+    "deleteMessage": "Are you sure you want to delete this flow?",
+    "steps": "Steps",
+    "flowCreated": "Flow Created Successfully",
+    "requiredName": "Please specify flow's name",
+    "requiredDescription": "Please specify flow's description"
+  },
+  "flowSteps": {
+    "Validation": "Validation",
+    "Diagnostic": "Diagnostic",
+    "Resolution": "Resolution",
+    "Escalation": "Escalation",
+    "Closure": "Closure",
+    "type": "Type",
+    "createStep": "Create Step",
+    "stepCreated": "Step Created Successfully",
+    "typeRequired": "Please specify Step's type",
+    "requiredDescription": "Please specify step's description",
+    "minLength": "Description field must have at least 3 characters",
+    "deleteMessage": "Are you sure you want to delete this step?"
   },
   "incidentManagementModule":{
     "busquedaIdentificacionLbl":"Enter id user",
@@ -174,8 +199,5 @@
     "table1EncNombreCompleto":"Full Name",
     "table2EncEmail":"Email",
     "table2EncTelefono":"Phone Number"
-
   }
-
-
 }
