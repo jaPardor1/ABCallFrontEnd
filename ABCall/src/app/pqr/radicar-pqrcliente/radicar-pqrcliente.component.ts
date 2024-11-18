@@ -1,54 +1,89 @@
-import { Component, EventEmitter, Inject, inject, Input, Output, output, ViewChild, viewChild } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Inject, inject, OnInit, Output, ViewChild, viewChild } from '@angular/core';
 import { PqrDTO } from '../Pqr';
 import { PqrService } from '../../service/pqr/pqr.service';
 import { DialogComponent } from '../../shared/dialog/dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { FormularioPqrComponent } from '../formulario-pqr/formulario-pqr.component';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-radicar-pqrcliente',
   templateUrl: './radicar-pqrcliente.component.html',
   styleUrl: './radicar-pqrcliente.component.css'
 })
-export class RadicarPQRClienteComponent {
+export class RadicarPQRClienteComponent implements AfterViewInit {
 
   @Output()
-  public module:EventEmitter<string> = new EventEmitter<string>();
+  public module: EventEmitter<string> = new EventEmitter<string>();
   readonly dialog = inject(MatDialog);
-  @ViewChild(FormularioPqrComponent) child!:FormularioPqrComponent
+  @ViewChild(FormularioPqrComponent) child!: FormularioPqrComponent
 
 
 
-  constructor(private pqrService:PqrService,private router:Router,@Inject('tabData') public gestion: boolean){
-       alert(gestion)
+  constructor(private pqrService: PqrService,
+    private router: Router,
+    private translate: TranslateService,
+    @Inject('tabData') public tabData: any,
+    @Inject('tabState') private state: any
+  ) {
+
   }
-  ngOnInit(): void {
-
-  }
-  saveIncident(incident:PqrDTO){
-    console.log(typeof(incident))
-    if(incident.title !==undefined){
-
-       this.pqrService.createIncident(incident).subscribe(
-        (response)=> {
-          this.openDialog( $localize`Se ha radicado el pqr `+response.ticket_number,incident);
-        },
-        (error:any)=> console.error(error)
-       )
+  ngAfterViewInit(): void {
+    try {
+      if (this.isValidState(this.state) && this.child) {
+        Promise.resolve().then(() => {
+          this.child.setFormData(this.state);
+        })
+      }
+    } catch (error) {
+      alert('Error al establecer el estado del formulario:' + error);
     }
- }
- openDialog(mensaje:string,incident:PqrDTO):void{
-  this.dialog.open(DialogComponent, {
-    data: {message:mensaje},
-  })
-  .afterClosed()
-  .subscribe(() => {
-    this.router.navigateByUrl('listIncidences');
-  });
+  }
+
+  private isValidState(state: any): boolean {
+    return state && typeof state === 'object' && state.value && 'type' in state.value && 'title' in state.value && 'description' in state.value;
+  }
+
+  saveIncident(incident: PqrDTO) {
+    console.log(typeof (incident))
+    if (incident.title !== undefined) {
+
+        incident.user_sub = this.tabData.user_sub
+
+        this.createIncident(incident);
+    }
+  }
+
+  createIncident(incident: PqrDTO) {
+    this.pqrService.createIncident(incident).subscribe(
+      (response) => {
+        let msg = this.translate.instant('createIncidentModule.incidenceCreated') + response.ticket_number
+        this.openDialog(msg)
+      },
+      (error: any) => console.error(error.message)
+    )
+  }
+  openDialog(mensaje: string): void {
+    this.dialog.open(DialogComponent, {
+      data: { message: mensaje },
+    })
+      .afterClosed()
+      .subscribe(() => {
+        if (this.tabData.gestion) {
+          this.child.form.reset();
+        } else {
+          this.router.navigateByUrl('listIncidences');
+          //alert('resireccionar al listado')
+        }
+      });
+  }
 
 
-  ;
-}
+  getState() {
+    // Devuelve el estado actual del componente
+    return this.child.getFormData();
+  }
+
 
 }

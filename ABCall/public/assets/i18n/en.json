@@ -116,7 +116,8 @@
     "tipoSolicitudRequerido": "Please specify the request type",
     "descripcionRequerida": "Please provide a description",
     "descripcionMaxima": "The description can only store a maximum of: {{maxLength}} characters.",
-    "asuntoRequerido": "Please specify a subject"
+    "asuntoRequerido": "Please specify a subject",
+    "incidenceCreated":"The incidende has been created :"
   },
   "listPqrMOdule": {
     "digiteElRadicado": "Enter the ticket(PQR) number:",

@@ -1,4 +1,4 @@
-import { Component, Inject, ViewChild } from '@angular/core';
+import { Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { PqrService } from '../../service/pqr/pqr.service';
 import { PqrResultDto } from '../pqrResult';
 import { MatDialog } from '@angular/material/dialog';
@@ -11,23 +11,54 @@ import { MatTableDataSource } from '@angular/material/table';
   templateUrl: './listado-pqr.component.html',
   styleUrl: './listado-pqr.component.css'
 })
-export class ListadoPqrComponent {
-  constructor(private pqrService: PqrService,public dialog: MatDialog,@Inject('tabData') public gestion: boolean) {
+export class ListadoPqrComponent implements OnInit {
 
-  }
 
   public dataSource:any;
   displayedColumns: string[] = ['subject', 'status', 'date','actions'];
   @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
   ticketNumber:string='';
   isNotFound:boolean=true;
+  incidenceList={}
+
+  constructor(private pqrService: PqrService,
+    public dialog: MatDialog,
+    @Inject('tabData') public tabData:any,
+    @Inject('tabState') private state: any
+  ) {
+
+  }
+
+  ngOnInit(): void {
+    if(this.tabData.gestion && this.tabData.user_sub){
+        this.searchIncidentsSub(this.tabData.user_sub);
+    }
+  }
+
+
+  getState() {
+    // Devuelve el estado actual del componente
+    return this.incidenceList ;
+  }
+
+
+
   public searchIncidents() {
     this.pqrService.getIncidents().subscribe(
       (response: PqrResultDto[]) => this.listFoundIncidents(response),
       (error: any) =>  console.error(error)
     )
   }
+
+  public searchIncidentsSub(userSub:string) {
+    this.pqrService.getIncidentsSub(userSub).subscribe(
+      (response: PqrResultDto[]) => this.listFoundIncidents(response),
+      (error: any) =>  console.error(error)
+    )
+  }
+
   public listFoundIncidents(list: PqrResultDto[]) {
+    this.incidenceList = list;
     if(list.length>0){
       this.isNotFound=false;
       if(this.ticketNumber.length>0){

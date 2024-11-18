@@ -48,5 +48,9 @@ export class ArticleListComponent {
     });
   }
 
+  getState(){
+    return {};
+  }
+
 
 }

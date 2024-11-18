@@ -36,7 +36,11 @@ const routes: Routes = [
         canActivate:[AuthorizeGuard],
         data:{
           allowedRoles: ['Admin', 'Superadmin','Regular'],
-        }
+        },
+        providers: [
+          {provide: 'tabData',useValue: {gestion:false,user_sub:null},},
+          {provide: 'tabState', useValue:{}},
+        ]
       },
       {
         path:'listIncidences',
@@ -44,7 +48,11 @@ const routes: Routes = [
         canActivate:[AuthorizeGuard],
         data:{
           allowedRoles: ['Admin', 'Superadmin','Regular'],
-        }
+        },
+        providers: [
+          {provide: 'tabData',useValue: {gestion:false,user_sub:null},},
+          {provide: 'tabState', useValue:{}},
+        ]
       },
       {
         path: 'articlesList',
@@ -89,10 +97,10 @@ const routes: Routes = [
       {
         path:'incidentManagement',
         component:GestionIncidentesComponent,
-        //canActivate:[AuthorizeGuard],
-        //data:{
-        //  allowedRoles: ['Admin', 'Superadmin','Agent'],
-        //}
+        canActivate:[AuthorizeGuard],
+        data:{
+         allowedRoles: ['Admin', 'Superadmin','Agent'],
+        }
       }
     ]
   }
