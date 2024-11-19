@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ComponentRef, Injector, Input, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { AfterViewInit, Component, ComponentRef, EventEmitter, Injector, Input, OnInit, Output, ViewChild, ViewContainerRef } from '@angular/core';
 import { RadicarPQRClienteComponent } from '../../pqr/radicar-pqrcliente/radicar-pqrcliente.component';
 import { ListadoPqrComponent } from '../../pqr/listado-pqr/listado-pqr.component';
 import { ArticleListComponent } from '../../knwoledgebase/article-list/article-list.component';
@@ -8,14 +8,14 @@ import { ArticleListComponent } from '../../knwoledgebase/article-list/article-l
   templateUrl: './tabs.component.html',
   styleUrl: './tabs.component.css'
 })
-export class TabsComponent implements OnInit ,AfterViewInit {
+export class TabsComponent implements OnInit, AfterViewInit {
   activeTabIndex: number = 0; // Índice de la pestaña activa
 
   // Arreglo de pestañas dinámicas
   tabs: any[] = [
-    { title:  'RADICAR PQR', component: RadicarPQRClienteComponent,state: {}, },
-    { title: 'HISTORIAL INCIDENTES', component: ListadoPqrComponent,state: {}, },
-    { title: 'BASE DE CONOCIMIENTO', component: ArticleListComponent,state: {}, },
+    { title: 'RADICAR PQR', component: RadicarPQRClienteComponent, state: {}, },
+    { title: 'HISTORIAL INCIDENTES', component: ListadoPqrComponent, state: {}, },
+    { title: 'BASE DE CONOCIMIENTO', component: ArticleListComponent, state: {}, },
   ];
 
 
@@ -23,15 +23,16 @@ export class TabsComponent implements OnInit ,AfterViewInit {
   activeComponentRef?: ComponentRef<any>;
   @ViewChild('dynamicComponent', { read: ViewContainerRef })
   viewContainer!: ViewContainerRef;
-  @Input() user_sub:string="";
-  constructor(){
+  @Input() user_sub: string = "";
+  @Output() public riskEvaluation: EventEmitter<any> = new EventEmitter<any>(); 
+  constructor() {
 
   }
   ngOnInit() {
 
   }
 
-  ngAfterViewInit(){
+  ngAfterViewInit() {
     this.activateTab(this.activeTabIndex); // Cargar la primera pestaña
   }
   activateTab(index: number) {
@@ -48,26 +49,34 @@ export class TabsComponent implements OnInit ,AfterViewInit {
 
     this.viewContainer.clear();
 
-    let data ={
-        gestion:true,
-        user_sub:this.user_sub
+    let data = {
+      gestion: true,
+      user_sub: this.user_sub
     }
 
     // Cargar el nuevo componente
     const tab = this.tabs[index];
-    const componentRef = this.viewContainer.createComponent(tab.component, {
+    const componentRef:ComponentRef<any> = this.viewContainer.createComponent(tab.component, {
       injector: this.createInjector(data, tab.state),
     });
+
+    if (index == 1) {
+      componentRef.instance.incidentIdrequested.subscribe((incidentInfo:any) => {
+            console.log("risk evaluation required for pqr"+incidentInfo.idPqr)
+            this.riskEvaluation.emit(incidentInfo);
+    }
+      );
+    }
 
     // Guardar referencia del componente activo (opcional, para manejar eventos o limpiar)
     this.activeComponentRef = componentRef;
   }
 
-  createInjector(data: any,state:any): Injector {
+  createInjector(data: any, state: any): Injector {
     return Injector.create({
       providers: [
-        {provide: 'tabData',useValue: data,},
-        {provide: 'tabState', useValue: state },
+        { provide: 'tabData', useValue: data, },
+        { provide: 'tabState', useValue: state },
       ],
     });
   }

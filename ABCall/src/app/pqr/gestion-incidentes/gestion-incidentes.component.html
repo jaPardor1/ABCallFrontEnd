@@ -21,13 +21,10 @@
             </div>
             <div *ngIf="user_sub.length>0" class="form-row">
                 <div class="form-column">
-                    <label for="">{{'incidentManagementModule.nivelRisgoLbl'|translate}}</label>
+                    <label *ngIf="riskLevel.length>0" for="">{{'incidentManagementModule.nivelRisgoLbl'+riskLevel|translate}}</label>
                   <div style="width: 100%;border:1px solid red;border-radius: 8px;background-color: white;">
                     <ul>
-                        <li>Sugerir ampliacion del plan por 2 meses.</li>
-                        <li>Sugerir ampliacion del plan por 2 meses.</li>
-                        <li>Sugerir ampliacion del plan por 2 meses.</li>
-                        <li>Sugerir ampliacion del plan por 2 meses.</li>
+                        <li *ngIf="riskLevelReco.length>0">{{riskLevelReco}} </li>
                     </ul>
 
                   </div>
@@ -86,7 +83,7 @@
     </div>
     <div class="row">
       <div class="col-12">
-        <app-tabs *ngIf="user_sub.length>0" [user_sub]="user_sub"   ></app-tabs>
+        <app-tabs (riskEvaluation)="evaluateRisk($event)" *ngIf="user_sub.length>0" [user_sub]="user_sub"   ></app-tabs>
       </div>
     </div>
 </div>

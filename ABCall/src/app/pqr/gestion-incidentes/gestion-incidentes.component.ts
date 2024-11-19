@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { UserService } from '../../service/user/user.service';
 import { UserDto } from '../../users/user';
+import { PqrService } from '../../service/pqr/pqr.service';
+import { PqrRiskEvaluationDto } from '../PqrRiskEvaluation';
 
 @Component({
   selector: 'app-gestion-incidentes',
@@ -15,7 +17,9 @@ export class GestionIncidentesComponent {
   displayedColumns2: string[] = ['email', 'phone_number'];
   clientIdNumber: string = "";
   user_sub:string="";
-  constructor(private userService: UserService) {
+  riskLevel:string="";
+  riskLevelReco:string="";
+  constructor(private userService: UserService, private pqrService: PqrService ) {
     this.dataSource = [{
       id: "1212551515",
       id_type: "Cedula Ciudadania",
@@ -52,5 +56,25 @@ export class GestionIncidentesComponent {
     }]
 
     this.user_sub=clientInfo[0].cognito_user_sub;
+  }
+
+
+  evaluateRisk(info:any){
+    if (info.idPqr !== undefined) {
+           this.pqrService.getIncidentRiskEvaluation(info.idPqr).subscribe(
+            (response:PqrRiskEvaluationDto)=>{
+                  this.setRiskInfo(response);
+            },
+            (error)=>{
+              console.error(error);    
+              alert(error);
+            }
+           );
+    }
+  }
+  
+  setRiskInfo(riskEvalInfo:PqrRiskEvaluationDto){
+        this.riskLevel = riskEvalInfo.risk_level;
+        this.riskLevelReco = riskEvalInfo.recommendation;
   }
 }
