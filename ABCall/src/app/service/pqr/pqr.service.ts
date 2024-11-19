@@ -11,7 +11,7 @@ import { PqrRiskEvaluationDto } from '../../pqr/PqrRiskEvaluation';
 export class PqrService {
 
   urlApi = environment.apiPqrs;
-  urlRiskEval = environment.apiKnowledgeBase;
+  urlRiskEval = environment.apiriskEvaluationBase;
   constructor(private http:HttpClient) { }
   public createIncident(incident:any):Observable<any>
   {
