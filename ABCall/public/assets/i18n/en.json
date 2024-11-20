@@ -192,7 +192,7 @@
   },
   "incidentManagementModule":{
     "busquedaIdentificacionLbl":"Enter id user",
-    "buscarBtn":"Search",
+    "buscarBtn":"SEARCH",
     "nivelRisgoLbl":"Risk level:",
     "table1EncIdentificacion":"Id. number",
     "table1EncTipoIdentificacion":"Id. type",

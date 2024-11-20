@@ -193,7 +193,7 @@
   },
   "incidentManagementModule":{
     "busquedaIdentificacionLbl":"Identificación",
-    "buscarBtn":"Buscar",
+    "buscarBtn":"BUSCAR",
     "nivelRisgoLbl":"Nivel de riesgo:",
     "table1EncIdentificacion":"Identificación",
     "table1EncTipoIdentificacion":"Tipo Identificación",

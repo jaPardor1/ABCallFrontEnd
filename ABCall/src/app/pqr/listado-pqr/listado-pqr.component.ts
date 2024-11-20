@@ -15,7 +15,7 @@ export class ListadoPqrComponent implements OnInit {
 
 
   public dataSource:any;
-  displayedColumns: string[] = ['subject', 'status', 'date','actions'];
+  displayedColumns: string[] = ['ticket_number','date','subject', 'status', 'actions'];
   @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
   ticketNumber:string='';
   isNotFound:boolean=true;
