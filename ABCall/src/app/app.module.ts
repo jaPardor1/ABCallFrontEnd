@@ -4,7 +4,7 @@ import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule, provideHttpClient, withInterceptorsFromDi} from '@angular/common/http'
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-
+import { NgApexchartsModule } from "ng-apexcharts";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -38,6 +38,9 @@ import { FlowFormComponent } from './flow/flow-form/flow-form.component';
 import { StepListComponent } from './flow/steps/step-list/step-list.component';
 import { CreateStepComponent } from './flow/steps/create-step/create-step.component';
 import { StepFormComponent } from './flow/steps/step-form/step-form.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
+
 
 // Función de fábrica para crear el TranslateLoader
 export function HttpLoaderFactory(http: HttpClient) {
@@ -72,8 +75,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     FlowFormComponent,
     StepListComponent,
     CreateStepComponent,
-    StepFormComponent
-   ],
+    StepFormComponent,
+    DashboardComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -81,6 +84,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    NgApexchartsModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
