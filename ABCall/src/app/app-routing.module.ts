@@ -1,6 +1,7 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { RadicarPQRClienteComponent } from './pqr/radicar-pqrcliente/radicar-pqrcliente.component';
 import { LayoutComponent } from './shared/layout/layout.component';
@@ -137,10 +138,20 @@ const routes: Routes = [
       {
         path:'incidentManagement',
         component:GestionIncidentesComponent,
-        //canActivate:[AuthorizeGuard],
-        //data:{
-         //allowedRoles: ['Admin', 'Superadmin','Agent'],
-        //}
+
+        canActivate:[AuthorizeGuard],
+        data:{
+         allowedRoles: ['Admin', 'Superadmin','Agent'],
+        }
+      },
+      {
+        path:'dashboard',
+        component:DashboardComponent,
+        canActivate:[AuthorizeGuard],
+        data:{
+         allowedRoles: ['Admin', 'Superadmin'],
+        }
+
       }
     ]
   }
