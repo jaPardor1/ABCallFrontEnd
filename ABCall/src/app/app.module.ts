@@ -38,6 +38,7 @@ import { FlowFormComponent } from './flow/flow-form/flow-form.component';
 import { StepListComponent } from './flow/steps/step-list/step-list.component';
 import { CreateStepComponent } from './flow/steps/create-step/create-step.component';
 import { StepFormComponent } from './flow/steps/step-form/step-form.component';
+import { AsignarPqrComponent } from './pqr/asignar-pqr/asignar-pqr.component';
 
 // Función de fábrica para crear el TranslateLoader
 export function HttpLoaderFactory(http: HttpClient) {
@@ -72,7 +73,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     FlowFormComponent,
     StepListComponent,
     CreateStepComponent,
-    StepFormComponent
+    StepFormComponent,
+    AsignarPqrComponent
    ],
   imports: [
     BrowserModule,
