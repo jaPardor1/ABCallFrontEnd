@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Inject, OnInit, Output, ViewChild } from '@angular/core';
 import { PqrService } from '../../service/pqr/pqr.service';
 import { PqrResultDto } from '../pqrResult';
 import { MatDialog } from '@angular/material/dialog';
@@ -20,6 +20,7 @@ export class ListadoPqrComponent implements OnInit {
   ticketNumber:string='';
   isNotFound:boolean=true;
   incidenceList={}
+  @Output() public incidentIdrequested: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(private pqrService: PqrService,
     public dialog: MatDialog,
@@ -77,6 +78,17 @@ export class ListadoPqrComponent implements OnInit {
   openDialog(pqrData:PqrResultDto): void {
     this.dialog.open(DetailDialogComponent, {
       data: { pqrData },
-    });
+    }).afterClosed().subscribe(
+      
+      ()=>{
+        debugger;
+        if(this.tabData.gestion){
+          this.incidentIdrequested.emit({
+            idPqr:pqrData.id,
+          });
+                           
+        }
+      }
+    );
   }
 }

@@ -3,13 +3,15 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { PqrResultDto } from '../../pqr/pqrResult';
 import { environment } from '../../../environments/environment';
+import { PqrRiskEvaluationDto } from '../../pqr/PqrRiskEvaluation';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PqrService {
 
-   urlApi = environment.apiPqrs;
+  urlApi = environment.apiPqrs;
+  urlRiskEval = environment.apiriskEvaluationBase;
   constructor(private http:HttpClient) { }
   public createIncident(incident:any):Observable<any>
   {
@@ -26,5 +28,9 @@ export class PqrService {
     let sub = "?user_sub="+userSub;
     const url = this.urlApi+sub
     return this.http.get<PqrResultDto[]>(url)
+  }
+  public getIncidentRiskEvaluation(idPqr:number):Observable<PqrRiskEvaluationDto>{
+    let url = this.urlRiskEval+idPqr
+    return this.http.get<PqrRiskEvaluationDto>(url)
   }
 }

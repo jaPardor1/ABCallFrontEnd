@@ -5,7 +5,7 @@ label {
     font-weight: bold;
     margin-bottom: 5px;
   }
-  
+
   button {
     background-color:  #029e89;
     border: none;
@@ -20,7 +20,7 @@ label {
     margin: 0;
     padding: 0;
   }
-  
+
   .register-page {
     width: 100%;
     min-height: 100vh;
@@ -32,39 +32,39 @@ label {
     justify-content: center;
     background-size: cover;
   }
-  
+
   /* Form styles */
   .register-form {
     background-color: rgba(72, 207, 194, 0.9);
     padding: 20px;
     border-radius: 10px;
   }
-  
+
   h1 {
     text-align: center;
     color: #48464C;
     font-size: 24px;
   }
-  
+
   .form-row {
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px; /* Reducir espacio entre filas */
   }
-  
+
   .form-column {
     display: flex;
     flex-direction: column;
     width: 100%;
   }
-  
+
   /* Labels and Inputs */
   label {
     font-weight: bold;
     color: #48464C;
     margin-bottom: 5px;
   }
-  
+
   input,
   select {
     width: 100%;
@@ -75,7 +75,7 @@ label {
     border-radius: 5px;
     box-sizing: border-box; /* Para asegurar que el padding no afecta el ancho */
   }
-  
+
   /* Styling for buttons */
   .form-buttons {
     display: flex;
@@ -84,7 +84,7 @@ label {
     padding-top: 10px;
     margin-bottom: 10px;
   }
-  
+
   .form-buttons .btn-regresar {
     background-color: #ff8a80;
     border: none;
@@ -93,7 +93,7 @@ label {
     border-radius: 5px;
     cursor: pointer;
   }
-  
+
   .form-buttons .btn-registrar {
     background-color: #029e89;
     border: none;
@@ -102,16 +102,16 @@ label {
     border-radius: 5px;
     cursor: pointer;
   }
-  
+
   /* Hover effect for buttons */
   button:hover {
     background-color: #008d76;
   }
-  
+
   .is-invalid {
     border: 2px solid red;
   }
-  
+
   /* Password validation list */
   .pass-err-container {
     background-color: #f0f0f038; /* Fondo gris claro */
@@ -119,22 +119,22 @@ label {
     border-radius: 5px;
     margin-bottom: 5px;
   }
-  
+
   .pass-err ul {
     list-style-type: none;
     padding: 0;
   }
-  
+
   .pass-err li {
     font-size: 10px;
     color: #ff0000;
     margin-bottom: 1px;
   }
-  
+
   .pass-ok {
     color: #4caf50; /* Green for valid items */
   }
-  
+
   /* Modal styling */
   .modal {
     display: block;
@@ -146,7 +146,7 @@ label {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
   }
-  
+
   .modal-content {
     background-color: #fefefe;
     margin: 15% auto;
@@ -156,33 +156,43 @@ label {
     text-align: center;
     border-radius: 10px;
   }
-  
+
   .modal-content.success {
     border-color: #4caf50;
     color: #4caf50;
   }
-  
+
   .modal-content.error {
     border-color: #f44336;
     color: #f44336;
   }
-  
+
   .close {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
   }
-  
+
   .close:hover,
   .close:focus {
     color: black;
     cursor: pointer;
   }
-  
+
   .small-text{
     font-size: 10px;
-  
+
   }
-  
-  
+
+  .risk-level-recomendation{
+    width: 101%;
+    border: 1px solid red;
+    border-radius: 8px;
+    background-color: white;
+    max-height: 200px;
+    text-align: justify;
+    padding: 10px;
+    font-size: small;
+  }
+
