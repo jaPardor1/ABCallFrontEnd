@@ -90,7 +90,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
         name: this.translate.instant('headerOptions.HEADER_OPTION_DASHBOARD'),
         isActive: false,
         link: "dashboard",
-        allowedRoles: ['Regular', 'Admin', 'Superadmin', 'Agent']
+        allowedRoles: ['Admin', 'Superadmin']
       },
 
     ];

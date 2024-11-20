@@ -148,7 +148,7 @@ const routes: Routes = [
         component:DashboardComponent,
         canActivate:[AuthorizeGuard],
         data:{
-         allowedRoles: ['Regular', 'Admin', 'Superadmin', 'Agent'],
+         allowedRoles: ['Admin', 'Superadmin'],
         }
       }
     ]
