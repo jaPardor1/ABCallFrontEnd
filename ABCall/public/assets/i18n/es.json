@@ -202,5 +202,9 @@
     "table2EncEmail":"Correo Electronico",
     "table2EncTelefono":"Telefono"
 
+  },
+  "tabModule":{
+    "historialIncidentes":"HISTORIAL DE INCIDENTES"
+
   }
 }
