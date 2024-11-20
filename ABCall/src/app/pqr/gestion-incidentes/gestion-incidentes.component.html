@@ -21,12 +21,9 @@
             </div>
             <div *ngIf="user_sub.length>0" class="form-row">
                 <div class="form-column">
-                    <label *ngIf="riskLevel.length>0" for="">{{'incidentManagementModule.nivelRisgoLbl'+riskLevel|translate}}</label>
-                  <div style="width: 100%;border:1px solid red;border-radius: 8px;background-color: white;">
-                    <ul>
-                        <li *ngIf="riskLevelReco.length>0">{{riskLevelReco}} </li>
-                    </ul>
-
+                  <label *ngIf="riskLevel.length>0" for="">{{'incidentManagementModule.nivelRisgoLbl'|translate}} {{riskLevel}}</label>
+                  <div *ngIf="riskLevelReco.length>0" class="risk-level-recomendation">
+                    {{riskLevelReco}}
                   </div>
                 </div>
             </div>

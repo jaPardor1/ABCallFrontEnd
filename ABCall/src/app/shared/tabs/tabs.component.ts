@@ -2,6 +2,8 @@ import { AfterViewInit, Component, ComponentRef, EventEmitter, Injector, Input, 
 import { RadicarPQRClienteComponent } from '../../pqr/radicar-pqrcliente/radicar-pqrcliente.component';
 import { ListadoPqrComponent } from '../../pqr/listado-pqr/listado-pqr.component';
 import { ArticleListComponent } from '../../knwoledgebase/article-list/article-list.component';
+import { Subscription } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-tabs',
@@ -10,26 +12,44 @@ import { ArticleListComponent } from '../../knwoledgebase/article-list/article-l
 })
 export class TabsComponent implements OnInit, AfterViewInit {
   activeTabIndex: number = 0; // Índice de la pestaña activa
+  private languageChangeSubscription: Subscription | undefined;
 
   // Arreglo de pestañas dinámicas
-  tabs: any[] = [
-    { title: 'RADICAR PQR', component: RadicarPQRClienteComponent, state: {}, },
-    { title: 'HISTORIAL INCIDENTES', component: ListadoPqrComponent, state: {}, },
-    { title: 'BASE DE CONOCIMIENTO', component: ArticleListComponent, state: {}, },
-  ];
-
-
+  tabs: any[] =[];
 
   activeComponentRef?: ComponentRef<any>;
   @ViewChild('dynamicComponent', { read: ViewContainerRef })
   viewContainer!: ViewContainerRef;
   @Input() user_sub: string = "";
-  @Output() public riskEvaluation: EventEmitter<any> = new EventEmitter<any>(); 
-  constructor() {
+  @Output() public riskEvaluation: EventEmitter<any> = new EventEmitter<any>();
+  constructor(private translate: TranslateService) {
 
   }
   ngOnInit() {
+    // Inicializar las opciones y suscribirse al cambio de idioma
+    this.configureTabs();
+    this.languageChangeSubscription = this.translate.onLangChange.subscribe(() => {
+      this.configureTabs(); // Actualiza las opciones cuando el idioma cambie
+    });
+  }
 
+  ngOnDestroy() {
+    // Limpiar la referencia del componente activo al destruir el TabsComponent
+    if (this.activeComponentRef) {
+      this.activeComponentRef.destroy();
+    }
+
+    if (this.languageChangeSubscription) {
+      this.languageChangeSubscription.unsubscribe(); // Limpiar la suscripción cuando el componente se destruya
+    }
+  }
+
+  configureTabs(){
+    this.tabs= [
+      { title:this.translate.instant('headerOptions.HEADER_OPTION_RADICAR_PQR'), component: RadicarPQRClienteComponent, state: {}, },
+      { title:this.translate.instant('tabModule.historialIncidentes'), component: ListadoPqrComponent, state: {}, },
+      { title:this.translate.instant('headerOptions.HEADER_OPTION_BASE_DE_CONOCIMIENTOS'), component: ArticleListComponent, state: {}, },
+    ];
   }
 
   ngAfterViewInit() {
@@ -81,12 +101,6 @@ export class TabsComponent implements OnInit, AfterViewInit {
     });
   }
 
-  ngOnDestroy() {
-    // Limpiar la referencia del componente activo al destruir el TabsComponent
-    if (this.activeComponentRef) {
-      this.activeComponentRef.destroy();
-    }
-  }
 
   saveCurrentState() {
     if (this.activeComponentRef) {

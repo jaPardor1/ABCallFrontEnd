@@ -7,8 +7,6 @@ import { TranslationService } from '../../service/i18n/translation.service';
   styleUrl: './lang-selector.component.css'
 })
 export class LangSelectorComponent implements OnInit {
-
-
   langs = [{id:'es',value:"ES"},{id:'en',value:"EN"}];
   lang:string;
   constructor(private translationService: TranslationService){
@@ -17,11 +15,7 @@ export class LangSelectorComponent implements OnInit {
   ngOnInit(): void {
     this.lang = this.translationService.getCurrentLang()
   }
-
-
-
   changeLanguage() {
-    debugger;
     this.translationService.changeLanguage(this.lang);
   }
 

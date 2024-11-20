@@ -33,7 +33,6 @@ export class GestionIncidentesComponent {
   }
 
   searchClient() {
-    debugger;
     this.userService.getUserClientInfo(this.clientIdNumber).subscribe(
       (response) => {
         this.listFoundinfo(response);
@@ -66,13 +65,13 @@ export class GestionIncidentesComponent {
                   this.setRiskInfo(response);
             },
             (error)=>{
-              console.error(error);    
+              console.error(error);
               alert(error);
             }
            );
     }
   }
-  
+
   setRiskInfo(riskEvalInfo:PqrRiskEvaluationDto){
         this.riskLevel = riskEvalInfo.risk_level;
         this.riskLevelReco = riskEvalInfo.recommendation;

@@ -19,7 +19,8 @@ export const environment = {
   apiFilterArticles: 'https://gpe0e6wgv6.execute-api.us-east-1.amazonaws.com/api/knowledgebase/filters',
   apiFlows: 'https://gpe0e6wgv6.execute-api.us-east-1.amazonaws.com/api/knowledgebase/flow',
   apiTags: 'https://gpe0e6wgv6.execute-api.us-east-1.amazonaws.com/api/knowledgebase/tags',
-  apiriskEvaluationBase:'https://gpe0e6wgv6.execute-api.us-east-1.amazonaws.com/api/risk-evaluation/'
+  apiriskEvaluationBase:'https://gpe0e6wgv6.execute-api.us-east-1.amazonaws.com/api/knowledgebase/risk-evaluation/'
+
 };
 
 
