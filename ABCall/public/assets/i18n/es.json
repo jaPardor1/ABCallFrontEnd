@@ -129,7 +129,8 @@
     "fecha": "Fecha",
     "estado": "Estado",
     "asunto": "Asunto",
-    "verDetalle": "Ver detalle"
+    "verDetalle": "Ver detalle",
+    "asignarPqr" : "Asignar Incidente"
   },
   "detailPqr":{
     "ticket": "Ticket",
@@ -194,7 +195,7 @@
   },
   "incidentManagementModule":{
     "busquedaIdentificacionLbl":"Identificación",
-    "buscarBtn":"Buscar",
+    "buscarBtn":"BUSCAR",
     "nivelRisgoLbl":"Nivel de riesgo:",
     "table1EncIdentificacion":"Identificación",
     "table1EncTipoIdentificacion":"Tipo Identificación",

@@ -19,6 +19,7 @@ export class GestionIncidentesComponent {
   user_sub:string="";
   riskLevel:string="";
   riskLevelReco:string="";
+  color="transparent";
   constructor(private userService: UserService, private pqrService: PqrService ) {
     this.dataSource = [{
       id: "1212551515",
