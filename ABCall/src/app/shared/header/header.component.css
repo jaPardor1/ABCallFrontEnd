@@ -61,3 +61,9 @@
   color: #ffffff; /* Color de texto en hover */
 }
 
+@media(max-width: 1364px){
+  .nav-link-container .nav-link {
+     font-size: smaller;
+  }
+
+}
