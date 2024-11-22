@@ -106,12 +106,16 @@ export class FormularioUserInternoComponent implements OnInit {
 
   loadProfiles() {
     const keys = Object.keys(Profile);
+    debugger;
     keys.forEach((key, index) => {
-      this.profiles.push({
-        id: Profile[index],
-        profileName: Profile[index]
-      });
+      if(Profile[index]!=='Client'){
+        this.profiles.push({
+          id: Profile[index],
+          profileName: Profile[index]
+        });
+      }
     });
+    
     this.profiles = this.profiles.filter(x => String(x.profileName).length > 0 && x.profileName !== undefined);
   }
 
