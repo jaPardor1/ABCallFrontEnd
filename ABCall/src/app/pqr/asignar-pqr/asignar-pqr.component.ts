@@ -11,8 +11,8 @@ export class AsignarPqrComponent {
   
    @Input() idPqr:number=0;
   
-  assignIncident(){
-      alert('incident assigned'+this.idPqr)
+  assignIncident(ticket_number:string){
+      alert('incident assigned!! to '+ticket_number)
   }
 
 }

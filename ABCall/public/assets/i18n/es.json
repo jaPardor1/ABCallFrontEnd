@@ -129,7 +129,8 @@
     "fecha": "Fecha",
     "estado": "Estado",
     "asunto": "Asunto",
-    "verDetalle": "Ver detalle"
+    "verDetalle": "Ver detalle",
+    "asignarPqr" : "Asignar Incidente"
   },
   "detailPqr":{
     "ticket": "Ticket",

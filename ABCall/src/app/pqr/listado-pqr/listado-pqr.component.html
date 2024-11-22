@@ -45,6 +45,8 @@
         <ng-container matColumnDef="actions">
           <th style="width: 160px;" mat-header-cell *matHeaderCellDef></th>
           <td mat-cell *matCellDef="let row">
+            
+            <app-asignar-pqr  *ngIf="tabData.gestion" (click)="assignIncidentToAgent(row.ticket_number)" [idPqr]="row.ticket_number"></app-asignar-pqr>
             <button  class="button-1" (click)="openDialog(row)" mat-button>{{ 'listPqrMOdule.verDetalle' | translate }}</button>
           </td>
         </ng-container>

@@ -130,7 +130,8 @@
     "fecha": "Date",
     "estado": "Status",
     "asunto": "Subject",
-    "verDetalle": "View details"
+    "verDetalle": "View details",
+    "asignarPqr" : "Assign Incident"
   },
   "detailPqr":{
     "ticket": "Ticket",

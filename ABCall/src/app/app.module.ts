@@ -77,7 +77,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     StepListComponent,
     CreateStepComponent,
     StepFormComponent,
-    DashboardComponent],
+    DashboardComponent,
+    AsignarPqrComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
