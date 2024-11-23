@@ -5,6 +5,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { DetailDialogComponent } from '../../shared/detail-dialog/detail-dialog.component';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { AsignarPqrComponent } from '../asignar-pqr/asignar-pqr.component';
 
 @Component({
   selector: 'app-listado-pqr',
@@ -15,8 +16,9 @@ export class ListadoPqrComponent implements OnInit {
 
 
   public dataSource:any;
-  displayedColumns: string[] = ['subject', 'status', 'date','actions'];
+  displayedColumns: string[] = ['ticket_number','date','subject', 'status', 'actions'];
   @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
+
   ticketNumber:string='';
   isNotFound:boolean=true;
   incidenceList={}
@@ -24,7 +26,7 @@ export class ListadoPqrComponent implements OnInit {
 
   constructor(private pqrService: PqrService,
     public dialog: MatDialog,
-    @Inject('tabData') public tabData:any,
+    @Inject('tabData') public tabData:any | null,
     @Inject('tabState') private state: any
   ) {
 
@@ -79,14 +81,18 @@ export class ListadoPqrComponent implements OnInit {
     this.dialog.open(DetailDialogComponent, {
       data: { pqrData },
     }).afterClosed().subscribe(
-      
       ()=>{
-        debugger;
+
         if(this.tabData.gestion){
           this.incidentIdrequested.emit({
             idPqr:pqrData.id,
+            ticket_number:pqrData.ticket_number,
+            title:pqrData.subject,
+            description:pqrData.description,
+            type:pqrData.type,
+            status:pqrData.status
           });
-                           
+
         }
       }
     );

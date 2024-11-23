@@ -22,14 +22,19 @@
             <div *ngIf="user_sub.length>0" class="form-row">
                 <div class="form-column">
                   <label *ngIf="riskLevel.length>0" for="">{{'incidentManagementModule.nivelRisgoLbl'|translate}} {{riskLevel}}</label>
+                  <label *ngIf="idPqr!==0"  for=""> {{'incidentManagementModule.idPqr' |translate}} : {{pqrTicketNumber}}</label>
+                  <div *ngIf="idPqr!==0 && pqrStatus!='CERRADO'" style="display: flex;margin: 5px 0px;">
+                    <app-asignar-pqr  (click)="assignPqrToCurrentAgent()" ></app-asignar-pqr>
+                    <app-cerrar-pqr (click)="closeIncident()"></app-cerrar-pqr>
+                  </div>
                   <div *ngIf="riskLevelReco.length>0" class="risk-level-recomendation">
                     {{riskLevelReco}}
                   </div>
                 </div>
             </div>
         </div>
-        <div class="col-6">
-            <div *ngIf="user_sub.length>0" class="form-row">
+        <div class="col-6" >
+            <div *ngIf="user_sub.length>0" class="form-row client-info-container">
                 <div class="form-column">
                     <div [hidden]="isNotFound">
                         <div class="col-12">

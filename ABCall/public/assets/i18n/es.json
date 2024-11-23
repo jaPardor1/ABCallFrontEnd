@@ -115,7 +115,8 @@
     "tipoSolicitudRequerido": "Por favor especifique el tipo de solicitud",
     "descripcionRequerida": "Por favor especifique una descripción",
     "descripcionMaxima": "La descripción solo puede almacenar máximo: {{maxLength}} caracteres.",
-    "asuntoRequerido": "Por favor especifique un asunto"
+    "asuntoRequerido": "Por favor especifique un asunto",
+    "incidenceCreated":"El Pqr ha sido creado :"
   },
   "listPqrMOdule":{
     "digiteElRadicado": "Digite el PQR* radicado:",
@@ -129,7 +130,8 @@
     "fecha": "Fecha",
     "estado": "Estado",
     "asunto": "Asunto",
-    "verDetalle": "Ver detalle"
+    "verDetalle": "Ver detalle",
+    "asignarPqr" : "Asignar Incidente"
   },
   "detailPqr":{
     "ticket": "Ticket",
@@ -144,7 +146,9 @@
     "detailDialogEstado": "Estado",
     "detailDialogFecha": "Fecha",
     "detailDialogFechaCierre": "Fecha estimada de cierre",
-    "detailDialogDescripcion": "Descripción"
+    "detailDialogDescripcion": "Descripción",
+    "agentAsigned":"Agente Asignado",
+    "canal":"Canal"
 
   },
   "KnowledgeBaseModule": {
@@ -195,18 +199,25 @@
   },
   "incidentManagementModule":{
     "busquedaIdentificacionLbl":"Identificación",
-    "buscarBtn":"Buscar",
+    "buscarBtn":"BUSCAR",
     "nivelRisgoLbl":"Nivel de riesgo:",
     "table1EncIdentificacion":"Identificación",
     "table1EncTipoIdentificacion":"Tipo Identificación",
     "table1EncNombreCompleto":"Nombre Completo",
     "table2EncEmail":"Correo Electronico",
-    "table2EncTelefono":"Telefono"
+    "table2EncTelefono":"Telefono",
+    "idPqr":"Numero de Ticket"
 
   },
   "tabModule":{
     "historialIncidentes":"HISTORIAL DE INCIDENTES"
-
+  },
+  "assignIncidentModule":{
+    "message":"El pqr ha sido asignado a este gestor."
+  },
+  "closeIncidentModule":{
+    "textBtn":"Cerrar Incidente",
+    "closeMessage":"Esta seguro de cerrar este incidente?"
   },
   "Clients": {
     "clients": "Clientes",
@@ -255,4 +266,5 @@
     "cedula_extranjeria" : "Cedula Extranjeria",
     "NIT" : "NIT"
   }
+
 }

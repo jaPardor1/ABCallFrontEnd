@@ -45,6 +45,8 @@ import { ClientFormComponent } from './client/client-form/client-form.component'
 
 
 
+import { AsignarPqrComponent } from './pqr/asignar-pqr/asignar-pqr.component';
+import { CerrarPqrComponent } from './pqr/cerrar-pqr/cerrar-pqr.component';
 
 // Función de fábrica para crear el TranslateLoader
 export function HttpLoaderFactory(http: HttpClient) {
@@ -52,7 +54,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 
 @NgModule({
-  declarations: [	
+  declarations: [
     AppComponent,
     ArticleListComponent,
     HeaderComponent,
@@ -84,7 +86,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     ClientListComponent,
     CreateClientComponent,
     ClientFormComponent
-   ],
+   ,
+    AsignarPqrComponent,
+    CerrarPqrComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
