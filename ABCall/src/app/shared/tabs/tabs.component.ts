@@ -56,11 +56,7 @@ export class TabsComponent implements OnInit, AfterViewInit {
     this.activateTab(this.activeTabIndex); // Cargar la primera pestaña
   }
   activateTab(index: number) {
-    // if (index === this.activeTabIndex) {
-    //   return; // Evitar recrear la misma pestaña
-    // }
-
-    // Guardar estado del componente actual antes de cambiar
+      // Guardar estado del componente actual antes de cambiar
     this.saveCurrentState();
 
     this.activeTabIndex = index;

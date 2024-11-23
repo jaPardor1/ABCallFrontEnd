@@ -1,0 +1,25 @@
+
+button {
+  background-color:  #029e89;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button-1 {
+  background-color: white; /* Fondo blanco */
+  color: #029e89; /* Cambia el color del texto si es necesario */
+  border: 2px solid red; /* Para que tenga un borde visible */
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 111px;
+  margin-bottom: 4px;
+}
+
+.button-1:hover {
+  background-color: #f0f0f0; /* Un leve cambio en el fondo al hacer hover */
+}

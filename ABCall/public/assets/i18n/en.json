@@ -116,7 +116,8 @@
     "tipoSolicitudRequerido": "Please specify the request type",
     "descripcionRequerida": "Please provide a description",
     "descripcionMaxima": "The description can only store a maximum of: {{maxLength}} characters.",
-    "asuntoRequerido": "Please specify a subject"
+    "asuntoRequerido": "Please specify a subject",
+    "incidenceCreated":"The incidence has been created :"
   },
   "listPqrMOdule": {
     "digiteElRadicado": "Enter the ticket(PQR) number:",
@@ -146,7 +147,9 @@
     "detailDialogEstado": "Status",
     "detailDialogFecha": "Date",
     "detailDialogFechaCierre": "Estimated close date",
-    "detailDialogDescripcion": "Description"
+    "detailDialogDescripcion": "Description",
+    "agentAsigned":"Asigned agent",
+    "canal":"Channel"
   },
   "KnowledgeBaseModule": {
     "searchTitle": "Search article by content:",
@@ -202,11 +205,20 @@
     "table1EncTipoIdentificacion":"Id. type",
     "table1EncNombreCompleto":"Full Name",
     "table2EncEmail":"Email",
-    "table2EncTelefono":"Phone Number"
+    "table2EncTelefono":"Phone Number",
+    "idPqr":"Ticket Number"
   },
   "tabModule":{
     "historialIncidentes":"INCIDENT HISTORY"
 
+  },
+  "assignIncidentModule":{
+    "message":"This incident has been assigned to current agent."
+  },
+  "closeIncidentModule":{
+    "textBtn":"Close Incident",
+    "closeMessage":"Are you sure to close this incident?"
   }
+
 
 }

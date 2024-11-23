@@ -138,11 +138,10 @@ const routes: Routes = [
       {
         path:'incidentManagement',
         component:GestionIncidentesComponent,
-
-        canActivate:[AuthorizeGuard],
-        data:{
-         allowedRoles: ['Admin', 'Superadmin','Agent'],
-        }
+        //canActivate:[AuthorizeGuard],
+        // data:{
+        //  allowedRoles: ['Admin', 'Superadmin','Agent'],
+        // }
       },
       {
         path:'dashboard',
