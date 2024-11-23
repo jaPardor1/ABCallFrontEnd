@@ -41,6 +41,7 @@ import { StepFormComponent } from './flow/steps/step-form/step-form.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 
+import { AsignarPqrComponent } from './pqr/asignar-pqr/asignar-pqr.component';
 
 // Función de fábrica para crear el TranslateLoader
 export function HttpLoaderFactory(http: HttpClient) {
@@ -76,7 +77,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     StepListComponent,
     CreateStepComponent,
     StepFormComponent,
-    DashboardComponent],
+    DashboardComponent,
+    AsignarPqrComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

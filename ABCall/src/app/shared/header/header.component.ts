@@ -14,8 +14,9 @@ import { Subscription } from 'rxjs';
 export class HeaderComponent implements OnInit, OnDestroy {
   public moduleName: string = '';
   public options: HeaderOptionDTO[] = [];
-  public currentOption = 3;
+  public currentOption = 0;
   public userRole: string = '';
+
   private languageChangeSubscription: Subscription | undefined;
 
   constructor(
@@ -30,8 +31,14 @@ export class HeaderComponent implements OnInit, OnDestroy {
   ngOnInit() {
     // Inicializar las opciones y suscribirse al cambio de idioma
     this.configureOptions();
+
     this.languageChangeSubscription = this.translate.onLangChange.subscribe(() => {
+    
       this.configureOptions(); // Actualiza las opciones cuando el idioma cambie
+      let nombre = this.options.find(x => x.id==this.currentOption);
+      if(nombre!== undefined){
+        this.moduleName = nombre.name;
+      }
     });
   }
 
@@ -46,56 +53,56 @@ export class HeaderComponent implements OnInit, OnDestroy {
       {
         id: 1,
         name: this.translate.instant('headerOptions.HEADER_OPTION_RADICAR_PQR'),
-        isActive: false,
+        
         link: "createIncidence",
         allowedRoles: ['Regular', 'Admin', 'Superadmin']
       },
       {
         id: 2,
         name: this.translate.instant('headerOptions.HEADER_OPTION_CONSULTAR_PQR'),
-        isActive: false,
+        
         link: "listIncidences",
         allowedRoles: ['Regular', 'Admin', 'Superadmin']
       },
       {
         id: 3,
         name: this.translate.instant('headerOptions.HEADER_OPTION_USUARIOS_REGISTRADOS'),
-        isActive: false,
+        
         link: "listUsers",
         allowedRoles: ['Admin', 'Superadmin']
       },
       {
         id: 4,
         name: this.translate.instant('headerOptions.HEADER_OPTION_BASE_DE_CONOCIMIENTOS'),
-        isActive: false,
+        
         link: "articlesList",
         allowedRoles: ['Regular', 'Admin', 'Superadmin', 'Agent']
       },
       {
         id: 5,
         name: this.translate.instant('headerOptions.HEADER_OPTION_FLOWS'),
-        isActive: false,
+        
         link: "flows",
         allowedRoles: ['Admin', 'Superadmin', 'Agent']
       },
       {
         id: 6,
         name: this.translate.instant('headerOptions.HEADER_OPTION_INCIDENT_MANAGEMENT'),
-        isActive: false,
+        
         link: "incidentManagement",
         allowedRoles: ['Admin', 'Superadmin', 'Agent']
       },
       {
         id: 7,
         name: this.translate.instant('headerOptions.HEADER_OPTION_DASHBOARD'),
-        isActive: false,
+        
         link: "dashboard",
         allowedRoles: ['Admin', 'Superadmin']
       },
 
     ];
 
-    this.setActiveOption(this.currentOption);
+    
   }
 
   setModuleName(name: string, id: number) {
@@ -104,11 +111,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   setActiveOption(cOption: number) {
-    let searched_obj: HeaderOptionDTO | undefined = this.options.find(i => i.id == this.currentOption);
-    if (searched_obj !== undefined) searched_obj.isActive = false;
-    searched_obj = this.options.find(i => i.id == cOption);
-    if (searched_obj !== undefined) searched_obj.isActive = true;
     this.currentOption = cOption;
+  }
+  isActiveClass(id:number){
+    let chk = (id ==this.currentOption)
+    return chk;
   }
 
   async onLogOut() {
