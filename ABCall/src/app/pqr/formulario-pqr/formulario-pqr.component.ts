@@ -24,7 +24,8 @@ export class FormularioPqrComponent implements OnInit {
       type: ['', [Validators.required]],
       title: ['', [Validators.required]],
       description: ['', [Validators.required, Validators.maxLength(500)]],
-      user_sub:['']
+      user_sub:[''],
+      channel:['WEB']
     });
   }
 
