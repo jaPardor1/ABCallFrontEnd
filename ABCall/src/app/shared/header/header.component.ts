@@ -33,7 +33,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.configureOptions();
 
     this.languageChangeSubscription = this.translate.onLangChange.subscribe(() => {
-    
+
       this.configureOptions(); // Actualiza las opciones cuando el idioma cambie
       let nombre = this.options.find(x => x.id==this.currentOption);
       if(nombre!== undefined){
@@ -53,63 +53,62 @@ export class HeaderComponent implements OnInit, OnDestroy {
       {
         id: 1,
         name: this.translate.instant('headerOptions.HEADER_OPTION_RADICAR_PQR'),
-        
+
         link: "createIncidence",
         allowedRoles: ['Regular', 'Admin', 'Superadmin']
       },
       {
         id: 2,
         name: this.translate.instant('headerOptions.HEADER_OPTION_CONSULTAR_PQR'),
-        
+
         link: "listIncidences",
         allowedRoles: ['Regular', 'Admin', 'Superadmin']
       },
       {
         id: 3,
         name: this.translate.instant('headerOptions.HEADER_OPTION_USUARIOS_REGISTRADOS'),
-        
+
         link: "listUsers",
         allowedRoles: ['Admin', 'Superadmin']
       },
       {
         id: 4,
         name: this.translate.instant('headerOptions.HEADER_OPTION_BASE_DE_CONOCIMIENTOS'),
-        
+
         link: "articlesList",
         allowedRoles: ['Regular', 'Admin', 'Superadmin', 'Agent']
       },
       {
         id: 5,
         name: this.translate.instant('headerOptions.HEADER_OPTION_FLOWS'),
-        
+
         link: "flows",
         allowedRoles: ['Admin', 'Superadmin', 'Agent']
       },
       {
         id: 6,
         name: this.translate.instant('headerOptions.HEADER_OPTION_INCIDENT_MANAGEMENT'),
-        
+
         link: "incidentManagement",
         allowedRoles: ['Admin', 'Superadmin', 'Agent']
       },
       {
         id: 7,
         name: this.translate.instant('headerOptions.HEADER_OPTION_DASHBOARD'),
-        
+
         link: "dashboard",
         allowedRoles: ['Admin', 'Superadmin']
       },
       {
         id: 8,
         name: this.translate.instant('headerOptions.HEADER_OPTION_CLIENTS'),
-        isActive: false,
         link: "clients",
         allowedRoles: ['Admin', 'Superadmin']
       },
 
     ];
 
-    
+
   }
 
   setModuleName(name: string, id: number) {
