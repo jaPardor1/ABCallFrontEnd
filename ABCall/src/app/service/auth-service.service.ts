@@ -20,21 +20,24 @@ export class AuthService {
       return undefined;
     return this.decodedToken.email;
   }
-  
+
   public getUserRole(): string | null {
     return this.userRole;
   }
   public getUserHomeByUserRole(){
-      
+
     if(this.userRole==="Superadmin" || this.userRole==="Admin"){
        this.router.navigateByUrl('listUsers');
     }
     else if(this.userRole==="Regular"){
        this.router.navigateByUrl('listIncidences');
     }
-    else if(this.userRole==="Agent"|| this.userRole==="Client"){
+    else if(this.userRole==="Client"){
        this.router.navigateByUrl('articlesList');
-    }else{
+    }else if(this.userRole==="Agent"){
+      this.router.navigateByUrl('incidentManagement');
+    }
+    else{
        this.router.navigateByUrl('login');
     }
 

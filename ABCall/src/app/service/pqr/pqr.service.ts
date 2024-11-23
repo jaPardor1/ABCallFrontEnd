@@ -33,4 +33,14 @@ export class PqrService {
     let url = this.urlRiskEval+idPqr
     return this.http.get<PqrRiskEvaluationDto>(url)
   }
+
+  public assignIncidence(idPqr:number,incident:any){
+    let url = this.urlApi+'/'+idPqr+'/assign';
+    return this.http.post<any>(url,incident)
+  }
+
+  public closeIncident(idPqr:number,status:any){
+    let url = this.urlApi+'/'+idPqr;
+    return this.http.put<any>(url,status)
+  }
 }

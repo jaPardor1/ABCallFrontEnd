@@ -42,6 +42,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 import { AsignarPqrComponent } from './pqr/asignar-pqr/asignar-pqr.component';
+import { CerrarPqrComponent } from './pqr/cerrar-pqr/cerrar-pqr.component';
 
 // Función de fábrica para crear el TranslateLoader
 export function HttpLoaderFactory(http: HttpClient) {
@@ -78,7 +79,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     CreateStepComponent,
     StepFormComponent,
     DashboardComponent,
-    AsignarPqrComponent
+    AsignarPqrComponent,
+    CerrarPqrComponent
   ],
   imports: [
     BrowserModule,

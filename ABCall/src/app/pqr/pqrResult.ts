@@ -9,5 +9,7 @@ export interface PqrResultDto {
   user_sub: string;
   type:string ,
   communication_type:string
-  ticket_number:string
+  ticket_number:string,
+  agent_assigned:string,
+  channel:string
 }

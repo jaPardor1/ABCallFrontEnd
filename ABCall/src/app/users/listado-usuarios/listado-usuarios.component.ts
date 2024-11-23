@@ -64,7 +64,7 @@ export class ListadoUsuariosComponent implements OnInit , OnDestroy  {
 
     console.log(sub);
     this.dialog
-      .open(ConfirmDialogComponent, {
+      .open(ConfirmDialogComponent,{
         data: message
       })
       .afterClosed()

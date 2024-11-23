@@ -6,6 +6,7 @@ button {
     color: white;
     border-radius: 5px;
     cursor: pointer;
+    margin: 5px;
   }
 
 .button-1 {
@@ -18,8 +19,7 @@ button {
     width: 111px;
     margin-bottom: 4px;
   }
-  
+
   .button-1:hover {
     background-color: #f0f0f0; /* Un leve cambio en el fondo al hacer hover */
   }
-  
