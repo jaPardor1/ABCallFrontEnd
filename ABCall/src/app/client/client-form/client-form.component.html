@@ -1,0 +1,162 @@
+<div class="register-page">
+  <div class="register-form">
+    <h1>{{ 'Clients.createClient' | translate }}</h1>
+    <form [formGroup]="form" (ngSubmit)="saveInfo()">
+
+      <!-- Campo de perfil -->
+      <div class="form-row">
+        <div class="form-column">
+          <label>{{ 'Clients.profile' | translate }}*:</label>
+          <input type="text" formControlName="perfil" 
+                 [ngClass]="{'is-invalid': form.get('perfil')?.invalid && (submitted || form.get('perfil')?.touched)}">
+          <div *ngIf="(submitted || form.get('perfil')?.touched) && form.get('perfil')?.invalid" class="small-text">
+            {{ getErrorPerfil() }}
+          </div>
+        </div>
+
+        <!-- Tipo de documento -->
+        <div class="form-column">
+          <label>{{ 'Clients.documentType' | translate }}*:</label>
+          <select formControlName="id_type" 
+                  [ngClass]="{'is-invalid': form.get('id_type')?.invalid && (submitted || form.get('id_type')?.touched)}">
+            <option value="">{{ 'ClientForm.selectIdType' | translate }}</option>
+            <!-- Aquí podrías agregar opciones para tipos de documento -->
+            <option *ngFor="let type of documentTypes" [value]="type">{{ 'DocumentTypes.' + type | translate }}</option>
+          </select>
+          <div *ngIf="(submitted || form.get('id_type')?.touched) && form.get('id_type')?.invalid" class="small-text">
+            {{ getErrorIdType() }}
+          </div>
+        </div>
+      </div>
+
+      <!-- Nombre legal -->
+      <div class="form-row">
+        <div class="form-column">
+          <label>{{ 'Clients.legalName' | translate }}*:</label>
+          <input type="text" formControlName="legal_name" 
+                 [ngClass]="{'is-invalid': form.get('legal_name')?.invalid && (submitted || form.get('legal_name')?.touched)}">
+          <div *ngIf="(submitted || form.get('legal_name')?.touched) && form.get('legal_name')?.invalid" class="small-text">
+            {{ getErrorLegalName() }}
+          </div>
+        </div>
+
+        <!-- Número de identificación -->
+        <div class="form-column">
+          <label>{{ 'Clients.idNumber' | translate }}*:</label>
+          <input type="text" formControlName="id_number" 
+                 [ngClass]="{'is-invalid': form.get('id_number')?.invalid && (submitted || form.get('id_number')?.touched)}">
+          <div *ngIf="(submitted || form.get('id_number')?.touched) && form.get('id_number')?.invalid" class="small-text">
+            {{ getErrorIdNumber() }}
+          </div>
+        </div>
+      </div>
+
+      <!-- Dirección -->
+      <div class="form-row">
+        <div class="form-column">
+          <label>{{ 'Clients.address' | translate }}*:</label>
+          <input type="text" formControlName="address" 
+                 [ngClass]="{'is-invalid': form.get('address')?.invalid && (submitted || form.get('address')?.touched)}">
+          <div *ngIf="(submitted || form.get('address')?.touched) && form.get('address')?.invalid" class="small-text">
+            {{ getErrorAddress() }}
+          </div>
+        </div>
+
+        <!-- Tipo de plan -->
+        <div class="form-column">
+          <label>{{ 'Clients.planType' | translate }}*:</label>
+          <select formControlName="plan_type" 
+                  [ngClass]="{'is-invalid': form.get('plan_type')?.invalid && (submitted || form.get('plan_type')?.touched)}">
+            <option value="">{{ 'ClientForm.selectPlanType' | translate }}</option>
+            <!-- Opciones para tipos de documento del representante -->
+            <option *ngFor="let planType of planTypes" [value]="planType">{{ "Clients." + planType | translate }}</option>
+          </select>
+          <div *ngIf="(submitted || form.get('plan_type')?.touched) && form.get('plan_type')?.invalid" class="small-text">
+            {{ getErrorPlanType() }}
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row"><h1>{{'ClientForm.legalRepresentative' | translate}}</h1></div>
+      
+      <div class="form-row">
+        <!-- Tipo de documento -->
+        <div class="form-column">
+          <label>{{ 'Clients.documentType' | translate }}*:</label>
+          <select formControlName="type_document_rep" 
+                  [ngClass]="{'is-invalid': form.get('type_document_rep')?.invalid && (submitted || form.get('type_document_rep')?.touched)}">
+            <option value="">{{ 'ClientForm.selectIdType' | translate }}</option>
+            <!-- Aquí podrías agregar opciones para tipos de documento -->
+            <option *ngFor="let type of documentTypes" [value]="type">{{ 'DocumentTypes.' + type | translate }}</option>
+          </select>
+          <div *ngIf="(submitted || form.get('type_document_rep')?.touched) && form.get('type_document_rep')?.invalid" class="small-text">
+            {{ getErrorTypeDocumentRep() }}
+          </div>
+        </div>
+
+        <!-- Número de identificación -->
+        <div class="form-column">
+          <label>{{ 'Clients.idNumber' | translate }}*:</label>
+          <input type="text" formControlName="id_rep_lega" 
+                 [ngClass]="{'is-invalid': form.get('id_rep_lega')?.invalid && (submitted || form.get('id_rep_lega')?.touched)}">
+          <div *ngIf="(submitted || form.get('id_rep_lega')?.touched) && form.get('id_rep_lega')?.invalid" class="small-text">
+            {{ getErrorIdRepLega() }}
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <!-- Nombre Representante Legal -->
+        <div class="form-column">
+          <label>{{ 'flowsModule.flowName' | translate }}*:</label>
+          <input type="text" formControlName="name_rep" 
+                 [ngClass]="{'is-invalid': form.get('name_rep')?.invalid && (submitted || form.get('name_rep')?.touched)}">
+          <div *ngIf="(submitted || form.get('name_rep')?.touched) && form.get('name_rep')?.invalid" class="small-text">
+            {{ getErrorNameRep() }}
+          </div>
+        </div>
+
+        <!-- Apellidos Representante Legal -->
+        <div class="form-column">
+          <label>{{ 'UserFormModule.apellidosLbl' | translate }}</label>
+          <input type="text" formControlName="last_name_rep" 
+                 [ngClass]="{'is-invalid': form.get('last_name_rep')?.invalid && (submitted || form.get('last_name_rep')?.touched)}">
+          <div *ngIf="(submitted || form.get('last_name_rep')?.touched) && form.get('last_name_rep')?.invalid" class="small-text">
+            {{ getErrorLastNameRep() }}
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <!--Email representante legal-->
+        <div class="form-column">
+          <label>{{'UserFormModule.EmailLbl'|translate}}</label>
+          <input type="email" formControlName="email_rep" [ngClass]="{'is-invalid': form.get('email_rep')?.invalid && (submitted || form.get('email_rep')?.touched)}">
+          <div *ngIf="(submitted || form.get('email_rep')?.touched) && form.get('email_rep')?.invalid" class="small-text">
+            {{ getErrorEmailRep() }}
+          </div>
+        </div>
+
+        <!-- Apellidos Representante Legal -->
+        <div class="form-column">
+          <label>{{ 'Clients.cellphone' | translate }}</label>
+          <input type="text" formControlName="cellphone" 
+                 [ngClass]="{'is-invalid': form.get('cellphone')?.invalid && (submitted || form.get('cellphone')?.touched)}">
+          <div *ngIf="(submitted || form.get('cellphone')?.touched) && form.get('cellphone')?.invalid" class="small-text">
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- Botones -->
+      <div class="form-buttons">
+        <button type="button" class="btn-regresar" (click)="onCancel()">
+          {{ 'UserFormModule.cancelarBtn' | translate }}
+        </button>
+        <button type="submit" class="btn-registrar" [disabled]="form.invalid">
+          {{ 'UserFormModule.guardarBtn' | translate }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

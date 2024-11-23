@@ -18,6 +18,8 @@ import { CreateFlowComponent } from './flow/create-flow/create-flow.component';
 import { StepListComponent } from './flow/steps/step-list/step-list.component';
 import { CreateStepComponent } from './flow/steps/create-step/create-step.component';
 import { GestionIncidentesComponent } from './pqr/gestion-incidentes/gestion-incidentes.component';
+import { ClientListComponent } from './client/client-list/client-list.component';
+import { CreateClientComponent } from './client/create-client/create-client.component';
 
 const routes: Routes = [
   {
@@ -151,7 +153,22 @@ const routes: Routes = [
         data:{
          allowedRoles: ['Admin', 'Superadmin'],
         }
-
+      },
+      {
+        path:'clients',
+        component:ClientListComponent,
+        canActivate:[AuthorizeGuard],
+        data:{
+         allowedRoles: ['Superadmin'],
+        }
+      },
+      {
+        path:'createClient',
+        component:CreateClientComponent,
+        canActivate:[AuthorizeGuard],
+        data:{
+         allowedRoles: ['Superadmin'],
+        }
       }
     ]
   }
