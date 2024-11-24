@@ -6,20 +6,17 @@
       <!-- Primera fila -->
       <div class="form-row">
         <div class="form-column">
-          <label>{{'flowsModule.flowName' | translate}}</label>
-          <input type="text" formControlName="name" 
+          <label for="name">{{'flowsModule.flowName' | translate}}</label>
+          <input type="text" formControlName="name" id="name"
                  [ngClass]="{'is-invalid': form.get('name')?.invalid && (submitted || form.get('name')?.touched)}">
           <div *ngIf="(submitted || form.get('name')?.touched) && form.get('name')?.invalid" class="small-text">
             {{ getErrorNameField() }}
           </div>
         </div>
-      </div>
 
-      <!-- Segunda fila -->
-      <div class="form-row">
         <div class="form-column">
-          <label>{{'flowsModule.flowDescription' | translate}}</label>
-          <textarea formControlName="description" 
+          <label for="description">{{'flowsModule.flowDescription' | translate}}</label>
+          <textarea formControlName="description" id="description"
                     [ngClass]="{'is-invalid': form.get('description')?.invalid && (submitted || form.get('description')?.touched)}">
           </textarea>
           <div *ngIf="(submitted || form.get('description')?.touched) && form.get('description')?.invalid" class="small-text">
@@ -35,8 +32,8 @@
             <table>
               <tbody>
                 <tr *ngFor="let tag of tags">
-                  <td>{{tag.name}}</td>
-                  <td><input type="checkbox" [checked]="form.get('tags')?.value.includes(tag.id)" 
+                  <td><label for="tag_{{tag.id}}">{{tag.name}}</label></td>
+                  <td><input type="checkbox" [checked]="form.get('tags')?.value.includes(tag.id)" id="tag_{{tag.id}}"
                     (change)="modifyTags(tag.id)"></td>
                 </tr>
               </tbody>
