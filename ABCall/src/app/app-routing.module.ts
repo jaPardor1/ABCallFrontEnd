@@ -172,6 +172,7 @@ const routes: Routes = [
       },{
         path:'reports',
         component:ReportesComponent,
+        canActivate:[AuthorizeGuard],
         data:{
           allowedRoles: ['Superadmin','Admin']
         }
