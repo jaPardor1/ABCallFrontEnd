@@ -140,10 +140,10 @@ const routes: Routes = [
       {
         path:'incidentManagement',
         component:GestionIncidentesComponent,
-        //canActivate:[AuthorizeGuard],
-        // data:{
-        //  allowedRoles: ['Admin', 'Superadmin','Agent'],
-        // }
+        canActivate:[AuthorizeGuard],
+        data:{
+         allowedRoles: ['Admin', 'Superadmin','Agent'],
+        }
       },
       {
         path:'dashboard',
@@ -156,18 +156,18 @@ const routes: Routes = [
       {
         path:'clients',
         component:ClientListComponent,
-        canActivate:[AuthorizeGuard],
-        data:{
-         allowedRoles: ['Superadmin'],
-        }
+        // canActivate:[AuthorizeGuard],
+        // data:{
+        //  allowedRoles: ['Superadmin'],
+        // }
       },
       {
         path:'createClient',
         component:CreateClientComponent,
-        canActivate:[AuthorizeGuard],
-        data:{
-         allowedRoles: ['Superadmin'],
-        }
+        // canActivate:[AuthorizeGuard],
+        // data:{
+        //  allowedRoles: ['Superadmin'],
+        // }
       }
     ]
   }

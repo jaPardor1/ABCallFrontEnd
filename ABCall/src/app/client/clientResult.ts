@@ -17,7 +17,7 @@ export interface ClientResultDTO {
     perfil: string;
     id_type: DocumentType;
     legal_name: string;
-    id_numnber: string;
+    id_number: string;
     address: string;
     type_document_rep: DocumentType;
     id_rep_lega: string;
