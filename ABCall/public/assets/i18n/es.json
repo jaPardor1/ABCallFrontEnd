@@ -232,7 +232,10 @@
     "legalName": "Nombre Legal",
     "idNumber": "Número de Documento",
     "nameRep": "Nombre Representante Legal",
-    "cellphone": "Celular"
+    "cellphone": "Celular",
+    "legalIdNumber":"Identificación rep. legal",
+    "legalRepId":"Tipo de documento rep. legal",
+    "emailLegalrep":"Email rep. legal"
   },
   "ClientForm": {
     "profileRequired": "Por favor, complete el campo de perfil",

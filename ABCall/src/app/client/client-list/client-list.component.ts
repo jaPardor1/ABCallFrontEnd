@@ -8,6 +8,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { TranslateService } from '@ngx-translate/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { DialogComponent } from '../../shared/dialog/dialog.component';
+import { ClientDetailDialogComponent } from '../../shared/client-detail-dialog/client-detail-dialog.component';
 
 @Component({
   selector: 'app-client-list',
@@ -44,10 +45,11 @@ export class ClientListComponent {
     this.router.navigateByUrl('createClient');
   }
 
-  openDialog(mensaje: string): void {
-    this.dialog.open(DialogComponent, {
-      data: { message: mensaje },
+  getClientDetail(clientInfo:ClientResultDTO){
+    this.dialog.open(ClientDetailDialogComponent, {
+      data: { clientInfo },
     });
   }
+
 
 }

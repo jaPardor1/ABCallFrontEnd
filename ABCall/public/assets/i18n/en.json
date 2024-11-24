@@ -224,7 +224,11 @@
     "legalName": "Legal Name",
     "idNumber": "ID Number",
     "nameRep": "Legal Representative Name",
-    "cellphone": "Cellphone"
+    "cellphone": "Cellphone",
+    "legalIdNumber":"Legal rep. id number",
+    "legalRepId":"Legal Rep id. type",
+    "emailLegalrep":"Email legal rep."
+
   },
   "ClientForm": {
     "profileRequired": "Please submit profile field",
