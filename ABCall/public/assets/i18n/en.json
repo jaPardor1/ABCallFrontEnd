@@ -116,7 +116,8 @@
     "tipoSolicitudRequerido": "Please specify the request type",
     "descripcionRequerida": "Please provide a description",
     "descripcionMaxima": "The description can only store a maximum of: {{maxLength}} characters.",
-    "asuntoRequerido": "Please specify a subject"
+    "asuntoRequerido": "Please specify a subject",
+    "incidenceCreated":"The incidence has been created :"
   },
   "listPqrMOdule": {
     "digiteElRadicado": "Enter the ticket(PQR) number:",
@@ -130,7 +131,8 @@
     "fecha": "Date",
     "estado": "Status",
     "asunto": "Subject",
-    "verDetalle": "View details"
+    "verDetalle": "View details",
+    "asignarPqr" : "Assign Incident"
   },
   "detailPqr":{
     "ticket": "Ticket",
@@ -145,7 +147,9 @@
     "detailDialogEstado": "Status",
     "detailDialogFecha": "Date",
     "detailDialogFechaCierre": "Estimated close date",
-    "detailDialogDescripcion": "Description"
+    "detailDialogDescripcion": "Description",
+    "agentAsigned":"Asigned agent",
+    "canal":"Channel"
   },
   "KnowledgeBaseModule": {
     "searchTitle": "Search article by content:",
@@ -162,7 +166,11 @@
     "HEADER_OPTION_USUARIOS_REGISTRADOS": "REGISTERED USERS",
     "HEADER_OPTION_BASE_DE_CONOCIMIENTOS": "KNOWLEDGE BASE",
     "HEADER_OPTION_FLOWS": "FLOWS",
-     "HEADER_OPTION_INCIDENT_MANAGEMENT":"INCIDENT MANAGEMENT"
+    "HEADER_OPTION_INCIDENT_MANAGEMENT":"INCIDENT MANAGEMENT",
+    "HEADER_OPTION_DASHBOARD":"DASHBOARD",
+    "HEADER_OPTION_CLIENTS": "CLIENTES",
+    "HEADER_OPTION_REPORTS": "REPORTS"
+
   },
   "flowsModule": {
     "flows": "Flows",
@@ -198,6 +206,88 @@
     "table1EncTipoIdentificacion":"Id. type",
     "table1EncNombreCompleto":"Full Name",
     "table2EncEmail":"Email",
-    "table2EncTelefono":"Phone Number"
+    "table2EncTelefono":"Phone Number",
+    "idPqr":"Ticket Number"
+  },
+  "tabModule":{
+    "historialIncidentes":"INCIDENT HISTORY"
+  },
+  "Clients": {
+    "clients": "Clients",
+    "createClient": "Create Client",
+    "address": "Address",
+    "profile": "Profile",
+    "planType": "Plan Type",
+    "emprendedor": "Entrepreneur",
+    "empresario": "Business",
+    "empresario_plus": "Business Plus",
+    "documentType": "Document Type",
+    "legalName": "Legal Name",
+    "idNumber": "ID Number",
+    "nameRep": "Legal Representative Name",
+    "cellphone": "Cellphone",
+    "legalIdNumber":"Legal rep. id number",
+    "legalRepId":"Legal Rep id. type",
+    "emailLegalrep":"Email legal rep."
+
+  },
+
+  "dashboardModule": {
+    "totalPQRs": "Total PQRs",
+    "resolved": "Resolved",
+    "pending": "Pending",
+    "escalated": "Escalated",
+    "averageResolutionTime": "Average Resolution Time",
+    "pqrsByChannel": "PQRs by Channel",
+    "pqrsDistribution": "PQRs Distribution"
+  },
+  "ClientForm": {
+    "profileRequired": "Please submit profile field",
+    "profileMinLenght": "The field profile must have at least 3 characters",
+    "idTypeRequired": "Please select the document type",
+    "legalNameRequired": "Please submit the legal name field",
+    "legalNameMinLength": "The legal name must have at least 3 characters",
+    "idNumberRequired": "Please submit the ID number field",
+    "idNumberMinLength": "The ID number must have at least 3 characters",
+    "addressRequired": "Please submit the address field",
+    "addressMinLength": "The address must have at least 3 characters",
+    "typeDocumentRepRequired": "Please select the representative's document type",
+    "idRepLegaRequired": "Please submit the representative's ID field",
+    "idRepLegaMinLength": "The representative's ID must have at least 3 characters",
+    "nameRepRequired": "Please submit the representative's name field",
+    "nameRepMinLength": "The representative's name must have at least 3 characters",
+    "lastNameRepRequired": "Please submit the representative's last name field",
+    "lastNameRepMinLength": "The representative's last name must have at least 3 characters",
+    "emailRepRequired": "Please submit the representative's email field",
+    "emailRepInvalid": "Please enter a valid email address",
+    "planTypeRequired": "Please select the plan type",
+    "selectIdType": "Select ID type",
+    "selectPlanType": "Select plan type",
+    "legalRepresentative": "Legal Representative",
+    "clientCreated": "Client Created Successfully"
+  },
+  "DocumentTypes": {
+    "cedula": "ID Card",
+    "registro_civil": "Civil Registry",
+    "passport": "Passport",
+    "cedula_extranjeria": "Foreigner ID Card",
+    "NIT": "Tax Identification Number"
+  },
+  "assignIncidentModule":{
+    "message":"This incident has been assigned to current agent."
+  },
+  "closeIncidentModule":{
+    "textBtn":"Close Incident",
+    "closeMessage":"Are you sure to close this incident?"
+
+  },
+  "reportsModule":{
+    "fechaInicioLbl":"Start Date",
+    "fechaFinLbl":"End Date",
+    "TipoIncidenciaLbl":"Incidence type",
+    "buttonText":"Generate"
+
   }
+
+
 }

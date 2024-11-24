@@ -3,4 +3,5 @@ export interface PqrDTO{
   title:string;
   description:string;
   user_sub:string;
+  channel:string;
 }

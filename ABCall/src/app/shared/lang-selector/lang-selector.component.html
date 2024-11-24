@@ -1,5 +1,6 @@
 <div >
-    <select [(ngModel)]="lang" (change)="changeLanguage()" name="" id="">
+    
+    <select [(ngModel)]="lang" (change)="changeLanguage()" name="language" id="language">
        <option *ngFor="let item of langs" [value]="item.id">{{item.value}}</option>
     </select>
 </div>

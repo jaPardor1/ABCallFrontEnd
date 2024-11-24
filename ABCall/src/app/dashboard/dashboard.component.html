@@ -1,0 +1,48 @@
+<div class="dashboard-container">
+  <!-- Primera fila: Indicadores -->
+  <div class="total-pqrs">
+    <h2>
+      {{ 'dashboardModule.totalPQRs' | translate }} {{ resolvedCount + pendingCount + escalatedCount }}
+    </h2>
+  </div>
+  <div class="info-boxes">
+    <div class="info-box resolved">
+      {{ 'dashboardModule.resolved' | translate }}: {{ resolvedCount }}
+    </div>
+    <div class="info-box pending">
+      {{ 'dashboardModule.pending' | translate }}: {{ pendingCount }}
+    </div>
+    <div class="info-box escalated">
+      {{ 'dashboardModule.escalated' | translate }}: {{ escalatedCount }}
+    </div>
+  </div>
+
+  <!-- Segunda fila: Primeros 3 gráficos -->
+  <div class="charts-container">
+    <div class="chart">
+      <h3>{{ 'dashboardModule.averageResolutionTime' | translate }}</h3>
+      <apx-chart
+        [series]="lineChartOptions.series"
+        [chart]="lineChartOptions.chart"
+        [xaxis]="lineChartOptions.xaxis">
+      </apx-chart>
+    </div>
+
+    <div class="chart">
+      <h3>{{ 'dashboardModule.pqrsByChannel' | translate }}</h3>
+      <apx-chart
+        [series]="channelSeries"
+        [chart]="channelChartOptions.chart"
+        [xaxis]="channelChartOptions.xaxis">
+      </apx-chart>
+    </div>
+
+    <div class="chart">
+      <h3>{{ 'dashboardModule.pqrsDistribution' | translate }}</h3>
+      <apx-chart
+        [series]="pieChartOptions.series"
+        [chart]="pieChartOptions.chart">
+      </apx-chart>
+    </div>
+  </div>
+</div>

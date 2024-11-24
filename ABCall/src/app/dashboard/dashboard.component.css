@@ -1,0 +1,59 @@
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+.info-boxes {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.info-box {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  color: rgb(5, 5, 5);
+}
+
+.info-box.resolved {
+  background-color: #008ffb; /* Verde */
+}
+
+.info-box.pending {
+  background-color: #00e396; /* Amarillo */
+}
+
+.info-box.escalated {
+  background-color: #feb019; /* Rojo */
+}
+
+.charts-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.chart {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.chart h3 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.apx-chart .apexcharts-pie-label {
+  font-size: 14px;
+  color: #000;
+}

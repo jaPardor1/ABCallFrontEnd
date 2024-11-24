@@ -1,6 +1,7 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { RadicarPQRClienteComponent } from './pqr/radicar-pqrcliente/radicar-pqrcliente.component';
 import { LayoutComponent } from './shared/layout/layout.component';
@@ -17,6 +18,9 @@ import { CreateFlowComponent } from './flow/create-flow/create-flow.component';
 import { StepListComponent } from './flow/steps/step-list/step-list.component';
 import { CreateStepComponent } from './flow/steps/create-step/create-step.component';
 import { GestionIncidentesComponent } from './pqr/gestion-incidentes/gestion-incidentes.component';
+import { ClientListComponent } from './client/client-list/client-list.component';
+import { CreateClientComponent } from './client/create-client/create-client.component';
+import { ReportesComponent } from './reportes/reportes.component';
 
 const routes: Routes = [
   {
@@ -140,6 +144,37 @@ const routes: Routes = [
         canActivate:[AuthorizeGuard],
         data:{
          allowedRoles: ['Admin', 'Superadmin','Agent'],
+        }
+      },
+      {
+        path:'dashboard',
+        component:DashboardComponent,
+        canActivate:[AuthorizeGuard],
+        data:{
+         allowedRoles: ['Admin', 'Superadmin'],
+        }
+      },
+      {
+        path:'clients',
+        component:ClientListComponent,
+        canActivate:[AuthorizeGuard],
+        data:{
+         allowedRoles: ['Superadmin'],
+        }
+      },
+      {
+        path:'createClient',
+        component:CreateClientComponent,
+        canActivate:[AuthorizeGuard],
+        data:{
+         allowedRoles: ['Superadmin'],
+        }
+      },{
+        path:'reports',
+        component:ReportesComponent,
+        canActivate:[AuthorizeGuard],
+        data:{
+          allowedRoles: ['Superadmin','Admin']
         }
       }
     ]
