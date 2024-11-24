@@ -168,7 +168,8 @@
     "HEADER_OPTION_FLOWS": "FLUJOS",
     "HEADER_OPTION_INCIDENT_MANAGEMENT":"GESTIÓN INCIDENTES",
     "HEADER_OPTION_DASHBOARD":"TABLEROS CONTROL",
-    "HEADER_OPTION_CLIENTS": "CLIENTES"
+    "HEADER_OPTION_CLIENTS": "CLIENTES",
+    "HEADER_OPTION_REPORTS": "INFORMES"
   },
   "flowsModule": {
     "flows": "Flujos",
@@ -281,6 +282,12 @@
     "cedula_extranjeria" : "Cedula Extranjeria",
     "NIT" : "NIT"
 
+  },
+  "reportsModule":{
+    "fechaInicioLbl":"Fecha inicio",
+    "fechaFinLbl":"Fecha fin",
+    "TipoIncidenciaLbl":"Tipo PQR",
+    "buttonText":"Generar"
   }
 
 }

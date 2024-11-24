@@ -48,6 +48,7 @@ import { ClientFormComponent } from './client/client-form/client-form.component'
 import { AsignarPqrComponent } from './pqr/asignar-pqr/asignar-pqr.component';
 import { CerrarPqrComponent } from './pqr/cerrar-pqr/cerrar-pqr.component';
 import { ClientDetailDialogComponent } from './shared/client-detail-dialog/client-detail-dialog.component';
+import { ReportesComponent } from './reportes/reportes.component';
 
 // Función de fábrica para crear el TranslateLoader
 export function HttpLoaderFactory(http: HttpClient) {
@@ -90,7 +91,8 @@ export function HttpLoaderFactory(http: HttpClient) {
    ,
     AsignarPqrComponent,
     CerrarPqrComponent,
-    ClientDetailDialogComponent
+    ClientDetailDialogComponent,
+    ReportesComponent
   ],
   imports: [
     BrowserModule,
