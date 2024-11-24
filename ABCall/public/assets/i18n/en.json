@@ -168,7 +168,8 @@
     "HEADER_OPTION_FLOWS": "FLOWS",
     "HEADER_OPTION_INCIDENT_MANAGEMENT":"INCIDENT MANAGEMENT",
     "HEADER_OPTION_DASHBOARD":"DASHBOARD",
-    "HEADER_OPTION_CLIENTS": "CLIENTES"
+    "HEADER_OPTION_CLIENTS": "CLIENTES",
+    "HEADER_OPTION_REPORTS": "REPORTS"
 
   },
   "flowsModule": {
@@ -278,6 +279,13 @@
   "closeIncidentModule":{
     "textBtn":"Close Incident",
     "closeMessage":"Are you sure to close this incident?"
+
+  },
+  "reportsModule":{
+    "fechaInicioLbl":"Start Date",
+    "fechaFinLbl":"End Date",
+    "TipoIncidenciaLbl":"Incidence type",
+    "buttonText":"Generate"
 
   }
 

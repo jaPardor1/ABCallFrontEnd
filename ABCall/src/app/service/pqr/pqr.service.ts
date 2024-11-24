@@ -43,16 +43,21 @@ export class PqrService {
   public getPqrStats(): Observable<PqrStatsDto> {
     return this.http.get<PqrStatsDto>(this.urlStats);
 
+  }
 
   public assignIncidence(idPqr:number,incident:any){
     let url = this.urlApi+'/'+idPqr+'/assign';
-    return this.http.post<any>(url,incident)
+    return this.http.post<any>(url,incident);
   }
 
   public closeIncident(idPqr:number,status:any){
     let url = this.urlApi+'/'+idPqr;
-    return this.http.put<any>(url,status)
+    return this.http.put<any>(url,status);
+  }
 
+  public getReport(filters:any){
+    let url = this.urlApi+'/stats/report'
+    return this.http.post<any>(url,filters);
   }
 }
 

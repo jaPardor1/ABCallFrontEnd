@@ -20,6 +20,7 @@ import { CreateStepComponent } from './flow/steps/create-step/create-step.compon
 import { GestionIncidentesComponent } from './pqr/gestion-incidentes/gestion-incidentes.component';
 import { ClientListComponent } from './client/client-list/client-list.component';
 import { CreateClientComponent } from './client/create-client/create-client.component';
+import { ReportesComponent } from './reportes/reportes.component';
 
 const routes: Routes = [
   {
@@ -156,18 +157,24 @@ const routes: Routes = [
       {
         path:'clients',
         component:ClientListComponent,
-        // canActivate:[AuthorizeGuard],
-        // data:{
-        //  allowedRoles: ['Superadmin'],
-        // }
+        canActivate:[AuthorizeGuard],
+        data:{
+         allowedRoles: ['Superadmin'],
+        }
       },
       {
         path:'createClient',
         component:CreateClientComponent,
-        // canActivate:[AuthorizeGuard],
-        // data:{
-        //  allowedRoles: ['Superadmin'],
-        // }
+        canActivate:[AuthorizeGuard],
+        data:{
+         allowedRoles: ['Superadmin'],
+        }
+      },{
+        path:'reports',
+        component:ReportesComponent,
+        data:{
+          allowedRoles: ['Superadmin','Admin']
+        }
       }
     ]
   }

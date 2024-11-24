@@ -1,0 +1,38 @@
+
+<div>
+  <p>{{startdate}}</p>
+  <p>{{endDate}}</p>
+  <p>{{incidenceType}}</p>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-2">
+      <label for="">{{'reportsModule.fechaInicioLbl'|translate}}</label>
+    </div>
+    <div class="col-2">
+      <input [(ngModel)]="startdate" type="date">
+    </div>
+    <div class="col-2">
+      <label for="">{{'reportsModule.TipoIncidenciaLbl'|translate}}</label>
+    </div>
+    <div class="col-2">
+      <select [(ngModel)]="incidenceType"  name="" id="">
+        <option value="PETICION">PETICION</option>
+        <option value="QUEJA">QUEJA</option>
+        <option value="RECLAMO">RECLAMO</option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2">
+      <label for="">{{'reportsModule.fechaFinLbl'|translate}}</label>
+    </div>
+    <div class="col-2">
+      <input [(ngModel)]="endDate" type="date">
+    </div>
+    <div class="col-2">
+      <button style="margin-left:50px" (click)="getReport()">{{'reportsModule.buttonText'|translate}}</button>
+    </div>
+  </div>
+</div>

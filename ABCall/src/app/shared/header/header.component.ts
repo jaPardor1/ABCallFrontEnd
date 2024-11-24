@@ -105,10 +105,13 @@ export class HeaderComponent implements OnInit, OnDestroy {
         link: "clients",
         allowedRoles: ['Admin', 'Superadmin']
       },
-
+      {
+        id:9,
+        name:this.translate.instant('headerOptions.HEADER_OPTION_REPORTS'),
+        link:'reports',
+        allowedRoles: ['Admin', 'Superadmin']
+      }
     ];
-
-
   }
 
   setModuleName(name: string, id: number) {
