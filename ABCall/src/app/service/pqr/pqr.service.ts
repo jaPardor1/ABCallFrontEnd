@@ -1,9 +1,12 @@
+
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { PqrResultDto } from '../../pqr/pqrResult';
-import { environment } from '../../../environments/environment';
+import { PqrDTO } from '../../pqr/Pqr';
 import { PqrRiskEvaluationDto } from '../../pqr/PqrRiskEvaluation';
+import { environment } from '../../../environments/environment';
+import { PqrStatsDto } from '../../pqr/PqrStatsDto'; // Importar el nuevo modelo de estadísticas
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +15,8 @@ export class PqrService {
 
   urlApi = environment.apiPqrs;
   urlRiskEval = environment.apiriskEvaluationBase;
+  urlStats = environment.apiPqrStats;
+
   constructor(private http:HttpClient) { }
   public createIncident(incident:any):Observable<any>
   {
@@ -33,4 +38,12 @@ export class PqrService {
     let url = this.urlRiskEval+idPqr
     return this.http.get<PqrRiskEvaluationDto>(url)
   }
+  // Nueva función para obtener estadísticas de PQRs
+  public getPqrStats(): Observable<PqrStatsDto> {
+    return this.http.get<PqrStatsDto>(this.urlStats);
+  }
 }
+
+
+
+

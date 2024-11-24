@@ -7,10 +7,10 @@ label {
   }
 
   button {
-    background-color:  #029e89;
+    background-color: #029e89 !important;
     border: none;
     padding: 10px 20px;
-  
+    color: white;
     border-radius: 5px;
     cursor: pointer;
   }

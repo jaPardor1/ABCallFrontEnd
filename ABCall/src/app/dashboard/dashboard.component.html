@@ -1,18 +1,26 @@
 <div class="dashboard-container">
   <!-- Primera fila: Indicadores -->
   <div class="total-pqrs">
-    <h2>Total PQRs: {{ resolvedCount + pendingCount + escalatedCount }}</h2>
+    <h2>
+      {{ 'dashboardModule.totalPQRs' | translate }} {{ resolvedCount + pendingCount + escalatedCount }}
+    </h2>
   </div>
   <div class="info-boxes">
-    <div class="info-box resolved">Resueltas: {{ resolvedCount }}</div>
-    <div class="info-box pending">Pendientes: {{ pendingCount }}</div>
-    <div class="info-box escalated">Escaladas: {{ escalatedCount }}</div>
+    <div class="info-box resolved">
+      {{ 'dashboardModule.resolved' | translate }}: {{ resolvedCount }}
+    </div>
+    <div class="info-box pending">
+      {{ 'dashboardModule.pending' | translate }}: {{ pendingCount }}
+    </div>
+    <div class="info-box escalated">
+      {{ 'dashboardModule.escalated' | translate }}: {{ escalatedCount }}
+    </div>
   </div>
 
   <!-- Segunda fila: Primeros 3 gráficos -->
   <div class="charts-container">
     <div class="chart">
-      <h3>Tiempo Promedio de Resolución</h3>
+      <h3>{{ 'dashboardModule.averageResolutionTime' | translate }}</h3>
       <apx-chart
         [series]="lineChartOptions.series"
         [chart]="lineChartOptions.chart"
@@ -21,47 +29,19 @@
     </div>
 
     <div class="chart">
-      <h3>Desempeño de Agentes</h3>
+      <h3>{{ 'dashboardModule.pqrsByChannel' | translate }}</h3>
       <apx-chart
-        [series]="agentPerformanceSeries"
-        [chart]="barChartOptions.chart"
-        [xaxis]="barChartOptions.xaxis">
+        [series]="channelSeries"
+        [chart]="channelChartOptions.chart"
+        [xaxis]="channelChartOptions.xaxis">
       </apx-chart>
     </div>
 
     <div class="chart">
-      <h3>Distribución de PQRs</h3>
+      <h3>{{ 'dashboardModule.pqrsDistribution' | translate }}</h3>
       <apx-chart
         [series]="pieChartOptions.series"
         [chart]="pieChartOptions.chart">
-      </apx-chart>
-    </div>
-  </div>
-
-  <!-- Tercera fila: Siguientes 3 gráficos -->
-  <div class="charts-container">
-    <div class="chart">
-      <h3>PQRs por Canal de Entrada</h3>
-      <apx-chart
-        [series]="channelSeries"
-        [chart]="barChartOptions.chart"
-        [xaxis]="barChartOptions.xaxis">
-      </apx-chart>
-    </div>
-    <div class="chart">
-      <h3>PQRs Radicados por Hora</h3>
-      <apx-chart
-        [series]="hourlySeries"
-        [chart]="barChartOptions.chart"
-        [xaxis]="barChartOptions.xaxis">
-      </apx-chart>
-    </div>
-    <div class="chart">
-      <h3>Top Agentes</h3>
-      <apx-chart
-        [series]="topAgentsSeries"
-        [chart]="horizontalBarChartOptions.chart"
-        [xaxis]="horizontalBarChartOptions.xaxis">
       </apx-chart>
     </div>
   </div>

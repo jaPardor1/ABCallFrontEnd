@@ -196,7 +196,7 @@
   },
   "incidentManagementModule":{
     "busquedaIdentificacionLbl":"Enter id user",
-    "buscarBtn":"SEARCH",
+    "buscarBtn":"Search",
     "nivelRisgoLbl":"Risk level:",
     "table1EncIdentificacion":"Id. number",
     "table1EncTipoIdentificacion":"Id. type",
@@ -207,6 +207,15 @@
   "tabModule":{
     "historialIncidentes":"INCIDENT HISTORY"
 
+  },
+  "dashboardModule": {
+    "totalPQRs": "Total PQRs",
+    "resolved": "Resolved",
+    "pending": "Pending",
+    "escalated": "Escalated",
+    "averageResolutionTime": "Average Resolution Time",
+    "pqrsByChannel": "PQRs by Channel",
+    "pqrsDistribution": "PQRs Distribution"
   }
 
 }
