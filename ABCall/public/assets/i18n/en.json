@@ -166,9 +166,9 @@
     "HEADER_OPTION_USUARIOS_REGISTRADOS": "REGISTERED USERS",
     "HEADER_OPTION_BASE_DE_CONOCIMIENTOS": "KNOWLEDGE BASE",
     "HEADER_OPTION_FLOWS": "FLOWS",
-
     "HEADER_OPTION_INCIDENT_MANAGEMENT":"INCIDENT MANAGEMENT",
-    "HEADER_OPTION_DASHBOARD":"DASHBOARD"
+    "HEADER_OPTION_DASHBOARD":"DASHBOARD",
+    "HEADER_OPTION_CLIENTS": "CLIENTES"
 
   },
   "flowsModule": {
@@ -210,7 +210,53 @@
   },
   "tabModule":{
     "historialIncidentes":"INCIDENT HISTORY"
-
+  },
+  "Clients": {
+    "clients": "Clients",
+    "createClient": "Create Client",
+    "address": "Address",
+    "profile": "Profile",
+    "planType": "Plan Type",
+    "emprendedor": "Entrepreneur",
+    "empresario": "Business",
+    "empresario_plus": "Business Plus",
+    "documentType": "Document Type",
+    "legalName": "Legal Name",
+    "idNumber": "ID Number",
+    "nameRep": "Legal Representative Name",
+    "cellphone": "Cellphone"
+  },
+  "ClientForm": {
+    "profileRequired": "Please submit profile field",
+    "profileMinLenght": "The field profile must have at least 3 characters",
+    "idTypeRequired": "Please select the document type",
+    "legalNameRequired": "Please submit the legal name field",
+    "legalNameMinLength": "The legal name must have at least 3 characters",
+    "idNumberRequired": "Please submit the ID number field",
+    "idNumberMinLength": "The ID number must have at least 3 characters",
+    "addressRequired": "Please submit the address field",
+    "addressMinLength": "The address must have at least 3 characters",
+    "typeDocumentRepRequired": "Please select the representative's document type",
+    "idRepLegaRequired": "Please submit the representative's ID field",
+    "idRepLegaMinLength": "The representative's ID must have at least 3 characters",
+    "nameRepRequired": "Please submit the representative's name field",
+    "nameRepMinLength": "The representative's name must have at least 3 characters",
+    "lastNameRepRequired": "Please submit the representative's last name field",
+    "lastNameRepMinLength": "The representative's last name must have at least 3 characters",
+    "emailRepRequired": "Please submit the representative's email field",
+    "emailRepInvalid": "Please enter a valid email address",
+    "planTypeRequired": "Please select the plan type",
+    "selectIdType": "Select ID type",
+    "selectPlanType": "Select plan type",
+    "legalRepresentative": "Legal Representative",
+    "clientCreated": "Client Created Successfully"
+  },
+  "DocumentTypes": {
+    "cedula": "ID Card",
+    "registro_civil": "Civil Registry",
+    "passport": "Passport",
+    "cedula_extranjeria": "Foreigner ID Card",
+    "NIT": "Tax Identification Number"
   },
   "assignIncidentModule":{
     "message":"This incident has been assigned to current agent."

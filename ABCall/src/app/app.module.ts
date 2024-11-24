@@ -39,6 +39,10 @@ import { StepListComponent } from './flow/steps/step-list/step-list.component';
 import { CreateStepComponent } from './flow/steps/create-step/create-step.component';
 import { StepFormComponent } from './flow/steps/step-form/step-form.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ClientListComponent } from './client/client-list/client-list.component';
+import { CreateClientComponent } from './client/create-client/create-client.component';
+import { ClientFormComponent } from './client/client-form/client-form.component';
+
 
 
 import { AsignarPqrComponent } from './pqr/asignar-pqr/asignar-pqr.component';
@@ -79,6 +83,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     CreateStepComponent,
     StepFormComponent,
     DashboardComponent,
+    ClientListComponent,
+    CreateClientComponent,
+    ClientFormComponent
+   ,
     AsignarPqrComponent,
     CerrarPqrComponent
   ],
