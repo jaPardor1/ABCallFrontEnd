@@ -7,8 +7,8 @@
       <!-- Descripción del paso -->
       <div class="form-row">
         <div class="form-column">
-          <label>{{ 'flowsModule.flowDescription' | translate }}</label>
-          <textarea formControlName="description" 
+          <label for="description">{{ 'flowsModule.flowDescription' | translate }}</label>
+          <textarea formControlName="description" id="description"
                     [ngClass]="{'is-invalid': form.get('description')?.invalid && (submitted || form.get('description')?.touched)}">
           </textarea>
           <div *ngIf="(submitted || form.get('description')?.touched) && form.get('description')?.invalid" class="small-text">
@@ -17,8 +17,8 @@
         </div>
 
         <div class="form-column">
-          <label>{{ 'flowSteps.type' | translate }}</label>
-          <select formControlName="type" 
+          <label for="type">{{ 'flowSteps.type' | translate }}</label>
+          <select formControlName="type" id="type"
                   [ngClass]="{'is-invalid': form.get('type')?.invalid && (submitted || form.get('type')?.touched)}">
             <option value="">Select step type</option>
             <option *ngFor="let stepType of stepTypes" [value]="stepType">{{ stepType | translate }}</option>

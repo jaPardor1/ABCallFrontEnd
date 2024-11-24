@@ -11,8 +11,8 @@
       <!-- Primera fila -->
       <div class="form-row">
         <div class="form-column">
-          <label>{{'UserFormModule.PerfilLbl'|translate}}</label>
-          <select formControlName="user_role" [ngClass]="{'is-invalid': form.get('user_role')?.invalid && (submitted || form.get('user_role')?.touched)}">
+          <label for="user_role">{{'UserFormModule.PerfilLbl'|translate}}</label>
+          <select formControlName="user_role" id="user_role" [ngClass]="{'is-invalid': form.get('user_role')?.invalid && (submitted || form.get('user_role')?.touched)}">
             <option *ngFor="let op of profiles" [value]="op.id">{{ op.profileName }}</option>
           </select>
           <div *ngIf="(submitted || form.get('user_role')?.touched) && form.get('user_role')?.invalid" class="small-text">
@@ -34,8 +34,8 @@
       <!-- Segunda fila -->
       <div class="form-row">
         <div class="form-column">
-          <label>{{'UserFormModule.tipoIdentificacionLbl'|translate}}</label>
-          <select formControlName="document_type" [ngClass]="{'is-invalid': form.get('document_type')?.invalid && (submitted || form.get('document_type')?.touched)}">
+          <label for="document_type">{{'UserFormModule.tipoIdentificacionLbl'|translate}}</label>
+          <select formControlName="document_type" id="document_type" [ngClass]="{'is-invalid': form.get('document_type')?.invalid && (submitted || form.get('document_type')?.touched)}">
             <option *ngFor="let op of documentIds" [value]="op.id">{{ op.documentName }}</option>
           </select>
           <div *ngIf="(submitted || form.get('document_type')?.touched) && form.get('document_type')?.invalid" class="small-text">
@@ -44,8 +44,8 @@
         </div>
 
         <div class="form-column">
-          <label>{{'UserFormModule.identificacion'|translate}}</label>
-          <input type="text" formControlName="id_number" [ngClass]="{'is-invalid': form.get('id_number')?.invalid && (submitted || form.get('id_number')?.touched)}">
+          <label for="id_number">{{'UserFormModule.identificacion'|translate}}</label>
+          <input type="text" formControlName="id_number" id="id_number" [ngClass]="{'is-invalid': form.get('id_number')?.invalid && (submitted || form.get('id_number')?.touched)}">
           <div *ngIf="(submitted || form.get('id_number')?.touched) && form.get('id_number')?.invalid" class="small-text">
             {{ getErrorIdentificacionField() }}
           </div>
@@ -55,16 +55,16 @@
       <!-- Tercera fila -->
       <div *ngIf="form.value.user_role != 'Client'" class="form-row">
         <div class="form-column">
-          <label>{{'UserFormModule.nombreLbl'|translate}}</label>
-          <input type="text" formControlName="name" [ngClass]="{'is-invalid': form.get('name')?.invalid && (submitted || form.get('name')?.touched)}">
+          <label for="name">{{'UserFormModule.nombreLbl'|translate}}</label>
+          <input type="text" formControlName="name" id="name" [ngClass]="{'is-invalid': form.get('name')?.invalid && (submitted || form.get('name')?.touched)}">
           <div *ngIf="(submitted || form.get('name')?.touched) && form.get('name')?.invalid" class="small-text">
             {{ getErrorNameField() }}
           </div>
         </div>
 
         <div class="form-column">
-          <label>{{'UserFormModule.apellidosLbl'|translate}}</label>
-          <input type="text" formControlName="last_name" [ngClass]="{'is-invalid': form.get('last_name')?.invalid && (submitted || form.get('last_name')?.touched)}">
+          <label for="last_name">{{'UserFormModule.apellidosLbl'|translate}}</label>
+          <input type="text" formControlName="last_name" id="last_name" [ngClass]="{'is-invalid': form.get('last_name')?.invalid && (submitted || form.get('last_name')?.touched)}">
           <div *ngIf="(submitted || form.get('last_name')?.touched) && form.get('last_name')?.invalid" class="small-text">
             {{ getErrorLastNameField() }}
           </div>
@@ -114,16 +114,16 @@
       <!-- Datos de contacto -->
       <div class="form-row">
         <div class="form-column">
-          <label>{{'UserFormModule.EmailLbl'|translate}}</label>
-          <input type="email" formControlName="email" [ngClass]="{'is-invalid': form.get('email')?.invalid && (submitted || form.get('email')?.touched)}">
+          <label for="email">{{'UserFormModule.EmailLbl'|translate}}</label>
+          <input type="email" formControlName="email" id="email" [ngClass]="{'is-invalid': form.get('email')?.invalid && (submitted || form.get('email')?.touched)}">
           <div *ngIf="(submitted || form.get('email')?.touched) && form.get('email')?.invalid" class="small-text">
             {{ getErrorEmailField() }}
           </div>
         </div>
 
         <div class="form-column">
-          <label>{{'UserFormModule.telefono'|translate}}</label>
-          <input type="text" formControlName="cellphone" [ngClass]="{'is-invalid': form.get('cellphone')?.invalid && (submitted || form.get('cellphone')?.touched)}">
+          <label for="cellphone">{{'UserFormModule.telefono'|translate}}</label>
+          <input type="text" formControlName="cellphone" id="cellphone" [ngClass]="{'is-invalid': form.get('cellphone')?.invalid && (submitted || form.get('cellphone')?.touched)}">
           <div *ngIf="(submitted || form.get('cellphone')?.touched) && form.get('cellphone')?.invalid" class="small-text">
             {{ getErrorTelephoneField() }}
           </div>
@@ -134,8 +134,8 @@
       <ng-container *ngIf="model == null">
         <div class="form-row highlight-box">
           <div class="form-column">
-            <label>{{'UserFormModule.contrasenia'|translate}}</label>
-            <input type="password" formControlName="password" [ngClass]="{'is-invalid': form.get('password')?.invalid && (submitted || form.get('password')?.touched)}">
+            <label for="password">{{'UserFormModule.contrasenia'|translate}}</label>
+            <input type="password" formControlName="password" id="password" [ngClass]="{'is-invalid': form.get('password')?.invalid && (submitted || form.get('password')?.touched)}">
             <div *ngIf="(submitted || form.get('password')?.touched) && form.get('password')?.invalid" class="small-text">
               {{ getErrorPasswordField() }}
             </div>
@@ -171,8 +171,8 @@
           </div>
 
           <div class="form-column">
-            <label>{{'UserFormModule.repContrasenia'|translate}}</label>
-            <input type="password" formControlName="password2" [ngClass]="{'is-invalid': form.get('password2')?.invalid && (submitted || form.get('password2')?.touched)}">
+            <label for="password2">{{'UserFormModule.repContrasenia'|translate}}</label>
+            <input type="password" formControlName="password2" id="password2" [ngClass]="{'is-invalid': form.get('password2')?.invalid && (submitted || form.get('password2')?.touched)}">
             <div *ngIf="(submitted || form.get('password2')?.touched) && form.get('password2')?.invalid" class="small-text">
               {{ getErrorPasswordField() }}
             </div>
