@@ -1,0 +1,79 @@
+<mat-dialog-content>
+  <div class="container-fluid">
+    <div class="line-title row">
+      <div class="col-12">
+        <label class="title">{{clients.legal_name}}</label>
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="field-title col-6">
+        <label for="">{{ 'Clients.idNumber' | translate }}:</label>
+      </div>
+      <div class="col-6">
+        <label for="">{{clients.id_number}}</label>
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="field-title col-6">
+        <label for="">{{ 'Clients.address' | translate }}:</label>
+      </div>
+      <div class="col-6">
+        <label for="">{{clients.address}}</label>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="field-title col-6">
+        <label for="">{{ 'Clients.cellphone' | translate }}:</label>
+      </div>
+      <div class="col-6">
+        <label for="">{{clients.cellphone}}</label>
+      </div>
+    </div>
+
+
+
+
+
+    <div class="row mt-3">
+      <div class="field-title col-6">
+        <label for="">{{ 'Clients.nameRep' | translate }}:</label>
+      </div>
+      <div class="col-6">
+        <label for="">{{clients.name_rep +' '+clients.last_name_rep}}</label>
+      </div>
+    </div>
+
+
+    <div class="row mt-3">
+      <div class="field-title col-6">
+        <label for="">{{ 'Clients.legalIdNumber' | translate }}:</label>
+      </div>
+      <div class="col-6">
+        <label for="">{{clients.id_rep_lega}}</label>
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="field-title col-6">
+        <label for="">{{ 'Clients.legalRepId' | translate }}:</label>
+      </div>
+      <div class="col-6">
+        <label for="">{{clients.type_document_rep}}</label>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="field-title col-6">
+        <label for="">{{ 'Clients.emailLegalrep' | translate }}:</label>
+      </div>
+      <div class="col-6">
+        <label for="">{{clients.email_rep}}</label>
+      </div>
+    </div>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="" cdkFocusInitial>{{ 'detailPqr.ok' | translate }}</button>
+</mat-dialog-actions>

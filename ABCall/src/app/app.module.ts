@@ -39,9 +39,15 @@ import { StepListComponent } from './flow/steps/step-list/step-list.component';
 import { CreateStepComponent } from './flow/steps/create-step/create-step.component';
 import { StepFormComponent } from './flow/steps/step-form/step-form.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ClientListComponent } from './client/client-list/client-list.component';
+import { CreateClientComponent } from './client/create-client/create-client.component';
+import { ClientFormComponent } from './client/client-form/client-form.component';
+
 
 
 import { AsignarPqrComponent } from './pqr/asignar-pqr/asignar-pqr.component';
+import { CerrarPqrComponent } from './pqr/cerrar-pqr/cerrar-pqr.component';
+import { ClientDetailDialogComponent } from './shared/client-detail-dialog/client-detail-dialog.component';
 
 // Función de fábrica para crear el TranslateLoader
 export function HttpLoaderFactory(http: HttpClient) {
@@ -78,7 +84,13 @@ export function HttpLoaderFactory(http: HttpClient) {
     CreateStepComponent,
     StepFormComponent,
     DashboardComponent,
-    AsignarPqrComponent
+    ClientListComponent,
+    CreateClientComponent,
+    ClientFormComponent
+   ,
+    AsignarPqrComponent,
+    CerrarPqrComponent,
+    ClientDetailDialogComponent
   ],
   imports: [
     BrowserModule,

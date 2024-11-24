@@ -18,7 +18,7 @@ export class ListadoPqrComponent implements OnInit {
   public dataSource:any;
   displayedColumns: string[] = ['ticket_number','date','subject', 'status', 'actions'];
   @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
-  @ViewChild(AsignarPqrComponent)botonAsignar!:AsignarPqrComponent;
+
   ticketNumber:string='';
   isNotFound:boolean=true;
   incidenceList={}
@@ -81,20 +81,20 @@ export class ListadoPqrComponent implements OnInit {
     this.dialog.open(DetailDialogComponent, {
       data: { pqrData },
     }).afterClosed().subscribe(
-      
       ()=>{
-        debugger;
+
         if(this.tabData.gestion){
           this.incidentIdrequested.emit({
             idPqr:pqrData.id,
+            ticket_number:pqrData.ticket_number,
+            title:pqrData.subject,
+            description:pqrData.description,
+            type:pqrData.type,
+            status:pqrData.status
           });
-                           
+
         }
       }
     );
   }
-  assignIncidentToAgent(ticketNUmber:string){
-       this.botonAsignar.assignIncident(ticketNUmber);
-  }
-
 }

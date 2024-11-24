@@ -115,7 +115,8 @@
     "tipoSolicitudRequerido": "Por favor especifique el tipo de solicitud",
     "descripcionRequerida": "Por favor especifique una descripción",
     "descripcionMaxima": "La descripción solo puede almacenar máximo: {{maxLength}} caracteres.",
-    "asuntoRequerido": "Por favor especifique un asunto"
+    "asuntoRequerido": "Por favor especifique un asunto",
+    "incidenceCreated":"El Pqr ha sido creado :"
   },
   "listPqrMOdule":{
     "digiteElRadicado": "Digite el PQR* radicado:",
@@ -145,7 +146,9 @@
     "detailDialogEstado": "Estado",
     "detailDialogFecha": "Fecha",
     "detailDialogFechaCierre": "Fecha estimada de cierre",
-    "detailDialogDescripcion": "Descripción"
+    "detailDialogDescripcion": "Descripción",
+    "agentAsigned":"Agente Asignado",
+    "canal":"Canal"
 
   },
   "KnowledgeBaseModule": {
@@ -164,7 +167,8 @@
     "HEADER_OPTION_BASE_DE_CONOCIMIENTOS": "BASE DE CONOCIMIENTOS",
     "HEADER_OPTION_FLOWS": "FLUJOS",
     "HEADER_OPTION_INCIDENT_MANAGEMENT":"GESTIÓN INCIDENTES",
-    "HEADER_OPTION_DASHBOARD":"TABLEROS CONTROL"
+    "HEADER_OPTION_DASHBOARD":"TABLEROS CONTROL",
+    "HEADER_OPTION_CLIENTS": "CLIENTES"
   },
   "flowsModule": {
     "flows": "Flujos",
@@ -201,11 +205,13 @@
     "table1EncTipoIdentificacion":"Tipo Identificación",
     "table1EncNombreCompleto":"Nombre Completo",
     "table2EncEmail":"Correo Electronico",
-    "table2EncTelefono":"Telefono"
+    "table2EncTelefono":"Telefono",
+    "idPqr":"Numero de Ticket"
 
   },
   "tabModule":{
     "historialIncidentes":"HISTORIAL DE INCIDENTES"
+
 
   },
   "dashboardModule": {
@@ -216,5 +222,65 @@
     "averageResolutionTime": "Tiempo Promedio de Resolución",
     "pqrsByChannel": "PQRs por Canal de Entrada",
     "pqrsDistribution": "Distribución de PQRs"
+
+  },
+  "assignIncidentModule":{
+    "message":"El pqr ha sido asignado a este gestor."
+  },
+  "closeIncidentModule":{
+    "textBtn":"Cerrar Incidente",
+    "closeMessage":"Esta seguro de cerrar este incidente?"
+  },
+  "Clients": {
+    "clients": "Clientes",
+    "createClient": "Crear Cliente",
+    "address": "Dirección",
+    "profile": "Perfil",
+    "planType": "Tipo de plan",
+    "emprendedor": "Emprendedor",
+    "empresario": "Empresario",
+    "empresario_plus": "Emplesario Plus",
+    "documentType": "Tipo de Documento",
+    "legalName": "Nombre Legal",
+    "idNumber": "Número de Documento",
+    "nameRep": "Nombre Representante Legal",
+    "cellphone": "Celular",
+    "legalIdNumber":"Identificación rep. legal",
+    "legalRepId":"Tipo de documento rep. legal",
+    "emailLegalrep":"Email rep. legal"
+  },
+  "ClientForm": {
+    "profileRequired": "Por favor, complete el campo de perfil",
+    "profileMinLenght": "El campo de perfil debe tener al menos 3 caracteres",
+    "idTypeRequired": "Por favor, seleccione el tipo de documento",
+    "legalNameRequired": "Por favor, complete el campo del nombre legal",
+    "legalNameMinLength": "El nombre legal debe tener al menos 3 caracteres",
+    "idNumberRequired": "Por favor, complete el campo del número de identificación",
+    "idNumberMinLength": "El número de identificación debe tener al menos 3 caracteres",
+    "addressRequired": "Por favor, complete el campo de la dirección",
+    "addressMinLength": "La dirección debe tener al menos 3 caracteres",
+    "typeDocumentRepRequired": "Por favor, seleccione el tipo de documento del representante",
+    "idRepLegaRequired": "Por favor, complete el campo del número de identificación del representante",
+    "idRepLegaMinLength": "El número de identificación del representante debe tener al menos 3 caracteres",
+    "nameRepRequired": "Por favor, complete el campo del nombre del representante",
+    "nameRepMinLength": "El nombre del representante debe tener al menos 3 caracteres",
+    "lastNameRepRequired": "Por favor, complete el campo del apellido del representante",
+    "lastNameRepMinLength": "El apellido del representante debe tener al menos 3 caracteres",
+    "emailRepRequired": "Por favor, complete el campo del correo electrónico del representante",
+    "emailRepInvalid": "Por favor, introduzca una dirección de correo electrónico válida",
+    "planTypeRequired": "Por favor, seleccione el tipo de plan",
+    "selectIdType": "Seleccione tipo de documento",
+    "selectPlanType": "Sleccione tipo de plan",
+    "legalRepresentative": "Representante Legal",
+    "clientCreated": "Cliente Creado Exitosamente"
+  },
+  "DocumentTypes": {
+    "cedula": "Cedula",
+    "registro_civil" : "Registro Civil",
+    "passport" : "Pasaporte",
+    "cedula_extranjeria" : "Cedula Extranjeria",
+    "NIT" : "NIT"
+
   }
+
 }

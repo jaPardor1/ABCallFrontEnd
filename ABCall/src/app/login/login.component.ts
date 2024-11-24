@@ -69,14 +69,12 @@ export class LoginComponent implements OnInit {
           this.showErrorModal = true;
         }
       }catch (error:any) {
-
         if(error.name=='NotAuthorizedException'){
           this.subscription=this.translate.stream('loginModule.errorLogin').subscribe((translatedText: string) => {
             message = translatedText;
           });
           this.modalMessage = message;
         }if(error.name==='UserAlreadyAuthenticatedException'){
-
           this.subscription=this.translate.stream('loginModule.alreadySignedUpMessage').subscribe((translatedText: string) => {
             message = translatedText;
           });
