@@ -8,6 +8,7 @@ export const environment = {
   },
 
   apiPqrs: 'https://yxdz3rfzj3.execute-api.us-east-1.amazonaws.com/api/pqrs',
+  apiPqrStats: 'https://yxdz3rfzj3.execute-api.us-east-1.amazonaws.com/api/pqrs/stats',
 
   /**apis for users**/
   apiClientsUrl2: 'https://l36oyb6gwa.execute-api.us-east-1.amazonaws.com/api/clients/short',// creacion de usurio sin autorization

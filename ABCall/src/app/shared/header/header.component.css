@@ -1,69 +1,81 @@
-.header-container{
-  position:sticky;
-  top:0px;
-  background-color:#1FC7B5 ;
-  margin-top: 0px;
-  z-index: 9;
-  z-index: 9;
+/* Contenedor del encabezado */
+.header-container {
+  position: sticky;
+  top: 0;
+  background-color: #1FC7B5;
+  z-index: 9; /* Eliminada la propiedad repetida */
 }
-@font-face{
+
+/* Definición de fuente personalizada */
+@font-face {
   font-family: 'bebas-neue';
-  src:url("/assets/fonts/bebas_neue/BebasNeue-Regular.ttf") format('truetype');
-  src:url("/assets/fonts/bebas_neue/BebasNeue-Regular.ttf") format('truetype');
+  src: url("/assets/fonts/bebas_neue/BebasNeue-Regular.ttf") format('truetype');
   font-weight: normal;
   font-style: normal;
 }
-.text-content{
+
+/* Contenido del encabezado */
+.text-content {
   height: 75px;
-  font-size: 35px;
+  font-size: 2.2rem; /* Usado rem para mayor flexibilidad */
   width: auto;
 }
-.header-text{
-  padding: 10px;
-  margin-top: 0px;
-  margin-left: 40px;
+
+/* Estilo del texto del encabezado */
+.header-text {
+  padding: 0.5rem 0; /* Espaciado vertical */
+  margin-left: 2.5rem; /* Espaciado izquierdo */
+  margin-right: 2rem; /* Añadir margen derecho para mayor separación */
   font-family: 'bebas-neue';
-  font-family: 'bebas-neue';
-  color:#D9D9D9;
-  font-size: 35px;
+  color: #D9D9D9;
+  font-size: 1.6rem; /* Usado rem para mayor flexibilidad */
 }
-.active{
+
+
+/* Elemento activo del menú */
+.active {
   background-color: #189B8D;
   font-weight: bold;
-  height: 50px; /* Igual a la altura de los elementos no activos */
-  transform: translateY(-5px); /* Eleva hacia arriba */
+  height: 3.125rem; /* 50px en rem */
+  transform: translateY(-5px);
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
 }
 
-.navbar-nav{
-  background-color:#47E3D2 ;
+/* Estilo de la barra de navegación */
+.navbar-nav {
+  background-color: #47E3D2;
 }
-.nav-link-container{
-   border-radius: 0px 0px 8px 8px;
-   height: 40px;
 
+/* Contenedor de los enlaces de navegación */
+.nav-link-container {
+  border-radius: 0 0 0.5rem 0.5rem; /* Bordes redondeados en la parte inferior */
+  height: 3.125rem; /* 50px en rem */
 }
+
+/* Ajuste para el elemento activo de la barra de navegación */
 .navbar-nav .active {
-  margin-top: -5px; /* Ajusta este valor para darle la apariencia de altura extra */
+  margin-top: -0.3rem; /* Ajuste con rem */
 }
 
-/* Efecto de hover para las opciones del menú */
+/* Efectos de hover en los enlaces del menú */
 .nav-link-container .nav-link {
   transition: background-color 0.3s, color 0.3s;
-  font-size: 14px;
+  font-size: 0.875rem; /* Tamaño de fuente pequeño */
   color: #312d2d;
   line-height: 1.5;
 }
 
+/* Efecto de hover en los enlaces */
 .nav-link-container .nav-link:hover {
-  background-color: #189B8D; /* Color de fondo en hover */
-  color: #ffffff; /* Color de texto en hover */
+  background-color: #189B8D;
+  color: #ffffff;
 }
 
-@media(max-width: 1364px){
+/* Estilos responsivos para pantallas más pequeñas */
+@media (max-width: 1364px) {
   .nav-link-container .nav-link {
-     font-size: smaller;
+    font-size: 0.75rem; /* Reducción del tamaño de fuente en pantallas pequeñas */
   }
-
 }
+

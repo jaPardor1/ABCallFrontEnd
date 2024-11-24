@@ -1,0 +1,50 @@
+button {
+  background-color:  #029e89;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.button-1{
+  font-size: 15px;
+  background-color:  #029e89;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #008d76; /* Color verde más oscuro al pasar el mouse */
+}
+
+.button-edit {
+  background-color: white; /* Fondo blanco */
+  color: #029e89; /* Color de texto */
+  border: 2px solid #029e89; /* Borde */
+  padding: 5px 5px; /* Ajusta el padding si es necesario */
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+
+}
+
+.button-delete {
+  background-color: white; /* Fondo blanco */
+  color: #d9534f; /* Color de texto en rojo */
+  border: 2px solid #d9534f; /* Borde rojo */
+  padding: 5px 5px; /* Ajusta el padding si es necesario */
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.button-edit:hover {
+  background-color: #e6f2f1; /* Fondo más claro al pasar el mouse */
+}
+
+.button-delete:hover {
+  background-color: #f9e6e6; /* Fondo más claro al pasar el mouse */
+}

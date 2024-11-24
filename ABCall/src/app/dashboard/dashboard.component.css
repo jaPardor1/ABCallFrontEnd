@@ -22,15 +22,15 @@
 }
 
 .info-box.resolved {
-  background-color: #90ee90; /* Verde */
+  background-color: #008ffb; /* Verde */
 }
 
 .info-box.pending {
-  background-color: #ffff99; /* Amarillo */
+  background-color: #00e396; /* Amarillo */
 }
 
 .info-box.escalated {
-  background-color: #ff9999; /* Rojo */
+  background-color: #feb019; /* Rojo */
 }
 
 .charts-container {
