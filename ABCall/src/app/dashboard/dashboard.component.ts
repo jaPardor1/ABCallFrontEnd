@@ -17,22 +17,35 @@ export class DashboardComponent implements OnInit {
   // Configuración del gráfico de pastel
   pieChartOptions: {
     chart: ApexChart;
-
     series: ApexNonAxisChartSeries;
+    labels?: string[]; // Añadir etiquetas personalizadas
     colors: string[];
   } = {
     chart: { type: 'pie', height: 300 },
-
     series: [],
+    labels: ['Cerradas', 'Abiertas', 'Escaladas'], // Nombres de las porciones
     colors: ['#90ee90', '#ffff99', '#ff9999'], // Verde, amarillo, rojo
   };
 
+
   // Configuración de los gráficos de líneas y barras (simplificado)
-  lineChartOptions: { chart: ApexChart; xaxis: ApexXAxis; series: ApexAxisChartSeries } = {
+  lineChartOptions: {
+    chart: ApexChart;
+    xaxis: ApexXAxis;
+    yaxis?: { labels: { formatter: (value: number) => string } }; // Añadir yaxis
+    series: ApexAxisChartSeries;
+  } = {
     chart: { type: 'line', height: 300 },
     xaxis: { categories: [] },
+    yaxis: {
+      labels: {
+        formatter: (value: number) => value.toFixed(2), // Formatear a 2 decimales
+      },
+    },
     series: [{ name: 'Promedio (días)', data: [] }],
   };
+
+
 
   barChartOptions: { chart: ApexChart; xaxis: ApexXAxis; series: ApexAxisChartSeries } = {
     chart: { type: 'bar', height: 300 },
@@ -71,6 +84,11 @@ export class DashboardComponent implements OnInit {
           // Actualizar labels y series en el gráfico de pastel
           this.pieChartOptions = {
             ...this.pieChartOptions,
+            labels: [
+              translations['dashboardModule.resolved'],
+              translations['dashboardModule.pending'],
+              translations['dashboardModule.escalated'],
+            ],
             series: [
               data.total_resolved,
               data.total_pending,
@@ -87,28 +105,33 @@ export class DashboardComponent implements OnInit {
   }
 
   private updateLineChart(data: PqrStatsDto): void {
-    // Calcular el promedio general de average_resolution_time_per_month
-    const averageResolutionTime = Object.values(data.average_resolution_time_per_month).reduce((a, b) => a + b, 0) /
+    const averageResolutionTime = Object.values(data.average_resolution_time_per_month)
+      .reduce((a, b) => a + b, 0) /
       Object.values(data.average_resolution_time_per_month).length;
 
-    // Configurar el gráfico de líneas
     this.lineChartOptions = {
       ...this.lineChartOptions,
       xaxis: {
-        categories: data.resolution_times.map((_, index) => `PQR ${index + 1}`), // Etiquetas para cada PQR
+        categories: data.resolution_times.map((_, index) => `PQR ${index + 1}`),
       },
       series: [
         {
           name: 'Tiempos de resolución',
-          data: data.resolution_times, // Datos de tiempos individuales
+          data: data.resolution_times,
         },
         {
           name: 'Promedio (días)',
-          data: Array(data.resolution_times.length).fill(averageResolutionTime), // Línea horizontal
+          data: Array(data.resolution_times.length).fill(averageResolutionTime),
         },
       ],
+      yaxis: {
+        labels: {
+          formatter: (value: number) => value.toFixed(2), // Redondea los valores del eje Y
+        },
+      },
     };
   }
+
 
 
   private updateBarChart(data: PqrStatsDto): void {
@@ -141,6 +164,10 @@ export class DashboardComponent implements OnInit {
     ];
   }
 }
+
+
+
+
 
 
 

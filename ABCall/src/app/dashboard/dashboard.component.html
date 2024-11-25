@@ -24,7 +24,10 @@
       <apx-chart
         [series]="lineChartOptions.series"
         [chart]="lineChartOptions.chart"
-        [xaxis]="lineChartOptions.xaxis">
+
+        [xaxis]="lineChartOptions.xaxis"
+        [yaxis]="lineChartOptions.yaxis"> <!-- Asegurarse de incluir yaxis -->
+
       </apx-chart>
     </div>
 
@@ -41,8 +44,11 @@
       <h3>{{ 'dashboardModule.pqrsDistribution' | translate }}</h3>
       <apx-chart
         [series]="pieChartOptions.series"
-        [chart]="pieChartOptions.chart">
+
+        [chart]="pieChartOptions.chart"
+        [labels]="pieChartOptions.labels"> <!-- Añadir labels -->
       </apx-chart>
     </div>
+
   </div>
 </div>
