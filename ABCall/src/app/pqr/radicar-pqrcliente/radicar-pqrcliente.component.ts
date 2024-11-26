@@ -48,15 +48,22 @@ export class RadicarPQRClienteComponent implements AfterViewInit {
   saveIncident(incident: PqrDTO) {
     console.log(typeof (incident))
     if (incident.title !== undefined) {
-
-        incident.user_sub = this.tabData.user_sub
-
         this.createIncident(incident);
     }
   }
 
   createIncident(incident: PqrDTO) {
-    this.pqrService.createIncident(incident).subscribe(
+
+    let pqr ;
+    if(this.tabData.gestion){
+      incident.user_sub = this.tabData.user_sub
+      pqr = incident;
+    }else{
+      const {user_sub:_,... newIncident} = incident;
+      pqr = newIncident;
+    }
+
+    this.pqrService.createIncident(pqr).subscribe(
       (response) => {
         let msg = this.translate.instant('createIncidentModule.incidenceCreated') + response.ticket_number
         this.openDialog(msg)
