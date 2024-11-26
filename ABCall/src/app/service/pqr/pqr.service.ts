@@ -20,6 +20,7 @@ export class PqrService {
   constructor(private http:HttpClient) { }
   public createIncident(incident:any):Observable<any>
   {
+    debugger;
     return this.http.post<any>(this.urlApi,incident)
   }
 
